@@ -12,37 +12,18 @@
                                 owl:versionIRI <http://emmo.info/computation/0.1> ;
                                 owl:imports <http://emmo.info/emmo/1.0.0-beta5/disciplines/computerscience> ,
                                             <http://emmo.info/emmo/1.0.0-beta5/multiperspective/persholistic> ;
-                                dcterms:abstract """Elementary Multiperspective Material Ontology (EMMO)
+                                dcterms:abstract """Application ontology describing needed concepts for remote computations with ExecFlow using AiiDA.
 
-EMMO is a multidisciplinary effort to develop a standard representational framework (the ontology) based on current materials modelling knowledge, including physical sciences, analytical philosophy and information and communication technologies.
-
-It provides the connection between the physical world, materials characterisation world and materials modelling world.
-
-EMMO is released under a Creative Commons license Attribution 4.0 International (CC BY 4.0)."""@en ;
-                                dcterms:contributor "Access, DE" ,
-                                                    "Fraunhofer IWM, DE" ,
-                                                    "Goldbeck Consulting Ltd (UK)" ,
-                                                    "SINTEF, NO" ,
-                                                    "University of Bologna, IT" ;
-                                dcterms:creator "Adham Hashibon" ,
-                                                "Emanuele Ghedini" ,
-                                                "Georg Schmitz" ,
-                                                "Gerhard Goldbeck" ,
-                                                "Jesper Friis" ;
+Computation is released under a Creative Commons license Attribution 4.0 International (CC BY 4.0)."""@en ;
+                                dcterms:creator "Louis Ponet, EPFL" ,
+                                                "Otello Roscioni, GCL" ,
+                                                "Francesca Bleken, SINTEF" ,
+                                                "Jesper Friis, SINTEF" ;
                                 dcterms:license "https://creativecommons.org/licenses/by/4.0/legalcode" ;
-                                dcterms:publisher "EMMC ASBL" ;
-                                dcterms:title "Elementary Multiperspective Material Ontology (EMMO)"@en ;
-                                rdfs:comment """Contacts:
-Gerhard Goldbeck
-Goldbeck Consulting Ltd (UK)
-email: gerhard@goldbeck-consulting.com
+                                dcterms:publisher "OpenModel" ;
+                                dcterms:title "OpenModel Computation Application Ontology"@en ;
+                                owl:versionInfo "0.3" .
 
-Emanuele Ghedini
-University of Bologna (IT)
-email: emanuele.ghedini@unibo.it"""@en ,
-                                             "The EMMO should be reasoned in order to visualize all inferences and class hierarchy in Protege (ctrl+R hotkey).  It is tested with both the HermiT (preferred) and HermiT reasoners."@en ;
-                                owl:versionInfo "1.0.0-beta5" ;
-                                <http://xmlns.com/foaf/0.1/logo> "https://github.com/emmo-repo/EMMO/raw/master/doc/emmo-logo.png" .
 
 #################################################################
 #    Annotation properties
@@ -50,10 +31,6 @@ email: emanuele.ghedini@unibo.it"""@en ,
 
 ###  http://www.w3.org/2002/07/owl#qualifiedCardinality
 owl:qualifiedCardinality rdf:type owl:AnnotationProperty .
-
-
-###  http://xmlns.com/foaf/0.1/logo
-<http://xmlns.com/foaf/0.1/logo> rdf:type owl:AnnotationProperty .
 
 
 #################################################################
