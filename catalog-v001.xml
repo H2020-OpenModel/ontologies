@@ -7,6 +7,7 @@
 
     <!-- EMMO -->
     <uri name="http://emmo.info/emmo/1.0.0-beta5"         uri="https://raw.githubusercontent.com/emmo-repo/emmo-repo.github.io/master/versions/1.0.0-beta5/emmo.ttl"/>
+    <uri name="http://emmo.info/emmo/1.0.0-beta5/disciplines/computerscience"       uri="https://raw.githubusercontent.com/emmo-repo/emmo-repo.github.io/master/versions/1.0.0-beta5/emmo.ttl"/>
 
     <!-- Domain ontologies -->
     <uri name="http://emmo.info/microstructure"           uri="https://raw.githubusercontent.com/emmo-repo/domain-microstructure/master/microstructure.ttl"/>
