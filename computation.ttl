@@ -10,14 +10,17 @@
 
 <http://emmo.info/computation> rdf:type owl:Ontology ;
                                 owl:versionIRI <http://emmo.info/computation/0.1> ;
-                                owl:imports <http://emmo.info/emmo/1.0.0-beta5/disciplines/computerscience> ,
-                                            <http://emmo.info/emmo/1.0.0-beta5/multiperspective/persholistic> ;
+#                                owl:imports <http://emmo.info/emmo/1.0.0-beta5/disciplines/computerscience> ,
+#                                            <http://emmo.info/emmo/1.0.0-beta5/multiperspective/persholistic> ;
+                                owl:imports <https://raw.githubusercontent.com/emmo-repo/EMMO/computer-science/disciplines/computerscience.ttl> ,
+                                            <http://emmo.info/emmo/computer-science/multiperspective/persholistic> ;
                                 dcterms:abstract """Application ontology describing needed concepts for remote computations with ExecFlow using AiiDA.
 
 Computation is released under a Creative Commons license Attribution 4.0 International (CC BY 4.0)."""@en ;
                                 dcterms:creator "Louis Ponet, EPFL" ,
                                                 "Otello Roscioni, GCL" ,
                                                 "Francesca Bleken, SINTEF" ,
+                                                "Emanuele Ghedini, UNIBO" ,
                                                 "Jesper Friis, SINTEF" ;
                                 dcterms:license "https://creativecommons.org/licenses/by/4.0/legalcode" ;
                                 dcterms:publisher "OpenModel" ;
@@ -96,7 +99,7 @@ owl:qualifiedCardinality rdf:type owl:AnnotationProperty .
 ###  http://emmo.info/emmo#EMMO_3509a3e7_1ffd_49dc_8fa6_e015f8290d60
 <http://emmo.info/emmo#EMMO_3509a3e7_1ffd_49dc_8fa6_e015f8290d60> rdf:type owl:Class ;
                                                                   rdfs:subClassOf <http://emmo.info/emmo#EMMO_19608340_178c_4bfd_bd4d_0d3b935c6fec> ;
-                                                                  <http://emmo.info/emmo#EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9> "Electronic device and processing data, typically in binary form, according to instructions given to it in a variable program."@en ;
+                                                                  <http://emmo.info/emmo#EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9> "Electronic device that processes data, typically in binary form, according to instructions given to it in a variable program."@en ;
                                                                   skos:prefLabel "Computer"@en .
 
 
