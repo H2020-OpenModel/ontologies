@@ -10,23 +10,20 @@
 
 <http://emmo.info/computation> rdf:type owl:Ontology ;
                                 owl:versionIRI <http://emmo.info/computation/0.1> ;
-#                                owl:imports <http://emmo.info/emmo/1.0.0-beta5/disciplines/computerscience> ,
-#                                            <http://emmo.info/emmo/1.0.0-beta5/multiperspective/persholistic> ;
-                                owl:imports <https://raw.githubusercontent.com/emmo-repo/EMMO/computer-science/disciplines/computerscience.ttl> ,
-                                            <http://emmo.info/emmo/computer-science/multiperspective/persholistic> ;
+                                owl:imports <http://emmo.info/emmo/computer-science/multiperspective/persholistic> ,
+                                            <https://raw.githubusercontent.com/emmo-repo/EMMO/computer-science/disciplines/computerscience.ttl> ;
                                 dcterms:abstract """Application ontology describing needed concepts for remote computations with ExecFlow using AiiDA.
 
 Computation is released under a Creative Commons license Attribution 4.0 International (CC BY 4.0)."""@en ;
-                                dcterms:creator "Louis Ponet, EPFL" ,
-                                                "Otello Roscioni, GCL" ,
+                                dcterms:creator "Emanuele Ghedini, UNIBO" ,
                                                 "Francesca Bleken, SINTEF" ,
-                                                "Emanuele Ghedini, UNIBO" ,
-                                                "Jesper Friis, SINTEF" ;
+                                                "Jesper Friis, SINTEF" ,
+                                                "Louis Ponet, EPFL" ,
+                                                "Otello Roscioni, GCL" ;
                                 dcterms:license "https://creativecommons.org/licenses/by/4.0/legalcode" ;
                                 dcterms:publisher "OpenModel" ;
                                 dcterms:title "OpenModel Computation Application Ontology"@en ;
                                 owl:versionInfo "0.3" .
-
 
 #################################################################
 #    Annotation properties
@@ -39,6 +36,25 @@ owl:qualifiedCardinality rdf:type owl:AnnotationProperty .
 #################################################################
 #    Classes
 #################################################################
+
+###  http://emmo.info/computation#EMMO_42f445fa_5cab_4166_bf71_97ed146d6b85
+:EMMO_42f445fa_5cab_4166_bf71_97ed146d6b85 rdf:type owl:Class ;
+                                           rdfs:subClassOf <http://emmo.info/emmo#EMMO_e94a9156_fb6c_4e16_88ee_829ac9933155> ;
+                                           <http://emmo.info/emmo#EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9> "Path to an executable program."@en ;
+                                           skos:prefLabel "ExecutablePath"@en .
+
+
+###  http://emmo.info/computation#EMMO_466540de_2206_4299_9526_0872bd697b29
+:EMMO_466540de_2206_4299_9526_0872bd697b29 rdf:type owl:Class ;
+                                           rdfs:subClassOf <http://emmo.info/emmo#EMMO_51645022_3a21_4fa9_a9ce_a795eebbeca7> ,
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty [ owl:inverseOf <http://emmo.info/emmo#EMMO_8e52c42b_e879_4473_9fa1_4b23428b392b>
+                                                                            ] ;
+                                                             owl:someValuesFrom <http://emmo.info/emmo#EMMO_ae047725_8b78_4e8d_a5be_ef3c5696c681>
+                                                           ] ;
+                                           rdfs:comment "A command to a Message Passing Interface (MPI) system."@en ;
+                                           skos:prefLabel "MPICommand"@en .
+
 
 ###  http://emmo.info/computation#EMMO_67b1182e_5bef_46c8_a414_41c9a649c8e0
 :EMMO_67b1182e_5bef_46c8_a414_41c9a649c8e0 rdf:type owl:Class ;
@@ -92,7 +108,7 @@ owl:qualifiedCardinality rdf:type owl:AnnotationProperty .
 ###  http://emmo.info/emmo#EMMO_2afbf10f_9dbd_4f4c_9aaa_defa3a395287
 <http://emmo.info/emmo#EMMO_2afbf10f_9dbd_4f4c_9aaa_defa3a395287> rdf:type owl:Class ;
                                                                   rdfs:subClassOf <http://emmo.info/emmo#EMMO_e94a9156_fb6c_4e16_88ee_829ac9933155> ;
-                                                                  <http://emmo.info/emmo#EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9> "Path that a computation will be performed in."@en ;
+                                                                  <http://emmo.info/emmo#EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9> "Path to a local directory where the computation will be performed."@en ;
                                                                   skos:prefLabel "WorkDirectory"@en .
 
 
