@@ -37,6 +37,13 @@ owl:qualifiedCardinality rdf:type owl:AnnotationProperty .
 #    Classes
 #################################################################
 
+###  http://emmo.info/computation#EMMO_2155b6e6_7e61_4236_b032_eaacbe8259d2
+:EMMO_2155b6e6_7e61_4236_b032_eaacbe8259d2 rdf:type owl:Class ;
+                                           rdfs:subClassOf <http://emmo.info/emmo#EMMO_dd4a7f3e_ef56_466c_ac1a_d2716b5f87ec> ;
+                                           <http://emmo.info/emmo#EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9> "Number of processors that can be used by MPI on a compute node."@en ;
+                                           skos:prefLabel "MPIProcessorsPerNode"@en .
+
+
 ###  http://emmo.info/computation#EMMO_42f445fa_5cab_4166_bf71_97ed146d6b85
 :EMMO_42f445fa_5cab_4166_bf71_97ed146d6b85 rdf:type owl:Class ;
                                            rdfs:subClassOf <http://emmo.info/emmo#EMMO_e94a9156_fb6c_4e16_88ee_829ac9933155> ;
@@ -46,12 +53,7 @@ owl:qualifiedCardinality rdf:type owl:AnnotationProperty .
 
 ###  http://emmo.info/computation#EMMO_466540de_2206_4299_9526_0872bd697b29
 :EMMO_466540de_2206_4299_9526_0872bd697b29 rdf:type owl:Class ;
-                                           rdfs:subClassOf <http://emmo.info/emmo#EMMO_51645022_3a21_4fa9_a9ce_a795eebbeca7> ,
-                                                           [ rdf:type owl:Restriction ;
-                                                             owl:onProperty [ owl:inverseOf <http://emmo.info/emmo#EMMO_8e52c42b_e879_4473_9fa1_4b23428b392b>
-                                                                            ] ;
-                                                             owl:someValuesFrom <http://emmo.info/emmo#EMMO_ae047725_8b78_4e8d_a5be_ef3c5696c681>
-                                                           ] ;
+                                           rdfs:subClassOf <http://emmo.info/emmo#EMMO_51645022_3a21_4fa9_a9ce_a795eebbeca7> ;
                                            rdfs:comment "A command to a Message Passing Interface (MPI) system."@en ;
                                            skos:prefLabel "MPICommand"@en .
 
@@ -90,6 +92,13 @@ owl:qualifiedCardinality rdf:type owl:AnnotationProperty .
                                            <http://emmo.info/emmo#EMMO_b432d2d5_25f4_4165_99c5_5935a7763c1a> "https, http, ftp, file, mailto, data, irc"@en ;
                                            <http://emmo.info/emmo#EMMO_c7b62dd7_063a_4c2a_8504_42f7264ba83f> "All URIs starts with a scheme, specifying how to interact with the resource specified by the URI. The scheme refers often to the protocol that can be used to access the resource, but that is not always the case. For example refer the 'http' scheme to the HTTP protocol, while the 'file' scheme has no protocol."@en ;
                                            skos:prefLabel "Scheme"@en .
+
+
+###  http://emmo.info/computation#EMMO_aa08906b_472a_4b0e_92fd_839535e95c02
+:EMMO_aa08906b_472a_4b0e_92fd_839535e95c02 rdf:type owl:Class ;
+                                           rdfs:subClassOf <http://emmo.info/emmo#EMMO_8681074a_e225_4e38_b586_e85b0f43ce38> ;
+                                           <http://emmo.info/emmo#EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9> "A software component that adds a specific feature to an existing computer program."@en ;
+                                           skos:prefLabel "SoftwarePlugin"@en .
 
 
 ###  http://emmo.info/computation#EMMO_d1401f4a_f5dd_4daf_ba6a_2252e6bbbfc4
@@ -138,6 +147,13 @@ owl:qualifiedCardinality rdf:type owl:AnnotationProperty .
                                                                   skos:prefLabel "WorkDirectory"@en .
 
 
+###  http://emmo.info/emmo#EMMO_3509a3e7_1ffd_49dc_8fa6_e015f8290d60
+<http://emmo.info/emmo#EMMO_3509a3e7_1ffd_49dc_8fa6_e015f8290d60> rdf:type owl:Class ;
+                                                                  rdfs:subClassOf <http://emmo.info/emmo#EMMO_19608340_178c_4bfd_bd4d_0d3b935c6fec> ;
+                                                                  <http://emmo.info/emmo#EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9> "Electronic device that processes data, typically in binary form, according to instructions given to it in a variable program."@en ;
+                                                                  skos:prefLabel "Computer"@en .
+
+
 ###  http://emmo.info/emmo#EMMO_398165de_5406_4e27_907e_fd8a1ab2f8e9
 <http://emmo.info/emmo#EMMO_398165de_5406_4e27_907e_fd8a1ab2f8e9> rdf:type owl:Class ;
                                                                   rdfs:subClassOf <http://emmo.info/emmo#EMMO_b45fbdc6_2519_4885_aa49_c56b394c3910> ;
@@ -170,17 +186,14 @@ owl:qualifiedCardinality rdf:type owl:AnnotationProperty .
 
 ###  http://emmo.info/emmo#EMMO_ae047725_8b78_4e8d_a5be_ef3c5696c681
 <http://emmo.info/emmo#EMMO_ae047725_8b78_4e8d_a5be_ef3c5696c681> rdf:type owl:Class ;
-                                                                  rdfs:subClassOf <http://emmo.info/emmo#EMMO_398165de_5406_4e27_907e_fd8a1ab2f8e9> ;
+                                                                  rdfs:subClassOf <http://emmo.info/emmo#EMMO_398165de_5406_4e27_907e_fd8a1ab2f8e9> ,
+                                                                                  [ rdf:type owl:Restriction ;
+                                                                                    owl:onProperty <http://emmo.info/emmo#EMMO_d01b3ee2_91a5_4ce2_95cd_f0d2c333c6d3> ;
+                                                                                    owl:someValuesFrom :EMMO_466540de_2206_4299_9526_0872bd697b29
+                                                                                  ] ;
                                                                   <http://emmo.info/emmo#EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9> "A standardized and portable message-passing standard designed to function on parallel computing architectures."@en ;
                                                                   skos:altLabel "MPI"@en ;
                                                                   skos:prefLabel "MessagePassingInterface"@en .
-
-
-###  http://emmo.info/emmo#EMMO_e791639c_bd22_4e9f_a57a_5905ad6b1385
-<http://emmo.info/emmo#EMMO_e791639c_bd22_4e9f_a57a_5905ad6b1385> rdf:type owl:Class ;
-                                                                  rdfs:subClassOf <http://emmo.info/emmo#EMMO_3b031fa9_8623_4ea5_8b57_bcafb70c5c8b> ;
-                                                                  skos:altLabel "MPIrun"@en ;
-                                                                  skos:prefLabel "MPIExec"@en .
 
 
 [ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
