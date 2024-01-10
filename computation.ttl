@@ -56,6 +56,15 @@ owl:qualifiedCardinality rdf:type owl:AnnotationProperty .
                                            skos:prefLabel "MPICommand"@en .
 
 
+###  http://emmo.info/computation#EMMO_4a679542_fc15_4269_bc30_647f16eb1ba4
+:EMMO_4a679542_fc15_4269_bc30_647f16eb1ba4 rdf:type owl:Class ;
+                                           rdfs:subClassOf <http://emmo.info/emmo#EMMO_51645022_3a21_4fa9_a9ce_a795eebbeca7> ,
+                                                           <http://emmo.info/emmo#EMMO_b941e455_2cb1_4c11_93e3_17caa06086b4> ;
+                                           <http://emmo.info/emmo#EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9> "Command to be executed before another command."@en ;
+                                           <http://emmo.info/emmo#EMMO_c7b62dd7_063a_4c2a_8504_42f7264ba83f> "A pre-command typically used to prepares the execution of another command."@en ;
+                                           skos:prefLabel "PreCommand"@en .
+
+
 ###  http://emmo.info/computation#EMMO_67b1182e_5bef_46c8_a414_41c9a649c8e0
 :EMMO_67b1182e_5bef_46c8_a414_41c9a649c8e0 rdf:type owl:Class ;
                                            rdfs:subClassOf <http://emmo.info/emmo#EMMO_3b031fa9_8623_4ea5_8b57_bcafb70c5c8b> ;
@@ -65,6 +74,13 @@ owl:qualifiedCardinality rdf:type owl:AnnotationProperty .
 - optimize CPU utilization
 - maximize the computation throughput"""@en ;
                                            skos:prefLabel "Scheduler"@en .
+
+
+###  http://emmo.info/computation#EMMO_750d9b76_aa5b_4007_8cf2_2b4d758546d1
+:EMMO_750d9b76_aa5b_4007_8cf2_2b4d758546d1 rdf:type owl:Class ;
+                                           rdfs:subClassOf <http://emmo.info/emmo#EMMO_51645022_3a21_4fa9_a9ce_a795eebbeca7> ;
+                                           <http://emmo.info/emmo#EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9> "Command performed on a local or remote machine where a calculation is submitted."@en ;
+                                           skos:prefLabel "Transport"@en .
 
 
 ###  http://emmo.info/computation#EMMO_9f76ea3e_270f_460d_9cec_7c9491601f34
@@ -91,6 +107,15 @@ owl:qualifiedCardinality rdf:type owl:AnnotationProperty .
                                            skos:prefLabel "Credential"@en .
 
 
+###  http://emmo.info/computation#EMMO_e681d1d0_6b8f_4cc1_a710_3f04e83807eb
+:EMMO_e681d1d0_6b8f_4cc1_a710_3f04e83807eb rdf:type owl:Class ;
+                                           rdfs:subClassOf <http://emmo.info/emmo#EMMO_51645022_3a21_4fa9_a9ce_a795eebbeca7> ,
+                                                           <http://emmo.info/emmo#EMMO_8a2a1cbc_dfc3_4e6c_b337_00ee56fd438a> ;
+                                           <http://emmo.info/emmo#EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9> "Command to be executed after another command."@en ;
+                                           <http://emmo.info/emmo#EMMO_c7b62dd7_063a_4c2a_8504_42f7264ba83f> "A post-command typically used to post-process the results after another command."@en ;
+                                           skos:prefLabel "PostCommand"@en .
+
+
 ###  http://emmo.info/computation#EMMO_ef281d84_3d01_4fa8_8483_5f35f069a0ae
 :EMMO_ef281d84_3d01_4fa8_8483_5f35f069a0ae rdf:type owl:Class ;
                                            rdfs:subClassOf <http://emmo.info/emmo#EMMO_b45fbdc6_2519_4885_aa49_c56b394c3910> ;
@@ -101,7 +126,8 @@ owl:qualifiedCardinality rdf:type owl:AnnotationProperty .
 ###  http://emmo.info/computation#EMMO_fe8a239f_4481_4c66_853f_de5875c9cf6b
 :EMMO_fe8a239f_4481_4c66_853f_de5875c9cf6b rdf:type owl:Class ;
                                            rdfs:subClassOf <http://emmo.info/emmo#EMMO_c130614a_2985_476d_a7ed_8a137847703c> ;
-                                           rdfs:comment "An agent, typically a human, that can log into computer systems and performing computations."@en ;
+                                           <http://emmo.info/emmo#EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9> "Agent that executes commands on a computer system."@en ;
+                                           rdfs:comment "A user is typically a human that can log into a computer system and provide commands. However users are not limited to humans. A user can for example also be a scheduled (cron) job performing a pre-defined command."@en ;
                                            skos:prefLabel "User"@en .
 
 
@@ -110,13 +136,6 @@ owl:qualifiedCardinality rdf:type owl:AnnotationProperty .
                                                                   rdfs:subClassOf <http://emmo.info/emmo#EMMO_e94a9156_fb6c_4e16_88ee_829ac9933155> ;
                                                                   <http://emmo.info/emmo#EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9> "Path to a local directory where the computation will be performed."@en ;
                                                                   skos:prefLabel "WorkDirectory"@en .
-
-
-###  http://emmo.info/emmo#EMMO_3509a3e7_1ffd_49dc_8fa6_e015f8290d60
-<http://emmo.info/emmo#EMMO_3509a3e7_1ffd_49dc_8fa6_e015f8290d60> rdf:type owl:Class ;
-                                                                  rdfs:subClassOf <http://emmo.info/emmo#EMMO_19608340_178c_4bfd_bd4d_0d3b935c6fec> ;
-                                                                  <http://emmo.info/emmo#EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9> "Electronic device that processes data, typically in binary form, according to instructions given to it in a variable program."@en ;
-                                                                  skos:prefLabel "Computer"@en .
 
 
 ###  http://emmo.info/emmo#EMMO_398165de_5406_4e27_907e_fd8a1ab2f8e9
