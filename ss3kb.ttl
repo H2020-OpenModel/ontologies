@@ -10,9 +10,9 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 
-<http://open-model.eu/ontologies/ss3kb#> rdf:type owl:Ontology ;
-                                        owl:versionIRI <http://open-model.eu/ontologies/0.1/ss3kb#> ;
-                                        owl:imports <http://open-model.eu/ontologies/0.1/ss3#> ;
+<http://open-model.eu/ontologies/ss3kb> rdf:type owl:Ontology ;
+                                        owl:versionIRI <http://open-model.eu/ontologies/0.1/ss3kb> ;
+                                        owl:imports <http://open-model.eu/ontologies/0.1/ss3> ;
                                         dcterms:abstract "Knowledge base for OpenModel success story 3 on aluminium reinforced concrete."@en ;
                                         dcterms:created "2024-01-24"@en ;
                                         dcterms:creator "Francesca Lønstad Bleken, SINTEF, NO"@en ,
@@ -28,3 +28,7 @@
 :heattreatment1 rdf:type ss3:HeatTreatment .
 
 :premodsimple1 rdf:type ss3:PremodSimple .
+
+:abaqus_femmesh1 rdf:type ss3:AbaqusFiniteElementMesh .
+:abaqus_materialcard_al rdf:type ss3:AbaqusMaterialCard .
+:abaqus_materialcard_cement rdf:type ss3:FenicsMaterialCard .
