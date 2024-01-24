@@ -24,7 +24,7 @@
                                         owl:versionInfo "0.1"@en .
 
 
-# Available datasets
+# Available data sources
 :heattreatment1 rdf:type ss3:HeatTreatment .
 
 :premodsimple1 rdf:type ss3:PremodSimple .
