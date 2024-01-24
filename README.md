@@ -19,6 +19,6 @@ Story 3].
 
 [computation application ontology]: https://raw.githubusercontent.com/H2020-OpenModel/ontologies/master/computation.ttl
 [success story 3 application ontology]: https://raw.githubusercontent.com/H2020-OpenModel/ontologies/master/ss3.ttl
-[ExecFlowA]: https://github.com/H2020-OpenModel/ExecFlow
+[ExecFlow]: https://github.com/H2020-OpenModel/ExecFlow
 [ExecFlowAPI]: https://github.com/H2020-OpenModel/ExecFlowAPI
 [Success Story 3]: https://open-model.eu/success-stories/success-story-3/
