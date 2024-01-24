@@ -25,10 +25,13 @@
 
 
 # Available data sources
-:heattreatment1 rdf:type ss3:HeatTreatment .
+:heattreatment1 rdf:type ss3:HeatTreatment .  # Premod
+:premodsimple1 rdf:type ss3:PremodSimple .  # Premod
 
-:premodsimple1 rdf:type ss3:PremodSimple .
+:abaqus_femmesh1 rdf:type ss3:AbaqusFiniteElementMesh .  # Abaqus
+:abaqus_materialcard_al1 rdf:type ss3:AbaqusMaterialCard .  # Abaqus
+:abaqus_materialcard_cement1 rdf:type ss3:FenicsMaterialCard .  # Abaqus
 
-:abaqus_femmesh1 rdf:type ss3:AbaqusFiniteElementMesh .
-:abaqus_materialcard_al rdf:type ss3:AbaqusMaterialCard .
-:abaqus_materialcard_cement rdf:type ss3:FenicsMaterialCard .
+:fenics_femmesh1 rdf:type ss3:FenicsFiniteElementMesh .  # Fenics
+:fenicsmaterials1 rdf:type ss3:FenicsMaterials .  # Fenics
+:fenicssimulationconfig1 rdf:type ss3:FenicsSimulationConfig .  # Fenics
