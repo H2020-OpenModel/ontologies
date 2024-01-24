@@ -37,6 +37,48 @@ dcterms:created rdf:type owl:AnnotationProperty .
 #    Classes
 #################################################################
 
+###  http://open-model.eu/ontologies/ss3#AbaqusSimpleMaterialCard
+ss3:AbaqusSimpleMaterialCard rdf:type owl:Class ;
+                             rdfs:subClassOf ss3:EMMO_ef51a2f2_cbf6_406f_94a6_4943176f5093 ;
+                             emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Simple material card section for Abaqus."@en .
+
+
+###  http://open-model.eu/ontologies/ss3#AbaqusSimulation
+ss3:AbaqusSimulation rdf:type owl:Class ;
+                     rdfs:subClassOf ss3:OpenModelSS3Simulation ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty emmo:EMMO_36e69413_8c59_4799_946c_10b05d266e22 ;
+                                       owl:someValuesFrom ss3:AbaqusSimpleMaterialCard
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty emmo:EMMO_c4bace1d_4db0_4cd3_87e9_18122bae2840 ;
+                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                       owl:onClass ss3:EMMO_71f190d2_8809_4c5e_9987_ecb97e898e79
+                                     ] ;
+                     emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A simulation performed by the Abaqus simulation software."@en .
+
+
+###  http://open-model.eu/ontologies/ss3#ChemistrySizeDistribution
+ss3:ChemistrySizeDistribution rdf:type owl:Class ;
+                              rdfs:subClassOf ss3:EMMO_ef51a2f2_cbf6_406f_94a6_4943176f5093 ;
+                              emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Entity for alloy composition and particle size distribution.  Example: an alloy with two types of precipitate, one with a size distribution discretised into 200 size classes and the other discretised into 500 size classes will have 700 domains."@en ;
+                              emmo:EMMO_c7b62dd7_063a_4c2a_8504_42f7264ba83f "Output from PREMOD."@en .
+
+
+###  http://open-model.eu/ontologies/ss3#EMMO_71f190d2_8809_4c5e_9987_ecb97e898e79
+ss3:EMMO_71f190d2_8809_4c5e_9987_ecb97e898e79 rdf:type owl:Class ;
+                                              rdfs:subClassOf ss3:EMMO_ef51a2f2_cbf6_406f_94a6_4943176f5093 ;
+                                              emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A dataset describing properties of cement calculated by ABAQUS."@en ;
+                                              skos:prefLabel "AbaqusDeformationHistory"@en .
+
+
+###  http://open-model.eu/ontologies/ss3#EMMO_ef51a2f2_cbf6_406f_94a6_4943176f5093
+ss3:EMMO_ef51a2f2_cbf6_406f_94a6_4943176f5093 rdf:type owl:Class ;
+                                              rdfs:subClassOf emmo:EMMO_194e367c_9783_4bf5_96d0_9ad597d48d9a ;
+                                              emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Datasets used in OpenModel success story 3."@en ;
+                                              skos:prefLabel "OpenModelSS3DataSet"@en .
+
+
 ###  http://open-model.eu/ontologies/ss3#FenicsLayer
 ss3:FenicsLayer rdf:type owl:Class ;
                 rdfs:subClassOf emmo:EMMO_ceaaf9f7_fd11_424b_8fda_9afa186af186 ,
@@ -88,11 +130,105 @@ ss3:FenicsMaterialModel rdf:type owl:Class ;
                         skos:prefLabel "FenicsMaterialModel"@en .
 
 
+###  http://open-model.eu/ontologies/ss3#FenicsMaterials
+ss3:FenicsMaterials rdf:type owl:Class ;
+                    rdfs:subClassOf ss3:EMMO_ef51a2f2_cbf6_406f_94a6_4943176f5093 ;
+                    emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Simple configuration for all materials properties for a Fenics simulation."@en .
+
+
+###  http://open-model.eu/ontologies/ss3#FenicsOutput
+ss3:FenicsOutput rdf:type owl:Class ;
+                 rdfs:subClassOf ss3:EMMO_ef51a2f2_cbf6_406f_94a6_4943176f5093 ;
+                 emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Indicator for the damage of the protective layer."@en .
+
+
 ###  http://open-model.eu/ontologies/ss3#FenicsSimulation
 ss3:FenicsSimulation rdf:type owl:Class ;
-                     rdfs:subClassOf emmo:EMMO_e97af6ec_4371_4bbc_8936_34b76e33302f ;
+                     rdfs:subClassOf ss3:OpenModelSS3Simulation ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty emmo:EMMO_36e69413_8c59_4799_946c_10b05d266e22 ;
+                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                       owl:onClass ss3:EMMO_71f190d2_8809_4c5e_9987_ecb97e898e79
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty emmo:EMMO_36e69413_8c59_4799_946c_10b05d266e22 ;
+                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                       owl:onClass ss3:FenicsMaterials
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty emmo:EMMO_36e69413_8c59_4799_946c_10b05d266e22 ;
+                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                       owl:onClass ss3:FenicsSimulationConfig
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty emmo:EMMO_c4bace1d_4db0_4cd3_87e9_18122bae2840 ;
+                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                       owl:onClass ss3:FenicsOutput
+                                     ] ;
                      emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A simulation performed by the Fenics simulation software."@en ;
                      skos:prefLabel "FenicsSimulation"@en .
+
+
+###  http://open-model.eu/ontologies/ss3#FenicsSimulationConfig
+ss3:FenicsSimulationConfig rdf:type owl:Class ;
+                           rdfs:subClassOf ss3:EMMO_ef51a2f2_cbf6_406f_94a6_4943176f5093 ;
+                           emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Simple configuration for simulations with Fenics."@en .
+
+
+###  http://open-model.eu/ontologies/ss3#HeatTreatment
+ss3:HeatTreatment rdf:type owl:Class ;
+                  rdfs:subClassOf ss3:EMMO_ef51a2f2_cbf6_406f_94a6_4943176f5093 ;
+                  emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "The temperature profile during heat treatment of an alloy."@en .
+
+
+###  http://open-model.eu/ontologies/ss3#MaterialCardGenerator
+ss3:MaterialCardGenerator rdf:type owl:Class ;
+                          rdfs:subClassOf <http://emmo.info/emmo#1c7f2dfe_0db4_4bf6_a0f6_853054a34ead> ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty emmo:EMMO_36e69413_8c59_4799_946c_10b05d266e22 ;
+                                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                            owl:onClass ss3:ChemistrySizeDistribution
+                                          ] ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty emmo:EMMO_c4bace1d_4db0_4cd3_87e9_18122bae2840 ;
+                                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                            owl:onClass ss3:AbaqusSimpleMaterialCard
+                                          ] ;
+                          emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 """A post-processing function that generates an Abaqus materials card from a the size distribution output from Premod. 
+
+Additional input is needed."""@en .
+
+
+###  http://open-model.eu/ontologies/ss3#OpenModelSS3Simulation
+ss3:OpenModelSS3Simulation rdf:type owl:Class ;
+                           rdfs:subClassOf emmo:EMMO_e97af6ec_4371_4bbc_8936_34b76e33302f .
+
+
+###  http://open-model.eu/ontologies/ss3#PremodSimple
+ss3:PremodSimple rdf:type owl:Class ;
+                 rdfs:subClassOf ss3:EMMO_ef51a2f2_cbf6_406f_94a6_4943176f5093 ;
+                 emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Input to the PREMOD model."@en .
+
+
+###  http://open-model.eu/ontologies/ss3#PremodSimulation
+ss3:PremodSimulation rdf:type owl:Class ;
+                     rdfs:subClassOf ss3:OpenModelSS3Simulation ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty emmo:EMMO_36e69413_8c59_4799_946c_10b05d266e22 ;
+                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                       owl:onClass ss3:HeatTreatment
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty emmo:EMMO_36e69413_8c59_4799_946c_10b05d266e22 ;
+                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                       owl:onClass ss3:PremodSimple
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty emmo:EMMO_c4bace1d_4db0_4cd3_87e9_18122bae2840 ;
+                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                       owl:onClass ss3:ChemistrySizeDistribution
+                                     ] ;
+                     emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A simulation performed with the PREMOD microstructure model."@en .
 
 
 [ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
