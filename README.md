@@ -5,7 +5,7 @@ A few application ontologies have been made publicly available in OpenModel.
 
 Computation application ontology
 --------------------------------
-The [computation application ontology] ontologise the terms used by the
+The [computation application ontology] ontologises the terms used by the
 [ExecFlowAPI], which is a REST API for configuring [ExecFlow] to run
 simulations on remote HPC clusters.
 
