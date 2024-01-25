@@ -1,6 +1,6 @@
 OpenModel application ontologies
 ================================
-A few application ontologies have been made public available in OpenModel.
+A few application ontologies have been made publicly available in OpenModel.
 
 
 Computation application ontology
