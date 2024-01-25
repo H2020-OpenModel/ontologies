@@ -13,7 +13,7 @@ simulations on remote HPC clusters.
 Success story 3 application ontology
 ------------------------------------
 The [success story 3 application ontology] is a simple open
-application ontology describing the workflow in OpenModel [Success
+application ontology describing inputs and outputs of models to be used  in OpenModel [Success
 Story 3].
 
 
