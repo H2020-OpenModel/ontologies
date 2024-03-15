@@ -91,6 +91,15 @@ ss3:ChemistrySizeDistribution rdf:type owl:Class ;
                               skos:prefLabel "ChemistrySizeDistribution"@en .
 
 
+###  http://open-model.eu/ontologies/ss3#EMMO_37c0c06f_cb29_4434_8e26_206138619043
+ss3:EMMO_37c0c06f_cb29_4434_8e26_206138619043 rdf:type owl:Class ;
+                                              rdfs:subClassOf emmo:EMMO_57b9fd6c_84d6_43f2_8c4f_de6a1ab50aea ,
+                                                              ss3:EMMO_b07e18c6_aa37_4851_8cfb_b3dbf4c40d8b ;
+                                              emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A performance attribute indicating the typical accuracy of a simulation tool. This takes the values of \"High\", \"Medium\" and \"Low\" and is defined the domain of the simulation."@en ;
+                                              emmo:EMMO_c7b62dd7_063a_4c2a_8504_42f7264ba83f "This performance attribute is the sign in a semiotic calculation process where the problem to solve is the object and the simulation software the interpreter."@en ;
+                                              skos:prefLabel "Accuracy"@en .
+
+
 ###  http://open-model.eu/ontologies/ss3#EMMO_5cfce8fd_ba78_41e8_b753_11e7cab8cd3f
 ss3:EMMO_5cfce8fd_ba78_41e8_b753_11e7cab8cd3f rdf:type owl:Class ;
                                               rdfs:subClassOf ss3:OpenModelSS3Simulation ,
@@ -130,6 +139,29 @@ ss3:EMMO_76467ac1_1fd8_432b_a0bc_283d254f2e68 rdf:type owl:Class ;
                                               rdfs:subClassOf emmo:EMMO_50d6236a_7667_4883_8ae1_9bb5d190423a ;
                                               emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "The class of datum of datasets used in OpenModel success story 3."@en ;
                                               skos:prefLabel "OpenModelSS3Datum"@en .
+
+
+###  http://open-model.eu/ontologies/ss3#EMMO_7dfe9999_0fc1_4273_85f4_b9973e0aea2e
+ss3:EMMO_7dfe9999_0fc1_4273_85f4_b9973e0aea2e rdf:type owl:Class ;
+                                              rdfs:subClassOf emmo:EMMO_b7bcff25_ffc3_474e_9ab5_01b1664bd4ba ;
+                                              emmo:EMMO_705f27ae_954c_4f13_98aa_18473fc52b25 "Constraints of how a software can be used. This is typically imposed by its license and special requirements for infrastructure, like HCP."@en ;
+                                              skos:prefLabel "SoftwareConstraint"@en .
+
+
+###  http://open-model.eu/ontologies/ss3#EMMO_b07e18c6_aa37_4851_8cfb_b3dbf4c40d8b
+ss3:EMMO_b07e18c6_aa37_4851_8cfb_b3dbf4c40d8b rdf:type owl:Class ;
+                                              rdfs:subClassOf emmo:EMMO_b7bcff25_ffc3_474e_9ab5_01b1664bd4ba ;
+                                              emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Performance attribute used by the OpenModel platform and success stories."@en ;
+                                              skos:prefLabel "OpenModelPerformanceAttribute"@en .
+
+
+###  http://open-model.eu/ontologies/ss3#EMMO_ea49dde7_ef5f_49c0_89f1_ad4dd4282ae8
+ss3:EMMO_ea49dde7_ef5f_49c0_89f1_ad4dd4282ae8 rdf:type owl:Class ;
+                                              rdfs:subClassOf emmo:EMMO_57b9fd6c_84d6_43f2_8c4f_de6a1ab50aea ,
+                                                              emmo:EMMO_d4f7d378_5e3b_468a_baa1_a7e98358cda7 ,
+                                                              ss3:EMMO_b07e18c6_aa37_4851_8cfb_b3dbf4c40d8b ;
+                                              emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "The typical simulation time to calculate a certain property with a simulation software as provided on the OpenModel OIP platform."@en ;
+                                              skos:prefLabel "TypicalOIPSimulationTime"@en .
 
 
 ###  http://open-model.eu/ontologies/ss3#EMMO_ef51a2f2_cbf6_406f_94a6_4943176f5093
