@@ -32,6 +32,10 @@
 emmo:EMMO_ae2d1a96_bfa1_409a_a7d2_03d69e8a125a rdf:type owl:AnnotationProperty .
 
 
+###  http://emmo.info/emmo#EMMO_b6292331_94af_4f00_976b_ea55960c2f1c
+emmo:EMMO_b6292331_94af_4f00_976b_ea55960c2f1c rdf:type owl:AnnotationProperty .
+
+
 #################################################################
 #    Classes
 #################################################################
@@ -47,30 +51,6 @@ ss3:FenicsMaterialCard rdf:type owl:Class .
 #################################################################
 #    Individuals
 #################################################################
-
-###  http://open-model.eu/ontologies/ss3kb#EMMO_0cb223f9_7a2c_429a_8496_b218b50c5c0d
-:EMMO_0cb223f9_7a2c_429a_8496_b218b50c5c0d rdf:type owl:NamedIndividual ,
-                                                    ss3:PremodSimulation ;
-                                           emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 """Semiotic Premod simulation process with:
-- Interpreter: Premod software
-- Object: Precipitation (physical phenomenon)
-- Sign: Precipitation statistics, accuracy, +++"""@en ;
-                                           emmo:EMMO_ae2d1a96_bfa1_409a_a7d2_03d69e8a125a :EMMO_1dbcc3cf_eeb4_4a5e_b5d1_b27c012e0b36 ,
-                                                                                          :EMMO_2b38ccb7_f297_44c7_bf59_4b189911fb1d ;
-                                           skos:prefLabel "premodsimulation1"@en .
-
-
-###  http://open-model.eu/ontologies/ss3kb#EMMO_1dbcc3cf_eeb4_4a5e_b5d1_b27c012e0b36
-:EMMO_1dbcc3cf_eeb4_4a5e_b5d1_b27c012e0b36 rdf:type owl:NamedIndividual ,
-                                                    <http://emmo.info/microstructure#EMMO_2fdafa2f-ef99-572f-8d2a-4c246e7e759f> ;
-                                           skos:prefLabel "premodsimulation_precipitation1"@en .
-
-
-###  http://open-model.eu/ontologies/ss3kb#EMMO_2b38ccb7_f297_44c7_bf59_4b189911fb1d
-:EMMO_2b38ccb7_f297_44c7_bf59_4b189911fb1d rdf:type owl:NamedIndividual ;
-                                           emmo:EMMO_b6292331_94af_4f00_976b_ea55960c2f1c "Low" ;
-                                           skos:prefLabel "premodsimulation_accuracy1"@en .
-
 
 ###  http://open-model.eu/ontologies/ss3kb#abaqus_femmesh1
 :abaqus_femmesh1 rdf:type owl:NamedIndividual ,
@@ -107,9 +87,101 @@ ss3:FenicsMaterialCard rdf:type owl:Class .
                          ss3:HeatTreatment .
 
 
+###  http://open-model.eu/ontologies/ss3kb#massconc_aa6082_Al
+:massconc_aa6082_Al rdf:type owl:NamedIndividual ,
+                             emmo:EMMO_16f2fe60_2db7_43ca_8fee_5b3e416bfe87 ;
+                    emmo:EMMO_faf79f53_749d_40b2_807c_d34244c192f4 "98.15"^^xsd:double .
+
+
+###  http://open-model.eu/ontologies/ss3kb#massconc_aa6082_Fe
+:massconc_aa6082_Fe rdf:type owl:NamedIndividual ,
+                             emmo:EMMO_16f2fe60_2db7_43ca_8fee_5b3e416bfe87 ;
+                    emmo:EMMO_faf79f53_749d_40b2_807c_d34244c192f4 "0.2"^^xsd:double .
+
+
+###  http://open-model.eu/ontologies/ss3kb#massconc_aa6082_Mg
+:massconc_aa6082_Mg rdf:type owl:NamedIndividual ,
+                             emmo:EMMO_16f2fe60_2db7_43ca_8fee_5b3e416bfe87 ;
+                    emmo:EMMO_faf79f53_749d_40b2_807c_d34244c192f4 "0.8"^^xsd:double .
+
+
+###  http://open-model.eu/ontologies/ss3kb#massconc_aa6082_Mn
+:massconc_aa6082_Mn rdf:type owl:NamedIndividual ,
+                             emmo:EMMO_16f2fe60_2db7_43ca_8fee_5b3e416bfe87 ;
+                    emmo:EMMO_faf79f53_749d_40b2_807c_d34244c192f4 "0.5"^^xsd:double .
+
+
+###  http://open-model.eu/ontologies/ss3kb#massconc_aa6082_Si
+:massconc_aa6082_Si rdf:type owl:NamedIndividual ,
+                             emmo:EMMO_16f2fe60_2db7_43ca_8fee_5b3e416bfe87 ;
+                    emmo:EMMO_faf79f53_749d_40b2_807c_d34244c192f4 "0.8"^^xsd:double .
+
+
+###  http://open-model.eu/ontologies/ss3kb#nominal_alloy_composition_aa6082
+:nominal_alloy_composition_aa6082 rdf:type owl:NamedIndividual ,
+                                           ss3:EMMO_efb9b65f_a44c_4d39_809b_8d07fd8cef15 ;
+                                  emmo:EMMO_b2282816_b7a3_44c6_b2cb_3feff1ceb7fe :singlecomp_aa6082_Al ,
+                                                                                 :singlecomp_aa6082_Fe ,
+                                                                                 :singlecomp_aa6082_Mg ,
+                                                                                 :singlecomp_aa6082_Mn ,
+                                                                                 :singlecomp_aa6082_Si .
+
+
 ###  http://open-model.eu/ontologies/ss3kb#premodsimple1
 :premodsimple1 rdf:type owl:NamedIndividual ,
                         ss3:PremodSimple .
+
+
+###  http://open-model.eu/ontologies/ss3kb#premodsimulation1
+:premodsimulation1 rdf:type owl:NamedIndividual ,
+                            ss3:PremodSimulation ;
+                   emmo:EMMO_ae2d1a96_bfa1_409a_a7d2_03d69e8a125a :premodsimulation_accuracy1 ,
+                                                                  :premodsimulation_precipitation1 ;
+                   emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 """Semiotic Premod simulation process with:
+- Interpreter: Premod software
+- Object: Precipitation (physical phenomenon)
+- Sign: Precipitation statistics, accuracy, +++"""@en .
+
+
+###  http://open-model.eu/ontologies/ss3kb#premodsimulation_accuracy1
+:premodsimulation_accuracy1 rdf:type owl:NamedIndividual ,
+                                     ss3:EMMO_efb9b65f_a44c_4d39_809b_8d07fd8cef15 ;
+                            emmo:EMMO_b6292331_94af_4f00_976b_ea55960c2f1c "Low" .
+
+
+###  http://open-model.eu/ontologies/ss3kb#premodsimulation_precipitation1
+:premodsimulation_precipitation1 rdf:type owl:NamedIndividual ,
+                                          <http://emmo.info/microstructure#EMMO_2fdafa2f-ef99-572f-8d2a-4c246e7e759f> .
+
+
+###  http://open-model.eu/ontologies/ss3kb#singlecomp_aa6082_Al
+:singlecomp_aa6082_Al rdf:type owl:NamedIndividual ,
+                               emmo:EMMO_172e2c96_180b_40f8_a3e7_b624471f40c2 ;
+                      emmo:EMMO_b2282816_b7a3_44c6_b2cb_3feff1ceb7fe :massconc_aa6082_Al .
+
+
+###  http://open-model.eu/ontologies/ss3kb#singlecomp_aa6082_Fe
+:singlecomp_aa6082_Fe rdf:type owl:NamedIndividual ,
+                               emmo:EMMO_172e2c96_180b_40f8_a3e7_b624471f40c2 ;
+                      emmo:EMMO_b2282816_b7a3_44c6_b2cb_3feff1ceb7fe :massconc_aa6082_Fe .
+
+
+###  http://open-model.eu/ontologies/ss3kb#singlecomp_aa6082_Mg
+:singlecomp_aa6082_Mg rdf:type owl:NamedIndividual ,
+                               emmo:EMMO_172e2c96_180b_40f8_a3e7_b624471f40c2 ;
+                      emmo:EMMO_b2282816_b7a3_44c6_b2cb_3feff1ceb7fe :massconc_aa6082_Mg .
+
+
+###  http://open-model.eu/ontologies/ss3kb#singlecomp_aa6082_Mn
+:singlecomp_aa6082_Mn rdf:type owl:NamedIndividual ,
+                               emmo:EMMO_172e2c96_180b_40f8_a3e7_b624471f40c2 ;
+                      emmo:EMMO_b2282816_b7a3_44c6_b2cb_3feff1ceb7fe :massconc_aa6082_Mn .
+
+
+###  http://open-model.eu/ontologies/ss3kb#singlecomp_aa6082_Si
+:singlecomp_aa6082_Si rdf:type owl:NamedIndividual ,
+                               emmo:EMMO_172e2c96_180b_40f8_a3e7_b624471f40c2 ;
+                      emmo:EMMO_b2282816_b7a3_44c6_b2cb_3feff1ceb7fe :massconc_aa6082_Si .
 
 
 ###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi
