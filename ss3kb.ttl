@@ -52,6 +52,35 @@ ss3:FenicsMaterialCard rdf:type owl:Class .
 #    Individuals
 #################################################################
 
+###  http://open-model.eu/ontologies/ss3kb#EMMO_4f360009_7719_4528_8100_70705e3cfc7b
+:EMMO_4f360009_7719_4528_8100_70705e3cfc7b rdf:type owl:NamedIndividual ;
+                                           emmo:EMMO_b6292331_94af_4f00_976b_ea55960c2f1c "Medium" ;
+                                           skos:prefLabel "namosimulation_accuracy1"@en .
+
+
+###  http://open-model.eu/ontologies/ss3kb#EMMO_7c86206f_3a58_442c_af26_587bd999e2fe
+:EMMO_7c86206f_3a58_442c_af26_587bd999e2fe rdf:type owl:NamedIndividual ,
+                                                    ss3:EMMO_ea49dde7_ef5f_49c0_89f1_ad4dd4282ae8 ;
+                                           emmo:EMMO_b6292331_94af_4f00_976b_ea55960c2f1c "60.0"^^xsd:double ;
+                                           skos:prefLabel "premodsimulation_simtime1"@en .
+
+
+###  http://open-model.eu/ontologies/ss3kb#EMMO_ac964702_cfb9_4f73_be99_ae937c3cc7f9
+:EMMO_ac964702_cfb9_4f73_be99_ae937c3cc7f9 rdf:type owl:NamedIndividual ,
+                                                    ss3:EMMO_ea49dde7_ef5f_49c0_89f1_ad4dd4282ae8 ;
+                                           emmo:EMMO_b6292331_94af_4f00_976b_ea55960c2f1c "120.0"^^xsd:double ;
+                                           skos:prefLabel "namosimulation_simtime1"@en .
+
+
+###  http://open-model.eu/ontologies/ss3kb#EMMO_cfce05d1_748a_4fc9_ac74_2dc7feecc99d
+:EMMO_cfce05d1_748a_4fc9_ac74_2dc7feecc99d rdf:type owl:NamedIndividual ;
+                                           emmo:EMMO_36e69413_8c59_4799_946c_10b05d266e22 :heattreatment1 ,
+                                                                                          :nominal_alloy_composition_aa6082 ;
+                                           emmo:EMMO_e1097637_70d2_4895_973f_2396f04fa204 :EMMO_4f360009_7719_4528_8100_70705e3cfc7b ,
+                                                                                          :EMMO_ac964702_cfb9_4f73_be99_ae937c3cc7f9 ;
+                                           skos:prefLabel "namosimulation1"@en .
+
+
 ###  http://open-model.eu/ontologies/ss3kb#abaqus_femmesh1
 :abaqus_femmesh1 rdf:type owl:NamedIndividual ,
                           ss3:AbaqusFiniteElementMesh .
@@ -129,14 +158,17 @@ ss3:FenicsMaterialCard rdf:type owl:Class .
 
 ###  http://open-model.eu/ontologies/ss3kb#premodsimple1
 :premodsimple1 rdf:type owl:NamedIndividual ,
-                        ss3:PremodSimple .
+                        ss3:PremodSimple ;
+               emmo:EMMO_17e27c22_37e1_468c_9dd7_95e137f73e7f :nominal_alloy_composition_aa6082 .
 
 
 ###  http://open-model.eu/ontologies/ss3kb#premodsimulation1
 :premodsimulation1 rdf:type owl:NamedIndividual ,
                             ss3:PremodSimulation ;
-                   emmo:EMMO_ae2d1a96_bfa1_409a_a7d2_03d69e8a125a :premodsimulation_accuracy1 ,
-                                                                  :premodsimulation_precipitation1 ;
+                   emmo:EMMO_36e69413_8c59_4799_946c_10b05d266e22 :heattreatment1 ;
+                   emmo:EMMO_ae2d1a96_bfa1_409a_a7d2_03d69e8a125a :premodsimulation_precipitation1 ;
+                   emmo:EMMO_e1097637_70d2_4895_973f_2396f04fa204 :EMMO_7c86206f_3a58_442c_af26_587bd999e2fe ,
+                                                                  :premodsimulation_accuracy1 ;
                    emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 """Semiotic Premod simulation process with:
 - Interpreter: Premod software
 - Object: Precipitation (physical phenomenon)
@@ -145,7 +177,7 @@ ss3:FenicsMaterialCard rdf:type owl:Class .
 
 ###  http://open-model.eu/ontologies/ss3kb#premodsimulation_accuracy1
 :premodsimulation_accuracy1 rdf:type owl:NamedIndividual ,
-                                     ss3:EMMO_efb9b65f_a44c_4d39_809b_8d07fd8cef15 ;
+                                     ss3:EMMO_37c0c06f_cb29_4434_8e26_206138619043 ;
                             emmo:EMMO_b6292331_94af_4f00_976b_ea55960c2f1c "Low" .
 
 

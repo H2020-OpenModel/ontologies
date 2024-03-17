@@ -155,8 +155,14 @@ ss3:EMMO_b07e18c6_aa37_4851_8cfb_b3dbf4c40d8b rdf:type owl:Class ;
 ss3:EMMO_ea49dde7_ef5f_49c0_89f1_ad4dd4282ae8 rdf:type owl:Class ;
                                               rdfs:subClassOf emmo:EMMO_57b9fd6c_84d6_43f2_8c4f_de6a1ab50aea ,
                                                               emmo:EMMO_d4f7d378_5e3b_468a_baa1_a7e98358cda7 ,
-                                                              ss3:EMMO_b07e18c6_aa37_4851_8cfb_b3dbf4c40d8b ;
+                                                              ss3:EMMO_b07e18c6_aa37_4851_8cfb_b3dbf4c40d8b ,
+                                                              [ rdf:type owl:Restriction ;
+                                                                owl:onProperty emmo:EMMO_bed1d005_b04e_4a90_94cf_02bc678a8569 ;
+                                                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                owl:onClass emmo:Second
+                                                              ] ;
                                               emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "The typical simulation time to calculate a certain property with a simulation software as provided on the OpenModel OIP platform."@en ;
+                                              emmo:EMMO_c7b62dd7_063a_4c2a_8504_42f7264ba83f "Always measured in seconds."@en ;
                                               skos:prefLabel "TypicalOIPSimulationTime"@en .
 
 
