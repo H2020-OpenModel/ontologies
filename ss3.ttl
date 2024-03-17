@@ -37,10 +37,6 @@ dcterms:created rdf:type owl:AnnotationProperty .
 #    Classes
 #################################################################
 
-###  http://emmo.info/emmo#1c7f2dfe_0db4_4bf6_a0f6_853054a34ead
-<http://emmo.info/emmo#1c7f2dfe_0db4_4bf6_a0f6_853054a34ead> rdf:type owl:Class .
-
-
 ###  http://open-model.eu/ontologies/ss3#AbaqusFiniteElementMesh
 ss3:AbaqusFiniteElementMesh rdf:type owl:Class ;
                             rdfs:subClassOf ss3:FiniteElementMesh ;
