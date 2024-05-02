@@ -8,7 +8,7 @@
 @base <http://open-model.eu/ontoflow/kpa> .
 
 <http://open-model.eu/ontoflow/kpa> rdf:type owl:Ontology ;
-                                     owl:imports <http://emmo.info/emmo#1.0.0-beta4> .
+                                     owl:imports <https://w3id.org/emmo/1.0.0-rc1> .
 
 #################################################################
 #    Object Properties
