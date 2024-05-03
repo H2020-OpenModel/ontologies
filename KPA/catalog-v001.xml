@@ -2,6 +2,6 @@
 <catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
   <group id="Folder Repository, directory=, recursive=true, Auto-Update=false, version=2" prefer="public" xml:base="">
 
-    <uri name="http://open-model.eu/ontologies/0.1/kpa  " uri="./kpa.ttl"/>
+    <uri name="http://open-model.eu/ontoflow/0.1/kpa" uri="./kpa.ttl"/>
   </group>
 </catalog>
