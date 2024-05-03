@@ -13,7 +13,7 @@
 
 <http://open-model.eu/ontologies/ss3kb> rdf:type owl:Ontology ;
                                          owl:versionIRI <http://open-model.eu/ontologies/0.1/ss3kb> ;
-                                         owl:imports <http://open-model.eu/ontologies/0.1/ss3> ;
+                                         owl:imports <http://open-model.eu/ontologies/0.1/ss3> , <http://open-model.eu/ontoflow/0.1/kpa> ;
                                          dcterms:abstract "Knowledge base for OpenModel success story 3 on aluminium reinforced concrete."@en ;
                                          dcterms:created "2024-01-24"@en ;
                                          dcterms:creator "Francesca Lønstad Bleken, SINTEF, NO"@en ,

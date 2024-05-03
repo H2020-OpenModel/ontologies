@@ -5,7 +5,7 @@
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix astm: <http://emmo.info/doam/astm52900#> .
-@prefix emmo: <http://emmo.info/emmo#> .
+@prefix emmo: <https://w3id.org/emmo#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
@@ -13,7 +13,7 @@
 
 <http://open-model.eu/ontologies/ss3> rdf:type owl:Ontology ;
                                        owl:versionIRI <http://open-model.eu/ontologies/0.1/ss3> ;
-                                       owl:imports <http://emmo.info/microstructure> ;
+                                       owl:imports <https://w3id.org/emmo/domain/microstructure/source> ;
                                        dcterms:abstract "Application ontology for OpenModel success story 3 on aluminium reinforced concrete."@en ;
                                        dcterms:created "2023-11-11"@en ;
                                        dcterms:creator "Francesca Lønstad Bleken, SINTEF, NO"@en ,
