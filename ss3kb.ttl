@@ -5,16 +5,17 @@
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix astm: <https://w3id.org/emmo/domain/doam/astm52900#> .
-@prefix micro: <https://w3id.org/emmo/domain/microstructure#> .
 @prefix emmo: <https://w3id.org/emmo#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix micro: <https://w3id.org/emmo/domain/microstructure#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @base <http://open-model.eu/ontologies/ss3kb#> .
 
 <http://open-model.eu/ontologies/ss3kb> rdf:type owl:Ontology ;
                                          owl:versionIRI <http://open-model.eu/ontologies/0.1/ss3kb> ;
-                                         owl:imports <http://open-model.eu/ontologies/0.1/ss3> , <http://open-model.eu/ontoflow/0.1/kpa> ;
+                                         owl:imports <http://open-model.eu/ontoflow/0.1/kpa> ,
+                                                     <http://open-model.eu/ontologies/0.1/ss3> ;
                                          dcterms:abstract "Knowledge base for OpenModel success story 3 on aluminium reinforced concrete."@en ;
                                          dcterms:created "2024-01-24"@en ;
                                          dcterms:creator "Francesca Lønstad Bleken, SINTEF, NO"@en ,
@@ -26,60 +27,14 @@
                                          owl:versionInfo "0.1"@en .
 
 #################################################################
-#    Annotation properties
-#################################################################
-
-###  http://emmo.info/emmo#EMMO_ae2d1a96_bfa1_409a_a7d2_03d69e8a125a
-#emmo:EMMO_ae2d1a96_bfa1_409a_a7d2_03d69e8a125a rdf:type owl:AnnotationProperty .
-
-
-###  http://emmo.info/emmo#EMMO_b6292331_94af_4f00_976b_ea55960c2f1c
-#emmo:EMMO_b6292331_94af_4f00_976b_ea55960c2f1c rdf:type owl:AnnotationProperty .
-
-
-#################################################################
-#    Classes
-#################################################################
-
-###  http://open-model.eu/ontologies/ss3#AbaqusMaterialCard
-#ss3:AbaqusMaterialCard rdf:type owl:Class .
-
-
-###  http://open-model.eu/ontologies/ss3#FenicsMaterialCard
-#ss3:FenicsMaterialCard rdf:type owl:Class .
-
-
-#################################################################
 #    Individuals
 #################################################################
 
-###  http://open-model.eu/ontologies/ss3kb#EMMO_4f360009_7719_4528_8100_70705e3cfc7b
-:EMMO_4f360009_7719_4528_8100_70705e3cfc7b rdf:type owl:NamedIndividual ;
-                                           emmo:EMMO_b6292331_94af_4f00_976b_ea55960c2f1c "Medium" ;
-                                           skos:prefLabel "namosimulation_accuracy1"@en .
-
-
 ###  http://open-model.eu/ontologies/ss3kb#EMMO_7c86206f_3a58_442c_af26_587bd999e2fe
 :EMMO_7c86206f_3a58_442c_af26_587bd999e2fe rdf:type owl:NamedIndividual ,
-                                                    ss3:EMMO_ea49dde7_ef5f_49c0_89f1_ad4dd4282ae8 ;
-                                           emmo:EMMO_b6292331_94af_4f00_976b_ea55960c2f1c "60.0"^^xsd:double ;
+                                                    <http://open-model.eu/ontoflow/kpa#SimulationTime> ;
+                                           <http://open-model.eu/ontoflow/kpa#KPAValue> "60.0"^^xsd:double ;
                                            skos:prefLabel "premodsimulation_simtime1"@en .
-
-
-###  http://open-model.eu/ontologies/ss3kb#EMMO_ac964702_cfb9_4f73_be99_ae937c3cc7f9
-:EMMO_ac964702_cfb9_4f73_be99_ae937c3cc7f9 rdf:type owl:NamedIndividual ,
-                                                    ss3:EMMO_ea49dde7_ef5f_49c0_89f1_ad4dd4282ae8 ;
-                                           emmo:EMMO_b6292331_94af_4f00_976b_ea55960c2f1c "120.0"^^xsd:double ;
-                                           skos:prefLabel "namosimulation_simtime1"@en .
-
-
-###  http://open-model.eu/ontologies/ss3kb#EMMO_cfce05d1_748a_4fc9_ac74_2dc7feecc99d
-:EMMO_cfce05d1_748a_4fc9_ac74_2dc7feecc99d rdf:type owl:NamedIndividual ;
-                                           emmo:EMMO_36e69413_8c59_4799_946c_10b05d266e22 :heattreatment1 ,
-                                                                                          :nominal_alloy_composition_aa6082 ;
-                                           emmo:EMMO_e1097637_70d2_4895_973f_2396f04fa204 :EMMO_4f360009_7719_4528_8100_70705e3cfc7b ,
-                                                                                          :EMMO_ac964702_cfb9_4f73_be99_ae937c3cc7f9 ;
-                                           skos:prefLabel "namosimulation1"@en .
 
 
 ###  http://open-model.eu/ontologies/ss3kb#abaqus_femmesh1
@@ -147,6 +102,38 @@
                     emmo:EMMO_faf79f53_749d_40b2_807c_d34244c192f4 "0.8"^^xsd:double .
 
 
+###  http://open-model.eu/ontologies/ss3kb#namosimulation1
+:namosimulation1 rdf:type owl:NamedIndividual ,
+                          ss3:EMMO_5cfce8fd_ba78_41e8_b753_11e7cab8cd3f ;
+                 emmo:EMMO_36e69413_8c59_4799_946c_10b05d266e22 :heattreatment1 ,
+                                                                :nominal_alloy_composition_aa6082 ;
+                 emmo:EMMO_e1097637_70d2_4895_973f_2396f04fa204 :namosimulation_accuracy1 ,
+                                                                :namosimulation_opensource1 ,
+                                                                :namosimulation_simtime1 ;
+                 skos:prefLabel "namosimulation1"@en .
+
+
+###  http://open-model.eu/ontologies/ss3kb#namosimulation_accuracy1
+:namosimulation_accuracy1 rdf:type owl:NamedIndividual ,
+                                   <http://open-model.eu/ontoflow/kpa#OrdinalAccuracy> ;
+                          <http://open-model.eu/ontoflow/kpa#KPAValue> "Medium" ;
+                          skos:prefLabel "namosimulation_accuracy1"@en .
+
+
+###  http://open-model.eu/ontologies/ss3kb#namosimulation_opensource1
+:namosimulation_opensource1 rdf:type owl:NamedIndividual ,
+                                     <http://open-model.eu/ontoflow/kpa#BoolOpenSource> ;
+                            <http://open-model.eu/ontoflow/kpa#KPAValue> "false"^^xsd:boolean ;
+                            skos:prefLabel "namosimulation_opensource1"@en .
+
+
+###  http://open-model.eu/ontologies/ss3kb#namosimulation_simtime1
+:namosimulation_simtime1 rdf:type owl:NamedIndividual ,
+                                  <http://open-model.eu/ontoflow/kpa#NumericalSimulationTime> ;
+                         <http://open-model.eu/ontoflow/kpa#KPAValue> "120.0"^^xsd:double ;
+                         skos:prefLabel "namosimulation_simtime1"@en .
+
+
 ###  http://open-model.eu/ontologies/ss3kb#nominal_alloy_composition_aa6082
 :nominal_alloy_composition_aa6082 rdf:type owl:NamedIndividual ,
                                            ss3:EMMO_efb9b65f_a44c_4d39_809b_8d07fd8cef15 ;
@@ -167,7 +154,6 @@
 :premodsimulation1 rdf:type owl:NamedIndividual ,
                             ss3:PremodSimulation ;
                    emmo:EMMO_36e69413_8c59_4799_946c_10b05d266e22 :heattreatment1 ;
-                   emmo:EMMO_ae2d1a96_bfa1_409a_a7d2_03d69e8a125a :premodsimulation_precipitation1 ;
                    emmo:EMMO_e1097637_70d2_4895_973f_2396f04fa204 :EMMO_7c86206f_3a58_442c_af26_587bd999e2fe ,
                                                                   :premodsimulation_accuracy1 ;
                    emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 """Semiotic Premod simulation process with:
@@ -178,13 +164,15 @@
 
 ###  http://open-model.eu/ontologies/ss3kb#premodsimulation_accuracy1
 :premodsimulation_accuracy1 rdf:type owl:NamedIndividual ,
-                                     ss3:EMMO_37c0c06f_cb29_4434_8e26_206138619043 ;
-                            emmo:EMMO_b6292331_94af_4f00_976b_ea55960c2f1c "Low" .
+                                     <http://open-model.eu/ontoflow/kpa#OrdinalAccuracy> ;
+                            <http://open-model.eu/ontoflow/kpa#KPAValue> "Low" .
 
 
-###  http://open-model.eu/ontologies/ss3kb#premodsimulation_precipitation1
-:premodsimulation_precipitation1 rdf:type owl:NamedIndividual ,
-                                          micro:EMMO_2fdafa2f-ef99-572f-8d2a-4c246e7e759f .
+###  http://open-model.eu/ontologies/ss3kb#premodsimulation_opensource1
+:premodsimulation_opensource1 rdf:type owl:NamedIndividual ,
+                                       <http://open-model.eu/ontoflow/kpa#BoolOpenSource> ;
+                              <http://open-model.eu/ontoflow/kpa#KPAValue> "false"^^xsd:boolean ;
+                              skos:prefLabel "premodsimulation_opensource1"@en .
 
 
 ###  http://open-model.eu/ontologies/ss3kb#singlecomp_aa6082_Al
