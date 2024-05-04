@@ -155,7 +155,8 @@
                             ss3:PremodSimulation ;
                    emmo:EMMO_36e69413_8c59_4799_946c_10b05d266e22 :heattreatment1 ;
                    emmo:EMMO_e1097637_70d2_4895_973f_2396f04fa204 :EMMO_7c86206f_3a58_442c_af26_587bd999e2fe ,
-                                                                  :premodsimulation_accuracy1 ;
+                                                                  :premodsimulation_accuracy1 ,
+                                                                  :premodsimulation_opensource1 ;
                    emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 """Semiotic Premod simulation process with:
 - Interpreter: Premod software
 - Object: Precipitation (physical phenomenon)
