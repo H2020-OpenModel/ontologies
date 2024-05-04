@@ -40,22 +40,22 @@ dcterms:created rdf:type owl:AnnotationProperty .
 ###  http://open-model.eu/ontologies/ss3#AbaqusFiniteElementMesh
 ss3:AbaqusFiniteElementMesh rdf:type owl:Class ;
                             rdfs:subClassOf ss3:FiniteElementMesh ;
-                            emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "FEM mesh for Abaqus."@en ;
-                            skos:prefLabel "AbaqusFiniteElementMesh"@en .
+                            skos:prefLabel "AbaqusFiniteElementMesh"@en ;
+                            emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "FEM mesh for Abaqus."@en .
 
 
 ###  http://open-model.eu/ontologies/ss3#AbaqusSimpleMaterialCard
 ss3:AbaqusSimpleMaterialCard rdf:type owl:Class ;
                              rdfs:subClassOf ss3:EMMO_ef51a2f2_cbf6_406f_94a6_4943176f5093 ;
-                             emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Simple material card section for Abaqus."@en ;
-                             skos:prefLabel "AbaqusSimpleMaterialCard"@en .
+                             skos:prefLabel "AbaqusSimpleMaterialCard"@en ;
+                             emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Simple material card section for Abaqus."@en .
 
 
 ###  http://open-model.eu/ontologies/ss3#AbaqusSimpleMaterialCardTemplate
 ss3:AbaqusSimpleMaterialCardTemplate rdf:type owl:Class ;
                                      rdfs:subClassOf ss3:EMMO_ef51a2f2_cbf6_406f_94a6_4943176f5093 ;
-                                     emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "An Abaqus material card that might have some placeholders that can be filled out py the Abaqus pre-processor/converter."@en ;
-                                     skos:prefLabel "AbaqusSimpleMaterialCardTemplate"@en .
+                                     skos:prefLabel "AbaqusSimpleMaterialCardTemplate"@en ;
+                                     emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "An Abaqus material card that might have some placeholders that can be filled out py the Abaqus pre-processor/converter."@en .
 
 
 ###  http://open-model.eu/ontologies/ss3#AbaqusSimulation
@@ -75,25 +75,25 @@ ss3:AbaqusSimulation rdf:type owl:Class ;
                                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                        owl:onClass ss3:EMMO_71f190d2_8809_4c5e_9987_ecb97e898e79
                                      ] ;
-                     emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A simulation performed by the Abaqus simulation software."@en ;
-                     skos:prefLabel "AbaqusSimulation"@en .
+                     skos:prefLabel "AbaqusSimulation"@en ;
+                     emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A simulation performed by the Abaqus simulation software."@en .
 
 
 ###  http://open-model.eu/ontologies/ss3#ChemistrySizeDistribution
 ss3:ChemistrySizeDistribution rdf:type owl:Class ;
                               rdfs:subClassOf ss3:EMMO_ef51a2f2_cbf6_406f_94a6_4943176f5093 ;
+                              skos:prefLabel "ChemistrySizeDistribution"@en ;
                               emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Entity for alloy composition and particle size distribution.  Example: an alloy with two types of precipitate, one with a size distribution discretised into 200 size classes and the other discretised into 500 size classes will have 700 domains."@en ;
-                              emmo:EMMO_c7b62dd7_063a_4c2a_8504_42f7264ba83f "Output from PREMOD."@en ;
-                              skos:prefLabel "ChemistrySizeDistribution"@en .
+                              emmo:EMMO_c7b62dd7_063a_4c2a_8504_42f7264ba83f "Output from PREMOD."@en .
 
 
 ###  http://open-model.eu/ontologies/ss3#EMMO_37c0c06f_cb29_4434_8e26_206138619043
 ss3:EMMO_37c0c06f_cb29_4434_8e26_206138619043 rdf:type owl:Class ;
-                                              rdfs:subClassOf emmo:EMMO_57b9fd6c_84d6_43f2_8c4f_de6a1ab50aea ,
-                                                              ss3:EMMO_b07e18c6_aa37_4851_8cfb_b3dbf4c40d8b ;
+                                              rdfs:subClassOf ss3:EMMO_b07e18c6_aa37_4851_8cfb_b3dbf4c40d8b ,
+                                                              emmo:EMMO_57b9fd6c_84d6_43f2_8c4f_de6a1ab50aea ;
+                                              skos:prefLabel "Accuracy"@en ;
                                               emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A performance attribute indicating the typical accuracy of a simulation tool. This takes the values of \"High\", \"Medium\" and \"Low\" and is defined the domain of the simulation."@en ;
-                                              emmo:EMMO_c7b62dd7_063a_4c2a_8504_42f7264ba83f "This performance attribute is the sign in a semiotic calculation process where the problem to solve is the object and the simulation software the interpreter."@en ;
-                                              skos:prefLabel "Accuracy"@en .
+                                              emmo:EMMO_c7b62dd7_063a_4c2a_8504_42f7264ba83f "This performance attribute is the sign in a semiotic calculation process where the problem to solve is the object and the simulation software the interpreter."@en .
 
 
 ###  http://open-model.eu/ontologies/ss3#EMMO_5cfce8fd_ba78_41e8_b753_11e7cab8cd3f
@@ -119,74 +119,74 @@ ss3:EMMO_5cfce8fd_ba78_41e8_b753_11e7cab8cd3f rdf:type owl:Class ;
                                                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                                                 owl:onClass ss3:YieldStress
                                                               ] ;
-                                              emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A simulation performed with the Hydro-owned NaMo simulation software for modelling precipitation during heat treatment and work hardening behaviour or the final component."@en ;
-                                              skos:prefLabel "NaMoSimulation"@en .
+                                              skos:prefLabel "NaMoSimulation"@en ;
+                                              emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A simulation performed with the Hydro-owned NaMo simulation software for modelling precipitation during heat treatment and work hardening behaviour or the final component."@en .
 
 
 ###  http://open-model.eu/ontologies/ss3#EMMO_71f190d2_8809_4c5e_9987_ecb97e898e79
 ss3:EMMO_71f190d2_8809_4c5e_9987_ecb97e898e79 rdf:type owl:Class ;
                                               rdfs:subClassOf ss3:EMMO_ef51a2f2_cbf6_406f_94a6_4943176f5093 ;
-                                              emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A dataset describing properties of cement calculated by ABAQUS."@en ;
-                                              skos:prefLabel "AbaqusDeformationHistory"@en .
+                                              skos:prefLabel "AbaqusDeformationHistory"@en ;
+                                              emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A dataset describing properties of cement calculated by ABAQUS."@en .
 
 
 ###  http://open-model.eu/ontologies/ss3#EMMO_76467ac1_1fd8_432b_a0bc_283d254f2e68
 ss3:EMMO_76467ac1_1fd8_432b_a0bc_283d254f2e68 rdf:type owl:Class ;
                                               rdfs:subClassOf emmo:EMMO_50d6236a_7667_4883_8ae1_9bb5d190423a ;
-                                              emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "The class of datum of datasets used in OpenModel success story 3."@en ;
-                                              skos:prefLabel "OpenModelSS3Datum"@en .
+                                              skos:prefLabel "OpenModelSS3Datum"@en ;
+                                              emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "The class of datum of datasets used in OpenModel success story 3."@en .
 
 
 ###  http://open-model.eu/ontologies/ss3#EMMO_7dfe9999_0fc1_4273_85f4_b9973e0aea2e
 ss3:EMMO_7dfe9999_0fc1_4273_85f4_b9973e0aea2e rdf:type owl:Class ;
                                               rdfs:subClassOf emmo:EMMO_b7bcff25_ffc3_474e_9ab5_01b1664bd4ba ;
-                                              emmo:EMMO_705f27ae_954c_4f13_98aa_18473fc52b25 "Constraints of how a software can be used. This is typically imposed by its license and special requirements for infrastructure, like HCP."@en ;
-                                              skos:prefLabel "SoftwareConstraint"@en .
+                                              skos:prefLabel "SoftwareConstraint"@en ;
+                                              emmo:EMMO_705f27ae_954c_4f13_98aa_18473fc52b25 "Constraints of how a software can be used. This is typically imposed by its license and special requirements for infrastructure, like HCP."@en .
 
 
 ###  http://open-model.eu/ontologies/ss3#EMMO_b07e18c6_aa37_4851_8cfb_b3dbf4c40d8b
 ss3:EMMO_b07e18c6_aa37_4851_8cfb_b3dbf4c40d8b rdf:type owl:Class ;
                                               rdfs:subClassOf emmo:EMMO_b7bcff25_ffc3_474e_9ab5_01b1664bd4ba ;
-                                              emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Performance attribute used by the OpenModel platform and success stories."@en ;
-                                              skos:prefLabel "OpenModelPerformanceAttribute"@en .
+                                              skos:prefLabel "OpenModelPerformanceAttribute"@en ;
+                                              emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Performance attribute used by the OpenModel platform and success stories."@en .
 
 
 ###  http://open-model.eu/ontologies/ss3#EMMO_ea49dde7_ef5f_49c0_89f1_ad4dd4282ae8
 ss3:EMMO_ea49dde7_ef5f_49c0_89f1_ad4dd4282ae8 rdf:type owl:Class ;
-                                              rdfs:subClassOf emmo:EMMO_57b9fd6c_84d6_43f2_8c4f_de6a1ab50aea ,
+                                              rdfs:subClassOf ss3:EMMO_b07e18c6_aa37_4851_8cfb_b3dbf4c40d8b ,
+                                                              emmo:EMMO_57b9fd6c_84d6_43f2_8c4f_de6a1ab50aea ,
                                                               emmo:EMMO_d4f7d378_5e3b_468a_baa1_a7e98358cda7 ,
-                                                              ss3:EMMO_b07e18c6_aa37_4851_8cfb_b3dbf4c40d8b ,
                                                               [ rdf:type owl:Restriction ;
                                                                 owl:onProperty emmo:EMMO_bed1d005_b04e_4a90_94cf_02bc678a8569 ;
                                                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                                                 owl:onClass emmo:Second
                                                               ] ;
+                                              skos:prefLabel "TypicalOIPSimulationTime"@en ;
                                               emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "The typical simulation time to calculate a certain property with a simulation software as provided on the OpenModel OIP platform."@en ;
-                                              emmo:EMMO_c7b62dd7_063a_4c2a_8504_42f7264ba83f "Always measured in seconds."@en ;
-                                              skos:prefLabel "TypicalOIPSimulationTime"@en .
+                                              emmo:EMMO_c7b62dd7_063a_4c2a_8504_42f7264ba83f "Always measured in seconds."@en .
 
 
 ###  http://open-model.eu/ontologies/ss3#EMMO_ef51a2f2_cbf6_406f_94a6_4943176f5093
 ss3:EMMO_ef51a2f2_cbf6_406f_94a6_4943176f5093 rdf:type owl:Class ;
                                               rdfs:subClassOf emmo:EMMO_194e367c_9783_4bf5_96d0_9ad597d48d9a ;
-                                              emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Datasets used in OpenModel success story 3."@en ;
-                                              skos:prefLabel "OpenModelSS3DataSet"@en .
+                                              skos:prefLabel "OpenModelSS3DataSet"@en ;
+                                              emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Datasets used in OpenModel success story 3."@en .
 
 
 ###  http://open-model.eu/ontologies/ss3#EMMO_efb9b65f_a44c_4d39_809b_8d07fd8cef15
 ss3:EMMO_efb9b65f_a44c_4d39_809b_8d07fd8cef15 rdf:type owl:Class ;
-                                              rdfs:subClassOf <http://emmo.info/microstructure#EMMO_ac83bdd0-4390-517f-8d44-0c1abd7dca5a> ,
-                                                              ss3:EMMO_76467ac1_1fd8_432b_a0bc_283d254f2e68 ,
-                                                              ss3:EMMO_ef51a2f2_cbf6_406f_94a6_4943176f5093 ;
-                                              emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "The nomical alloy composition."@en ;
-                                              skos:prefLabel "NominalAlloyComposition"@en .
+                                              rdfs:subClassOf ss3:EMMO_76467ac1_1fd8_432b_a0bc_283d254f2e68 ,
+                                                              ss3:EMMO_ef51a2f2_cbf6_406f_94a6_4943176f5093 ,
+                                                              <https://w3id.org/emmo/domain/microstructure#EMMO_ac83bdd0-4390-517f-8d44-0c1abd7dca5a> ;
+                                              skos:prefLabel "NominalAlloyComposition"@en ;
+                                              emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "The nomical alloy composition."@en .
 
 
 ###  http://open-model.eu/ontologies/ss3#FenicsFiniteElementMesh
 ss3:FenicsFiniteElementMesh rdf:type owl:Class ;
                             rdfs:subClassOf ss3:FiniteElementMesh ;
-                            emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "FEM mesh for Fenics."@en ;
-                            skos:prefLabel "FenicsFiniteElementMesh"@en .
+                            skos:prefLabel "FenicsFiniteElementMesh"@en ;
+                            emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "FEM mesh for Fenics."@en .
 
 
 ###  http://open-model.eu/ontologies/ss3#FenicsLayer
@@ -207,51 +207,51 @@ ss3:FenicsLayer rdf:type owl:Class ;
                                   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                   owl:onClass ss3:FenicsLayerMaterial
                                 ] ;
-                emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A layer in the Fenics model."@en ;
                 skos:altLabel "FenicsSimulationLayer"@en ;
-                skos:prefLabel "FenicsLayer"@en .
+                skos:prefLabel "FenicsLayer"@en ;
+                emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A layer in the Fenics model."@en .
 
 
 ###  http://open-model.eu/ontologies/ss3#FenicsLayerDirection
 ss3:FenicsLayerDirection rdf:type owl:Class ;
                          rdfs:subClassOf emmo:EMMO_602397bd_e302_42a6_be33_fe67ea81933a ;
-                         emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Direction of a layer in the Fenics model."@en ;
-                         skos:prefLabel "FenicsLayerDirection"@en .
+                         skos:prefLabel "FenicsLayerDirection"@en ;
+                         emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Direction of a layer in the Fenics model."@en .
 
 
 ###  http://open-model.eu/ontologies/ss3#FenicsLayerMaterial
 ss3:FenicsLayerMaterial rdf:type owl:Class ;
                         rdfs:subClassOf emmo:EMMO_4207e895_8b83_4318_996a_72cfb32acd94 ;
-                        emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "The material that a layer in the Fenics model is made of."@en ;
-                        skos:prefLabel "FenicsLayerMaterial"@en .
+                        skos:prefLabel "FenicsLayerMaterial"@en ;
+                        emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "The material that a layer in the Fenics model is made of."@en .
 
 
 ###  http://open-model.eu/ontologies/ss3#FenicsLayerThickness
 ss3:FenicsLayerThickness rdf:type owl:Class ;
                          rdfs:subClassOf emmo:EMMO_43003c86_9d15_433b_9789_ee2940920656 ;
-                         emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Layer thickness in the Fenics model."@en ;
-                         skos:prefLabel "FenicsLayerThickness"@en .
+                         skos:prefLabel "FenicsLayerThickness"@en ;
+                         emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Layer thickness in the Fenics model."@en .
 
 
 ###  http://open-model.eu/ontologies/ss3#FenicsMaterialModel
 ss3:FenicsMaterialModel rdf:type owl:Class ;
                         rdfs:subClassOf emmo:EMMO_084b4f77_6df7_4c6a_b705_2528aba5cdda ;
-                        emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Material model used by the Fenics modelling software."@en ;
-                        skos:prefLabel "FenicsMaterialModel"@en .
+                        skos:prefLabel "FenicsMaterialModel"@en ;
+                        emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Material model used by the Fenics modelling software."@en .
 
 
 ###  http://open-model.eu/ontologies/ss3#FenicsMaterials
 ss3:FenicsMaterials rdf:type owl:Class ;
                     rdfs:subClassOf ss3:EMMO_ef51a2f2_cbf6_406f_94a6_4943176f5093 ;
-                    emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Simple configuration for all materials properties for a Fenics simulation."@en ;
-                    skos:prefLabel "FenicsMaterials"@en .
+                    skos:prefLabel "FenicsMaterials"@en ;
+                    emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Simple configuration for all materials properties for a Fenics simulation."@en .
 
 
 ###  http://open-model.eu/ontologies/ss3#FenicsOutput
 ss3:FenicsOutput rdf:type owl:Class ;
                  rdfs:subClassOf ss3:EMMO_ef51a2f2_cbf6_406f_94a6_4943176f5093 ;
-                 emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Indicator for the damage of the protective layer."@en ;
-                 skos:prefLabel "FenicsOutput"@en .
+                 skos:prefLabel "FenicsOutput"@en ;
+                 emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Indicator for the damage of the protective layer."@en .
 
 
 ###  http://open-model.eu/ontologies/ss3#FenicsSimulation
@@ -282,29 +282,29 @@ ss3:FenicsSimulation rdf:type owl:Class ;
                                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                        owl:onClass ss3:FenicsOutput
                                      ] ;
-                     emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A simulation performed by the Fenics simulation software."@en ;
-                     skos:prefLabel "FenicsSimulation"@en .
+                     skos:prefLabel "FenicsSimulation"@en ;
+                     emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A simulation performed by the Fenics simulation software."@en .
 
 
 ###  http://open-model.eu/ontologies/ss3#FenicsSimulationConfig
 ss3:FenicsSimulationConfig rdf:type owl:Class ;
                            rdfs:subClassOf ss3:EMMO_ef51a2f2_cbf6_406f_94a6_4943176f5093 ;
-                           emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Simple configuration for simulations with Fenics."@en ;
-                           skos:prefLabel "FenicsSimulationConfig"@en .
+                           skos:prefLabel "FenicsSimulationConfig"@en ;
+                           emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Simple configuration for simulations with Fenics."@en .
 
 
 ###  http://open-model.eu/ontologies/ss3#FiniteElementMesh
 ss3:FiniteElementMesh rdf:type owl:Class ;
                       rdfs:subClassOf ss3:EMMO_ef51a2f2_cbf6_406f_94a6_4943176f5093 ;
-                      emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Mesh input to a FEM simulation."@en ;
-                      skos:prefLabel "FiniteElementMesh"@en .
+                      skos:prefLabel "FiniteElementMesh"@en ;
+                      emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Mesh input to a FEM simulation."@en .
 
 
 ###  http://open-model.eu/ontologies/ss3#HeatTreatment
 ss3:HeatTreatment rdf:type owl:Class ;
                   rdfs:subClassOf ss3:EMMO_ef51a2f2_cbf6_406f_94a6_4943176f5093 ;
-                  emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "The temperature profile during heat treatment of an alloy."@en ;
-                  skos:prefLabel "HeatTreatment"@en .
+                  skos:prefLabel "HeatTreatment"@en ;
+                  emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "The temperature profile during heat treatment of an alloy."@en .
 
 
 ###  http://open-model.eu/ontologies/ss3#MaterialCardGenerator
@@ -324,17 +324,17 @@ ss3:MaterialCardGenerator rdf:type owl:Class ;
                                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                             owl:onClass ss3:AbaqusSimpleMaterialCard
                                           ] ;
+                          skos:prefLabel "MaterialCardGenerator"@en ;
                           emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 """A post-processing function that generates an Abaqus materials card from a the size distribution output from Premod.
 
-Additional input is needed."""@en ;
-                          skos:prefLabel "MaterialCardGenerator"@en .
+Additional input is needed."""@en .
 
 
 ###  http://open-model.eu/ontologies/ss3#OpenModelSS3Simulation
 ss3:OpenModelSS3Simulation rdf:type owl:Class ;
                            rdfs:subClassOf emmo:EMMO_e97af6ec_4371_4bbc_8936_34b76e33302f ;
-                           emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "The class of all simulations used in OpenModel success story 3."@en ;
-                           skos:prefLabel "OpenModelSS3Simulation"@en .
+                           skos:prefLabel "OpenModelSS3Simulation"@en ;
+                           emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "The class of all simulations used in OpenModel success story 3."@en .
 
 
 ###  http://open-model.eu/ontologies/ss3#PremodSimple
@@ -345,8 +345,8 @@ ss3:PremodSimple rdf:type owl:Class ;
                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                    owl:onClass ss3:EMMO_efb9b65f_a44c_4d39_809b_8d07fd8cef15
                                  ] ;
-                 emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Input to the PREMOD model."@en ;
-                 skos:prefLabel "PremodSimple"@en .
+                 skos:prefLabel "PremodSimple"@en ;
+                 emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Input to the PREMOD model."@en .
 
 
 ###  http://open-model.eu/ontologies/ss3#PremodSimulation
@@ -367,8 +367,8 @@ ss3:PremodSimulation rdf:type owl:Class ;
                                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                        owl:onClass ss3:ChemistrySizeDistribution
                                      ] ;
-                     emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A simulation performed with the PREMOD microstructure model."@en ;
-                     skos:prefLabel "PremodSimulation"@en .
+                     skos:prefLabel "PremodSimulation"@en ;
+                     emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A simulation performed with the PREMOD microstructure model."@en .
 
 
 ###  http://open-model.eu/ontologies/ss3#PremodStrengthModel
@@ -384,14 +384,14 @@ ss3:PremodStrengthModel rdf:type owl:Class ;
                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                           owl:onClass ss3:YieldStress
                                         ] ;
-                        emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A strength model that calculates the Yield strength from the size distribution calcuated by Premod."@en ;
-                        skos:prefLabel "PremodStrengthModel"@en .
+                        skos:prefLabel "PremodStrengthModel"@en ;
+                        emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A strength model that calculates the Yield strength from the size distribution calcuated by Premod."@en .
 
 
 ###  http://open-model.eu/ontologies/ss3#YieldStress
 ss3:YieldStress rdf:type owl:Class ;
-                rdfs:subClassOf emmo:EMMO_d1917609_db5e_4b8a_9b76_ef1d6f860a81 ,
-                                ss3:EMMO_76467ac1_1fd8_432b_a0bc_283d254f2e68 ;
+                rdfs:subClassOf ss3:EMMO_76467ac1_1fd8_432b_a0bc_283d254f2e68 ,
+                                emmo:EMMO_d1917609_db5e_4b8a_9b76_ef1d6f860a81 ;
                 emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "The stress at the Yield point."@en .
 
 

@@ -4,8 +4,9 @@
 @prefix ss3: <http://open-model.eu/ontologies/ss3#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix astm: <http://emmo.info/doam/astm52900#> .
-@prefix emmo: <http://emmo.info/emmo#> .
+@prefix astm: <https://w3id.org/emmo/domain/doam/astm52900#> .
+@prefix micro: <https://w3id.org/emmo/domain/microstructure#> .
+@prefix emmo: <https://w3id.org/emmo#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
@@ -29,11 +30,11 @@
 #################################################################
 
 ###  http://emmo.info/emmo#EMMO_ae2d1a96_bfa1_409a_a7d2_03d69e8a125a
-emmo:EMMO_ae2d1a96_bfa1_409a_a7d2_03d69e8a125a rdf:type owl:AnnotationProperty .
+#emmo:EMMO_ae2d1a96_bfa1_409a_a7d2_03d69e8a125a rdf:type owl:AnnotationProperty .
 
 
 ###  http://emmo.info/emmo#EMMO_b6292331_94af_4f00_976b_ea55960c2f1c
-emmo:EMMO_b6292331_94af_4f00_976b_ea55960c2f1c rdf:type owl:AnnotationProperty .
+#emmo:EMMO_b6292331_94af_4f00_976b_ea55960c2f1c rdf:type owl:AnnotationProperty .
 
 
 #################################################################
@@ -41,11 +42,11 @@ emmo:EMMO_b6292331_94af_4f00_976b_ea55960c2f1c rdf:type owl:AnnotationProperty .
 #################################################################
 
 ###  http://open-model.eu/ontologies/ss3#AbaqusMaterialCard
-ss3:AbaqusMaterialCard rdf:type owl:Class .
+#ss3:AbaqusMaterialCard rdf:type owl:Class .
 
 
 ###  http://open-model.eu/ontologies/ss3#FenicsMaterialCard
-ss3:FenicsMaterialCard rdf:type owl:Class .
+#ss3:FenicsMaterialCard rdf:type owl:Class .
 
 
 #################################################################
@@ -88,12 +89,12 @@ ss3:FenicsMaterialCard rdf:type owl:Class .
 
 ###  http://open-model.eu/ontologies/ss3kb#abaqus_materialcard_al1
 :abaqus_materialcard_al1 rdf:type owl:NamedIndividual ,
-                                  ss3:AbaqusMaterialCard .
+                                  ss3:AbaqusSimpleMaterialCard .
 
 
 ###  http://open-model.eu/ontologies/ss3kb#abaqus_materialcard_cement1
 :abaqus_materialcard_cement1 rdf:type owl:NamedIndividual ,
-                                      ss3:FenicsMaterialCard .
+                                      ss3:AbaqusSimpleMaterialCard .
 
 
 ###  http://open-model.eu/ontologies/ss3kb#fenics_femmesh1
@@ -183,7 +184,7 @@ ss3:FenicsMaterialCard rdf:type owl:Class .
 
 ###  http://open-model.eu/ontologies/ss3kb#premodsimulation_precipitation1
 :premodsimulation_precipitation1 rdf:type owl:NamedIndividual ,
-                                          <http://emmo.info/microstructure#EMMO_2fdafa2f-ef99-572f-8d2a-4c246e7e759f> .
+                                          micro:EMMO_2fdafa2f-ef99-572f-8d2a-4c246e7e759f .
 
 
 ###  http://open-model.eu/ontologies/ss3kb#singlecomp_aa6082_Al
