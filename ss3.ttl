@@ -81,7 +81,8 @@ ss3:AbaqusSimulation rdf:type owl:Class ;
 
 ###  http://open-model.eu/ontologies/ss3#ChemistrySizeDistribution
 ss3:ChemistrySizeDistribution rdf:type owl:Class ;
-                              rdfs:subClassOf ss3:EMMO_ef51a2f2_cbf6_406f_94a6_4943176f5093 ;
+                              rdfs:subClassOf ss3:EMMO_ef51a2f2_cbf6_406f_94a6_4943176f5093 ,
+                                              <https://w3id.org/emmo/domain/microstructure#EMMO_f76d629e_3440_4acf_82ae_e7255c4492b4> ;
                               skos:prefLabel "ChemistrySizeDistribution"@en ;
                               emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Entity for alloy composition and particle size distribution.  Example: an alloy with two types of precipitate, one with a size distribution discretised into 200 size classes and the other discretised into 500 size classes will have 700 domains."@en ;
                               emmo:EMMO_c7b62dd7_063a_4c2a_8504_42f7264ba83f "Output from PREMOD."@en .
@@ -128,6 +129,13 @@ ss3:EMMO_71f190d2_8809_4c5e_9987_ecb97e898e79 rdf:type owl:Class ;
                                               rdfs:subClassOf ss3:EMMO_ef51a2f2_cbf6_406f_94a6_4943176f5093 ;
                                               skos:prefLabel "AbaqusDeformationHistory"@en ;
                                               emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A dataset describing properties of cement calculated by ABAQUS."@en .
+
+
+###  http://open-model.eu/ontologies/ss3#EMMO_71f268c7_ca4f_4d62_8916_734146d2c485
+ss3:EMMO_71f268c7_ca4f_4d62_8916_734146d2c485 rdf:type owl:Class ;
+                                              rdfs:subClassOf ss3:EMMO_ef51a2f2_cbf6_406f_94a6_4943176f5093 ;
+                                              skos:prefLabel "ConcreteMaterialCard"@en ;
+                                              emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Material card for concrete. It describes the mechanical properties of a given concrete."@en .
 
 
 ###  http://open-model.eu/ontologies/ss3#EMMO_76467ac1_1fd8_432b_a0bc_283d254f2e68
@@ -351,6 +359,11 @@ ss3:PremodSimple rdf:type owl:Class ;
 ###  http://open-model.eu/ontologies/ss3#PremodSimulation
 ss3:PremodSimulation rdf:type owl:Class ;
                      rdfs:subClassOf ss3:OpenModelSS3Simulation ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty emmo:EMMO_36e69413_8c59_4799_946c_10b05d266e22 ;
+                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                       owl:onClass ss3:EMMO_efb9b65f_a44c_4d39_809b_8d07fd8cef15
+                                     ] ,
                                      [ rdf:type owl:Restriction ;
                                        owl:onProperty emmo:EMMO_36e69413_8c59_4799_946c_10b05d266e22 ;
                                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
