@@ -1,4 +1,5 @@
 @prefix : <http://open-model.eu/ontologies/ss3#> .
+@prefix kpa: <http://open-model.eu/ontoflow/0.1/kpa#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
@@ -66,15 +67,15 @@ dcterms:created rdf:type owl:AnnotationProperty .
                                     owl:someValuesFrom :AbaqusSimpleMaterialCard
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty emmo:EMMO_e1097637_70d2_4895_973f_2396f04fa204 ;
+                                    owl:onProperty kpa:hasKPA ;
                                     owl:hasValue :abaqussimulation_accuracy
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty emmo:EMMO_e1097637_70d2_4895_973f_2396f04fa204 ;
+                                    owl:onProperty kpa:hasKPA ;
                                     owl:hasValue :abaqussimulation_opensource
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty emmo:EMMO_e1097637_70d2_4895_973f_2396f04fa204 ;
+                                    owl:onProperty kpa:hasKPA  ;
                                     owl:hasValue :abaqussimulation_simulationtime
                                   ] ,
                                   [ rdf:type owl:Restriction ;
@@ -104,15 +105,15 @@ dcterms:created rdf:type owl:AnnotationProperty .
 :EMMO_5cfce8fd_ba78_41e8_b753_11e7cab8cd3f rdf:type owl:Class ;
                                            rdfs:subClassOf :OpenModelSS3Simulation ,
                                                            [ rdf:type owl:Restriction ;
-                                                             owl:onProperty emmo:EMMO_e1097637_70d2_4895_973f_2396f04fa204 ;
+                                                             owl:onProperty kpa:hasKPA ;
                                                              owl:hasValue :namosimulation_accuracy
                                                            ] ,
                                                            [ rdf:type owl:Restriction ;
-                                                             owl:onProperty emmo:EMMO_e1097637_70d2_4895_973f_2396f04fa204 ;
+                                                             owl:onProperty kpa:hasKPA ;
                                                              owl:hasValue :namosimulation_opensource
                                                            ] ,
                                                            [ rdf:type owl:Restriction ;
-                                                             owl:onProperty emmo:EMMO_e1097637_70d2_4895_973f_2396f04fa204 ;
+                                                             owl:onProperty kpa:hasKPA ;
                                                              owl:hasValue :namosimulation_simulationtime
                                                            ] ,
                                                            [ rdf:type owl:Restriction ;
@@ -266,15 +267,15 @@ dcterms:created rdf:type owl:AnnotationProperty .
 :FenicsSimulation rdf:type owl:Class ;
                   rdfs:subClassOf :OpenModelSS3Simulation ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty emmo:EMMO_e1097637_70d2_4895_973f_2396f04fa204 ;
+                                    owl:onProperty kpa:hasKPA ;
                                     owl:hasValue :fenicssimulation_accuracy
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty emmo:EMMO_e1097637_70d2_4895_973f_2396f04fa204 ;
+                                    owl:onProperty kpa:hasKPA ;
                                     owl:hasValue :fenicssimulation_opensource
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty emmo:EMMO_e1097637_70d2_4895_973f_2396f04fa204 ;
+                                    owl:onProperty kpa:hasKPA ;
                                     owl:hasValue :fenicssimulation_simulationtime
                                   ] ,
                                   [ rdf:type owl:Restriction ;
@@ -339,15 +340,15 @@ dcterms:created rdf:type owl:AnnotationProperty .
                                          owl:someValuesFrom <https://w3id.org/emmo/domain/microstructure#EMMO_17b4803f_6dc1_441c_ac84_0cf190de3a06>
                                        ] ,
                                        [ rdf:type owl:Restriction ;
-                                         owl:onProperty emmo:EMMO_e1097637_70d2_4895_973f_2396f04fa204 ;
+                                         owl:onProperty kpa:hasKPA ;
                                          owl:hasValue :materialcardgenerator_accuracy
                                        ] ,
                                        [ rdf:type owl:Restriction ;
-                                         owl:onProperty emmo:EMMO_e1097637_70d2_4895_973f_2396f04fa204 ;
+                                         owl:onProperty kpa:hasKPA ;
                                          owl:hasValue :materialcardgenerator_opensource
                                        ] ,
                                        [ rdf:type owl:Restriction ;
-                                         owl:onProperty emmo:EMMO_e1097637_70d2_4895_973f_2396f04fa204 ;
+                                         owl:onProperty kpa:hasKPA ;
                                          owl:hasValue :materialcardgenerator_simulationtime
                                        ] ,
                                        [ rdf:type owl:Restriction ;
@@ -384,15 +385,15 @@ Additional input is needed."""@en .
 :PremodSimulation rdf:type owl:Class ;
                   rdfs:subClassOf :OpenModelSS3Simulation ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty emmo:EMMO_e1097637_70d2_4895_973f_2396f04fa204 ;
+                                    owl:onProperty kpa:hasKPA ;
                                     owl:hasValue :premodsimulation_accuracy
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty emmo:EMMO_e1097637_70d2_4895_973f_2396f04fa204 ;
+                                    owl:onProperty kpa:hasKPA ;
                                     owl:hasValue :premodsimulation_opensource
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty emmo:EMMO_e1097637_70d2_4895_973f_2396f04fa204 ;
+                                    owl:onProperty kpa:hasKPA ;
                                     owl:hasValue :premodsimulation_simulationtime
                                   ] ,
                                   [ rdf:type owl:Restriction ;
@@ -423,15 +424,15 @@ Additional input is needed."""@en .
 :PremodStrengthModel rdf:type owl:Class ;
                      rdfs:subClassOf :OpenModelSS3Simulation ,
                                      [ rdf:type owl:Restriction ;
-                                       owl:onProperty emmo:EMMO_e1097637_70d2_4895_973f_2396f04fa204 ;
+                                       owl:onProperty kpa:hasKPA ;
                                        owl:hasValue :premodstrengthsimulation_accuracy
                                      ] ,
                                      [ rdf:type owl:Restriction ;
-                                       owl:onProperty emmo:EMMO_e1097637_70d2_4895_973f_2396f04fa204 ;
+                                       owl:onProperty kpa:hasKPA ;
                                        owl:hasValue :premodstrengthsimulation_opensource
                                      ] ,
                                      [ rdf:type owl:Restriction ;
-                                       owl:onProperty emmo:EMMO_e1097637_70d2_4895_973f_2396f04fa204 ;
+                                       owl:onProperty kpa:hasKPA ;
                                        owl:hasValue :premodstrengthsimulation_simulationtime
                                      ] ,
                                      [ rdf:type owl:Restriction ;
