@@ -3,16 +3,15 @@
   <group id="Folder Repository, directory=, recursive=true, Auto-Update=false, version=2" prefer="public" xml:base="">
 
     <!-- OpenModel ontologies -->
-    <uri name="http://open-model.eu/ontologies/0.1/ss3"   uri="./ss3.ttl"/>
-    <uri name="http://open-model.eu/ontologies/0.1/ss3kb" uri="./ss3kb.ttl"/>
-    <uri name="http://open-model.eu/ontoflow/0.1/kpa"     uri="KPA/kpa.ttl"/>
+    <uri name="http://open-model.eu/ontologies/0.1/ss3"       uri="./ss3.ttl"/>
+    <uri name="http://open-model.eu/ontologies/0.1/ss3kb"     uri="./ss3kb.ttl"/>
+    <uri name="http://open-model.eu/ontoflow/0.1/kpa"         uri="KPA/kpa.ttl"/>
 
     <!-- EMMO -->
-    <uri name="http://emmo.info/emmo/1.0.0-beta5"         uri="https://raw.githubusercontent.com/emmo-repo/emmo-repo.github.io/master/versions/1.0.0-beta5/emmo.ttl"/>
-    <uri name="http://emmo.info/emmo/1.0.0-beta5/disciplines/computerscience"       uri="https://raw.githubusercontent.com/emmo-repo/emmo-repo.github.io/master/versions/1.0.0-beta5/emmo.ttl"/>
+    <uri name="https://w3id.org/emmo/1.0.0-rc1"               uri="https://emmo-repo.github.io/versions/1.0.0-rc1/emmo.ttl"/>
 
     <!-- Domain ontologies -->
-    <uri name="http://emmo.info/microstructure"           uri="https://raw.githubusercontent.com/emmo-repo/domain-microstructure/master/microstructure.ttl"/>
+    <uri name="https://w3id.org/emmo/domain/microstructure"   uri="https://raw.githubusercontent.com/emmo-repo/domain-microstructure/master/microstructure.ttl"/>
 
   </group>
 </catalog>
