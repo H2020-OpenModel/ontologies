@@ -111,7 +111,7 @@ dcterms:created rdf:type owl:AnnotationProperty .
 
 ###  http://open-model.eu/ontologies/ss3#ConcreteMaterialCard
 :ConcreteMaterialCard rdf:type owl:Class ;
-                      rdfs:subClassOf :AluminiumMaterialCard ;
+                      rdfs:subClassOf :OpenModelSS3DataSet ;
                       skos:prefLabel "ConcreteMaterialCard"@en ;
                       emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Material card for concrete. It describes the mechanical properties of a given concrete."@en .
 
