@@ -98,7 +98,8 @@ dcterms:created rdf:type owl:AnnotationProperty .
 
 ###  http://open-model.eu/ontologies/ss3#AlloyStrength
 :AlloyStrength rdf:type owl:Class ;
-               rdfs:subClassOf :OpenModelSS3DataSet .
+               rdfs:subClassOf :OpenModelSS3DataSet ;
+               emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A data model describing the alloy strength."@en .
 
 
 ###  http://open-model.eu/ontologies/ss3#AluminiumMaterialCard
@@ -122,13 +123,6 @@ dcterms:created rdf:type owl:AnnotationProperty .
                       rdfs:subClassOf :AbaqusMaterialCard ;
                       skos:prefLabel "ConcreteMaterialCard"@en ;
                       emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Material card for concrete. It describes the mechanical properties of a given concrete."@en .
-
-
-###  http://open-model.eu/ontologies/ss3#DefaultAluminiumMaterialCard
-:DefaultAluminiumMaterialCard rdf:type owl:Class ;
-                              rdfs:subClassOf :AluminiumMaterialCard ;
-                              rdfs:comment "Material card for aluminium that has not been processed by the MaterialCardGenerator. It describes the mechanical properties of a given aluminium."@en ;
-                              skos:prefLabel "DefaultAluminiumMaterialCard"@en .
 
 
 ###  http://open-model.eu/ontologies/ss3#FenicsFiniteElementMesh
@@ -273,7 +267,7 @@ dcterms:created rdf:type owl:AnnotationProperty .
                        rdfs:subClassOf :OpenModelSS3Simulation ,
                                        [ rdf:type owl:Restriction ;
                                          owl:onProperty emmo:EMMO_36e69413_8c59_4799_946c_10b05d266e22 ;
-                                         owl:someValuesFrom <https://w3id.org/emmo/domain/microstructure#EMMO_17b4803f_6dc1_441c_ac84_0cf190de3a06>
+                                         owl:someValuesFrom :AlloyStrength
                                        ] ,
                                        [ rdf:type owl:Restriction ;
                                          owl:onProperty kpa:hasKPA ;
@@ -286,11 +280,6 @@ dcterms:created rdf:type owl:AnnotationProperty .
                                        [ rdf:type owl:Restriction ;
                                          owl:onProperty kpa:hasKPA ;
                                          owl:hasValue :materialcardgenerator_simulationtime
-                                       ] ,
-                                       [ rdf:type owl:Restriction ;
-                                         owl:onProperty emmo:EMMO_36e69413_8c59_4799_946c_10b05d266e22 ;
-                                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                         owl:onClass :DefaultAluminiumMaterialCard
                                        ] ,
                                        [ rdf:type owl:Restriction ;
                                          owl:onProperty emmo:EMMO_c4bace1d_4db0_4cd3_87e9_18122bae2840 ;
@@ -331,12 +320,12 @@ Additional input is needed."""@en .
                                 [ rdf:type owl:Restriction ;
                                   owl:onProperty emmo:EMMO_c4bace1d_4db0_4cd3_87e9_18122bae2840 ;
                                   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                  owl:onClass :ChemistrySizeDistribution
+                                  owl:onClass :AlloyStrength
                                 ] ,
                                 [ rdf:type owl:Restriction ;
                                   owl:onProperty emmo:EMMO_c4bace1d_4db0_4cd3_87e9_18122bae2840 ;
                                   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                  owl:onClass <https://w3id.org/emmo/domain/microstructure#EMMO_17b4803f_6dc1_441c_ac84_0cf190de3a06>
+                                  owl:onClass :ChemistrySizeDistribution
                                 ] ;
                 skos:prefLabel "NaMoSimulation"@en ;
                 emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A simulation performed with the Hydro-owned NaMo simulation software for modelling precipitation during heat treatment and work hardening behaviour or the final component."@en .
@@ -460,7 +449,7 @@ Additional input is needed."""@en .
                                      [ rdf:type owl:Restriction ;
                                        owl:onProperty emmo:EMMO_c4bace1d_4db0_4cd3_87e9_18122bae2840 ;
                                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                       owl:onClass <https://w3id.org/emmo/domain/microstructure#EMMO_17b4803f_6dc1_441c_ac84_0cf190de3a06>
+                                       owl:onClass :AlloyStrength
                                      ] ;
                      skos:prefLabel "PremodStrengthModel"@en ;
                      emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A strength model that calculates the Yield strength from the size distribution calcuated by Premod."@en .
