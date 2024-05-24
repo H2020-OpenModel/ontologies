@@ -99,6 +99,7 @@ dcterms:created rdf:type owl:AnnotationProperty .
 ###  http://open-model.eu/ontologies/ss3#AlloyStrength
 :AlloyStrength rdf:type owl:Class ;
                rdfs:subClassOf :OpenModelSS3DataSet ;
+               skos:prefLabel "AlloyStrength"@en ;
                emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A data model describing the alloy strength."@en .
 
 
