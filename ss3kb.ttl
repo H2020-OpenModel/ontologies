@@ -44,12 +44,15 @@
 
 ###  http://open-model.eu/ontologies/ss3kb#abaqus_materialcard_al1
 :abaqus_materialcard_al1 rdf:type owl:NamedIndividual ,
-                                  ss3:AbaqusSimpleMaterialCard .
+                                  ss3:AluminiumMaterialCard .
 
+###  http://open-model.eu/ontologies/ss3kb#abaqus_materialcard_al2
+:abaqus_materialcard_al2 rdf:type owl:NamedIndividual ,
+                                  ss3:AluminiumMaterialCard .
 
-###  http://open-model.eu/ontologies/ss3kb#abaqus_materialcard_cement1
+###  http://open-model.eu/ontologies/ss3kb#abaqus_materialcard_concrete1
 :abaqus_materialcard_cement1 rdf:type owl:NamedIndividual ,
-                                      ss3:AbaqusSimpleMaterialCard .
+                                      ss3:ConcreteMaterialCard .
 
 
 ###  http://open-model.eu/ontologies/ss3kb#fenics_femmesh1
