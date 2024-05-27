@@ -51,7 +51,7 @@
                                   ss3:AluminiumMaterialCard .
 
 ###  http://open-model.eu/ontologies/ss3kb#abaqus_materialcard_concrete1
-:abaqus_materialcard_cement1 rdf:type owl:NamedIndividual ,
+:abaqus_materialcard_concrete1 rdf:type owl:NamedIndividual ,
                                       ss3:ConcreteMaterialCard .
 
 
