@@ -49,7 +49,7 @@ dcterms:created rdf:type owl:AnnotationProperty .
 :AbaqusConfiguration rdf:type owl:Class ;
                      rdfs:subClassOf :OpenModelSS3DataSet ;
                      skos:prefLabel "AbaqusConfiguration"@en ;
-                     emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Configuration for an Abaqus siumlation, with information both on input and immedate postprosessing. Does not include material specifications."@en .
+                     emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Configuration for an Abaqus siumlation, with information both on input and immediate postprosessing. Does not include material specifications."@en .
 
 
 ###  http://open-model.eu/ontologies/ss3#AbaqusMaterialCard
