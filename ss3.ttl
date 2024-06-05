@@ -107,7 +107,7 @@ dcterms:created rdf:type owl:AnnotationProperty .
 :AluminiumMaterialCard rdf:type owl:Class ;
                        rdfs:subClassOf :AbaqusMaterialCard ;
                        skos:prefLabel "AluminiumMaterialCard"@en ;
-                       emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Material card for aluminium. It describes the mechanical properties of a given concrete."@en .
+                       emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Material card for aluminium. It describes the mechanical properties of a given aluminium."@en .
 
 
 ###  http://open-model.eu/ontologies/ss3#ChemistrySizeDistribution
