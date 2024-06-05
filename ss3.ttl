@@ -52,27 +52,14 @@ dcterms:created rdf:type owl:AnnotationProperty .
                          emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "FEM mesh for Abaqus."@en .
 
 
-###  http://open-model.eu/ontologies/ss3#AbaqusSimpleMaterialCard
-:AbaqusSimpleMaterialCard rdf:type owl:Class ;
-                          rdfs:subClassOf :OpenModelSS3DataSet ;
-                          skos:prefLabel "AbaqusSimpleMaterialCard"@en ;
-                          emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Simple material card section for Abaqus."@en .
-
-
-###  http://open-model.eu/ontologies/ss3#AbaqusSimpleMaterialCardTemplate
-:AbaqusSimpleMaterialCardTemplate rdf:type owl:Class ;
-                                  rdfs:subClassOf :OpenModelSS3DataSet ;
-                                  skos:prefLabel "AbaqusSimpleMaterialCardTemplate"@en ;
-                                  emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "An Abaqus material card that might have some placeholders that can be filled out py the Abaqus pre-processor/converter."@en .
+###  http://open-model.eu/ontologies/ss3#AbaqusMaterialCard
+:AbaqusMaterialCard rdf:type owl:Class ;
+                    rdfs:subClassOf :OpenModelSS3DataSet .
 
 
 ###  http://open-model.eu/ontologies/ss3#AbaqusSimulation
 :AbaqusSimulation rdf:type owl:Class ;
                   rdfs:subClassOf :OpenModelSS3Simulation ,
-                                  [ rdf:type owl:Restriction ;
-                                    owl:onProperty emmo:EMMO_36e69413_8c59_4799_946c_10b05d266e22 ;
-                                    owl:someValuesFrom :AbaqusSimpleMaterialCard
-                                  ] ,
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty kpa:hasKPA ;
                                     owl:hasValue :abaqussimulation_accuracy
@@ -91,12 +78,36 @@ dcterms:created rdf:type owl:AnnotationProperty .
                                     owl:onClass :AbaqusFiniteElementMesh
                                   ] ,
                                   [ rdf:type owl:Restriction ;
+                                    owl:onProperty emmo:EMMO_36e69413_8c59_4799_946c_10b05d266e22 ;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                    owl:onClass :AluminiumMaterialCard
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty emmo:EMMO_36e69413_8c59_4799_946c_10b05d266e22 ;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                    owl:onClass :ConcreteMaterialCard
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
                                     owl:onProperty emmo:EMMO_c4bace1d_4db0_4cd3_87e9_18122bae2840 ;
                                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                     owl:onClass :AbaqusDeformationHistory
                                   ] ;
                   skos:prefLabel "AbaqusSimulation"@en ;
                   emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A simulation performed by the Abaqus simulation software."@en .
+
+
+###  http://open-model.eu/ontologies/ss3#AlloyStrength
+:AlloyStrength rdf:type owl:Class ;
+               rdfs:subClassOf :OpenModelSS3DataSet ;
+               skos:prefLabel "AlloyStrength"@en ;
+               emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A data model describing the alloy strength."@en .
+
+
+###  http://open-model.eu/ontologies/ss3#AluminiumMaterialCard
+:AluminiumMaterialCard rdf:type owl:Class ;
+                       rdfs:subClassOf :AbaqusMaterialCard ;
+                       skos:prefLabel "AluminiumMaterialCard"@en ;
+                       emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Material card for aluminium. It describes the mechanical properties of a given aluminium."@en .
 
 
 ###  http://open-model.eu/ontologies/ss3#ChemistrySizeDistribution
@@ -110,7 +121,7 @@ dcterms:created rdf:type owl:AnnotationProperty .
 
 ###  http://open-model.eu/ontologies/ss3#ConcreteMaterialCard
 :ConcreteMaterialCard rdf:type owl:Class ;
-                      rdfs:subClassOf :AbaqusSimpleMaterialCardTemplate ;
+                      rdfs:subClassOf :AbaqusMaterialCard ;
                       skos:prefLabel "ConcreteMaterialCard"@en ;
                       emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Material card for concrete. It describes the mechanical properties of a given concrete."@en .
 
@@ -257,11 +268,7 @@ dcterms:created rdf:type owl:AnnotationProperty .
                        rdfs:subClassOf :OpenModelSS3Simulation ,
                                        [ rdf:type owl:Restriction ;
                                          owl:onProperty emmo:EMMO_36e69413_8c59_4799_946c_10b05d266e22 ;
-                                         owl:someValuesFrom :AbaqusSimpleMaterialCardTemplate
-                                       ] ,
-                                       [ rdf:type owl:Restriction ;
-                                         owl:onProperty emmo:EMMO_36e69413_8c59_4799_946c_10b05d266e22 ;
-                                         owl:someValuesFrom <https://w3id.org/emmo/domain/microstructure#EMMO_17b4803f_6dc1_441c_ac84_0cf190de3a06>
+                                         owl:someValuesFrom :AlloyStrength
                                        ] ,
                                        [ rdf:type owl:Restriction ;
                                          owl:onProperty kpa:hasKPA ;
@@ -276,14 +283,9 @@ dcterms:created rdf:type owl:AnnotationProperty .
                                          owl:hasValue :materialcardgenerator_simulationtime
                                        ] ,
                                        [ rdf:type owl:Restriction ;
-                                         owl:onProperty emmo:EMMO_36e69413_8c59_4799_946c_10b05d266e22 ;
-                                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                         owl:onClass :ConcreteMaterialCard
-                                       ] ,
-                                       [ rdf:type owl:Restriction ;
                                          owl:onProperty emmo:EMMO_c4bace1d_4db0_4cd3_87e9_18122bae2840 ;
                                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                         owl:onClass :AbaqusSimpleMaterialCard
+                                         owl:onClass :AluminiumMaterialCard
                                        ] ;
                        skos:prefLabel "MaterialCardGenerator"@en ;
                        emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 """A post-processing function that generates an Abaqus materials card from a the size distribution output from Premod.
@@ -319,12 +321,12 @@ Additional input is needed."""@en .
                                 [ rdf:type owl:Restriction ;
                                   owl:onProperty emmo:EMMO_c4bace1d_4db0_4cd3_87e9_18122bae2840 ;
                                   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                  owl:onClass :ChemistrySizeDistribution
+                                  owl:onClass :AlloyStrength
                                 ] ,
                                 [ rdf:type owl:Restriction ;
                                   owl:onProperty emmo:EMMO_c4bace1d_4db0_4cd3_87e9_18122bae2840 ;
                                   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                  owl:onClass <https://w3id.org/emmo/domain/microstructure#EMMO_17b4803f_6dc1_441c_ac84_0cf190de3a06>
+                                  owl:onClass :ChemistrySizeDistribution
                                 ] ;
                 skos:prefLabel "NaMoSimulation"@en ;
                 emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A simulation performed with the Hydro-owned NaMo simulation software for modelling precipitation during heat treatment and work hardening behaviour or the final component."@en .
@@ -367,16 +369,23 @@ Additional input is needed."""@en .
                         emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "The class of all simulations used in OpenModel success story 3."@en .
 
 
-###  http://open-model.eu/ontologies/ss3#PremodSimple
-:PremodSimple rdf:type owl:Class ;
-              rdfs:subClassOf :OpenModelSS3DataSet ,
-                              [ rdf:type owl:Restriction ;
-                                owl:onProperty emmo:EMMO_17e27c22_37e1_468c_9dd7_95e137f73e7f ;
-                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                owl:onClass :NominalAlloyComposition
-                              ] ;
-              skos:prefLabel "PremodSimple"@en ;
-              emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Input to the PREMOD model."@en .
+###  http://open-model.eu/ontologies/ss3#PremodBasicConfiguration
+:PremodBasicConfiguration rdf:type owl:Class ;
+                          rdfs:subClassOf :PremodConfiguration ;
+                          skos:prefLabel "PremodBasicConfiguration"@en ;
+                          emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Basic configuration for Premod."@en .
+
+
+###  http://open-model.eu/ontologies/ss3#PremodConfiguration
+:PremodConfiguration rdf:type owl:Class ;
+                     rdfs:subClassOf :OpenModelSS3DataSet ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty emmo:EMMO_17e27c22_37e1_468c_9dd7_95e137f73e7f ;
+                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                       owl:onClass :NominalAlloyComposition
+                                     ] ;
+                     skos:prefLabel "PremodConfiguration"@en ;
+                     emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Input to the PREMOD model."@en .
 
 
 ###  http://open-model.eu/ontologies/ss3#PremodSimulation
@@ -407,7 +416,7 @@ Additional input is needed."""@en .
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty emmo:EMMO_36e69413_8c59_4799_946c_10b05d266e22 ;
                                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                    owl:onClass :PremodSimple
+                                    owl:onClass :PremodBasicConfiguration
                                   ] ,
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty emmo:EMMO_c4bace1d_4db0_4cd3_87e9_18122bae2840 ;
@@ -441,7 +450,7 @@ Additional input is needed."""@en .
                                      [ rdf:type owl:Restriction ;
                                        owl:onProperty emmo:EMMO_c4bace1d_4db0_4cd3_87e9_18122bae2840 ;
                                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                       owl:onClass <https://w3id.org/emmo/domain/microstructure#EMMO_17b4803f_6dc1_441c_ac84_0cf190de3a06>
+                                       owl:onClass :AlloyStrength
                                      ] ;
                      skos:prefLabel "PremodStrengthModel"@en ;
                      emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A strength model that calculates the Yield strength from the size distribution calcuated by Premod."@en .
