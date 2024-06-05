@@ -38,8 +38,7 @@
 
 ###  http://open-model.eu/ontoflow/kpa#Accuracy
 :Accuracy rdf:type owl:Class ;
-          rdfs:subClassOf :KPA ,
-                          emmo:EMMO_57b9fd6c_84d6_43f2_8c4f_de6a1ab50aea ;
+          rdfs:subClassOf :KPA ;
           emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "The Accuracy metric for a process, model or task. It can be defined in heterogeneous way according to its subclasses"@en .
 
 
@@ -53,6 +52,9 @@
 ###  http://open-model.eu/ontoflow/kpa#KPA
 :KPA rdf:type owl:Class ;
      rdfs:subClassOf emmo:EMMO_f658c301_ce93_46cf_9639_4eace2c5d1d5 ;
+     rdfs:comment """Quantitative KPAs, like accuracy and simulation time may either be specified as a qualified guess or based on experience from a range of similar simulations stored in the knowledge base.
+
+In the case of qualified guess, should the KPA individuals be a subclass of both KPA and emmo:Guess. They should (ideally) also be properly elucidated about the assumptions and conditions this guess is based on."""@en ;
      emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "The Key Performance Attribute (KPA) class defining technical attributes of models, processes or tasks"@en .
 
 
@@ -90,15 +92,37 @@
 
 ###  http://open-model.eu/ontoflow/kpa#OrdinalAccuracy
 :OrdinalAccuracy rdf:type owl:Class ;
-                 rdfs:subClassOf :Accuracy ,
-                                 emmo:EMMO_50ea1ec5_f157_41b0_b46b_a9032f17ca10 ;
-                 emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A performance attribute indicating the typical accuracy of a simulation tool. This takes the values of  High, Medium and Low"@en .
+    rdfs:subClassOf :Accuracy ,
+    emmo:EMMO_50ea1ec5_f157_41b0_b46b_a9032f17ca10 ;
+    emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A performance attribute indicating the typical accuracy of a simulation tool. This takes the values of  High, Medium and Low"@en ;
+    #owl:equivalentClass [
+    #    a owl:Class ;
+    #    owl:oneOf (
+    #        [:kpaValue "low"] [:kpaValue "medium"] [:kpaValue "high"]
+    #    )
+    #] .
+    owl:equivalentClass [
+        a owl:Class ;
+        owl:oneOf (
+            :lowAccuracy :mediumAccuracy :highAccuracy
+        )
+    ] .
+
+:lowAccuracy a owl:NamedIndividual , :OrdinalAccuracy ;
+    :KPAValue "low" .
+
+:mediumAccuracy a owl:NamedIndividual , :OrdinalAccuracy ;
+    :KPAValue "medium" .
+
+:highAccuracy a owl:NamedIndividual , :OrdinalAccuracy ;
+    :KPAValue "high" .
+
+
 
 
 ###  http://open-model.eu/ontoflow/kpa#SimulationTime
 :SimulationTime rdf:type owl:Class ;
-                rdfs:subClassOf :KPA ,
-                                emmo:EMMO_57b9fd6c_84d6_43f2_8c4f_de6a1ab50aea ;
+                rdfs:subClassOf :KPA ;
                 emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Usual simulation time of tools"@en .
 
 
