@@ -483,7 +483,7 @@ The model computes the different component of the strength but will return only 
 :YieldStrength rdf:type owl:Class ;
                rdfs:subClassOf :OpenModelSS3DataSet ;
                skos:prefLabel "YieldStrength"@en ;
-               emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A data model describing the yield strength. The yield strength being defined in that context as the stress at which the plastic deformation starts."@en .
+               emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A dataset describing the yield strength. The yield strength being defined in that context as the stress at which the plastic deformation starts."@en .
 
 
 #################################################################
