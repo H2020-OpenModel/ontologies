@@ -126,7 +126,6 @@ The output is processed to extract the evolution of the local stresses and defor
 ###  http://open-model.eu/ontologies/ss3#EffectiveAlloyComposition
 :EffectiveAlloyComposition rdf:type owl:Class ;
                            rdfs:subClassOf :OpenModelSS3DataSet ,
-                                           :OpenModelSS3Datum ,
                                            <https://w3id.org/emmo/domain/microstructure#EMMO_f84836b6_4a4d_4f13_a340_a4c141028c87> ;
                            skos:prefLabel "EffectiveAlloyComposition"@en ;
                            emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Dataset to describe the effective alloy composition, the composition in the aluminium matrix which is different from the nominal composition due to formation of other phases during solidification and homogenization."@en .
