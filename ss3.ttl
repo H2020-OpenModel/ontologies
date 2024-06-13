@@ -127,7 +127,7 @@ The output is processed to extract the evolution of the local stresses and defor
 :EffectiveAlloyComposition rdf:type owl:Class ;
                            rdfs:subClassOf :OpenModelSS3DataSet ,
                                            :OpenModelSS3Datum ,
-                                           <https://w3id.org/emmo/domain/microstructure#EMMO_ac83bdd0-4390-517f-8d44-0c1abd7dca5a> ;
+                                           <https://w3id.org/emmo/domain/microstructure#EMMO_f84836b6_4a4d_4f13_a340_a4c141028c87> ;
                            skos:prefLabel "EffectiveAlloyComposition"@en ;
                            emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Dataset to describe the effective alloy composition, the composition in the aluminium matrix which is different from the nominal composition due to formation of other phases during solidification and homogenization."@en .
 
@@ -342,6 +342,14 @@ In the material card, the elastic is not modified. The plastic deformation curve
                                 ] ;
                 skos:prefLabel "NaMoSimulation"@en ;
                 emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A simulation performed with the Hydro-owned NaMo simulation software for modelling precipitation during heat treatment and work hardening behaviour or the final component."@en .
+
+
+###  http://open-model.eu/ontologies/ss3#NominalAlloyComposition
+:NominalAlloyComposition rdf:type owl:Class ;
+                         rdfs:subClassOf :OpenModelSS3DataSet ,
+                                         <https://w3id.org/emmo/domain/microstructure#EMMO_ac83bdd0-4390-517f-8d44-0c1abd7dca5a> ;
+                         skos:prefLabel "NominalAlloyComposition"@en ;
+                         emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "The overall alloy composition, including all the phases in the alloy."@en .
 
 
 ###  http://open-model.eu/ontologies/ss3#OpenModelPerformanceAttribute
