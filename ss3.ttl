@@ -112,7 +112,7 @@ The output is processed to extract the evolution of the local stresses and defor
                            rdfs:subClassOf :OpenModelSS3DataSet ,
                                            <https://w3id.org/emmo/domain/microstructure#EMMO_f76d629e_3440_4acf_82ae_e7255c4492b4> ;
                            skos:prefLabel "ChemistrySizeDistribution"@en ;
-                           emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Data model for alloy composition, solid solution, and particle size distribution.  Example: an alloy with two types of precipitate, one with a size distribution discretised into 200 size classes and the other discretised into 500 size classes will have 700 domains."@en ;
+                           emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Dataset for alloy composition, solid solution, and particle size distribution.  Example: an alloy with two types of precipitate, one with a size distribution discretised into 200 size classes and the other discretised into 500 size classes will have 700 domains."@en ;
                            emmo:EMMO_c7b62dd7_063a_4c2a_8504_42f7264ba83f "Output from PREMOD."@en .
 
 
@@ -129,7 +129,7 @@ The output is processed to extract the evolution of the local stresses and defor
                                            :OpenModelSS3Datum ,
                                            <https://w3id.org/emmo/domain/microstructure#EMMO_ac83bdd0-4390-517f-8d44-0c1abd7dca5a> ;
                            skos:prefLabel "EffectiveAlloyComposition"@en ;
-                           emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Data model to describe the effective alloy composition, the composition in the aluminium matrix which is different from the nominal composition due to formation of other phases during solidification and homogenization."@en .
+                           emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Dataset to describe the effective alloy composition, the composition in the aluminium matrix which is different from the nominal composition due to formation of other phases during solidification and homogenization."@en .
 
 
 ###  http://open-model.eu/ontologies/ss3#FenicsFiniteElementMesh
@@ -476,7 +476,7 @@ The model computes the different component of the strength but will return only 
 :TabulatedElastoPlastic rdf:type owl:Class ;
                         rdfs:subClassOf :OpenModelSS3DataSet ;
                         skos:prefLabel "TabulatedElastoPlastic"@en ;
-                        emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Data model to represent an Elasto Plastic constitutive model. The plastic behviour is represented by a table plastic strain - stress"@en .
+                        emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Dataset to represent an Elasto Plastic constitutive model. The plastic behviour is represented by a table plastic strain - stress"@en .
 
 
 ###  http://open-model.eu/ontologies/ss3#YieldStrength
