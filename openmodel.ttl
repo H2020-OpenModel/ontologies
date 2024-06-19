@@ -342,81 +342,6 @@ LAMMPS has potentials for solid-state materials (metals, semiconductors) and sof
         skos:prefLabel "LAMMPS"@en .
 
 
-###  https://w3id.org/emmo/domain/openmodel#LAMMPSDataSet
-:LAMMPSDataSet rdf:type owl:Class ;
-               rdfs:subClassOf emmo:EMMO_194e367c_9783_4bf5_96d0_9ad597d48d9a ,
-                               [ rdf:type owl:Restriction ;
-                                 owl:onProperty emmo:EMMO_4832e353_6a2d_4deb_9a5b_96989afaff2d ;
-                                 owl:someValuesFrom :LAMMPS
-                               ] ,
-                               [ rdf:type owl:Restriction ;
-                                 owl:onProperty emmo:EMMO_e1097637_70d2_4895_973f_2396f04fa204 ;
-                                 owl:someValuesFrom emmo:EMMO_02c0621e_a527_4790_8a0f_2bb51973c819
-                               ] ,
-                               [ rdf:type owl:Restriction ;
-                                 owl:onProperty [ owl:inverseOf emmo:EMMO_24c71baf_6db6_48b9_86c8_8c70cf36db0c
-                                                ] ;
-                                 owl:someValuesFrom emmo:EMMO_bc37743c_37c4_4ec7_9d58_d1aae5567352
-                               ] ;
-               skos:prefLabel "LAMMPSDataSet" ;
-               emmo:EMMO_c7b62dd7_063a_4c2a_8504_42f7264ba83f "The set of files taken as input by LAMMPS to run a simulation."@en .
-
-
-###  https://w3id.org/emmo/domain/openmodel#LAMMPSFile
-:LAMMPSFile rdf:type owl:Class ;
-            rdfs:subClassOf emmo:EMMO_998dd3a0_c85f_4c8d_9fb8_816a93cc3bb8 ,
-                            [ rdf:type owl:Restriction ;
-                              owl:onProperty emmo:EMMO_4832e353_6a2d_4deb_9a5b_96989afaff2d ;
-                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                              owl:onClass :LAMMPS
-                            ] ;
-            skos:prefLabel "LAMMPSFile" ;
-            emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Class of input and output files for the software LAMMPS."@en .
-
-
-###  https://w3id.org/emmo/domain/openmodel#LAMMPSLogParsing
-:LAMMPSLogParsing rdf:type owl:Class ;
-                  skos:prefLabel "LAMMPSLogParsing" .
-
-
-###  https://w3id.org/emmo/domain/openmodel#LAMMPSTemplate
-:LAMMPSTemplate rdf:type owl:Class ;
-                rdfs:subClassOf emmo:EMMO_3c5b33a1_4f28_41f9_b725_1994df79bf55 ,
-                                _:genid18 ;
-                rdfs:seeAlso "https://www.moltemplate.org/"^^xsd:anyURI ;
-                skos:altLabel "LAMMPSTemplate" ,
-                              "LTFile" ;
-                skos:prefLabel "MoltemplateScript" ;
-                emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A moltemplate LT file containing molecule definitions to generate a valid input deck for LAMMPS." ;
-                emmo:EMMO_c7b62dd7_063a_4c2a_8504_42f7264ba83f "The LAMMPS-template (LT) format is used by moltemplate to create template files containing all the information required to create a particular molecule or input for LAMMPS (including coordinates, bond-topology, angles, force-field parameters, constraints, groups and fixes). LT files are text-based and are interpreted by the program Moltemplate. The format is agnostic to the LAMMPS syntax."@en .
-
-_:genid18 rdf:type owl:Restriction ;
-           owl:onProperty emmo:EMMO_7fb7fe7e_bdf9_4eeb_adad_e384dd5285c6 ;
-           owl:allValuesFrom :Moltemplate .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource :LAMMPSTemplate ;
-   owl:annotatedProperty rdfs:subClassOf ;
-   owl:annotatedTarget _:genid18 ;
-   emmo:EMMO_c7b62dd7_063a_4c2a_8504_42f7264ba83f "Is this axiom correct to define a property of the scripting language? Or, should it be stated for Moltemplate Files?"@en
- ] .
-
-
-###  https://w3id.org/emmo/domain/openmodel#LTFile
-:LTFile rdf:type owl:Class ;
-        rdfs:subClassOf emmo:EMMO_998dd3a0_c85f_4c8d_9fb8_816a93cc3bb8 ,
-                        [ rdf:type owl:Restriction ;
-                          owl:onProperty emmo:EMMO_60577dea_9019_4537_ac41_80b0fb563d41 ;
-                          owl:allValuesFrom :LAMMPSTemplate
-                        ] ,
-                        [ rdf:type owl:Restriction ;
-                          owl:onProperty emmo:EMMO_4832e353_6a2d_4deb_9a5b_96989afaff2d ;
-                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                          owl:onClass :Moltemplate
-                        ] ;
-        skos:prefLabel "LTFile" .
-
-
 ###  https://w3id.org/emmo/domain/openmodel#LennardJones612
 :LennardJones612 rdf:type owl:Class ;
                  rdfs:subClassOf :PotentialFunction ;
@@ -468,25 +393,6 @@ This class includes the three-dimensional arrangement of the atoms that constitu
              rdfs:seeAlso "http://www.moltemplate.org/" ;
              skos:prefLabel "Moltemplate"@en ;
              emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Moltemplate is a general molecule builder and force-field database system for LAMMPS."@en .
-
-
-###  https://w3id.org/emmo/domain/openmodel#MoltemplateDataSet
-:MoltemplateDataSet rdf:type owl:Class ;
-                    rdfs:subClassOf emmo:EMMO_194e367c_9783_4bf5_96d0_9ad597d48d9a ,
-                                    [ rdf:type owl:Restriction ;
-                                      owl:onProperty emmo:EMMO_4832e353_6a2d_4deb_9a5b_96989afaff2d ;
-                                      owl:someValuesFrom :Moltemplate
-                                    ] ,
-                                    [ rdf:type owl:Restriction ;
-                                      owl:onProperty emmo:EMMO_b19aacfc_5f73_4c33_9456_469c1e89a53e ;
-                                      owl:someValuesFrom :LTFile
-                                    ] ,
-                                    [ rdf:type owl:Restriction ;
-                                      owl:onProperty [ owl:inverseOf emmo:EMMO_24c71baf_6db6_48b9_86c8_8c70cf36db0c
-                                                     ] ;
-                                      owl:someValuesFrom emmo:EMMO_bc37743c_37c4_4ec7_9d58_d1aae5567352
-                                    ] ;
-                    emmo:EMMO_b432d2d5_25f4_4165_99c5_5935a7763c1a "A class covering any dataset that is passed to Moltemplate."@en .
 
 
 ###  https://w3id.org/emmo/domain/openmodel#OPLS
