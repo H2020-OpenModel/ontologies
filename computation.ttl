@@ -172,6 +172,12 @@ emmo:EMMO_398165de_5406_4e27_907e_fd8a1ab2f8e9 rdf:type owl:Class ;
                                                emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A well-defined way (interface) for two or more computer programs to communicate with each other."@en ;
                                                emmo:EMMO_c84c6752_6d64_48cc_9500_e54a3c34898d "https://en.wikipedia.org/wiki/Bash_(Unix_shell)"^^xsd:anyURI .
 
+###  https://w3id.org/emmo#EMMO_62536db0_537d_4a79_959b_2d3acb268fa4
+emmo:EMMO_62536db0_537d_4a79_959b_2d3acb268fa4 rdf:type owl:Class ;
+                                                                  rdfs:subClassOf emmo:EMMO_f84b1b92_1dc8_4146_99f0_b03cd53e455b ;
+                                                                  emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A Unix shell and command language."@en ;
+                                                                  emmo:EMMO_c84c6752_6d64_48cc_9500_e54a3c34898d "https://en.wikipedia.org/wiki/Bash_(Unix_shell)"^^xsd:anyURI ;
+                                                                  skos:prefLabel "Bash"@en .
 
 ###  https://w3id.org/emmo#EMMO_6470bbfa_04a6_4360_9534_1aa18d68329b
 emmo:EMMO_6470bbfa_04a6_4360_9534_1aa18d68329b rdfs:subClassOf [ rdf:type owl:Restriction ;
