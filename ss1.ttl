@@ -14,7 +14,7 @@
 <http://open-model.eu/ontologies/ss1> rdf:type owl:Ontology ;
                                        owl:versionIRI <http://open-model.eu/ontologies/1.0/ss1> ;
                                        owl:imports <http://open-model.eu/domain/simulationsoftware> ,
-                                                   <http://open-model.eu/ontoflow/0.1/kpa> ;
+                                                   <http://open-model.eu/ontoflow/kpa> ;
                                        dcterms:abstract "Application ontology for OpenModel success story 1. Synaptic electronics: from materials properties to next-generation memory devices."@en ;
                                        dcterms:created "2024-06-19"@en ;
                                        dcterms:creator <https://orcid.org/0000-0001-7815-6636> ;
