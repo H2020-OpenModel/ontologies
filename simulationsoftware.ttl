@@ -123,14 +123,14 @@ foaf:logo rdf:type owl:AnnotationProperty .
                                   owl:someValuesFrom :AiiDA
                                 ] ;
                 skos:prefLabel "AiiDADataNodes" ;
-                emmo:EMMO_b432d2d5_25f4_4165_99c5_5935a7763c1a "A dataset created during the execution of a workflow. Thedataset is composed of nodes that are created during one step and can be passed to another step using the context, a internal data container."@en .
+                emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A dataset created during the execution of a workflow. Thedataset is composed of nodes that are created during one step and can be passed to another step using the context, a internal data container."@en .
 
 
 ###  http://open-model.eu/domain/simulationsoftware#AtomicStructureFile
 :AtomicStructureFile rdf:type owl:Class ;
                      rdfs:subClassOf emmo:EMMO_998dd3a0_c85f_4c8d_9fb8_816a93cc3bb8 ;
                      skos:prefLabel "AtomicStructureFile" ;
-                     emmo:EMMO_c7b62dd7_063a_4c2a_8504_42f7264ba83f "A file containing the position and type of one or more atoms. Optionally, the file can include additional information such as periodic repeating unit, symmetry group, molecular topology or connectivity, molecular index, residue type, labels, etc." .
+                     emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A file containing the position and type of one or more atoms. Optionally, the file can include additional information such as periodic repeating unit, symmetry group, molecular topology or connectivity, molecular index, residue type, labels, etc."@en .
 
 
 ###  http://open-model.eu/domain/simulationsoftware#AtomisticMolecularDynamics
@@ -140,7 +140,8 @@ foaf:logo rdf:type owl:AnnotationProperty .
                                               owl:onProperty emmo:EMMO_17e27c22_37e1_468c_9dd7_95e137f73e7f ;
                                               owl:someValuesFrom :ForceField
                                             ] ;
-                            skos:prefLabel "AtomisticMolecularDynamics" .
+                            skos:prefLabel "AtomisticMolecularDynamics" ;
+                            emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A molecular dynamics simulation using an all-atom model."@en .
 
 
 ###  http://open-model.eu/domain/simulationsoftware#BashScript
@@ -183,7 +184,8 @@ foaf:logo rdf:type owl:AnnotationProperty .
                                                   owl:onProperty emmo:EMMO_17e27c22_37e1_468c_9dd7_95e137f73e7f ;
                                                   owl:someValuesFrom :ForceField
                                                 ] ;
-                                skos:prefLabel "CoarseGrainedMolecularDynamics" .
+                                skos:prefLabel "CoarseGrainedMolecularDynamics" ;
+                                emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A molecular dynamics simulation using a coarse-grained model."@en .
 
 
 ###  http://open-model.eu/domain/simulationsoftware#ComputationalFluidDynamics
@@ -274,7 +276,7 @@ foaf:logo rdf:type owl:AnnotationProperty .
 :ForceField rdf:type owl:Class ;
             rdfs:subClassOf emmo:EMMO_e5438930_04e7_4d42_ade5_3700d4a52ab7 ;
             skos:prefLabel "ForceField" ;
-            emmo:EMMO_c7b62dd7_063a_4c2a_8504_42f7264ba83f "a set of parameters and equations for use in molecular mechanics simulations" .
+            emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "a set of parameters and equations for use in molecular mechanics simulations" .
 
 
 ###  http://open-model.eu/domain/simulationsoftware#GROMOS
@@ -304,7 +306,8 @@ GULP is a program for performing a variety of types of simulation on materials u
 ###  http://open-model.eu/domain/simulationsoftware#GayBerne
 :GayBerne rdf:type owl:Class ;
           rdfs:subClassOf :PotentialFunction ;
-          skos:prefLabel "GayBerne" .
+          skos:prefLabel "GayBerne" ;
+          emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "The Gay-Berne potential is a generalised form of the Lennard-Jones 12:6 potential adapted for anisotropic particles, that is, spheroids."@en .
 
 
 ###  http://open-model.eu/domain/simulationsoftware#Ginestra
@@ -355,7 +358,8 @@ LAMMPS has potentials for solid-state materials (metals, semiconductors) and sof
 ###  http://open-model.eu/domain/simulationsoftware#LennardJones612
 :LennardJones612 rdf:type owl:Class ;
                  rdfs:subClassOf :PotentialFunction ;
-                 skos:prefLabel "LennardJones612" .
+                 skos:prefLabel "LennardJones612" ;
+                 emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "The Lennard-Jones potential combines an attractive term proportional to 1/r^6 to a repulsive term proportional to 1/r^12."@en .
 
 
 ###  http://open-model.eu/domain/simulationsoftware#MCSCF
@@ -412,14 +416,14 @@ This class includes the three-dimensional arrangement of the atoms that constitu
                         owl:onProperty emmo:EMMO_a8bd7094_6b40_47af_b1f4_a69d81a3afbd ;
                         owl:someValuesFrom emmo:EMMO_84cadc45_6758_46f2_ba2a_5ead65c70213
                       ] ;
-      skos:prefLabel "OPLS" ;
-      emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 """OPLS4: Improving Force Field Accuracy on Challenging Regimes of Chemical Space.
+      rdfs:seeAlso """OPLS4: Improving Force Field Accuracy on Challenging Regimes of Chemical Space.
 J. Chem. Theory Comput., 17, 4291–4300 (2021).
 https://doi.org/10.1021/acs.jctc.1c00302"""@en ,
-                                                     "The OPLS (Optimized Potentials for Liquid Simulations) force field was developed by Prof. William L. Jorgensen at Purdue University and later at Yale University, and is being further developed commercially by Schrödinger, Inc."@en ,
-                                                     """The OPLS Force Field for Proteins. Energy Minimizations for Crystals of Cyclic Peptides and Crambin.
+                   """The OPLS Force Field for Proteins. Energy Minimizations for Crystals of Cyclic Peptides and Crambin.
 J. Am. Chem. Soc., 110, 1657–1666 (1998).
-https://doi.org/10.1021/ja00214a001."""@en .
+https://doi.org/10.1021/ja00214a001."""@en ;
+      skos:prefLabel "OPLS" ;
+      emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "The OPLS (Optimized Potentials for Liquid Simulations) force field was developed by Prof. William L. Jorgensen at Purdue University and later at Yale University, and is being further developed commercially by Schrödinger, Inc."@en .
 
 
 ###  http://open-model.eu/domain/simulationsoftware#OTEAPIDataSet
@@ -429,7 +433,7 @@ https://doi.org/10.1021/ja00214a001."""@en .
                                  owl:onProperty emmo:EMMO_4832e353_6a2d_4deb_9a5b_96989afaff2d ;
                                  owl:someValuesFrom :DLite
                                ] ;
-               emmo:EMMO_b432d2d5_25f4_4165_99c5_5935a7763c1a "A class covering any dataset that is passed to an OTEAPI pipeline for data documentation, mapping, and serialisation."@en .
+               emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A class covering any dataset that is passed to an OTEAPI pipeline for data documentation, mapping, and serialisation."@en .
 
 
 ###  http://open-model.eu/domain/simulationsoftware#OTEAPIpipeline
@@ -481,7 +485,8 @@ https://doi.org/10.1021/ja00214a001."""@en .
                                      owl:onProperty emmo:EMMO_a8bd7094_6b40_47af_b1f4_a69d81a3afbd ;
                                      owl:someValuesFrom :ForceField
                                    ] ;
-                   skos:prefLabel "PotentialFunction" .
+                   skos:prefLabel "PotentialFunction" ;
+                   emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A mathematical function used to express the potential energy (or part of it) in classical molecular modelling simulations."@en .
 
 
 ###  http://open-model.eu/domain/simulationsoftware#ProgrammingVariable
@@ -508,7 +513,7 @@ https://doi.org/10.1021/ja00214a001."""@en .
 :RandomNumber rdf:type owl:Class ;
               rdfs:subClassOf emmo:EMMO_888a5dea_3b7d_4dc0_93f2_d4e345a1f903 ;
               skos:prefLabel "RandomNumber" ;
-              emmo:EMMO_c7b62dd7_063a_4c2a_8504_42f7264ba83f "A number with arbitrary value, selected using a random source or a pseudo-random algorithm."@en .
+              emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A number with arbitrary value, selected using a random source or a pseudo-random algorithm."@en .
 
 
 ###  http://open-model.eu/domain/simulationsoftware#SemiEmpiricalHamiltonian
@@ -532,8 +537,8 @@ https://doi.org/10.1021/ja00214a001."""@en .
                          owl:onProperty emmo:EMMO_faf79f53_749d_40b2_807c_d34244c192f4 ;
                          owl:allValuesFrom xsd:int
                        ] ;
-       rdfs:comment "Number of repetitions of a certain task."@en ;
-       skos:prefLabel "Steps" .
+       skos:prefLabel "Steps" ;
+       emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Number of repetitions of a certain task."@en .
 
 
 ###  http://open-model.eu/domain/simulationsoftware#Timestep
@@ -541,13 +546,18 @@ https://doi.org/10.1021/ja00214a001."""@en .
           rdfs:subClassOf emmo:EMMO_d1d436e7_72fc_49cd_863b_7bfb4ba5276a ,
                           emmo:EMMO_d4f7d378_5e3b_468a_baa1_a7e98358cda7 ;
           skos:prefLabel "Timestep" ;
-          emmo:EMMO_c7b62dd7_063a_4c2a_8504_42f7264ba83f "A timestep is a number (in time units) used to integrate numerically the equations of motion in a subsequent molecular dynamics simulation."@en .
+          emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A timestep is a number (in time units) used to integrate numerically the equations of motion in a subsequent molecular dynamics simulation."@en .
 
 
 ###  http://open-model.eu/domain/simulationsoftware#UnitedAtomsMolecularDynamics
 :UnitedAtomsMolecularDynamics rdf:type owl:Class ;
-                              rdfs:subClassOf emmo:EMMO_53935db0_af45_4426_b9e9_244a0d77db00 ;
-                              skos:prefLabel "UnitedAtomsMolecularDynamics" .
+                              rdfs:subClassOf emmo:EMMO_53935db0_af45_4426_b9e9_244a0d77db00 ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty emmo:EMMO_17e27c22_37e1_468c_9dd7_95e137f73e7f ;
+                                                owl:someValuesFrom :ForceField
+                                              ] ;
+                              skos:prefLabel "UnitedAtomsMolecularDynamics" ;
+                              emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A molecular dynamics simulation using the united-atoms model."@en .
 
 
 ###  http://open-model.eu/domain/simulationsoftware#VolumeElement

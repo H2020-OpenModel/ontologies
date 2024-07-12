@@ -267,12 +267,6 @@ foaf:Person rdf:type owl:Class .
 #    Individuals
 #################################################################
 
-###  http://open-model.eu/ontologies/ss1#quantumespresso_acc
-:quantumespresso_acc rdf:type owl:NamedIndividual ,
-                              kpa:OrdinalAccuracy ;
-                     kpa:KPAValue "high" .
-
-
 ###  https://orcid.org/0000-0001-7815-6636
 <https://orcid.org/0000-0001-7815-6636> rdf:type foaf:Person ;
                                         rdfs:comment "" ;
