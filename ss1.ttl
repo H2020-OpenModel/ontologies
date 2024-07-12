@@ -90,7 +90,12 @@
 ###  http://open-model.eu/ontologies/ss1#EMMO_212dc6b5_6cce_4eaa_b6c4_8c41a33c938b
 :EMMO_212dc6b5_6cce_4eaa_b6c4_8c41a33c938b rdf:type owl:Class ;
                                            rdfs:subClassOf :EMMO_1333132a_0d66_4619_92fc_4d50add1eaf5 ,
-                                                           emmo:EMMO_e97af6ec_4371_4bbc_8936_34b76e33302f ;
+                                                           emmo:EMMO_e97af6ec_4371_4bbc_8936_34b76e33302f ,
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty emmo:EMMO_ae2d1a96_bfa1_409a_a7d2_03d69e8a125a ;
+                                                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                             owl:onClass <http://open-model.eu/domain/simulationsoftware#QuantumEspresso>
+                                                           ] ;
                                            skos:prefLabel "QuantumEspressoSimulation"@en ;
                                            emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A generic DFT simulation using the plane-wave code Quantum Espresso."@en .
 
@@ -104,7 +109,12 @@
 ###  http://open-model.eu/ontologies/ss1#EMMO_3d1e08c2_f22d_4cae_a4c9_af34a1f5bf88
 :EMMO_3d1e08c2_f22d_4cae_a4c9_af34a1f5bf88 rdf:type owl:Class ;
                                            rdfs:subClassOf :EMMO_1333132a_0d66_4619_92fc_4d50add1eaf5 ,
-                                                           emmo:EMMO_e97af6ec_4371_4bbc_8936_34b76e33302f ;
+                                                           emmo:EMMO_e97af6ec_4371_4bbc_8936_34b76e33302f ,
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty emmo:EMMO_ae2d1a96_bfa1_409a_a7d2_03d69e8a125a ;
+                                                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                             owl:onClass <http://open-model.eu/domain/simulationsoftware#Ginestra>
+                                                           ] ;
                                            skos:prefLabel "GinestraSimulation"@en ;
                                            emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A generic simulation of a macroscopic device using the Ginestra software."@en .
 
@@ -132,7 +142,27 @@
 
 ###  http://open-model.eu/ontologies/ss1#EMMO_a0945c5e_2f4d_4787_afdb_ca59661f3d28
 :EMMO_a0945c5e_2f4d_4787_afdb_ca59661f3d28 rdf:type owl:Class ;
-                                           rdfs:subClassOf :EMMO_3d1e08c2_f22d_4cae_a4c9_af34a1f5bf88 ;
+                                           rdfs:subClassOf :EMMO_3d1e08c2_f22d_4cae_a4c9_af34a1f5bf88 ,
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty emmo:EMMO_36e69413_8c59_4799_946c_10b05d266e22 ;
+                                                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                             owl:onClass :EMMO_1a7e31bc_2e42_4256_baa8_46f869bdc83d
+                                                           ] ,
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty emmo:EMMO_36e69413_8c59_4799_946c_10b05d266e22 ;
+                                                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                             owl:onClass :EMMO_4e025209_1428_4df6_b374_8bf2a5670669
+                                                           ] ,
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty emmo:EMMO_36e69413_8c59_4799_946c_10b05d266e22 ;
+                                                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                             owl:onClass :EMMO_dc6e6dda_8ed5_48ef_a2f3_e07ab8acd2ce
+                                                           ] ,
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty emmo:EMMO_c4bace1d_4db0_4cd3_87e9_18122bae2840 ;
+                                                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                             owl:onClass :EMMO_0bcec776_5b9f_4074_873a_37fa3fd1c1e1
+                                                           ] ;
                                            skos:prefLabel "GinestraDeviceSimulation"@en .
 
 
@@ -237,6 +267,12 @@ foaf:Person rdf:type owl:Class .
 #    Individuals
 #################################################################
 
+###  http://open-model.eu/ontologies/ss1#quantumespresso_acc
+:quantumespresso_acc rdf:type owl:NamedIndividual ,
+                              kpa:OrdinalAccuracy ;
+                     kpa:KPAValue "high" .
+
+
 ###  https://orcid.org/0000-0001-7815-6636
 <https://orcid.org/0000-0001-7815-6636> rdf:type foaf:Person ;
                                         rdfs:comment "" ;
@@ -245,4 +281,4 @@ foaf:Person rdf:type owl:Class .
                                         foaf:name "Otello Maria Roscioni" .
 
 
-###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi
+###  Generated by the OWL API (version 4.5.25.2023-02-15T19:15:49Z) https://github.com/owlcs/owlapi
