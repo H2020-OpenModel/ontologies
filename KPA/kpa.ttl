@@ -11,6 +11,7 @@
                                      owl:versionIRI <http://open-model.eu/ontoflow/0.1/kpa> ;
                                      owl:imports <https://w3id.org/emmo/1.0.0-rc1/multiperspective/symbolic> ,
                                                  <https://w3id.org/emmo/1.0.0-rc1/disciplines/models> ,
+                                                 <https://w3id.org/emmo/1.0.0-rc1/disciplines/units/siunits> ,
                                                  <https://w3id.org/emmo/1.0.0-rc1/mereocausality/mereocausality> ,
                                                  <https://w3id.org/emmo/1.0.0-rc1/disciplines/metrology> ,
                                                  <https://w3id.org/emmo/1.0.0-rc1/perspectives/structural> ,
