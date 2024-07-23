@@ -25,40 +25,12 @@
                                             owl:versionInfo "1.0"@en .
 
 #################################################################
-#    Classes
-#################################################################
-
-###  http://open-model.eu/ontologies/ss1-abox#AmorphousSilicon
-:AmorphousSilicon rdf:type owl:Class .
-
-
-###  http://open-model.eu/ontologies/ss1-abox#CrystalSilicon
-:CrystalSilicon rdf:type owl:Class .
-
-
-###  http://open-model.eu/ontologies/ss1-abox#GSetup
-:GSetup rdf:type owl:Class .
-
-
-###  http://open-model.eu/ontologies/ss1-abox#QuantumEspressoBS
-:QuantumEspressoBS rdf:type owl:Class .
-
-
-###  http://open-model.eu/ontologies/ss1-abox#QuantumEspressoOpt
-:QuantumEspressoOpt rdf:type owl:Class .
-
-
-###  http://open-model.eu/ontologies/ss1-abox#StructureInitialGuess
-:StructureInitialGuess rdf:type owl:Class .
-
-
-#################################################################
 #    Individuals
 #################################################################
 
 ###  http://open-model.eu/ontologies/ss1-abox#ASilicon
 :ASilicon rdf:type owl:NamedIndividual ,
-                   :AmorphousSilicon ;
+                   ss1-tbox:AmorphousSilicon ;
           skos:prefLabel "ASilicon" .
 
 
@@ -86,7 +58,7 @@ This item could point to (or be connected with) a YAML file containing a templat
 
 ###  http://open-model.eu/ontologies/ss1-abox#GinestraSetup
 :GinestraSetup rdf:type owl:NamedIndividual ,
-                        :GSetup ;
+                        ss1-tbox:GSetup ;
                kpa:hasKPA :GinestraSetup_accuracy ,
                           :GinestraSetup_simulationtime ;
                skos:prefLabel "GinestraSetup" ;
@@ -114,12 +86,12 @@ This item could point to (or be connected with) a YAML file containing a templat
 :MOSFET rdf:type owl:NamedIndividual ,
                  ss1-tbox:GDevice ;
         emmo:EMMO_9380ab64_0363_4804_b13f_3a8a94119a76 :Silicon ;
-        skos:prefLabel "GDevice" .
+        skos:prefLabel "MOSFET" .
 
 
 ###  http://open-model.eu/ontologies/ss1-abox#QEBands01
 :QEBands01 rdf:type owl:NamedIndividual ,
-                    :QuantumEspressoBS ;
+                    ss1-tbox:QuantumEspressoBS ;
            kpa:hasKPA :QEBands01_accuracy ,
                       :QEBands01_simulationtime ;
            skos:prefLabel "QEBands01" .
@@ -141,7 +113,7 @@ This item could point to (or be connected with) a YAML file containing a templat
 
 ###  http://open-model.eu/ontologies/ss1-abox#QEGeometryOpt01
 :QEGeometryOpt01 rdf:type owl:NamedIndividual ,
-                          :QuantumEspressoOpt ;
+                          ss1-tbox:QuantumEspressoOpt ;
                  kpa:hasKPA :QEGeometryOpt01_accuracy ,
                             :QEGeometryOpt01_simulationtime ;
                  skos:prefLabel "QEGeometryOpt01" .
@@ -179,14 +151,14 @@ This item could point to (or be connected with) a YAML file containing a templat
 
 ###  http://open-model.eu/ontologies/ss1-abox#Silicon
 :Silicon rdf:type owl:NamedIndividual ,
-                  :CrystalSilicon ;
+                  ss1-tbox:CrystalSilicon ;
          emmo:EMMO_e1097637_70d2_4895_973f_2396f04fa204 <http://open-model.eu/ontologies/ss1-abox-abox#SiliconExperimentalStructure> ;
          skos:prefLabel "Silicon" .
 
 
 ###  http://open-model.eu/ontologies/ss1-abox-abox#SiliconExperimentalStructure
 <http://open-model.eu/ontologies/ss1-abox-abox#SiliconExperimentalStructure> rdf:type owl:NamedIndividual ,
-                                                                                      :StructureInitialGuess ;
+                                                                                      ss1-tbox:StructureInitialGuess ;
                                                                              skos:prefLabel "SiliconExperimentalStructure"@en .
 
 

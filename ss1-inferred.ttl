@@ -1,10 +1,10 @@
-@prefix : <http://open-model.eu/ontologies/ss1-inferred#> .
+@prefix : <http://open-model.eu/ontologies/ss1#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@base <http://open-model.eu/ontologies/ss1-inferred> .
+@base <http://open-model.eu/ontologies/ss1#> .
 
 <http://open-model.eu/ontologies/ss1-inferred> rdf:type owl:Ontology ;
                                                 <http://purl.org/dc/terms/abstract> ""@en ,
@@ -389,7 +389,8 @@ rdf:JSON rdf:type rdfs:Datatype .
 
 
 ###  http://www.w3.org/2002/07/owl#topObjectProperty
-owl:topObjectProperty rdf:type owl:SymmetricProperty ,
+owl:topObjectProperty rdf:type owl:ObjectProperty ,
+                               owl:SymmetricProperty ,
                                owl:TransitiveProperty ,
                                owl:ReflexiveProperty .
 
@@ -2237,324 +2238,324 @@ https://doi.org/10.1021/ja00214a001."""@en ;
 
 
 ###  http://open-model.eu/ontologies/ss1#AmorphousSilicon
-<http://open-model.eu/ontologies/ss1#AmorphousSilicon> rdf:type owl:Class ;
-                                                       rdfs:subClassOf <https://w3id.org/emmo#EMMO_0afc19b0_2d43_4b3d_8da0_9ffb63bc1492> ;
-                                                       <http://www.w3.org/2004/02/skos/core#prefLabel> "AmorphousSilicon" ;
-                                                       <https://w3id.org/emmo#EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9> "Elemental silicon in its amorphous form."@en .
+:AmorphousSilicon rdf:type owl:Class ;
+                  rdfs:subClassOf <https://w3id.org/emmo#EMMO_0afc19b0_2d43_4b3d_8da0_9ffb63bc1492> ;
+                  <http://www.w3.org/2004/02/skos/core#prefLabel> "AmorphousSilicon" ;
+                  <https://w3id.org/emmo#EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9> "Elemental silicon in its amorphous form."@en .
 
 
 ###  http://open-model.eu/ontologies/ss1#BandGap
-<http://open-model.eu/ontologies/ss1#BandGap> rdf:type owl:Class ;
-                                              rdfs:subClassOf <http://open-model.eu/ontologies/ss1#GinestraDS> ,
-                                                              <https://w3id.org/emmo#EMMO_69164f9e_c75d_4fbc_a0f8_af7a81bbd128> ,
-                                                              <https://w3id.org/emmo#EMMO_e7aac247_31d6_4b2e_9fd2_e842b1b7ccac> ,
-                                                              [ rdf:type owl:Restriction ;
-                                                                owl:onProperty <https://w3id.org/emmo#EMMO_dc57d998_23db_4d8e_b2cd_f346b195b846> ;
-                                                                owl:someValuesFrom <https://w3id.org/emmo#EMMO_6eca09be_17e9_445e_abc9_000aa61b7a11>
-                                                              ] ,
-                                                              [ rdf:type owl:Restriction ;
-                                                                owl:onProperty [ owl:inverseOf <https://w3id.org/emmo#EMMO_e1097637_70d2_4895_973f_2396f04fa204>
-                                                                               ] ;
-                                                                owl:someValuesFrom <https://w3id.org/emmo#EMMO_4207e895_8b83_4318_996a_72cfb32acd94>
-                                                              ] ;
-                                              <http://www.w3.org/2004/02/skos/core#prefLabel> "BandGap"@en ;
-                                              <https://w3id.org/emmo#elucidation> "The band gap of a semiconductor."@en .
+:BandGap rdf:type owl:Class ;
+         rdfs:subClassOf :GinestraDS ,
+                         <https://w3id.org/emmo#EMMO_69164f9e_c75d_4fbc_a0f8_af7a81bbd128> ,
+                         <https://w3id.org/emmo#EMMO_e7aac247_31d6_4b2e_9fd2_e842b1b7ccac> ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty <https://w3id.org/emmo#EMMO_dc57d998_23db_4d8e_b2cd_f346b195b846> ;
+                           owl:someValuesFrom <https://w3id.org/emmo#EMMO_6eca09be_17e9_445e_abc9_000aa61b7a11>
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty [ owl:inverseOf <https://w3id.org/emmo#EMMO_e1097637_70d2_4895_973f_2396f04fa204>
+                                          ] ;
+                           owl:someValuesFrom <https://w3id.org/emmo#EMMO_4207e895_8b83_4318_996a_72cfb32acd94>
+                         ] ;
+         <http://www.w3.org/2004/02/skos/core#prefLabel> "BandGap"@en ;
+         <https://w3id.org/emmo#elucidation> "The band gap of a semiconductor."@en .
 
 
 ###  http://open-model.eu/ontologies/ss1#CrystalSilicon
-<http://open-model.eu/ontologies/ss1#CrystalSilicon> rdf:type owl:Class ;
-                                                     rdfs:subClassOf <https://w3id.org/emmo#EMMO_f1025834_0cd2_42a1_bfeb_13bec41c8655> ;
-                                                     <http://www.w3.org/2004/02/skos/core#prefLabel> "CrystalSilicon" ;
-                                                     <https://w3id.org/emmo#EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9> "Elemental silicon in its crystalline form." .
+:CrystalSilicon rdf:type owl:Class ;
+                rdfs:subClassOf <https://w3id.org/emmo#EMMO_f1025834_0cd2_42a1_bfeb_13bec41c8655> ;
+                <http://www.w3.org/2004/02/skos/core#prefLabel> "CrystalSilicon" ;
+                <https://w3id.org/emmo#EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9> "Elemental silicon in its crystalline form." .
 
 
 ###  http://open-model.eu/ontologies/ss1#DeviceFlowCurrent
-<http://open-model.eu/ontologies/ss1#DeviceFlowCurrent> rdf:type owl:Class ;
-                                                        rdfs:subClassOf <http://open-model.eu/ontologies/ss1#GinestraDS> ,
-                                                                        <https://w3id.org/emmo#EMMO_c995ae70_3b84_4ebb_bcfc_69e6a281bb88> ,
-                                                                        [ rdf:type owl:Restriction ;
-                                                                          owl:onProperty [ owl:inverseOf <https://w3id.org/emmo#EMMO_e1097637_70d2_4895_973f_2396f04fa204>
-                                                                                         ] ;
-                                                                          owl:someValuesFrom <https://w3id.org/emmo#EMMO_494b372c_cfdf_47d3_a4de_5e037c540de8>
-                                                                        ] ;
-                                                        <http://www.w3.org/2004/02/skos/core#prefLabel> "DeviceFlowCurrent"@en ;
-                                                        <https://w3id.org/emmo#elucidation> "The current–voltage (I-V) curve of a MOSFET device, computed with Ginestra. The I-V curve shows the electric current through a circuit as a function of the voltage applied to the drain."@en .
+:DeviceFlowCurrent rdf:type owl:Class ;
+                   rdfs:subClassOf :GinestraDS ,
+                                   <https://w3id.org/emmo#EMMO_c995ae70_3b84_4ebb_bcfc_69e6a281bb88> ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty [ owl:inverseOf <https://w3id.org/emmo#EMMO_e1097637_70d2_4895_973f_2396f04fa204>
+                                                    ] ;
+                                     owl:someValuesFrom <https://w3id.org/emmo#EMMO_494b372c_cfdf_47d3_a4de_5e037c540de8>
+                                   ] ;
+                   <http://www.w3.org/2004/02/skos/core#prefLabel> "DeviceFlowCurrent"@en ;
+                   <https://w3id.org/emmo#elucidation> "The current–voltage (I-V) curve of a MOSFET device, computed with Ginestra. The I-V curve shows the electric current through a circuit as a function of the voltage applied to the drain."@en .
 
 
 ###  http://open-model.eu/ontologies/ss1#GDevice
-<http://open-model.eu/ontologies/ss1#GDevice> rdf:type owl:Class ;
-                                              rdfs:subClassOf <http://open-model.eu/ontologies/ss1#GinestraDS> ,
-                                                              <https://w3id.org/emmo#EMMO_494b372c_cfdf_47d3_a4de_5e037c540de8> ,
-                                                              [ rdf:type owl:Restriction ;
-                                                                owl:onProperty <https://w3id.org/emmo#EMMO_9380ab64_0363_4804_b13f_3a8a94119a76> ;
-                                                                owl:someValuesFrom <https://w3id.org/emmo#EMMO_4207e895_8b83_4318_996a_72cfb32acd94>
-                                                              ] ;
-                                              <http://www.w3.org/2004/02/skos/core#prefLabel> "GDevice"@en ;
-                                              <https://w3id.org/emmo#elucidation> "A dataset with the input geometry and composition of a device, to be executed with Ginestra."@en .
+:GDevice rdf:type owl:Class ;
+         rdfs:subClassOf :GinestraDS ,
+                         <https://w3id.org/emmo#EMMO_494b372c_cfdf_47d3_a4de_5e037c540de8> ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty <https://w3id.org/emmo#EMMO_9380ab64_0363_4804_b13f_3a8a94119a76> ;
+                           owl:someValuesFrom <https://w3id.org/emmo#EMMO_4207e895_8b83_4318_996a_72cfb32acd94>
+                         ] ;
+         <http://www.w3.org/2004/02/skos/core#prefLabel> "GDevice"@en ;
+         <https://w3id.org/emmo#elucidation> "A dataset with the input geometry and composition of a device, to be executed with Ginestra."@en .
 
 
 ###  http://open-model.eu/ontologies/ss1#GSetup
-<http://open-model.eu/ontologies/ss1#GSetup> rdf:type owl:Class ;
-                                             rdfs:subClassOf <http://open-model.eu/ontologies/ss1#GinestraDS> ;
-                                             <http://www.w3.org/2004/02/skos/core#prefLabel> "GSetup"@en ;
-                                             <https://w3id.org/emmo#elucidation> "A dataset required by Ginestra to start a calculation, including the path of the executable, the license file, and the path of output files."@en .
+:GSetup rdf:type owl:Class ;
+        rdfs:subClassOf :GinestraDS ;
+        <http://www.w3.org/2004/02/skos/core#prefLabel> "GSetup"@en ;
+        <https://w3id.org/emmo#elucidation> "A dataset required by Ginestra to start a calculation, including the path of the executable, the license file, and the path of output files."@en .
 
 
 ###  http://open-model.eu/ontologies/ss1#GinestraDS
-<http://open-model.eu/ontologies/ss1#GinestraDS> rdf:type owl:Class ;
-                                                 rdfs:subClassOf <http://open-model.eu/ontologies/ss1#SS1Datasets> ;
-                                                 <http://www.w3.org/2004/02/skos/core#prefLabel> "GinestraDS"@en ;
-                                                 <https://w3id.org/emmo#elucidation> "An input dataset for Ginestra \"Black Box\", which is a CLI version of the regular desktop application."@en .
+:GinestraDS rdf:type owl:Class ;
+            rdfs:subClassOf :SS1Datasets ;
+            <http://www.w3.org/2004/02/skos/core#prefLabel> "GinestraDS"@en ;
+            <https://w3id.org/emmo#elucidation> "An input dataset for Ginestra \"Black Box\", which is a CLI version of the regular desktop application."@en .
 
 
 ###  http://open-model.eu/ontologies/ss1#GinestraDeviceSimulation
-<http://open-model.eu/ontologies/ss1#GinestraDeviceSimulation> rdf:type owl:Class ;
-                                                               rdfs:subClassOf <http://open-model.eu/ontologies/ss1#GinestraSimulation> ,
-                                                                               [ rdf:type owl:Restriction ;
-                                                                                 owl:onProperty <https://w3id.org/emmo#EMMO_36e69413_8c59_4799_946c_10b05d266e22> ;
-                                                                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                                                 owl:onClass <http://open-model.eu/ontologies/ss1#BandGap>
-                                                                               ] ,
-                                                                               [ rdf:type owl:Restriction ;
-                                                                                 owl:onProperty <https://w3id.org/emmo#EMMO_36e69413_8c59_4799_946c_10b05d266e22> ;
-                                                                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                                                 owl:onClass <http://open-model.eu/ontologies/ss1#GDevice>
-                                                                               ] ,
-                                                                               [ rdf:type owl:Restriction ;
-                                                                                 owl:onProperty <https://w3id.org/emmo#EMMO_36e69413_8c59_4799_946c_10b05d266e22> ;
-                                                                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                                                 owl:onClass <http://open-model.eu/ontologies/ss1#GSetup>
-                                                                               ] ,
-                                                                               [ rdf:type owl:Restriction ;
-                                                                                 owl:onProperty <https://w3id.org/emmo#EMMO_c4bace1d_4db0_4cd3_87e9_18122bae2840> ;
-                                                                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                                                 owl:onClass <http://open-model.eu/ontologies/ss1#DeviceFlowCurrent>
-                                                                               ] ;
-                                                               <http://www.w3.org/2004/02/skos/core#prefLabel> "GinestraDeviceSimulation"@en .
+:GinestraDeviceSimulation rdf:type owl:Class ;
+                          rdfs:subClassOf :GinestraSimulation ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty <https://w3id.org/emmo#EMMO_36e69413_8c59_4799_946c_10b05d266e22> ;
+                                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                            owl:onClass :BandGap
+                                          ] ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty <https://w3id.org/emmo#EMMO_36e69413_8c59_4799_946c_10b05d266e22> ;
+                                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                            owl:onClass :GDevice
+                                          ] ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty <https://w3id.org/emmo#EMMO_36e69413_8c59_4799_946c_10b05d266e22> ;
+                                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                            owl:onClass :GSetup
+                                          ] ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty <https://w3id.org/emmo#EMMO_c4bace1d_4db0_4cd3_87e9_18122bae2840> ;
+                                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                            owl:onClass :DeviceFlowCurrent
+                                          ] ;
+                          <http://www.w3.org/2004/02/skos/core#prefLabel> "GinestraDeviceSimulation"@en .
 
 
 ###  http://open-model.eu/ontologies/ss1#GinestraSimulation
-<http://open-model.eu/ontologies/ss1#GinestraSimulation> rdf:type owl:Class ;
-                                                         rdfs:subClassOf <http://open-model.eu/ontologies/ss1#SS1SynapticElectronics> ,
-                                                                         <https://w3id.org/emmo#EMMO_e97af6ec_4371_4bbc_8936_34b76e33302f> ,
-                                                                         [ rdf:type owl:Restriction ;
-                                                                           owl:onProperty <https://w3id.org/emmo#EMMO_ae2d1a96_bfa1_409a_a7d2_03d69e8a125a> ;
-                                                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                                           owl:onClass <http://open-model.eu/domain/simulationsoftware#Ginestra>
-                                                                         ] ;
-                                                         <http://www.w3.org/2004/02/skos/core#prefLabel> "GinestraSimulation"@en ;
-                                                         <https://w3id.org/emmo#elucidation> "A generic simulation of a macroscopic device using the Ginestra software."@en .
+:GinestraSimulation rdf:type owl:Class ;
+                    rdfs:subClassOf :SS1SynapticElectronics ,
+                                    <https://w3id.org/emmo#EMMO_e97af6ec_4371_4bbc_8936_34b76e33302f> ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty <https://w3id.org/emmo#EMMO_ae2d1a96_bfa1_409a_a7d2_03d69e8a125a> ;
+                                      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                      owl:onClass <http://open-model.eu/domain/simulationsoftware#Ginestra>
+                                    ] ;
+                    <http://www.w3.org/2004/02/skos/core#prefLabel> "GinestraSimulation"@en ;
+                    <https://w3id.org/emmo#elucidation> "A generic simulation of a macroscopic device using the Ginestra software."@en .
 
 
 ###  http://open-model.eu/ontologies/ss1#Graphene
-<http://open-model.eu/ontologies/ss1#Graphene> rdf:type owl:Class ;
-                                               rdfs:subClassOf <https://w3id.org/emmo#EMMO_f1025834_0cd2_42a1_bfeb_13bec41c8655> ;
-                                               <http://www.w3.org/2004/02/skos/core#prefLabel> "Graphene" ;
-                                               <https://w3id.org/emmo#EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9> "One of the many allotropes of carbon, characterized by a zero band gap."@en .
+:Graphene rdf:type owl:Class ;
+          rdfs:subClassOf <https://w3id.org/emmo#EMMO_f1025834_0cd2_42a1_bfeb_13bec41c8655> ;
+          <http://www.w3.org/2004/02/skos/core#prefLabel> "Graphene" ;
+          <https://w3id.org/emmo#EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9> "One of the many allotropes of carbon, characterized by a zero band gap."@en .
 
 
 ###  http://open-model.eu/ontologies/ss1#QEBandStructureCalculation
-<http://open-model.eu/ontologies/ss1#QEBandStructureCalculation> rdf:type owl:Class ;
-                                                                 rdfs:subClassOf <http://open-model.eu/ontologies/ss1#QuantumEspressoDS> ;
-                                                                 <http://www.w3.org/2004/02/skos/core#prefLabel> "QEBandStructureCalculation"@en ;
-                                                                 <https://w3id.org/emmo#elucidation> "A dataset for carrying out a band-structure calculation with Quantum Espresso."@en .
+:QEBandStructureCalculation rdf:type owl:Class ;
+                            rdfs:subClassOf :QuantumEspressoDS ;
+                            <http://www.w3.org/2004/02/skos/core#prefLabel> "QEBandStructureCalculation"@en ;
+                            <https://w3id.org/emmo#elucidation> "A dataset for carrying out a band-structure calculation with Quantum Espresso."@en .
 
 
 ###  http://open-model.eu/ontologies/ss1#QEBands
-<http://open-model.eu/ontologies/ss1#QEBands> rdf:type owl:Class ;
-                                              rdfs:subClassOf <http://open-model.eu/ontologies/ss1#QuantumEspressoDS> ,
-                                                              <https://w3id.org/emmo#EMMO_40a1d85c_bcfe_48aa_89a2_79e8a8c82af1> ,
-                                                              <https://w3id.org/emmo#EMMO_e7aac247_31d6_4b2e_9fd2_e842b1b7ccac> ,
-                                                              [ rdf:type owl:Restriction ;
-                                                                owl:onProperty <https://w3id.org/emmo#EMMO_dc57d998_23db_4d8e_b2cd_f346b195b846> ;
-                                                                owl:someValuesFrom <https://w3id.org/emmo#EMMO_6eca09be_17e9_445e_abc9_000aa61b7a11>
-                                                              ] ,
-                                                              [ rdf:type owl:Restriction ;
-                                                                owl:onProperty [ owl:inverseOf <https://w3id.org/emmo#EMMO_e1097637_70d2_4895_973f_2396f04fa204>
-                                                                               ] ;
-                                                                owl:someValuesFrom <https://w3id.org/emmo#EMMO_4207e895_8b83_4318_996a_72cfb32acd94>
-                                                              ] ;
-                                              <http://www.w3.org/2004/02/skos/core#prefLabel> "QEBands"@en .
+:QEBands rdf:type owl:Class ;
+         rdfs:subClassOf :QuantumEspressoDS ,
+                         <https://w3id.org/emmo#EMMO_40a1d85c_bcfe_48aa_89a2_79e8a8c82af1> ,
+                         <https://w3id.org/emmo#EMMO_e7aac247_31d6_4b2e_9fd2_e842b1b7ccac> ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty <https://w3id.org/emmo#EMMO_dc57d998_23db_4d8e_b2cd_f346b195b846> ;
+                           owl:someValuesFrom <https://w3id.org/emmo#EMMO_6eca09be_17e9_445e_abc9_000aa61b7a11>
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty [ owl:inverseOf <https://w3id.org/emmo#EMMO_e1097637_70d2_4895_973f_2396f04fa204>
+                                          ] ;
+                           owl:someValuesFrom <https://w3id.org/emmo#EMMO_4207e895_8b83_4318_996a_72cfb32acd94>
+                         ] ;
+         <http://www.w3.org/2004/02/skos/core#prefLabel> "QEBands"@en .
 
 
 ###  http://open-model.eu/ontologies/ss1#QEGeometryOptimisation
-<http://open-model.eu/ontologies/ss1#QEGeometryOptimisation> rdf:type owl:Class ;
-                                                             rdfs:subClassOf <http://open-model.eu/ontologies/ss1#QuantumEspressoDS> ;
-                                                             <http://www.w3.org/2004/02/skos/core#prefLabel> "QEGeometryOptimisation"@en ;
-                                                             <https://w3id.org/emmo#elucidation> "A dataset for a geometry optimisation (cell + atomic coordinates) performed with QuantumEspresso ."@en .
+:QEGeometryOptimisation rdf:type owl:Class ;
+                        rdfs:subClassOf :QuantumEspressoDS ;
+                        <http://www.w3.org/2004/02/skos/core#prefLabel> "QEGeometryOptimisation"@en ;
+                        <https://w3id.org/emmo#elucidation> "A dataset for a geometry optimisation (cell + atomic coordinates) performed with QuantumEspresso ."@en .
 
 
 ###  http://open-model.eu/ontologies/ss1#QEOptimisedGeometry
-<http://open-model.eu/ontologies/ss1#QEOptimisedGeometry> rdf:type owl:Class ;
-                                                          rdfs:subClassOf <http://open-model.eu/ontologies/ss1#QuantumEspressoDS> ,
-                                                                          <https://w3id.org/emmo#EMMO_8944581c_64da_46a9_be29_7074f7cc8098> ,
-                                                                          <https://w3id.org/emmo#EMMO_b7bcff25_ffc3_474e_9ab5_01b1664bd4ba> ,
-                                                                          <https://w3id.org/emmo#EMMO_e7aac247_31d6_4b2e_9fd2_e842b1b7ccac> ,
-                                                                          [ rdf:type owl:Restriction ;
-                                                                            owl:onProperty <https://w3id.org/emmo#EMMO_dc57d998_23db_4d8e_b2cd_f346b195b846> ;
-                                                                            owl:someValuesFrom <https://w3id.org/emmo#EMMO_6eca09be_17e9_445e_abc9_000aa61b7a11>
-                                                                          ] ,
-                                                                          [ rdf:type owl:Restriction ;
-                                                                            owl:onProperty [ owl:inverseOf <https://w3id.org/emmo#EMMO_e1097637_70d2_4895_973f_2396f04fa204>
-                                                                                           ] ;
-                                                                            owl:someValuesFrom <https://w3id.org/emmo#EMMO_4207e895_8b83_4318_996a_72cfb32acd94>
-                                                                          ] ;
-                                                          <http://www.w3.org/2004/02/skos/core#prefLabel> "QEOptimisedGeometry"@en ;
-                                                          <https://w3id.org/emmo#elucidation> "The relaxed geometry obtained after a geomerical optimisation carried out with Quantum Espresso."@en .
+:QEOptimisedGeometry rdf:type owl:Class ;
+                     rdfs:subClassOf :QuantumEspressoDS ,
+                                     <https://w3id.org/emmo#EMMO_8944581c_64da_46a9_be29_7074f7cc8098> ,
+                                     <https://w3id.org/emmo#EMMO_b7bcff25_ffc3_474e_9ab5_01b1664bd4ba> ,
+                                     <https://w3id.org/emmo#EMMO_e7aac247_31d6_4b2e_9fd2_e842b1b7ccac> ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty <https://w3id.org/emmo#EMMO_dc57d998_23db_4d8e_b2cd_f346b195b846> ;
+                                       owl:someValuesFrom <https://w3id.org/emmo#EMMO_6eca09be_17e9_445e_abc9_000aa61b7a11>
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty [ owl:inverseOf <https://w3id.org/emmo#EMMO_e1097637_70d2_4895_973f_2396f04fa204>
+                                                      ] ;
+                                       owl:someValuesFrom <https://w3id.org/emmo#EMMO_4207e895_8b83_4318_996a_72cfb32acd94>
+                                     ] ;
+                     <http://www.w3.org/2004/02/skos/core#prefLabel> "QEOptimisedGeometry"@en ;
+                     <https://w3id.org/emmo#elucidation> "The relaxed geometry obtained after a geomerical optimisation carried out with Quantum Espresso."@en .
 
 
 ###  http://open-model.eu/ontologies/ss1#QEPostprocessingBS
-<http://open-model.eu/ontologies/ss1#QEPostprocessingBS> rdf:type owl:Class ;
-                                                         rdfs:subClassOf <https://w3id.org/emmo#EMMO_1c7f2dfe_0db4_4bf6_a0f6_853054a34ead> ,
-                                                                         [ rdf:type owl:Restriction ;
-                                                                           owl:onProperty <https://w3id.org/emmo#EMMO_36e69413_8c59_4799_946c_10b05d266e22> ;
-                                                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                                           owl:onClass <http://open-model.eu/ontologies/ss1#QEBands>
-                                                                         ] ,
-                                                                         [ rdf:type owl:Restriction ;
-                                                                           owl:onProperty <https://w3id.org/emmo#EMMO_c4bace1d_4db0_4cd3_87e9_18122bae2840> ;
-                                                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                                           owl:onClass <http://open-model.eu/ontologies/ss1#BandGap>
-                                                                         ] ;
-                                                         <http://www.w3.org/2004/02/skos/core#prefLabel> "QEPostprocessingBS"@en ;
-                                                         <https://w3id.org/emmo#elucidation> "A postprocessing computation returning the band gap of a solid starting from its band structure."@en .
+:QEPostprocessingBS rdf:type owl:Class ;
+                    rdfs:subClassOf <https://w3id.org/emmo#EMMO_1c7f2dfe_0db4_4bf6_a0f6_853054a34ead> ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty <https://w3id.org/emmo#EMMO_36e69413_8c59_4799_946c_10b05d266e22> ;
+                                      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                      owl:onClass :QEBands
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty <https://w3id.org/emmo#EMMO_c4bace1d_4db0_4cd3_87e9_18122bae2840> ;
+                                      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                      owl:onClass :BandGap
+                                    ] ;
+                    <http://www.w3.org/2004/02/skos/core#prefLabel> "QEPostprocessingBS"@en ;
+                    <https://w3id.org/emmo#elucidation> "A postprocessing computation returning the band gap of a solid starting from its band structure."@en .
 
 
 ###  http://open-model.eu/ontologies/ss1#QESinglePoint
-<http://open-model.eu/ontologies/ss1#QESinglePoint> rdf:type owl:Class ;
-                                                    rdfs:subClassOf <http://open-model.eu/ontologies/ss1#QuantumEspressoDS> ;
-                                                    <http://www.w3.org/2004/02/skos/core#prefLabel> "QESinglePoint"@en ;
-                                                    <https://w3id.org/emmo#elucidation> "A core dataset for a QuantumEspresso calculation  specifying the level of theory, input geometry, and numerical parameters used in the calculation."@en .
+:QESinglePoint rdf:type owl:Class ;
+               rdfs:subClassOf :QuantumEspressoDS ;
+               <http://www.w3.org/2004/02/skos/core#prefLabel> "QESinglePoint"@en ;
+               <https://w3id.org/emmo#elucidation> "A core dataset for a QuantumEspresso calculation  specifying the level of theory, input geometry, and numerical parameters used in the calculation."@en .
 
 
 ###  http://open-model.eu/ontologies/ss1#QEWavefunction
-<http://open-model.eu/ontologies/ss1#QEWavefunction> rdf:type owl:Class ;
-                                                     rdfs:subClassOf <http://open-model.eu/ontologies/ss1#QuantumEspressoDS> ,
-                                                                     <https://w3id.org/emmo#EMMO_b7bcff25_ffc3_474e_9ab5_01b1664bd4ba> ,
-                                                                     <https://w3id.org/emmo#EMMO_e7aac247_31d6_4b2e_9fd2_e842b1b7ccac> ,
-                                                                     [ rdf:type owl:Restriction ;
-                                                                       owl:onProperty <https://w3id.org/emmo#EMMO_dc57d998_23db_4d8e_b2cd_f346b195b846> ;
-                                                                       owl:someValuesFrom <https://w3id.org/emmo#EMMO_6eca09be_17e9_445e_abc9_000aa61b7a11>
-                                                                     ] ,
-                                                                     [ rdf:type owl:Restriction ;
-                                                                       owl:onProperty [ owl:inverseOf <https://w3id.org/emmo#EMMO_e1097637_70d2_4895_973f_2396f04fa204>
-                                                                                      ] ;
-                                                                       owl:someValuesFrom <https://w3id.org/emmo#EMMO_4207e895_8b83_4318_996a_72cfb32acd94>
-                                                                     ] ;
-                                                     <http://www.w3.org/2004/02/skos/core#prefLabel> "QEWavefunction"@en ;
-                                                     <https://w3id.org/emmo#elucidation> "The self-consistent wavefunction obtained at the end of a Quantum Espresso calculation."@en .
+:QEWavefunction rdf:type owl:Class ;
+                rdfs:subClassOf :QuantumEspressoDS ,
+                                <https://w3id.org/emmo#EMMO_b7bcff25_ffc3_474e_9ab5_01b1664bd4ba> ,
+                                <https://w3id.org/emmo#EMMO_e7aac247_31d6_4b2e_9fd2_e842b1b7ccac> ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty <https://w3id.org/emmo#EMMO_dc57d998_23db_4d8e_b2cd_f346b195b846> ;
+                                  owl:someValuesFrom <https://w3id.org/emmo#EMMO_6eca09be_17e9_445e_abc9_000aa61b7a11>
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty [ owl:inverseOf <https://w3id.org/emmo#EMMO_e1097637_70d2_4895_973f_2396f04fa204>
+                                                 ] ;
+                                  owl:someValuesFrom <https://w3id.org/emmo#EMMO_4207e895_8b83_4318_996a_72cfb32acd94>
+                                ] ;
+                <http://www.w3.org/2004/02/skos/core#prefLabel> "QEWavefunction"@en ;
+                <https://w3id.org/emmo#elucidation> "The self-consistent wavefunction obtained at the end of a Quantum Espresso calculation."@en .
 
 
 ###  http://open-model.eu/ontologies/ss1#QuantumEspressoBS
-<http://open-model.eu/ontologies/ss1#QuantumEspressoBS> rdf:type owl:Class ;
-                                                        rdfs:subClassOf <http://open-model.eu/ontologies/ss1#QuantumEspressoSimulation> ,
-                                                                        [ rdf:type owl:Restriction ;
-                                                                          owl:onProperty <https://w3id.org/emmo#EMMO_36e69413_8c59_4799_946c_10b05d266e22> ;
-                                                                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                                          owl:onClass <http://open-model.eu/ontologies/ss1#QEBandStructureCalculation>
-                                                                        ] ,
-                                                                        [ rdf:type owl:Restriction ;
-                                                                          owl:onProperty <https://w3id.org/emmo#EMMO_36e69413_8c59_4799_946c_10b05d266e22> ;
-                                                                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                                          owl:onClass <http://open-model.eu/ontologies/ss1#QEOptimisedGeometry>
-                                                                        ] ,
-                                                                        [ rdf:type owl:Restriction ;
-                                                                          owl:onProperty <https://w3id.org/emmo#EMMO_36e69413_8c59_4799_946c_10b05d266e22> ;
-                                                                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                                          owl:onClass <http://open-model.eu/ontologies/ss1#QEWavefunction>
-                                                                        ] ,
-                                                                        [ rdf:type owl:Restriction ;
-                                                                          owl:onProperty <https://w3id.org/emmo#EMMO_c4bace1d_4db0_4cd3_87e9_18122bae2840> ;
-                                                                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                                          owl:onClass <http://open-model.eu/ontologies/ss1#QEBands>
-                                                                        ] ,
-                                                                        [ rdf:type owl:Restriction ;
-                                                                          owl:onProperty <https://w3id.org/emmo#EMMO_c4bace1d_4db0_4cd3_87e9_18122bae2840> ;
-                                                                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                                          owl:onClass <http://open-model.eu/ontologies/ss1#QEWavefunction>
-                                                                        ] ;
-                                                        <http://www.w3.org/2004/02/skos/core#prefLabel> "QuantumEspressoBS"@en ;
-                                                        <https://w3id.org/emmo#elucidation> "Compute the band structure of a material."@en .
+:QuantumEspressoBS rdf:type owl:Class ;
+                   rdfs:subClassOf :QuantumEspressoSimulation ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty <https://w3id.org/emmo#EMMO_36e69413_8c59_4799_946c_10b05d266e22> ;
+                                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                     owl:onClass :QEBandStructureCalculation
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty <https://w3id.org/emmo#EMMO_36e69413_8c59_4799_946c_10b05d266e22> ;
+                                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                     owl:onClass :QEOptimisedGeometry
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty <https://w3id.org/emmo#EMMO_36e69413_8c59_4799_946c_10b05d266e22> ;
+                                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                     owl:onClass :QEWavefunction
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty <https://w3id.org/emmo#EMMO_c4bace1d_4db0_4cd3_87e9_18122bae2840> ;
+                                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                     owl:onClass :QEBands
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty <https://w3id.org/emmo#EMMO_c4bace1d_4db0_4cd3_87e9_18122bae2840> ;
+                                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                     owl:onClass :QEWavefunction
+                                   ] ;
+                   <http://www.w3.org/2004/02/skos/core#prefLabel> "QuantumEspressoBS"@en ;
+                   <https://w3id.org/emmo#elucidation> "Compute the band structure of a material."@en .
 
 
 ###  http://open-model.eu/ontologies/ss1#QuantumEspressoDS
-<http://open-model.eu/ontologies/ss1#QuantumEspressoDS> rdf:type owl:Class ;
-                                                        rdfs:subClassOf <http://open-model.eu/ontologies/ss1#SS1Datasets> ;
-                                                        <http://www.w3.org/2004/02/skos/core#prefLabel> "QuantumEspressoDS"@en ;
-                                                        <https://w3id.org/emmo#elucidation> "The generic class of input datasets for QuantumEspresso"@en .
+:QuantumEspressoDS rdf:type owl:Class ;
+                   rdfs:subClassOf :SS1Datasets ;
+                   <http://www.w3.org/2004/02/skos/core#prefLabel> "QuantumEspressoDS"@en ;
+                   <https://w3id.org/emmo#elucidation> "The generic class of input datasets for QuantumEspresso"@en .
 
 
 ###  http://open-model.eu/ontologies/ss1#QuantumEspressoOpt
-<http://open-model.eu/ontologies/ss1#QuantumEspressoOpt> rdf:type owl:Class ;
-                                                         rdfs:subClassOf <http://open-model.eu/ontologies/ss1#QuantumEspressoSimulation> ,
-                                                                         [ rdf:type owl:Restriction ;
-                                                                           owl:onProperty <https://w3id.org/emmo#EMMO_36e69413_8c59_4799_946c_10b05d266e22> ;
-                                                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                                           owl:onClass <http://open-model.eu/ontologies/ss1#QEGeometryOptimisation>
-                                                                         ] ,
-                                                                         [ rdf:type owl:Restriction ;
-                                                                           owl:onProperty <https://w3id.org/emmo#EMMO_36e69413_8c59_4799_946c_10b05d266e22> ;
-                                                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                                           owl:onClass <http://open-model.eu/ontologies/ss1#StructureInitialGuess>
-                                                                         ] ,
-                                                                         [ rdf:type owl:Restriction ;
-                                                                           owl:onProperty <https://w3id.org/emmo#EMMO_c4bace1d_4db0_4cd3_87e9_18122bae2840> ;
-                                                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                                           owl:onClass <http://open-model.eu/ontologies/ss1#QEOptimisedGeometry>
-                                                                         ] ,
-                                                                         [ rdf:type owl:Restriction ;
-                                                                           owl:onProperty <https://w3id.org/emmo#EMMO_c4bace1d_4db0_4cd3_87e9_18122bae2840> ;
-                                                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                                           owl:onClass <http://open-model.eu/ontologies/ss1#QEWavefunction>
-                                                                         ] ;
-                                                         <http://www.w3.org/2004/02/skos/core#prefLabel> "QuantumEspressoOpt"@en ;
-                                                         <https://w3id.org/emmo#elucidation> "A geometrical optimisation at the DFT level, suitable for periodic structures such as crystals."@en .
+:QuantumEspressoOpt rdf:type owl:Class ;
+                    rdfs:subClassOf :QuantumEspressoSimulation ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty <https://w3id.org/emmo#EMMO_36e69413_8c59_4799_946c_10b05d266e22> ;
+                                      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                      owl:onClass :QEGeometryOptimisation
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty <https://w3id.org/emmo#EMMO_36e69413_8c59_4799_946c_10b05d266e22> ;
+                                      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                      owl:onClass :StructureInitialGuess
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty <https://w3id.org/emmo#EMMO_c4bace1d_4db0_4cd3_87e9_18122bae2840> ;
+                                      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                      owl:onClass :QEOptimisedGeometry
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty <https://w3id.org/emmo#EMMO_c4bace1d_4db0_4cd3_87e9_18122bae2840> ;
+                                      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                      owl:onClass :QEWavefunction
+                                    ] ;
+                    <http://www.w3.org/2004/02/skos/core#prefLabel> "QuantumEspressoOpt"@en ;
+                    <https://w3id.org/emmo#elucidation> "A geometrical optimisation at the DFT level, suitable for periodic structures such as crystals."@en .
 
 
 ###  http://open-model.eu/ontologies/ss1#QuantumEspressoSimulation
-<http://open-model.eu/ontologies/ss1#QuantumEspressoSimulation> rdf:type owl:Class ;
-                                                                rdfs:subClassOf <http://open-model.eu/ontologies/ss1#SS1SynapticElectronics> ,
-                                                                                <https://w3id.org/emmo#EMMO_e97af6ec_4371_4bbc_8936_34b76e33302f> ,
-                                                                                [ rdf:type owl:Restriction ;
-                                                                                  owl:onProperty <https://w3id.org/emmo#EMMO_ae2d1a96_bfa1_409a_a7d2_03d69e8a125a> ;
-                                                                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                                                  owl:onClass <http://open-model.eu/domain/simulationsoftware#QuantumEspresso>
-                                                                                ] ;
-                                                                <http://www.w3.org/2004/02/skos/core#prefLabel> "QuantumEspressoSimulation"@en ;
-                                                                <https://w3id.org/emmo#elucidation> "A generic DFT simulation using the plane-wave code Quantum Espresso."@en .
+:QuantumEspressoSimulation rdf:type owl:Class ;
+                           rdfs:subClassOf :SS1SynapticElectronics ,
+                                           <https://w3id.org/emmo#EMMO_e97af6ec_4371_4bbc_8936_34b76e33302f> ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty <https://w3id.org/emmo#EMMO_ae2d1a96_bfa1_409a_a7d2_03d69e8a125a> ;
+                                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                             owl:onClass <http://open-model.eu/domain/simulationsoftware#QuantumEspresso>
+                                           ] ;
+                           <http://www.w3.org/2004/02/skos/core#prefLabel> "QuantumEspressoSimulation"@en ;
+                           <https://w3id.org/emmo#elucidation> "A generic DFT simulation using the plane-wave code Quantum Espresso."@en .
 
 
 ###  http://open-model.eu/ontologies/ss1#SS1Datasets
-<http://open-model.eu/ontologies/ss1#SS1Datasets> rdf:type owl:Class ;
-                                                  rdfs:subClassOf <https://w3id.org/emmo#EMMO_194e367c_9783_4bf5_96d0_9ad597d48d9a> ;
-                                                  <http://www.w3.org/2004/02/skos/core#prefLabel> "SS1Datasets"@en ;
-                                                  <https://w3id.org/emmo#elucidation> "Datasets used in OpenModel success story 1."@en .
+:SS1Datasets rdf:type owl:Class ;
+             rdfs:subClassOf <https://w3id.org/emmo#EMMO_194e367c_9783_4bf5_96d0_9ad597d48d9a> ;
+             <http://www.w3.org/2004/02/skos/core#prefLabel> "SS1Datasets"@en ;
+             <https://w3id.org/emmo#elucidation> "Datasets used in OpenModel success story 1."@en .
 
 
 ###  http://open-model.eu/ontologies/ss1#SS1SynapticElectronics
-<http://open-model.eu/ontologies/ss1#SS1SynapticElectronics> rdf:type owl:Class ;
-                                                             rdfs:subClassOf <https://w3id.org/emmo#EMMO_7d56ec24_499d_487a_af7d_a91aaa787bfe> ;
-                                                             <http://www.w3.org/2004/02/skos/core#prefLabel> "SS1SynapticElectronics"@en ;
-                                                             <https://w3id.org/emmo#elucidation> "A class collecting all individual simulations used in OpenModel's success story 1."@en .
+:SS1SynapticElectronics rdf:type owl:Class ;
+                        rdfs:subClassOf <https://w3id.org/emmo#EMMO_7d56ec24_499d_487a_af7d_a91aaa787bfe> ;
+                        <http://www.w3.org/2004/02/skos/core#prefLabel> "SS1SynapticElectronics"@en ;
+                        <https://w3id.org/emmo#elucidation> "A class collecting all individual simulations used in OpenModel's success story 1."@en .
 
 
 ###  http://open-model.eu/ontologies/ss1#StructureInitialGuess
-<http://open-model.eu/ontologies/ss1#StructureInitialGuess> rdf:type owl:Class ;
-                                                            rdfs:subClassOf <http://open-model.eu/ontologies/ss1#QuantumEspressoDS> ,
-                                                                            <https://w3id.org/emmo#EMMO_8944581c_64da_46a9_be29_7074f7cc8098> ,
-                                                                            <https://w3id.org/emmo#EMMO_b7bcff25_ffc3_474e_9ab5_01b1664bd4ba> ,
-                                                                            <https://w3id.org/emmo#EMMO_e7aac247_31d6_4b2e_9fd2_e842b1b7ccac> ,
-                                                                            [ rdf:type owl:Restriction ;
-                                                                              owl:onProperty <https://w3id.org/emmo#EMMO_dc57d998_23db_4d8e_b2cd_f346b195b846> ;
-                                                                              owl:someValuesFrom <https://w3id.org/emmo#EMMO_6eca09be_17e9_445e_abc9_000aa61b7a11>
-                                                                            ] ,
-                                                                            [ rdf:type owl:Restriction ;
-                                                                              owl:onProperty [ owl:inverseOf <https://w3id.org/emmo#EMMO_e1097637_70d2_4895_973f_2396f04fa204>
-                                                                                             ] ;
-                                                                              owl:someValuesFrom <https://w3id.org/emmo#EMMO_4207e895_8b83_4318_996a_72cfb32acd94>
-                                                                            ] ;
-                                                            <http://www.w3.org/2004/02/skos/core#prefLabel> "StructureInitialGuess"@en ;
-                                                            <https://w3id.org/emmo#elucidation> "The initial guess of a solid-state structure."@en .
+:StructureInitialGuess rdf:type owl:Class ;
+                       rdfs:subClassOf :QuantumEspressoDS ,
+                                       <https://w3id.org/emmo#EMMO_8944581c_64da_46a9_be29_7074f7cc8098> ,
+                                       <https://w3id.org/emmo#EMMO_b7bcff25_ffc3_474e_9ab5_01b1664bd4ba> ,
+                                       <https://w3id.org/emmo#EMMO_e7aac247_31d6_4b2e_9fd2_e842b1b7ccac> ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty <https://w3id.org/emmo#EMMO_dc57d998_23db_4d8e_b2cd_f346b195b846> ;
+                                         owl:someValuesFrom <https://w3id.org/emmo#EMMO_6eca09be_17e9_445e_abc9_000aa61b7a11>
+                                       ] ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty [ owl:inverseOf <https://w3id.org/emmo#EMMO_e1097637_70d2_4895_973f_2396f04fa204>
+                                                        ] ;
+                                         owl:someValuesFrom <https://w3id.org/emmo#EMMO_4207e895_8b83_4318_996a_72cfb32acd94>
+                                       ] ;
+                       <http://www.w3.org/2004/02/skos/core#prefLabel> "StructureInitialGuess"@en ;
+                       <https://w3id.org/emmo#elucidation> "The initial guess of a solid-state structure."@en .
 
 
 ###  http://xmlns.com/foaf/0.1/Person
@@ -21039,55 +21040,46 @@ It defines the Kelvin unit in the SI system."""@en ;
                                                                   <https://w3id.org/emmo#EMMO_31252f35_c767_4b97_a877_1235076c3e13> "The universe is considered as a causally self-connected object, encompassing all other objects. For this reason is unique."@en .
 
 
-[ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
+[ <https://w3id.org/emmo#EMMO_c7b62dd7_063a_4c2a_8504_42f7264ba83f> """The rule for the subproperty chain:
+ inverse (hasInterpreter) o  inverse (hasSign) =>hasReferent"""@en
 ] .
 
-[ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
- ] .
-
-[ owl:qualifiedCardinality "2"^^xsd:nonNegativeInteger
- ] .
-
-[ owl:qualifiedCardinality "2"^^xsd:nonNegativeInteger
- ] .
-
-[ owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger
- ] .
-
-[ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
- ] .
-
-[ owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger
- ] .
-
-[ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
- ] .
-
-[ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
- ] .
-
-[ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
- ] .
-
-[ owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger
+[ <https://w3id.org/emmo#EMMO_c7b62dd7_063a_4c2a_8504_42f7264ba83f> """The rule for the subproperty chain:
+ inverse (hasReferent) o  inverse (hasInterpreter)=>hasSign"""@en
  ] .
 
 [ <https://w3id.org/emmo#EMMO_c7b62dd7_063a_4c2a_8504_42f7264ba83f> """The rule for the subproperty chain:
 inverse (hasSign) o  inverse (hasReferent) => hasInterpreter"""@en
  ] .
 
-[ <https://w3id.org/emmo#EMMO_c7b62dd7_063a_4c2a_8504_42f7264ba83f> """The rule for the subproperty chain:
- inverse (hasInterpreter) o  inverse (hasSign) =>hasReferent"""@en
- ] .
-
-[ <https://w3id.org/emmo#EMMO_c7b62dd7_063a_4c2a_8504_42f7264ba83f> """The rule for the subproperty chain:
- inverse (hasReferent) o  inverse (hasInterpreter)=>hasSign"""@en
- ] .
-
-[ owl:qualifiedCardinality "3"^^xsd:nonNegativeInteger
+[ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
  ] .
 
 [ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
+ ] .
+
+[ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
+ ] .
+
+[ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
+ ] .
+
+[ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
+ ] .
+
+[ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
+ ] .
+
+[ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
+ ] .
+
+[ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
+ ] .
+
+[ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
+ ] .
+
+[ owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger
  ] .
 
 [ owl:qualifiedCardinality "4"^^xsd:nonNegativeInteger
@@ -21096,7 +21088,7 @@ inverse (hasSign) o  inverse (hasReferent) => hasInterpreter"""@en
 [ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
  ] .
 
-[ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
+[ owl:qualifiedCardinality "3"^^xsd:nonNegativeInteger
  ] .
 
 [ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
@@ -21108,13 +21100,22 @@ inverse (hasSign) o  inverse (hasReferent) => hasInterpreter"""@en
 [ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
  ] .
 
-[ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
+[ owl:qualifiedCardinality "2"^^xsd:nonNegativeInteger
  ] .
 
 [ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
  ] .
 
 [ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
+ ] .
+
+[ owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger
+ ] .
+
+[ owl:qualifiedCardinality "2"^^xsd:nonNegativeInteger
+ ] .
+
+[ owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger
  ] .
 
 #################################################################
