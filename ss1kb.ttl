@@ -1,0 +1,193 @@
+@prefix : <http://open-model.eu/ontologies/ss1-abox#> .
+@prefix kpa: <http://open-model.eu/ontoflow/kpa#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix emmo: <https://w3id.org/emmo#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix tbox: <http://open-model.eu/ontologies/ss1-inferred#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ss1-tbox: <http://open-model.eu/ontologies/ss1#> .
+@base <http://open-model.eu/ontologies/ss1-abox#> .
+
+<http://open-model.eu/ontologies/ss1-abox> rdf:type owl:Ontology ;
+                                            owl:versionIRI <http://open-model.eu/ontologies/1.0/ss1-abox> ;
+                                            owl:imports <http://open-model.eu/ontologies/ss1-inferred> ;
+                                            dcterms:abstract "Application ontology for OpenModel success story 1. Synaptic electronics: from materials properties to next-generation memory devices."@en ;
+                                            dcterms:created "2024-07-22"@en ;
+                                            dcterms:creator <https://orcid.org/0000-0001-7815-6636> ;
+                                            dcterms:license "https://creativecommons.org/licenses/by/4.0/legalcode"@en ;
+                                            dcterms:publisher "OpenModel"@en ;
+                                            dcterms:title "ABox for OpenModel Success Story 1."@en ;
+                                            owl:versionInfo "1.0"@en .
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://open-model.eu/ontologies/ss1-abox#AmorphousSilicon
+:AmorphousSilicon rdf:type owl:Class .
+
+
+###  http://open-model.eu/ontologies/ss1-abox#CrystalSilicon
+:CrystalSilicon rdf:type owl:Class .
+
+
+###  http://open-model.eu/ontologies/ss1-abox#GSetup
+:GSetup rdf:type owl:Class .
+
+
+###  http://open-model.eu/ontologies/ss1-abox#QuantumEspressoBS
+:QuantumEspressoBS rdf:type owl:Class .
+
+
+###  http://open-model.eu/ontologies/ss1-abox#QuantumEspressoOpt
+:QuantumEspressoOpt rdf:type owl:Class .
+
+
+###  http://open-model.eu/ontologies/ss1-abox#StructureInitialGuess
+:StructureInitialGuess rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://open-model.eu/ontologies/ss1-abox#ASilicon
+:ASilicon rdf:type owl:NamedIndividual ,
+                   :AmorphousSilicon ;
+          skos:prefLabel "ASilicon" .
+
+
+###  http://open-model.eu/ontologies/ss1-abox#BoronArsenide
+:BoronArsenide rdf:type owl:NamedIndividual ,
+                        emmo:EMMO_f1025834_0cd2_42a1_bfeb_13bec41c8655 ;
+               skos:prefLabel "BoronArsenide" .
+
+
+###  http://open-model.eu/ontologies/ss1-abox#GinestraLocal
+:GinestraLocal rdf:type owl:NamedIndividual ,
+                        <http://open-model.eu/domain/simulationsoftware#Ginestra> ;
+               kpa:hasKPA :GinestraLocal_opensource ;
+               skos:prefLabel "GinestraLocal" ;
+               emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 """Local copy of the Ginestra Software.
+This item could point to (or be connected with) a YAML file containing a template for ExecFlow."""@en .
+
+
+###  http://open-model.eu/ontologies/ss1-abox#GinestraLocal_opensource
+:GinestraLocal_opensource rdf:type owl:NamedIndividual ,
+                                   kpa:BoolOpenSource ;
+                          kpa:KPAValue "false"^^xsd:boolean ;
+                          skos:prefLabel "GinestraLocal_opensource" .
+
+
+###  http://open-model.eu/ontologies/ss1-abox#GinestraSetup
+:GinestraSetup rdf:type owl:NamedIndividual ,
+                        :GSetup ;
+               kpa:hasKPA :GinestraSetup_accuracy ,
+                          :GinestraSetup_simulationtime ;
+               skos:prefLabel "GinestraSetup" ;
+               emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "An input dataset to setup a Ginestra calculation."@en .
+
+
+###  http://open-model.eu/ontologies/ss1-abox#GinestraSetup_accuracy
+:GinestraSetup_accuracy rdf:type owl:NamedIndividual ,
+                                 kpa:OrdinalAccuracy ;
+                        kpa:KPAValue "medium" .
+
+
+###  http://open-model.eu/ontologies/ss1-abox#GinestraSetup_simulationtime
+:GinestraSetup_simulationtime rdf:type owl:NamedIndividual ,
+                                       kpa:NumericalSimulationTime ;
+                              kpa:KPAValue "" .
+
+
+###  http://open-model.eu/ontologies/ss1-abox#Graphene
+:Graphene rdf:type owl:NamedIndividual ,
+                   emmo:EMMO_f1025834_0cd2_42a1_bfeb_13bec41c8655 .
+
+
+###  http://open-model.eu/ontologies/ss1-abox#MOSFET
+:MOSFET rdf:type owl:NamedIndividual ,
+                 ss1-tbox:GDevice ;
+        emmo:EMMO_9380ab64_0363_4804_b13f_3a8a94119a76 :Silicon ;
+        skos:prefLabel "GDevice" .
+
+
+###  http://open-model.eu/ontologies/ss1-abox#QEBands01
+:QEBands01 rdf:type owl:NamedIndividual ,
+                    :QuantumEspressoBS ;
+           kpa:hasKPA :QEBands01_accuracy ,
+                      :QEBands01_simulationtime ;
+           skos:prefLabel "QEBands01" .
+
+
+###  http://open-model.eu/ontologies/ss1-abox#QEBands01_accuracy
+:QEBands01_accuracy rdf:type owl:NamedIndividual ,
+                             kpa:OrdinalAccuracy ;
+                    kpa:KPAValue "high" ;
+                    skos:prefLabel "QEBands01_accuracy" .
+
+
+###  http://open-model.eu/ontologies/ss1-abox#QEBands01_simulationtime
+:QEBands01_simulationtime rdf:type owl:NamedIndividual ,
+                                   kpa:NumericalSimulationTime ;
+                          kpa:KPAValue "" ;
+                          skos:prefLabel "QEBands01_simulationtime" .
+
+
+###  http://open-model.eu/ontologies/ss1-abox#QEGeometryOpt01
+:QEGeometryOpt01 rdf:type owl:NamedIndividual ,
+                          :QuantumEspressoOpt ;
+                 kpa:hasKPA :QEGeometryOpt01_accuracy ,
+                            :QEGeometryOpt01_simulationtime ;
+                 skos:prefLabel "QEGeometryOpt01" .
+
+
+###  http://open-model.eu/ontologies/ss1-abox#QEGeometryOpt01_accuracy
+:QEGeometryOpt01_accuracy rdf:type owl:NamedIndividual ,
+                                   kpa:OrdinalAccuracy ;
+                          kpa:KPAValue "high" ;
+                          skos:prefLabel "QEGeometryOpt01_accuracy" .
+
+
+###  http://open-model.eu/ontologies/ss1-abox#QEGeometryOpt01_simulationtime
+:QEGeometryOpt01_simulationtime rdf:type owl:NamedIndividual ,
+                                         kpa:NumericalSimulationTime ;
+                                kpa:KPAValue "" ;
+                                skos:prefLabel "QEGeometryOpt01_simulationtime" .
+
+
+###  http://open-model.eu/ontologies/ss1-abox#QuantumEspressoLocal
+:QuantumEspressoLocal rdf:type owl:NamedIndividual ,
+                               <http://open-model.eu/domain/simulationsoftware#QuantumEspresso> ;
+                      kpa:hasKPA :QuantumEspressoLocal_opensource ;
+                      skos:prefLabel "QuantumEspressoLocal" ;
+                      emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 """Local copy of Quantum Espresso.
+This item could point to (or be connected with) a YAML file containing a template for ExecFlow."""@en .
+
+
+###  http://open-model.eu/ontologies/ss1-abox#QuantumEspressoLocal_opensource
+:QuantumEspressoLocal_opensource rdf:type owl:NamedIndividual ,
+                                          kpa:BoolOpenSource ;
+                                 kpa:KPAValue "true"^^xsd:boolean ;
+                                 skos:prefLabel "QuantumEspressoLocal_opensource" .
+
+
+###  http://open-model.eu/ontologies/ss1-abox#Silicon
+:Silicon rdf:type owl:NamedIndividual ,
+                  :CrystalSilicon ;
+         emmo:EMMO_e1097637_70d2_4895_973f_2396f04fa204 <http://open-model.eu/ontologies/ss1-abox-abox#SiliconExperimentalStructure> ;
+         skos:prefLabel "Silicon" .
+
+
+###  http://open-model.eu/ontologies/ss1-abox-abox#SiliconExperimentalStructure
+<http://open-model.eu/ontologies/ss1-abox-abox#SiliconExperimentalStructure> rdf:type owl:NamedIndividual ,
+                                                                                      :StructureInitialGuess ;
+                                                                             skos:prefLabel "SiliconExperimentalStructure"@en .
+
+
+###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi
