@@ -24,47 +24,42 @@
                                             owl:versionInfo "1.0"@en .
 
 #################################################################
-#    Annotation properties
-#################################################################
-
-###  http://purl.org/dc/terms/abstract
-dcterms:abstract rdf:type owl:AnnotationProperty .
-
-
-###  http://purl.org/dc/terms/created
-dcterms:created rdf:type owl:AnnotationProperty .
-
-
-###  http://purl.org/dc/terms/creator
-dcterms:creator rdf:type owl:AnnotationProperty .
-
-
-###  http://purl.org/dc/terms/license
-dcterms:license rdf:type owl:AnnotationProperty .
-
-
-###  http://purl.org/dc/terms/publisher
-dcterms:publisher rdf:type owl:AnnotationProperty .
-
-
-###  http://purl.org/dc/terms/title
-dcterms:title rdf:type owl:AnnotationProperty .
-
-
-#################################################################
 #    Individuals
 #################################################################
 
 ###  http://open-model.eu/ontologies/ss1-abox#ASilicon
 :ASilicon rdf:type owl:NamedIndividual ,
                    tbox:AmorphousSilicon ;
+          emmo:EMMO_e1097637_70d2_4895_973f_2396f04fa204 :SiliconBandStructure2 ;
           skos:prefLabel "ASilicon" .
+
+
+###  http://open-model.eu/ontologies/ss1-abox#BS2BGLocal
+:BS2BGLocal rdf:type owl:NamedIndividual ,
+                     <http://open-model.eu/domain/simulationsoftware#BandStructure2BandGap> ;
+            kpa:hasKPA :BS2BGLocal_opensource ;
+            skos:prefLabel "BS2BGLocal"@en .
+
+
+###  http://open-model.eu/ontologies/ss1-abox#BS2BGLocal_opensource
+:BS2BGLocal_opensource rdf:type owl:NamedIndividual ,
+                                kpa:BoolOpenSource ;
+                       kpa:KPAValue "true"^^xsd:boolean ;
+                       skos:prefLabel "BS2BGLocal_opensource"@en .
 
 
 ###  http://open-model.eu/ontologies/ss1-abox#BoronArsenide
 :BoronArsenide rdf:type owl:NamedIndividual ,
                         emmo:EMMO_f1025834_0cd2_42a1_bfeb_13bec41c8655 ;
+               emmo:EMMO_e1097637_70d2_4895_973f_2396f04fa204 :BoronArsenideBandStructure ;
                skos:prefLabel "BoronArsenide" .
+
+
+###  http://open-model.eu/ontologies/ss1-abox#BoronArsenideBandStructure
+:BoronArsenideBandStructure rdf:type owl:NamedIndividual ,
+                                     tbox:QEBands ;
+                            emmo:EMMO_c4ca55f0_2795_4bff_b8a9_445ed6e29d6c :BoronArsenide ;
+                            skos:prefLabel "BoronArsenideBandStructure"@en .
 
 
 ###  http://open-model.eu/ontologies/ss1-abox#GinestraLocal
@@ -109,6 +104,13 @@ This item could point to (or be connected with) a YAML file containing a templat
                    emmo:EMMO_f1025834_0cd2_42a1_bfeb_13bec41c8655 .
 
 
+###  http://open-model.eu/ontologies/ss1-abox#GrapheneBandStructure
+:GrapheneBandStructure rdf:type owl:NamedIndividual ,
+                                tbox:QEBands ;
+                       emmo:EMMO_c4ca55f0_2795_4bff_b8a9_445ed6e29d6c :Graphene ;
+                       skos:prefLabel "GrapheneBandStructure"@en .
+
+
 ###  http://open-model.eu/ontologies/ss1-abox#MOSFET
 :MOSFET rdf:type owl:NamedIndividual ,
                  tbox:GDevice ;
@@ -116,71 +118,29 @@ This item could point to (or be connected with) a YAML file containing a templat
         skos:prefLabel "MOSFET" .
 
 
-###  http://open-model.eu/ontologies/ss1-abox#QEBands01
-:QEBands01 rdf:type owl:NamedIndividual ,
-                    tbox:QuantumEspressoBS ;
-           kpa:hasKPA :QEBands01_accuracy ,
-                      :QEBands01_simulationtime ;
-           skos:prefLabel "QEBands01" .
-
-
-###  http://open-model.eu/ontologies/ss1-abox#QEBands01_accuracy
-:QEBands01_accuracy rdf:type owl:NamedIndividual ,
-                             kpa:OrdinalAccuracy ;
-                    kpa:KPAValue "high" ;
-                    skos:prefLabel "QEBands01_accuracy" .
-
-
-###  http://open-model.eu/ontologies/ss1-abox#QEBands01_simulationtime
-:QEBands01_simulationtime rdf:type owl:NamedIndividual ,
-                                   kpa:NumericalSimulationTime ;
-                          kpa:KPAValue "" ;
-                          skos:prefLabel "QEBands01_simulationtime" .
-
-
-###  http://open-model.eu/ontologies/ss1-abox#QEGeometryOpt01
-:QEGeometryOpt01 rdf:type owl:NamedIndividual ,
-                          tbox:QuantumEspressoOpt ;
-                 kpa:hasKPA :QEGeometryOpt01_accuracy ,
-                            :QEGeometryOpt01_simulationtime ;
-                 skos:prefLabel "QEGeometryOpt01" .
-
-
-###  http://open-model.eu/ontologies/ss1-abox#QEGeometryOpt01_accuracy
-:QEGeometryOpt01_accuracy rdf:type owl:NamedIndividual ,
-                                   kpa:OrdinalAccuracy ;
-                          kpa:KPAValue "high" ;
-                          skos:prefLabel "QEGeometryOpt01_accuracy" .
-
-
-###  http://open-model.eu/ontologies/ss1-abox#QEGeometryOpt01_simulationtime
-:QEGeometryOpt01_simulationtime rdf:type owl:NamedIndividual ,
-                                         kpa:NumericalSimulationTime ;
-                                kpa:KPAValue "" ;
-                                skos:prefLabel "QEGeometryOpt01_simulationtime" .
-
-
-###  http://open-model.eu/ontologies/ss1-abox#QuantumEspressoLocal
-:QuantumEspressoLocal rdf:type owl:NamedIndividual ,
-                               <http://open-model.eu/domain/simulationsoftware#QuantumEspresso> ;
-                      kpa:hasKPA :QuantumEspressoLocal_opensource ;
-                      skos:prefLabel "QuantumEspressoLocal" ;
-                      emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 """Local copy of Quantum Espresso.
-This item could point to (or be connected with) a YAML file containing a template for ExecFlow."""@en .
-
-
-###  http://open-model.eu/ontologies/ss1-abox#QuantumEspressoLocal_opensource
-:QuantumEspressoLocal_opensource rdf:type owl:NamedIndividual ,
-                                          kpa:BoolOpenSource ;
-                                 kpa:KPAValue "true"^^xsd:boolean ;
-                                 skos:prefLabel "QuantumEspressoLocal_opensource" .
-
-
 ###  http://open-model.eu/ontologies/ss1-abox#Silicon
 :Silicon rdf:type owl:NamedIndividual ,
                   tbox:CrystalSilicon ;
-         emmo:EMMO_e1097637_70d2_4895_973f_2396f04fa204 :SiliconExperimentalStructure ;
+         emmo:EMMO_e1097637_70d2_4895_973f_2396f04fa204 :SiliconBandStructure ,
+                                                        :SiliconExperimentalStructure ;
          skos:prefLabel "Silicon" .
+
+
+###  http://open-model.eu/ontologies/ss1-abox#SiliconBandStructure
+:SiliconBandStructure rdf:type owl:NamedIndividual ,
+                               tbox:QEBands ;
+                      emmo:EMMO_c4ca55f0_2795_4bff_b8a9_445ed6e29d6c :Silicon ;
+                      skos:prefLabel "SiliconBandStructure"@en ;
+                      emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Band structure computed with Quantum Espresso for crystalline silicon."@en .
+
+
+###  http://open-model.eu/ontologies/ss1-abox#SiliconBandStructure2
+:SiliconBandStructure2 rdf:type owl:NamedIndividual ,
+                                tbox:QEBands ;
+                       emmo:EMMO_c4ca55f0_2795_4bff_b8a9_445ed6e29d6c :ASilicon ;
+                       skos:prefLabel "SiliconBandStructure2"@en ;
+                       emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 """Band structure computed with Quantum Espresso for amorphous silicon.
+This instance should not be selected by OntoFlow (hopefully)."""@en .
 
 
 ###  http://open-model.eu/ontologies/ss1-abox#SiliconExperimentalStructure
