@@ -29,37 +29,96 @@
 
 ###  http://open-model.eu/ontologies/ss1-abox#ASilicon
 :ASilicon rdf:type owl:NamedIndividual ,
-                   tbox:AmorphousSilicon ;
+                   tbox:AmorphousSilicon ,
+                   tbox:SimulatedMaterial ;
           emmo:EMMO_e1097637_70d2_4895_973f_2396f04fa204 :SiliconBandStructure2 ;
           skos:prefLabel "ASilicon" .
 
 
-###  http://open-model.eu/ontologies/ss1-abox#BS2BGLocal
-:BS2BGLocal rdf:type owl:NamedIndividual ,
-                     <http://open-model.eu/domain/simulationsoftware#BandStructure2BandGap> ;
-            kpa:hasKPA :BS2BGLocal_opensource ;
-            skos:prefLabel "BS2BGLocal"@en .
-
-
-###  http://open-model.eu/ontologies/ss1-abox#BS2BGLocal_opensource
-:BS2BGLocal_opensource rdf:type owl:NamedIndividual ,
-                                kpa:BoolOpenSource ;
-                       kpa:KPAValue "true"^^xsd:boolean ;
-                       skos:prefLabel "BS2BGLocal_opensource"@en .
-
-
-###  http://open-model.eu/ontologies/ss1-abox#BoronArsenide
-:BoronArsenide rdf:type owl:NamedIndividual ,
-                        emmo:EMMO_f1025834_0cd2_42a1_bfeb_13bec41c8655 ;
+###  http://open-model.eu/ontologies/ss1-abox#CBoronArsenide
+:CBoronArsenide rdf:type owl:NamedIndividual ,
+                         tbox:BoronArsenide ,
+                         tbox:SimulatedMaterial ;
                emmo:EMMO_e1097637_70d2_4895_973f_2396f04fa204 :BoronArsenideBandStructure ;
-               skos:prefLabel "BoronArsenide" .
-
+                skos:prefLabel "CBoronArsenide" .
 
 ###  http://open-model.eu/ontologies/ss1-abox#BoronArsenideBandStructure
 :BoronArsenideBandStructure rdf:type owl:NamedIndividual ,
                                      tbox:QEBands ;
                             emmo:EMMO_c4ca55f0_2795_4bff_b8a9_445ed6e29d6c :BoronArsenide ;
                             skos:prefLabel "BoronArsenideBandStructure"@en .
+
+
+###  http://open-model.eu/ontologies/ss1-abox#CGraphene
+:CGraphene rdf:type owl:NamedIndividual ,
+                    tbox:Graphene ,
+                    tbox:SimulatedMaterial ;
+           skos:prefLabel "CGraphene" .
+
+
+###  http://open-model.eu/ontologies/ss1-abox#GrapheneBandStructure
+:GrapheneBandStructure rdf:type owl:NamedIndividual ,
+                                tbox:QEBands ;
+                       emmo:EMMO_c4ca55f0_2795_4bff_b8a9_445ed6e29d6c :CGraphene ;
+                       skos:prefLabel "GrapheneBandStructure"@en .
+
+
+###  http://open-model.eu/ontologies/ss1-abox#Silicon
+:Silicon rdf:type owl:NamedIndividual ,
+                  tbox:CrystalSilicon ,
+                  tbox:SimulatedMaterial ;
+         emmo:EMMO_e1097637_70d2_4895_973f_2396f04fa204 :SiliconBandStructure ,
+                                                        :SiliconExperimentalStructure ;
+         skos:prefLabel "Silicon" .
+
+
+###  http://open-model.eu/ontologies/ss1-abox#SiliconBandStructure
+:SiliconBandStructure rdf:type owl:NamedIndividual ,
+                               tbox:QEBands ;
+                      emmo:EMMO_c4ca55f0_2795_4bff_b8a9_445ed6e29d6c :Silicon ;
+                      skos:prefLabel "SiliconBandStructure"@en ;
+                      emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Band structure computed with Quantum Espresso for crystalline silicon."@en .
+
+
+###  http://open-model.eu/ontologies/ss1-abox#SiliconBandStructure2
+:SiliconBandStructure2 rdf:type owl:NamedIndividual ,
+                                tbox:QEBands ;
+                       emmo:EMMO_c4ca55f0_2795_4bff_b8a9_445ed6e29d6c :ASilicon ;
+                       skos:prefLabel "SiliconBandStructure2"@en ;
+                       emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 """Band structure computed with Quantum Espresso for amorphous silicon.
+This instance should not be selected by OntoFlow (hopefully)."""@en .
+
+
+###  http://open-model.eu/ontologies/ss1-abox#SiliconExperimentalStructure
+:SiliconExperimentalStructure rdf:type owl:NamedIndividual ,
+                                       tbox:StructureInitialGuess ;
+                              emmo:EMMO_c4ca55f0_2795_4bff_b8a9_445ed6e29d6c :Silicon ;
+                              skos:prefLabel "SiliconExperimentalStructure"@en .
+
+
+
+###  http://open-model.eu/ontologies/ss1-abox#GinestraDev1
+:GinestraDev1 rdf:type owl:NamedIndividual ,
+                       tbox:GDevice ;
+              emmo:EMMO_6b78c119_f86c_4b5e_ba6c_b42d25a64122 :Silicon ;
+              emmo:EMMO_c4ca55f0_2795_4bff_b8a9_445ed6e29d6c :MOSFET ;
+              skos:prefLabel "GinestraDev1" .
+
+
+###  http://open-model.eu/ontologies/ss1-abox#GinestraDev2
+:GinestraDev2 rdf:type owl:NamedIndividual ,
+                       tbox:GDevice ;
+              emmo:EMMO_6b78c119_f86c_4b5e_ba6c_b42d25a64122 :CGraphene ;
+              emmo:EMMO_c4ca55f0_2795_4bff_b8a9_445ed6e29d6c :OLED ;
+              skos:prefLabel "GinestraDev2" .
+
+
+###  http://open-model.eu/ontologies/ss1-abox#GinestraDev3
+:GinestraDev3 rdf:type owl:NamedIndividual ,
+                       tbox:GDevice ;
+              emmo:EMMO_6b78c119_f86c_4b5e_ba6c_b42d25a64122 :CBoronArsenide ;
+              emmo:EMMO_c4ca55f0_2795_4bff_b8a9_445ed6e29d6c :MOSFET ;
+              skos:prefLabel "GinestraDev3" .
 
 
 ###  http://open-model.eu/ontologies/ss1-abox#GinestraLocal
@@ -99,55 +158,33 @@ This item could point to (or be connected with) a YAML file containing a templat
                               kpa:KPAValue "" .
 
 
-###  http://open-model.eu/ontologies/ss1-abox#Graphene
-:Graphene rdf:type owl:NamedIndividual ,
-                   emmo:EMMO_f1025834_0cd2_42a1_bfeb_13bec41c8655 .
-
-
-###  http://open-model.eu/ontologies/ss1-abox#GrapheneBandStructure
-:GrapheneBandStructure rdf:type owl:NamedIndividual ,
-                                tbox:QEBands ;
-                       emmo:EMMO_c4ca55f0_2795_4bff_b8a9_445ed6e29d6c :Graphene ;
-                       skos:prefLabel "GrapheneBandStructure"@en .
-
 
 ###  http://open-model.eu/ontologies/ss1-abox#MOSFET
 :MOSFET rdf:type owl:NamedIndividual ,
-                 tbox:GDevice ;
+                 emmo:EMMO_86ca9b93_1183_4b65_81b8_c0fcd3bba5ad ;
         emmo:EMMO_9380ab64_0363_4804_b13f_3a8a94119a76 :Silicon ;
         skos:prefLabel "MOSFET" .
 
 
-###  http://open-model.eu/ontologies/ss1-abox#Silicon
-:Silicon rdf:type owl:NamedIndividual ,
-                  tbox:CrystalSilicon ;
-         emmo:EMMO_e1097637_70d2_4895_973f_2396f04fa204 :SiliconBandStructure ,
-                                                        :SiliconExperimentalStructure ;
-         skos:prefLabel "Silicon" .
+###  http://open-model.eu/ontologies/ss1-abox#OLED
+:OLED rdf:type owl:NamedIndividual ,
+               emmo:EMMO_86ca9b93_1183_4b65_81b8_c0fcd3bba5ad ;
+      emmo:EMMO_9380ab64_0363_4804_b13f_3a8a94119a76 :CGraphene ;
+      skos:prefLabel "OLED"@en .
 
 
-###  http://open-model.eu/ontologies/ss1-abox#SiliconBandStructure
-:SiliconBandStructure rdf:type owl:NamedIndividual ,
-                               tbox:QEBands ;
-                      emmo:EMMO_c4ca55f0_2795_4bff_b8a9_445ed6e29d6c :Silicon ;
-                      skos:prefLabel "SiliconBandStructure"@en ;
-                      emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Band structure computed with Quantum Espresso for crystalline silicon."@en .
+###  http://open-model.eu/ontologies/ss1-abox#BS2BGLocal
+:BS2BGLocal rdf:type owl:NamedIndividual ,
+                     <http://open-model.eu/domain/simulationsoftware#BandStructure2BandGap> ;
+            kpa:hasKPA :BS2BGLocal_opensource ;
+            skos:prefLabel "BS2BGLocal"@en .
 
 
-###  http://open-model.eu/ontologies/ss1-abox#SiliconBandStructure2
-:SiliconBandStructure2 rdf:type owl:NamedIndividual ,
-                                tbox:QEBands ;
-                       emmo:EMMO_c4ca55f0_2795_4bff_b8a9_445ed6e29d6c :ASilicon ;
-                       skos:prefLabel "SiliconBandStructure2"@en ;
-                       emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 """Band structure computed with Quantum Espresso for amorphous silicon.
-This instance should not be selected by OntoFlow (hopefully)."""@en .
-
-
-###  http://open-model.eu/ontologies/ss1-abox#SiliconExperimentalStructure
-:SiliconExperimentalStructure rdf:type owl:NamedIndividual ,
-                                       tbox:StructureInitialGuess ;
-                              emmo:EMMO_c4ca55f0_2795_4bff_b8a9_445ed6e29d6c :Silicon ;
-                              skos:prefLabel "SiliconExperimentalStructure"@en .
+###  http://open-model.eu/ontologies/ss1-abox#BS2BGLocal_opensource
+:BS2BGLocal_opensource rdf:type owl:NamedIndividual ,
+                                kpa:BoolOpenSource ;
+                       kpa:KPAValue "true"^^xsd:boolean ;
+                       skos:prefLabel "BS2BGLocal_opensource"@en .
 
 
 ###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi

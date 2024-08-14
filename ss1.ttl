@@ -43,7 +43,8 @@ emmo:example rdf:type owl:AnnotationProperty .
 
 ###  http://open-model.eu/ontologies/ss1#AmorphousSilicon
 :AmorphousSilicon rdf:type owl:Class ;
-                  rdfs:subClassOf emmo:EMMO_0afc19b0_2d43_4b3d_8da0_9ffb63bc1492 ;
+                  rdfs:subClassOf :SimulatedMaterial ,
+                                  emmo:EMMO_0afc19b0_2d43_4b3d_8da0_9ffb63bc1492 ;
                   skos:prefLabel "AmorphousSilicon" ;
                   emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Elemental silicon in its amorphous form."@en .
 
@@ -64,9 +65,18 @@ emmo:example rdf:type owl:AnnotationProperty .
          emmo:elucidation "The band gap of a semiconductor."@en .
 
 
+###  http://open-model.eu/ontologies/ss1#BoronArsenide
+:BoronArsenide rdf:type owl:Class ;
+               rdfs:subClassOf :SimulatedMaterial ,
+                               emmo:EMMO_f1025834_0cd2_42a1_bfeb_13bec41c8655 ;
+               skos:prefLabel "BoronArsenide" ;
+               emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A wide-bandgap semiconductor."@en .
+
+
 ###  http://open-model.eu/ontologies/ss1#CrystalSilicon
 :CrystalSilicon rdf:type owl:Class ;
-                rdfs:subClassOf emmo:EMMO_f1025834_0cd2_42a1_bfeb_13bec41c8655 ;
+                rdfs:subClassOf :SimulatedMaterial ,
+                                emmo:EMMO_f1025834_0cd2_42a1_bfeb_13bec41c8655 ;
                 skos:prefLabel "CrystalSilicon" ;
                 emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Elemental silicon in its crystalline form." .
 
@@ -77,7 +87,7 @@ emmo:example rdf:type owl:AnnotationProperty .
                                    emmo:EMMO_c995ae70_3b84_4ebb_bcfc_69e6a281bb88 ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty emmo:EMMO_c4ca55f0_2795_4bff_b8a9_445ed6e29d6c ;
-                                     owl:someValuesFrom :GDevice
+                                     owl:someValuesFrom emmo:EMMO_86ca9b93_1183_4b65_81b8_c0fcd3bba5ad
                                    ] ;
                    skos:prefLabel "DeviceFlowCurrent"@en ;
                    emmo:elucidation "The current–voltage (I-V) curve of a MOSFET device, computed with Ginestra. The I-V curve shows the electric current through a circuit as a function of the voltage applied to the drain."@en .
@@ -90,6 +100,10 @@ emmo:example rdf:type owl:AnnotationProperty .
                          [ rdf:type owl:Restriction ;
                            owl:onProperty emmo:EMMO_9380ab64_0363_4804_b13f_3a8a94119a76 ;
                            owl:someValuesFrom emmo:EMMO_4207e895_8b83_4318_996a_72cfb32acd94
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty emmo:EMMO_c4ca55f0_2795_4bff_b8a9_445ed6e29d6c ;
+                           owl:someValuesFrom emmo:EMMO_86ca9b93_1183_4b65_81b8_c0fcd3bba5ad
                          ] ;
          skos:prefLabel "GDevice"@en ;
          emmo:elucidation "A dataset with the input geometry and composition of a device, to be executed with Ginestra."@en .
@@ -112,6 +126,10 @@ emmo:example rdf:type owl:AnnotationProperty .
 ###  http://open-model.eu/ontologies/ss1#GinestraDeviceSimulation
 :GinestraDeviceSimulation rdf:type owl:Class ;
                           rdfs:subClassOf :GinestraSimulation ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty emmo:EMMO_36e69413_8c59_4799_946c_10b05d266e22 ;
+                                            owl:someValuesFrom :SimulatedMaterial
+                                          ] ,
                                           [ rdf:type owl:Restriction ;
                                             owl:onProperty emmo:EMMO_36e69413_8c59_4799_946c_10b05d266e22 ;
                                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
@@ -150,7 +168,8 @@ emmo:example rdf:type owl:AnnotationProperty .
 
 ###  http://open-model.eu/ontologies/ss1#Graphene
 :Graphene rdf:type owl:Class ;
-          rdfs:subClassOf emmo:EMMO_f1025834_0cd2_42a1_bfeb_13bec41c8655 ;
+          rdfs:subClassOf :SimulatedMaterial ,
+                          emmo:EMMO_f1025834_0cd2_42a1_bfeb_13bec41c8655 ;
           skos:prefLabel "Graphene" ;
           emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "One of the many allotropes of carbon, characterized by a zero band gap."@en .
 
@@ -335,6 +354,15 @@ emmo:example rdf:type owl:AnnotationProperty .
                         rdfs:subClassOf emmo:EMMO_7d56ec24_499d_487a_af7d_a91aaa787bfe ;
                         skos:prefLabel "SS1SynapticElectronics"@en ;
                         emmo:elucidation "A class collecting all individual simulations used in OpenModel's success story 1."@en .
+
+
+###  http://open-model.eu/ontologies/ss1#SimulatedMaterial
+:SimulatedMaterial rdf:type owl:Class ;
+                   rdfs:subClassOf :SS1Datasets ,
+                                   emmo:EMMO_4207e895_8b83_4318_996a_72cfb32acd94 ,
+                                   emmo:EMMO_4f2d1fcc_e20c_4479_9ad7_7a0480dd3e44 ;
+                   skos:prefLabel "SimulatedMaterial" ;
+                   emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "An analogical icon of a material taking part in a materials modelling simulation."@en .
 
 
 ###  http://open-model.eu/ontologies/ss1#StructureInitialGuess

@@ -24,55 +24,60 @@
                                             owl:versionInfo "1.0"@en .
 
 #################################################################
-#    Annotation properties
-#################################################################
-
-###  http://purl.org/dc/terms/abstract
-dcterms:abstract rdf:type owl:AnnotationProperty .
-
-
-###  http://purl.org/dc/terms/created
-dcterms:created rdf:type owl:AnnotationProperty .
-
-
-###  http://purl.org/dc/terms/creator
-dcterms:creator rdf:type owl:AnnotationProperty .
-
-
-###  http://purl.org/dc/terms/license
-dcterms:license rdf:type owl:AnnotationProperty .
-
-
-###  http://purl.org/dc/terms/publisher
-dcterms:publisher rdf:type owl:AnnotationProperty .
-
-
-###  http://purl.org/dc/terms/title
-dcterms:title rdf:type owl:AnnotationProperty .
-
-
-#################################################################
 #    Individuals
 #################################################################
 
 ###  http://open-model.eu/ontologies/ss1-abox#ASilicon
 :ASilicon rdf:type owl:NamedIndividual ,
-                   tbox:AmorphousSilicon ;
+                   tbox:AmorphousSilicon ,
+                   tbox:SimulatedMaterial ;
           skos:prefLabel "ASilicon" .
 
 
-###  http://open-model.eu/ontologies/ss1-abox#BoronArsenide
-:BoronArsenide rdf:type owl:NamedIndividual ,
-                        emmo:EMMO_f1025834_0cd2_42a1_bfeb_13bec41c8655 ;
-               skos:prefLabel "BoronArsenide" .
-
+###  http://open-model.eu/ontologies/ss1-abox#CBoronArsenide
+:CBoronArsenide rdf:type owl:NamedIndividual ,
+                         tbox:BoronArsenide ,
+                         tbox:SimulatedMaterial ;
+                skos:prefLabel "CBoronArsenide" .
 
 ###  http://open-model.eu/ontologies/ss1-abox#BoronArsenideBandGap
 :BoronArsenideBandGap rdf:type owl:NamedIndividual ,
                                tbox:BandGap ;
-                      emmo:EMMO_c4ca55f0_2795_4bff_b8a9_445ed6e29d6c :BoronArsenide ;
+                      emmo:EMMO_c4ca55f0_2795_4bff_b8a9_445ed6e29d6c :CBoronArsenide ;
                       emmo:EMMO_faf79f53_749d_40b2_807c_d34244c192f4 "1.82"^^xsd:double ;
                       skos:prefLabel "BoronArsenideBandGap"@en .
+
+
+###  http://open-model.eu/ontologies/ss1-abox#CGraphene
+:CGraphene rdf:type owl:NamedIndividual ,
+                    tbox:Graphene ,
+                    tbox:SimulatedMaterial ;
+           skos:prefLabel "CGraphene" ;
+           emmo:elucidation "An individual to test the filtering ability of OntoFlow."@en .
+
+
+###  http://open-model.eu/ontologies/ss1-abox#GinestraDev1
+:GinestraDev1 rdf:type owl:NamedIndividual ,
+                       tbox:GDevice ;
+              emmo:EMMO_6b78c119_f86c_4b5e_ba6c_b42d25a64122 :Silicon ;
+              emmo:EMMO_c4ca55f0_2795_4bff_b8a9_445ed6e29d6c :MOSFET ;
+              skos:prefLabel "GinestraDev1" .
+
+
+###  http://open-model.eu/ontologies/ss1-abox#GinestraDev2
+:GinestraDev2 rdf:type owl:NamedIndividual ,
+                       tbox:GDevice ;
+              emmo:EMMO_6b78c119_f86c_4b5e_ba6c_b42d25a64122 :CGraphene ;
+              emmo:EMMO_c4ca55f0_2795_4bff_b8a9_445ed6e29d6c :OLED ;
+              skos:prefLabel "GinestraDev2" .
+
+
+###  http://open-model.eu/ontologies/ss1-abox#GinestraDev3
+:GinestraDev3 rdf:type owl:NamedIndividual ,
+                       tbox:GDevice ;
+              emmo:EMMO_6b78c119_f86c_4b5e_ba6c_b42d25a64122 :CBoronArsenide ;
+              emmo:EMMO_c4ca55f0_2795_4bff_b8a9_445ed6e29d6c :MOSFET ;
+              skos:prefLabel "GinestraDev3" .
 
 
 ###  http://open-model.eu/ontologies/ss1-abox#GinestraLocal
@@ -112,36 +117,32 @@ This item could point to (or be connected with) a YAML file containing a templat
                               kpa:KPAValue 500000 .
 
 
-###  http://open-model.eu/ontologies/ss1-abox#Graphene
-:Graphene rdf:type owl:NamedIndividual ,
-                   emmo:EMMO_f1025834_0cd2_42a1_bfeb_13bec41c8655 .
-
-
 ###  http://open-model.eu/ontologies/ss1-abox#GrapheneBandGap
 :GrapheneBandGap rdf:type owl:NamedIndividual ,
                           tbox:BandGap ;
-                 emmo:EMMO_c4ca55f0_2795_4bff_b8a9_445ed6e29d6c :Graphene ;
+                 emmo:EMMO_c4ca55f0_2795_4bff_b8a9_445ed6e29d6c :CGraphene ;
                  emmo:EMMO_faf79f53_749d_40b2_807c_d34244c192f4 "0.0"^^xsd:double ;
                  skos:prefLabel "GrapheneBandGap"@en .
 
 
 ###  http://open-model.eu/ontologies/ss1-abox#MOSFET
 :MOSFET rdf:type owl:NamedIndividual ,
-                 tbox:GDevice ;
+                 emmo:EMMO_86ca9b93_1183_4b65_81b8_c0fcd3bba5ad ;
         emmo:EMMO_9380ab64_0363_4804_b13f_3a8a94119a76 :Silicon ;
         skos:prefLabel "MOSFET" .
 
 
 ###  http://open-model.eu/ontologies/ss1-abox#OLED
 :OLED rdf:type owl:NamedIndividual ,
-               tbox:GDevice ;
-      emmo:EMMO_9380ab64_0363_4804_b13f_3a8a94119a76 :Graphene ;
+               emmo:EMMO_86ca9b93_1183_4b65_81b8_c0fcd3bba5ad ;
+      emmo:EMMO_9380ab64_0363_4804_b13f_3a8a94119a76 :CGraphene ;
       skos:prefLabel "OLED"@en .
 
 
 ###  http://open-model.eu/ontologies/ss1-abox#Silicon
 :Silicon rdf:type owl:NamedIndividual ,
-                  tbox:CrystalSilicon ;
+                  tbox:CrystalSilicon ,
+                  tbox:SimulatedMaterial ;
          emmo:EMMO_e1097637_70d2_4895_973f_2396f04fa204 :SiliconExperimentalStructure ;
          skos:prefLabel "Silicon" .
 
