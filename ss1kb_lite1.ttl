@@ -83,7 +83,7 @@
 
 ###  http://open-model.eu/ontologies/ss1-abox#GinestraLocal
 :GinestraLocal rdf:type owl:NamedIndividual ,
-                        <http://open-model.eu/domain/simulationsoftware#Ginestra> ;
+                        simsoft:Ginestra ;
                kpa:hasKPA :GinestraLocal_opensource ;
                skos:prefLabel "GinestraLocal" ;
                emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 """Local copy of the Ginestra Software.

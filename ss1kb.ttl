@@ -38,7 +38,7 @@
 
 ###  http://open-model.eu/ontologies/ss1-abox#BS2BGLocal
 :BS2BGLocal rdf:type owl:NamedIndividual ,
-                     <http://open-model.eu/domain/simulationsoftware#BandStructure2BandGap> ;
+                     simsoft:BandStructure2BandGap ;
             kpa:hasKPA :BS2BGLocal_opensource ;
             skos:prefLabel "BS2BGLocal"@en .
 
@@ -98,7 +98,7 @@
 
 ###  http://open-model.eu/ontologies/ss1-abox#GinestraLocal
 :GinestraLocal rdf:type owl:NamedIndividual ,
-                        <http://open-model.eu/domain/simulationsoftware#Ginestra> ;
+                        simsoft:Ginestra ;
                kpa:hasKPA :GinestraLocal_opensource ;
                skos:prefLabel "GinestraLocal" ;
                emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 """Local copy of the Ginestra Software.
@@ -202,7 +202,7 @@ This item could point to (or be connected with) a YAML file containing a templat
 
 ###  http://open-model.eu/ontologies/ss1-abox#QuantumEspressoLocal
 :QuantumEspressoLocal rdf:type owl:NamedIndividual ,
-                               <http://open-model.eu/domain/simulationsoftware#QuantumEspresso> ;
+                               simsoft:QuantumEspresso ;
                       kpa:hasKPA :QuantumEspressoLocal_opensource ;
                       skos:prefLabel "QuantumEspressoLocal" ;
                       emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 """Local copy of Quantum Espresso.
