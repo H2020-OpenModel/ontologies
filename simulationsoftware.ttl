@@ -370,7 +370,7 @@ GULP is a program for performing a variety of types of simulation on materials u
                                   ] ;
                   skos:example "A coarse step for numerical integration."@en ;
                   skos:prefLabel "InputControlData" ;
-                  emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "The set of parameters used to control a numerical simulations."@en ;
+                  emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "The set of parameters used to control a numerical simulation."@en ;
                   emmo:EMMO_c7b62dd7_063a_4c2a_8504_42f7264ba83f "If a dataset is also a subclass of InputControlData, then OntoFlow does not apply any filter to the individual of the dataset class. This means that each instance of InputControlData gives rise to a different workflow."@en .
 
 
