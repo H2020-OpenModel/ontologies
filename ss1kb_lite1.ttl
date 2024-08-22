@@ -10,6 +10,7 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix tbox: <http://open-model.eu/ontologies/ss1#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix simsoft: <http://open-model.eu/domain/simulationsoftware#> .
 @base <http://open-model.eu/ontologies/ss1-abox#> .
 
 <http://open-model.eu/ontologies/ss1-abox> rdf:type owl:Ontology ;
@@ -30,14 +31,14 @@
 ###  http://open-model.eu/ontologies/ss1-abox#ASilicon
 :ASilicon rdf:type owl:NamedIndividual ,
                    tbox:AmorphousSilicon ,
-                   tbox:SimulatedMaterial ;
+                   simsoft:SimulatedMaterial ;
           skos:prefLabel "ASilicon" .
 
 
 ###  http://open-model.eu/ontologies/ss1-abox#CBoronArsenide
 :CBoronArsenide rdf:type owl:NamedIndividual ,
                          tbox:BoronArsenide ,
-                         tbox:SimulatedMaterial ;
+                         simsoft:SimulatedMaterial ;
                 skos:prefLabel "CBoronArsenide" .
 
 ###  http://open-model.eu/ontologies/ss1-abox#BoronArsenideBandGap
@@ -51,7 +52,7 @@
 ###  http://open-model.eu/ontologies/ss1-abox#CGraphene
 :CGraphene rdf:type owl:NamedIndividual ,
                     tbox:Graphene ,
-                    tbox:SimulatedMaterial ;
+                    simsoft:SimulatedMaterial ;
            skos:prefLabel "CGraphene" ;
            emmo:elucidation "An individual to test the filtering ability of OntoFlow."@en .
 
@@ -142,7 +143,7 @@ This item could point to (or be connected with) a YAML file containing a templat
 ###  http://open-model.eu/ontologies/ss1-abox#Silicon
 :Silicon rdf:type owl:NamedIndividual ,
                   tbox:CrystalSilicon ,
-                  tbox:SimulatedMaterial ;
+                  simsoft:SimulatedMaterial ;
          emmo:EMMO_e1097637_70d2_4895_973f_2396f04fa204 :SiliconExperimentalStructure ;
          skos:prefLabel "Silicon" .
 
