@@ -9,14 +9,14 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix simsoft: <http://open-model.eu/domain/simulationsoftware#> .
 @base <http://open-model.eu/ontologies/ss1#> .
 
 <http://open-model.eu/ontologies/ss1> rdf:type owl:Ontology ;
                                        owl:versionIRI <http://open-model.eu/ontologies/1.0/ss1> ;
                                        owl:imports <http://open-model.eu/domain/simulationsoftware> ,
                                                    <http://open-model.eu/ontoflow/kpa> ,
-                                                   <https://w3id.org/emmo/1.0.0-rc1/disciplines/manufacturing> ,
-                                                   <https://w3id.org/emmo/1.0.0-rc1/multiperspective/dataset> ;
+                                                   <https://w3id.org/emmo/1.0.0-rc1/disciplines/manufacturing> ;
                                        dcterms:abstract "Application ontology for OpenModel success story 1. Synaptic electronics: from materials properties to next-generation memory devices."@en ;
                                        dcterms:created "2024-06-19"@en ;
                                        dcterms:creator <https://orcid.org/0000-0001-7815-6636> ;
@@ -41,9 +41,13 @@ emmo:example rdf:type owl:AnnotationProperty .
 #    Classes
 #################################################################
 
+###  http://open-model.eu/domain/simulationsoftware#SimulatedMaterial
+simsoft:SimulatedMaterial rdfs:subClassOf :SS1Datasets .
+
+
 ###  http://open-model.eu/ontologies/ss1#AmorphousSilicon
 :AmorphousSilicon rdf:type owl:Class ;
-                  rdfs:subClassOf :SimulatedMaterial ,
+                  rdfs:subClassOf simsoft:SimulatedMaterial ,
                                   emmo:EMMO_0afc19b0_2d43_4b3d_8da0_9ffb63bc1492 ;
                   skos:prefLabel "AmorphousSilicon" ;
                   emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Elemental silicon in its amorphous form."@en .
@@ -67,7 +71,7 @@ emmo:example rdf:type owl:AnnotationProperty .
 
 ###  http://open-model.eu/ontologies/ss1#BoronArsenide
 :BoronArsenide rdf:type owl:Class ;
-               rdfs:subClassOf :SimulatedMaterial ,
+               rdfs:subClassOf simsoft:SimulatedMaterial ,
                                emmo:EMMO_f1025834_0cd2_42a1_bfeb_13bec41c8655 ;
                skos:prefLabel "BoronArsenide" ;
                emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A wide-bandgap semiconductor."@en .
@@ -75,7 +79,7 @@ emmo:example rdf:type owl:AnnotationProperty .
 
 ###  http://open-model.eu/ontologies/ss1#CrystalSilicon
 :CrystalSilicon rdf:type owl:Class ;
-                rdfs:subClassOf :SimulatedMaterial ,
+                rdfs:subClassOf simsoft:SimulatedMaterial ,
                                 emmo:EMMO_f1025834_0cd2_42a1_bfeb_13bec41c8655 ;
                 skos:prefLabel "CrystalSilicon" ;
                 emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Elemental silicon in its crystalline form." .
@@ -111,7 +115,8 @@ emmo:example rdf:type owl:AnnotationProperty .
 
 ###  http://open-model.eu/ontologies/ss1#GSetup
 :GSetup rdf:type owl:Class ;
-        rdfs:subClassOf :GinestraDS ;
+        rdfs:subClassOf simsoft:InputControlData ,
+                        :GinestraDS ;
         skos:prefLabel "GSetup"@en ;
         emmo:elucidation "A dataset required by Ginestra to start a calculation, including the path of the executable, the license file, and the path of output files."@en .
 
@@ -128,7 +133,7 @@ emmo:example rdf:type owl:AnnotationProperty .
                           rdfs:subClassOf :GinestraSimulation ,
                                           [ rdf:type owl:Restriction ;
                                             owl:onProperty emmo:EMMO_36e69413_8c59_4799_946c_10b05d266e22 ;
-                                            owl:someValuesFrom :SimulatedMaterial
+                                            owl:someValuesFrom simsoft:SimulatedMaterial
                                           ] ,
                                           [ rdf:type owl:Restriction ;
                                             owl:onProperty emmo:EMMO_36e69413_8c59_4799_946c_10b05d266e22 ;
@@ -160,7 +165,7 @@ emmo:example rdf:type owl:AnnotationProperty .
                                     [ rdf:type owl:Restriction ;
                                       owl:onProperty emmo:EMMO_ae2d1a96_bfa1_409a_a7d2_03d69e8a125a ;
                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                      owl:onClass <http://open-model.eu/domain/simulationsoftware#Ginestra>
+                                      owl:onClass simsoft:Ginestra
                                     ] ;
                     skos:prefLabel "GinestraSimulation"@en ;
                     emmo:elucidation "A generic simulation of a macroscopic device using the Ginestra software."@en .
@@ -168,7 +173,7 @@ emmo:example rdf:type owl:AnnotationProperty .
 
 ###  http://open-model.eu/ontologies/ss1#Graphene
 :Graphene rdf:type owl:Class ;
-          rdfs:subClassOf :SimulatedMaterial ,
+          rdfs:subClassOf simsoft:SimulatedMaterial ,
                           emmo:EMMO_f1025834_0cd2_42a1_bfeb_13bec41c8655 ;
           skos:prefLabel "Graphene" ;
           emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "One of the many allotropes of carbon, characterized by a zero band gap."@en .
@@ -176,7 +181,8 @@ emmo:example rdf:type owl:AnnotationProperty .
 
 ###  http://open-model.eu/ontologies/ss1#QEBandStructureCalculation
 :QEBandStructureCalculation rdf:type owl:Class ;
-                            rdfs:subClassOf :QuantumEspressoDS ;
+                            rdfs:subClassOf simsoft:InputControlData ,
+                                            :QuantumEspressoDS ;
                             skos:prefLabel "QEBandStructureCalculation"@en ;
                             emmo:elucidation "A dataset for carrying out a band-structure calculation with Quantum Espresso."@en .
 
@@ -198,7 +204,8 @@ emmo:example rdf:type owl:AnnotationProperty .
 
 ###  http://open-model.eu/ontologies/ss1#QEGeometryOptimisation
 :QEGeometryOptimisation rdf:type owl:Class ;
-                        rdfs:subClassOf :QuantumEspressoDS ;
+                        rdfs:subClassOf simsoft:InputControlData ,
+                                        :QuantumEspressoDS ;
                         skos:prefLabel "QEGeometryOptimisation"@en ;
                         emmo:elucidation "A dataset for a geometry optimisation (cell + atomic coordinates) performed with QuantumEspresso ."@en .
 
@@ -230,7 +237,7 @@ emmo:example rdf:type owl:AnnotationProperty .
                                     [ rdf:type owl:Restriction ;
                                       owl:onProperty emmo:EMMO_ae2d1a96_bfa1_409a_a7d2_03d69e8a125a ;
                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                      owl:onClass <http://open-model.eu/domain/simulationsoftware#BandStructure2BandGap>
+                                      owl:onClass simsoft:BandStructure2BandGap
                                     ] ,
                                     [ rdf:type owl:Restriction ;
                                       owl:onProperty emmo:EMMO_c4bace1d_4db0_4cd3_87e9_18122bae2840 ;
@@ -336,7 +343,7 @@ emmo:example rdf:type owl:AnnotationProperty .
                                            [ rdf:type owl:Restriction ;
                                              owl:onProperty emmo:EMMO_ae2d1a96_bfa1_409a_a7d2_03d69e8a125a ;
                                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                             owl:onClass <http://open-model.eu/domain/simulationsoftware#QuantumEspresso>
+                                             owl:onClass simsoft:QuantumEspresso
                                            ] ;
                            skos:prefLabel "QuantumEspressoSimulation"@en ;
                            emmo:elucidation "A generic DFT simulation using the plane-wave code Quantum Espresso."@en .
@@ -354,15 +361,6 @@ emmo:example rdf:type owl:AnnotationProperty .
                         rdfs:subClassOf emmo:EMMO_7d56ec24_499d_487a_af7d_a91aaa787bfe ;
                         skos:prefLabel "SS1SynapticElectronics"@en ;
                         emmo:elucidation "A class collecting all individual simulations used in OpenModel's success story 1."@en .
-
-
-###  http://open-model.eu/ontologies/ss1#SimulatedMaterial
-:SimulatedMaterial rdf:type owl:Class ;
-                   rdfs:subClassOf :SS1Datasets ,
-                                   emmo:EMMO_4207e895_8b83_4318_996a_72cfb32acd94 ,
-                                   emmo:EMMO_4f2d1fcc_e20c_4479_9ad7_7a0480dd3e44 ;
-                   skos:prefLabel "SimulatedMaterial" ;
-                   emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "An analogical icon of a material taking part in a materials modelling simulation."@en .
 
 
 ###  http://open-model.eu/ontologies/ss1#StructureInitialGuess

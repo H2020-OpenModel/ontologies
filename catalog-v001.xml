@@ -2,10 +2,10 @@
 <catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
     <uri id="User Entered Import Resolution" name="http://open-model.eu/ontologies/ss1-tbox" uri="ss1-inferred.ttl"/>
     <uri id="User Entered Import Resolution" name="http://open-model.eu/domain/simulationsoftware" uri="KPA/kpa.ttl"/>
+    <uri id="User Entered Import Resolution" name="https://w3id.org/emmo/1.0.0-rc1" uri="../EMMO/emmo.ttl"/>
     <group id="Folder Repository, directory=, recursive=true, Auto-Update=false, version=2" prefer="public" xml:base="">
         <uri name="http://open-model.eu/ontologies/0.1/ss3" uri="./ss3.ttl"/>
         <uri name="http://open-model.eu/ontoflow/0.1/kpa" uri="./KPA/kpa.ttl"/>
-        <uri name="https://w3id.org/emmo/1.0.0-rc1" uri="https://emmo-repo.github.io/versions/1.0.0-rc1/emmo.ttl"/>
-        <uri name="https://w3id.org/emmo/domain/microstructure" uri="https://raw.githubusercontent.com/emmo-repo/domain-microstructure/master/microstructure.ttl"/>
+        <uri name="https://w3id.org/emmo/domain/microstructure" uri="./microstructure.ttl"/>
     </group>
 </catalog>

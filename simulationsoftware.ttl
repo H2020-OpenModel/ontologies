@@ -15,6 +15,7 @@
                                                   owl:imports <https://w3id.org/emmo/1.0.0-rc1/disciplines/geometrical> ,
                                                               <https://w3id.org/emmo/1.0.0-rc1/disciplines/isq> ,
                                                               <https://w3id.org/emmo/1.0.0-rc1/disciplines/models> ,
+                                                              <https://w3id.org/emmo/1.0.0-rc1/multiperspective/dataset> ,
                                                               <https://w3id.org/emmo/1.0.0-rc1/perspectives/data> ,
                                                               <https://w3id.org/emmo/1.0.0-rc1/perspectives/structural> ;
                                                   dcterms:abstract "Ontological foundations for a Knowledge Base covering the methods outlined in the Review of Materials Modelling (RoMM)."@en ;
@@ -106,6 +107,17 @@ foaf:logo rdf:type owl:AnnotationProperty .
 #################################################################
 #    Classes
 #################################################################
+
+###  http://open-model.eu/domain/simulationsoftware#Abaqus
+:Abaqus rdf:type owl:Class ;
+        rdfs:subClassOf emmo:EMMO_8d4962d7_9608_44f7_a2f1_82a4bb173f4a ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty emmo:EMMO_24c71baf_6db6_48b9_86c8_8c70cf36db0c ;
+                          owl:someValuesFrom :FiniteElements
+                        ] ;
+        skos:prefLabel "Abaqus" ;
+        emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Abaqus is a Finite Element Analysis (FEA) software designed to simulate real-world problems for various industries." .
+
 
 ###  http://open-model.eu/domain/simulationsoftware#AiiDA
 :AiiDA rdf:type owl:Class ;
@@ -280,6 +292,14 @@ foaf:logo rdf:type owl:AnnotationProperty .
                  emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A task which is executed in ExecFlow using a wrapper to an external software."@en .
 
 
+###  http://open-model.eu/domain/simulationsoftware#Fenics
+:Fenics rdf:type owl:Class ;
+        rdfs:subClassOf emmo:EMMO_cbf42aa6_9e11_4be8_932a_ae3c792ab17d ;
+        rdfs:seeAlso "https://fenicsproject.org/" ;
+        skos:prefLabel "Fenics" ;
+        emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "FEniCS is a popular open-source computing platform for solving partial differential equations (PDEs) with the finite element method (FEM). FEniCS enables users to quickly translate scientific models into efficient finite element code."@en .
+
+
 ###  http://open-model.eu/domain/simulationsoftware#FiniteElements
 :FiniteElements rdf:type owl:Class ;
                 rdfs:subClassOf emmo:EMMO_4456a5d2_16a6_4ee1_9a8e_5c75956b28ea ;
@@ -339,6 +359,19 @@ GULP is a program for performing a variety of types of simulation on materials u
 :HartreeFock rdf:type owl:Class ;
              rdfs:subClassOf emmo:EMMO_6eca09be_17e9_445e_abc9_000aa61b7a11 ;
              skos:prefLabel "HartreeFock" .
+
+
+###  http://open-model.eu/domain/simulationsoftware#InputControlData
+:InputControlData rdf:type owl:Class ;
+                  rdfs:subClassOf emmo:EMMO_4db96fb7_e9e0_466d_942b_f6f17bfdc145 ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty emmo:EMMO_559ab98c_1c7d_4794_996c_8c1d8d56381c ;
+                                    owl:someValuesFrom emmo:EMMO_eff42cb3_208e_4768_9a39_f8b6b3c3d7a2
+                                  ] ;
+                  skos:example "A coarse step for numerical integration."@en ;
+                  skos:prefLabel "InputControlData" ;
+                  emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "The set of parameters used to control a numerical simulations."@en ;
+                  emmo:EMMO_c7b62dd7_063a_4c2a_8504_42f7264ba83f "If a dataset is also a subclass of InputControlData, then OntoFlow does not apply any filter to the individual of the dataset class. This means that each instance of InputControlData gives rise to a different workflow."@en .
 
 
 ###  http://open-model.eu/domain/simulationsoftware#Jinja2File
@@ -535,6 +568,14 @@ https://doi.org/10.1021/ja00214a001."""@en ;
                           rdfs:subClassOf :HartreeFock ;
                           skos:prefLabel "SemiEmpiricalHamiltonian" ;
                           emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Semi-empirical quantum chemistry methods are based on the Hartree–Fock formalism, but make many approximations and obtain some parameters from empirical data."@en .
+
+
+###  http://open-model.eu/domain/simulationsoftware#SimulatedMaterial
+:SimulatedMaterial rdf:type owl:Class ;
+                   rdfs:subClassOf emmo:EMMO_4207e895_8b83_4318_996a_72cfb32acd94 ,
+                                   emmo:EMMO_4f2d1fcc_e20c_4479_9ad7_7a0480dd3e44 ;
+                   skos:prefLabel "SimulatedMaterial" ;
+                   emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "An analogical icon of a material taking part in a materials modelling simulation."@en .
 
 
 ###  http://open-model.eu/domain/simulationsoftware#Slab
