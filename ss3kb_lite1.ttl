@@ -60,36 +60,58 @@ This item could point to (or be connected with) a YAML file containing a templat
 
 ###  http://open-model.eu/ontologies/ss3-abox#Concrete1
 :Concrete1 rdf:type owl:NamedIndividual ,
-                    ss3:ReinforcedConcrete .
+                    ss3:ReinforcedConcrete ;
+           emmo:EMMO_9380ab64_0363_4804_b13f_3a8a94119a76 :abaqus_materialcard_al6060 ,
+                                                          :abaqus_materialcard_cement1 .
 
 
 ###  http://open-model.eu/ontologies/ss3-abox#Concrete2
 :Concrete2 rdf:type owl:NamedIndividual ,
-                    ss3:ReinforcedConcrete .
+                    ss3:ReinforcedConcrete ;
+           emmo:EMMO_9380ab64_0363_4804_b13f_3a8a94119a76 :abaqus_materialcard_al6083 ,
+                                                          :abaqus_materialcard_cement2 .
+
+
+###  http://open-model.eu/ontologies/ss3-abox#Concrete3
+:Concrete3 rdf:type owl:NamedIndividual ;
+           emmo:EMMO_9380ab64_0363_4804_b13f_3a8a94119a76 :abaqus_materialcard_cement1 ,
+                                                          :abaqus_materialcard_st001 .
 
 
 ###  http://open-model.eu/ontologies/ss3-abox#abaqus_materialcard_al6060
 :abaqus_materialcard_al6060 rdf:type owl:NamedIndividual ,
+                                     ss3:Aluminium ,
                                      ss3:ReinforcementMaterialCard ;
                             emmo:EMMO_7159549c_16a3_4dd3_b37d_e992ad0b0879 :Concrete1 .
 
 
 ###  http://open-model.eu/ontologies/ss3-abox#abaqus_materialcard_al6083
 :abaqus_materialcard_al6083 rdf:type owl:NamedIndividual ,
+                                     ss3:Aluminium ,
                                      ss3:ReinforcementMaterialCard ;
                             emmo:EMMO_7159549c_16a3_4dd3_b37d_e992ad0b0879 :Concrete2 .
 
 
 ###  http://open-model.eu/ontologies/ss3-abox#abaqus_materialcard_cement1
 :abaqus_materialcard_cement1 rdf:type owl:NamedIndividual ,
+                                      ss3:Concrete ,
                                       ss3:MatrixMaterialCard ;
-                             emmo:EMMO_7159549c_16a3_4dd3_b37d_e992ad0b0879 :Concrete1 .
+                             emmo:EMMO_7159549c_16a3_4dd3_b37d_e992ad0b0879 :Concrete1 ,
+                                                                            :Concrete3 .
 
 
 ###  http://open-model.eu/ontologies/ss3-abox#abaqus_materialcard_cement2
 :abaqus_materialcard_cement2 rdf:type owl:NamedIndividual ,
+                                      ss3:Concrete ,
                                       ss3:MatrixMaterialCard ;
                              emmo:EMMO_7159549c_16a3_4dd3_b37d_e992ad0b0879 :Concrete2 .
+
+
+###  http://open-model.eu/ontologies/ss3-abox#abaqus_materialcard_st001
+:abaqus_materialcard_st001 rdf:type owl:NamedIndividual ,
+                                    ss3:ReinforcementMaterialCard ,
+                                    ss3:Steel ;
+                           emmo:EMMO_7159549c_16a3_4dd3_b37d_e992ad0b0879 :Concrete3 .
 
 
 ###  http://open-model.eu/ontologies/ss3-abox#abaqussimulation_conf1
