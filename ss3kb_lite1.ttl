@@ -49,6 +49,11 @@ ss3:abaqussimulation_opensource rdf:type owl:NamedIndividual ,
                                 kpa:KPAValue "false"^^xsd:boolean .
 
 
+###  http://open-model.eu/ontologies/ss3#abaquswrapper_twocomponents
+ss3:abaquswrapper_twocomponents rdf:type ss3:AbaqusWrapper ;
+                                emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A pointer to a YAML template file containing the Abaqus wrapper for a particular task, that is, a simulation of reinforced concrete, where the simulated components are the reinforcement bar and the concrete matrix."@en .
+
+
 ###  http://open-model.eu/ontologies/ss3-abox#Abaqus_local
 :Abaqus_local rdf:type owl:NamedIndividual ,
                        simsoft:Abaqus ;

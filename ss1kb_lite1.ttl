@@ -28,6 +28,10 @@
 #    Individuals
 #################################################################
 
+###  http://open-model.eu/ontologies/ss1#wrapper_ginestra_device
+tbox:wrapper_ginestra_device rdf:type tbox:GinestraWrapper .
+
+
 ###  http://open-model.eu/ontologies/ss1-abox#ASilicon
 :ASilicon rdf:type owl:NamedIndividual ,
                    tbox:AmorphousSilicon ,

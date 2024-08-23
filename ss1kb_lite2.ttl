@@ -28,6 +28,15 @@
 #    Individuals
 #################################################################
 
+###  http://open-model.eu/ontologies/ss1#calcjob_bs2bg
+tbox:calcjob_bs2bg rdf:type simsoft:BandStructure2BandGap ;
+                   kpa:hasKPA :bs2bs_opensource .
+
+
+###  http://open-model.eu/ontologies/ss1#wrapper_ginestra_device
+tbox:wrapper_ginestra_device rdf:type tbox:GinestraWrapper .
+
+
 ###  http://open-model.eu/ontologies/ss1-abox#ASilicon
 :ASilicon rdf:type owl:NamedIndividual ,
                    tbox:AmorphousSilicon ,
@@ -124,7 +133,7 @@ This instance should not be selected by OntoFlow (hopefully)."""@en .
 
 ###  http://open-model.eu/ontologies/ss1-abox#GinestraLocal
 :GinestraLocal rdf:type owl:NamedIndividual ,
-                        <http://open-model.eu/domain/simulationsoftware#Ginestra> ;
+                        simsoft:Ginestra ;
                kpa:hasKPA :GinestraLocal_opensource ;
                skos:prefLabel "GinestraLocal" ;
                emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 """Local copy of the Ginestra Software.
@@ -176,7 +185,7 @@ This item could point to (or be connected with) a YAML file containing a templat
 
 ###  http://open-model.eu/ontologies/ss1-abox#BS2BGLocal
 :BS2BGLocal rdf:type owl:NamedIndividual ,
-                     <http://open-model.eu/domain/simulationsoftware#BandStructure2BandGap> ;
+                     simsoft:BandStructure2BandGap ;
             kpa:hasKPA :BS2BGLocal_opensource ;
             skos:prefLabel "BS2BGLocal"@en .
 
