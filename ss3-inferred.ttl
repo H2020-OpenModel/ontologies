@@ -2645,7 +2645,8 @@ Additional input is needed."""@en .
 
 ###  http://open-model.eu/ontologies/ss3#ReinforcedConcrete
 :ReinforcedConcrete rdf:type owl:Class ;
-                    rdfs:subClassOf emmo:EMMO_ec7464a9_d99d_45f8_965b_4e9230ea8356 ;
+                    rdfs:subClassOf simsoft:SimulatedMaterial ,
+                                    emmo:EMMO_ec7464a9_d99d_45f8_965b_4e9230ea8356 ;
                     skos:prefLabel "ReinforcedConcrete" .
 
 

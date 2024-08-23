@@ -98,9 +98,6 @@ dcterms:created rdf:type owl:AnnotationProperty .
 ###  http://open-model.eu/ontologies/ss3#AbaqusSimulation
 :AbaqusSimulation rdf:type owl:Class ;
                   rdfs:subClassOf :OpenModelSS3Simulation ,
-                                  <http://org.semanticweb.owlapi/error#Error33> ,
-                                  <http://org.semanticweb.owlapi/error#Error34> ,
-                                  <http://org.semanticweb.owlapi/error#Error35> ,
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty emmo:EMMO_36e69413_8c59_4799_946c_10b05d266e22 ;
                                     owl:someValuesFrom :MatrixMaterialCard
@@ -163,10 +160,7 @@ dcterms:created rdf:type owl:AnnotationProperty .
 
 ###  http://open-model.eu/ontologies/ss3#FenicsLayer
 :FenicsLayer rdf:type owl:Class ;
-             rdfs:subClassOf <http://org.semanticweb.owlapi/error#Error46> ,
-                             <http://org.semanticweb.owlapi/error#Error47> ,
-                             <http://org.semanticweb.owlapi/error#Error48> ,
-                             emmo:EMMO_ceaaf9f7_fd11_424b_8fda_9afa186af186 ;
+             rdfs:subClassOf emmo:EMMO_ceaaf9f7_fd11_424b_8fda_9afa186af186 ;
              skos:altLabel "FenicsSimulationLayer"@en ;
              skos:prefLabel "FenicsLayer"@en ;
              emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A layer in the Fenics model."@en .
@@ -216,12 +210,7 @@ dcterms:created rdf:type owl:AnnotationProperty .
 
 ###  http://open-model.eu/ontologies/ss3#FenicsSimulation
 :FenicsSimulation rdf:type owl:Class ;
-                  rdfs:subClassOf :OpenModelSS3Simulation ,
-                                  <http://org.semanticweb.owlapi/error#Error41> ,
-                                  <http://org.semanticweb.owlapi/error#Error42> ,
-                                  <http://org.semanticweb.owlapi/error#Error43> ,
-                                  <http://org.semanticweb.owlapi/error#Error44> ,
-                                  <http://org.semanticweb.owlapi/error#Error45> ;
+                  rdfs:subClassOf :OpenModelSS3Simulation ;
                   skos:prefLabel "FenicsSimulation"@en ;
                   emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A simulation performed by the Fenics simulation software."@en .
 
@@ -256,8 +245,6 @@ dcterms:created rdf:type owl:AnnotationProperty .
 ###  http://open-model.eu/ontologies/ss3#MaterialCardGenerator
 :MaterialCardGenerator rdf:type owl:Class ;
                        rdfs:subClassOf :OpenModelSS3Simulation ,
-                                       <http://org.semanticweb.owlapi/error#Error39> ,
-                                       <http://org.semanticweb.owlapi/error#Error40> ,
                                        [ rdf:type owl:Restriction ;
                                          owl:onProperty emmo:EMMO_36e69413_8c59_4799_946c_10b05d266e22 ;
                                          owl:someValuesFrom :AbaqusSimpleMaterialCardTemplate
@@ -280,11 +267,7 @@ Additional input is needed."""@en .
 
 ###  http://open-model.eu/ontologies/ss3#NaMoSimulation
 :NaMoSimulation rdf:type owl:Class ;
-                rdfs:subClassOf :OpenModelSS3Simulation ,
-                                <http://org.semanticweb.owlapi/error#Error29> ,
-                                <http://org.semanticweb.owlapi/error#Error30> ,
-                                <http://org.semanticweb.owlapi/error#Error31> ,
-                                <http://org.semanticweb.owlapi/error#Error32> ;
+                rdfs:subClassOf :OpenModelSS3Simulation ;
                 skos:prefLabel "NaMoSimulation"@en ;
                 emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A simulation performed with the Hydro-owned NaMo simulation software for modelling precipitation during heat treatment and work hardening behaviour or the final component."@en .
 
@@ -328,35 +311,29 @@ Additional input is needed."""@en .
 
 ###  http://open-model.eu/ontologies/ss3#PremodSimple
 :PremodSimple rdf:type owl:Class ;
-              rdfs:subClassOf :OpenModelSS3DataSet ,
-                              <http://org.semanticweb.owlapi/error#Error36> ;
+              rdfs:subClassOf :OpenModelSS3DataSet ;
               skos:prefLabel "PremodSimple"@en ;
               emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Input to the PREMOD model."@en .
 
 
 ###  http://open-model.eu/ontologies/ss3#PremodSimulation
 :PremodSimulation rdf:type owl:Class ;
-                  rdfs:subClassOf :OpenModelSS3Simulation ,
-                                  <http://org.semanticweb.owlapi/error#Error25> ,
-                                  <http://org.semanticweb.owlapi/error#Error26> ,
-                                  <http://org.semanticweb.owlapi/error#Error27> ,
-                                  <http://org.semanticweb.owlapi/error#Error28> ;
+                  rdfs:subClassOf :OpenModelSS3Simulation ;
                   skos:prefLabel "PremodSimulation"@en ;
                   emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A simulation performed with the PREMOD microstructure model."@en .
 
 
 ###  http://open-model.eu/ontologies/ss3#PremodStrengthModel
 :PremodStrengthModel rdf:type owl:Class ;
-                     rdfs:subClassOf :OpenModelSS3Simulation ,
-                                     <http://org.semanticweb.owlapi/error#Error37> ,
-                                     <http://org.semanticweb.owlapi/error#Error38> ;
+                     rdfs:subClassOf :OpenModelSS3Simulation ;
                      skos:prefLabel "PremodStrengthModel"@en ;
                      emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A strength model that calculates the Yield strength from the size distribution calcuated by Premod."@en .
 
 
 ###  http://open-model.eu/ontologies/ss3#ReinforcedConcrete
 :ReinforcedConcrete rdf:type owl:Class ;
-                    rdfs:subClassOf emmo:EMMO_ec7464a9_d99d_45f8_965b_4e9230ea8356 ;
+                    rdfs:subClassOf simsoft:SimulatedMaterial ,
+                                    emmo:EMMO_ec7464a9_d99d_45f8_965b_4e9230ea8356 ;
                     skos:prefLabel "ReinforcedConcrete" .
 
 
@@ -379,102 +356,6 @@ Additional input is needed."""@en .
        skos:prefLabel "Steel" .
 
 
-###  http://org.semanticweb.owlapi/error#Error25
-<http://org.semanticweb.owlapi/error#Error25> rdf:type owl:Class .
-
-
-###  http://org.semanticweb.owlapi/error#Error26
-<http://org.semanticweb.owlapi/error#Error26> rdf:type owl:Class .
-
-
-###  http://org.semanticweb.owlapi/error#Error27
-<http://org.semanticweb.owlapi/error#Error27> rdf:type owl:Class .
-
-
-###  http://org.semanticweb.owlapi/error#Error28
-<http://org.semanticweb.owlapi/error#Error28> rdf:type owl:Class .
-
-
-###  http://org.semanticweb.owlapi/error#Error29
-<http://org.semanticweb.owlapi/error#Error29> rdf:type owl:Class .
-
-
-###  http://org.semanticweb.owlapi/error#Error30
-<http://org.semanticweb.owlapi/error#Error30> rdf:type owl:Class .
-
-
-###  http://org.semanticweb.owlapi/error#Error31
-<http://org.semanticweb.owlapi/error#Error31> rdf:type owl:Class .
-
-
-###  http://org.semanticweb.owlapi/error#Error32
-<http://org.semanticweb.owlapi/error#Error32> rdf:type owl:Class .
-
-
-###  http://org.semanticweb.owlapi/error#Error33
-<http://org.semanticweb.owlapi/error#Error33> rdf:type owl:Class .
-
-
-###  http://org.semanticweb.owlapi/error#Error34
-<http://org.semanticweb.owlapi/error#Error34> rdf:type owl:Class .
-
-
-###  http://org.semanticweb.owlapi/error#Error35
-<http://org.semanticweb.owlapi/error#Error35> rdf:type owl:Class .
-
-
-###  http://org.semanticweb.owlapi/error#Error36
-<http://org.semanticweb.owlapi/error#Error36> rdf:type owl:Class .
-
-
-###  http://org.semanticweb.owlapi/error#Error37
-<http://org.semanticweb.owlapi/error#Error37> rdf:type owl:Class .
-
-
-###  http://org.semanticweb.owlapi/error#Error38
-<http://org.semanticweb.owlapi/error#Error38> rdf:type owl:Class .
-
-
-###  http://org.semanticweb.owlapi/error#Error39
-<http://org.semanticweb.owlapi/error#Error39> rdf:type owl:Class .
-
-
-###  http://org.semanticweb.owlapi/error#Error40
-<http://org.semanticweb.owlapi/error#Error40> rdf:type owl:Class .
-
-
-###  http://org.semanticweb.owlapi/error#Error41
-<http://org.semanticweb.owlapi/error#Error41> rdf:type owl:Class .
-
-
-###  http://org.semanticweb.owlapi/error#Error42
-<http://org.semanticweb.owlapi/error#Error42> rdf:type owl:Class .
-
-
-###  http://org.semanticweb.owlapi/error#Error43
-<http://org.semanticweb.owlapi/error#Error43> rdf:type owl:Class .
-
-
-###  http://org.semanticweb.owlapi/error#Error44
-<http://org.semanticweb.owlapi/error#Error44> rdf:type owl:Class .
-
-
-###  http://org.semanticweb.owlapi/error#Error45
-<http://org.semanticweb.owlapi/error#Error45> rdf:type owl:Class .
-
-
-###  http://org.semanticweb.owlapi/error#Error46
-<http://org.semanticweb.owlapi/error#Error46> rdf:type owl:Class .
-
-
-###  http://org.semanticweb.owlapi/error#Error47
-<http://org.semanticweb.owlapi/error#Error47> rdf:type owl:Class .
-
-
-###  http://org.semanticweb.owlapi/error#Error48
-<http://org.semanticweb.owlapi/error#Error48> rdf:type owl:Class .
-
-
 #################################################################
 #    Individuals
 #################################################################
@@ -490,77 +371,5 @@ Additional input is needed."""@en .
 ###  http://open-model.eu/ontologies/ss3#abaqussimulation_opensource
 :abaqussimulation_opensource rdf:type owl:NamedIndividual .
 
-
-[ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
-] .
-
-[ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
- ] .
-
-[ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
- ] .
-
-[ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
- ] .
-
-[ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
- ] .
-
-[ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
- ] .
-
-[ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
- ] .
-
-[ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
- ] .
-
-[ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
- ] .
-
-[ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
- ] .
-
-[ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
- ] .
-
-[ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
- ] .
-
-[ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
- ] .
-
-[ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
- ] .
-
-[ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
- ] .
-
-[ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
- ] .
-
-[ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
- ] .
-
-[ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
- ] .
-
-[ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
- ] .
-
-[ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
- ] .
-
-[ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
- ] .
-
-[ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
- ] .
-
-[ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
- ] .
-
-[ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
- ] .
 
 ###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi
