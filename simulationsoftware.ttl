@@ -81,8 +81,13 @@ foaf:logo rdf:type owl:AnnotationProperty .
 #    Object Properties
 #################################################################
 
-###  http://www.w3.org/ns/dcat#accessURL
-<http://www.w3.org/ns/dcat#accessURL> rdf:type owl:ObjectProperty .
+###  http://open-model.eu/domain/simulationsoftware#hasWrapper
+:hasWrapper rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf emmo:EMMO_b2282816_b7a3_44c6_b2cb_3feff1ceb7fe ;
+            rdfs:domain emmo:EMMO_4299e344_a321_4ef2_a744_bacfcce80afc ;
+            rdfs:range :YAMLFile ;
+            skos:prefLabel "hasWrapper" ;
+            emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Relates a process to its AiiDA wrapper, written using the declarative workflow syntax (ExecFlow)."@en .
 
 
 #################################################################
