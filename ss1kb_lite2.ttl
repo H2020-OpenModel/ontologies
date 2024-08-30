@@ -40,7 +40,7 @@ tbox:wrapper_ginestra_device rdf:type tbox:GinestraWrapper .
 ###  http://open-model.eu/ontologies/ss1-abox#ASilicon
 :ASilicon rdf:type owl:NamedIndividual ,
                    tbox:AmorphousSilicon ,
-                   simsoft:SimulatedMaterial ;
+                   simsoft:VirtualMaterial ;
           emmo:EMMO_e1097637_70d2_4895_973f_2396f04fa204 :SiliconBandStructure2 ;
           skos:prefLabel "ASilicon" .
 
@@ -48,7 +48,7 @@ tbox:wrapper_ginestra_device rdf:type tbox:GinestraWrapper .
 ###  http://open-model.eu/ontologies/ss1-abox#CBoronArsenide
 :CBoronArsenide rdf:type owl:NamedIndividual ,
                          tbox:BoronArsenide ,
-                         simsoft:SimulatedMaterial ;
+                         simsoft:VirtualMaterial ;
                emmo:EMMO_e1097637_70d2_4895_973f_2396f04fa204 :BoronArsenideBandStructure ;
                 skos:prefLabel "CBoronArsenide" .
 
@@ -62,7 +62,7 @@ tbox:wrapper_ginestra_device rdf:type tbox:GinestraWrapper .
 ###  http://open-model.eu/ontologies/ss1-abox#CGraphene
 :CGraphene rdf:type owl:NamedIndividual ,
                     tbox:Graphene ,
-                    simsoft:SimulatedMaterial ;
+                    simsoft:VirtualMaterial ;
            skos:prefLabel "CGraphene" .
 
 
@@ -76,7 +76,7 @@ tbox:wrapper_ginestra_device rdf:type tbox:GinestraWrapper .
 ###  http://open-model.eu/ontologies/ss1-abox#Silicon
 :Silicon rdf:type owl:NamedIndividual ,
                   tbox:CrystalSilicon ,
-                  simsoft:SimulatedMaterial ;
+                  simsoft:VirtualMaterial ;
          emmo:EMMO_e1097637_70d2_4895_973f_2396f04fa204 :SiliconBandStructure ,
                                                         :SiliconExperimentalStructure ;
          skos:prefLabel "Silicon" .

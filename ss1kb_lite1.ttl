@@ -35,14 +35,14 @@ tbox:wrapper_ginestra_device rdf:type tbox:GinestraWrapper .
 ###  http://open-model.eu/ontologies/ss1-abox#ASilicon
 :ASilicon rdf:type owl:NamedIndividual ,
                    tbox:AmorphousSilicon ,
-                   simsoft:SimulatedMaterial ;
+                   simsoft:VirtualMaterial ;
           skos:prefLabel "ASilicon" .
 
 
 ###  http://open-model.eu/ontologies/ss1-abox#CBoronArsenide
 :CBoronArsenide rdf:type owl:NamedIndividual ,
                          tbox:BoronArsenide ,
-                         simsoft:SimulatedMaterial ;
+                         simsoft:VirtualMaterial ;
                 skos:prefLabel "CBoronArsenide" .
 
 ###  http://open-model.eu/ontologies/ss1-abox#BoronArsenideBandGap
@@ -56,7 +56,7 @@ tbox:wrapper_ginestra_device rdf:type tbox:GinestraWrapper .
 ###  http://open-model.eu/ontologies/ss1-abox#CGraphene
 :CGraphene rdf:type owl:NamedIndividual ,
                     tbox:Graphene ,
-                    simsoft:SimulatedMaterial ;
+                    simsoft:VirtualMaterial ;
            skos:prefLabel "CGraphene" ;
            emmo:elucidation "An individual to test the filtering ability of OntoFlow."@en .
 
@@ -147,7 +147,7 @@ This item could point to (or be connected with) a YAML file containing a templat
 ###  http://open-model.eu/ontologies/ss1-abox#Silicon
 :Silicon rdf:type owl:NamedIndividual ,
                   tbox:CrystalSilicon ,
-                  simsoft:SimulatedMaterial ;
+                  simsoft:VirtualMaterial ;
          emmo:EMMO_e1097637_70d2_4895_973f_2396f04fa204 :SiliconExperimentalStructure ;
          skos:prefLabel "Silicon" .
 

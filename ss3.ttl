@@ -136,7 +136,7 @@ dcterms:created rdf:type owl:AnnotationProperty .
 
 ###  http://open-model.eu/ontologies/ss3#Aluminium
 :Aluminium rdf:type owl:Class ;
-           rdfs:subClassOf simsoft:SimulatedMaterial ;
+           rdfs:subClassOf simsoft:VirtualMaterial ;
            skos:prefLabel "Aluminium" .
 
 
@@ -151,7 +151,7 @@ dcterms:created rdf:type owl:AnnotationProperty .
 
 ###  http://open-model.eu/ontologies/ss3#Concrete
 :Concrete rdf:type owl:Class ;
-          rdfs:subClassOf simsoft:SimulatedMaterial ;
+          rdfs:subClassOf simsoft:VirtualMaterial ;
           skos:prefLabel "Concrete" .
 
 
@@ -250,7 +250,7 @@ dcterms:created rdf:type owl:AnnotationProperty .
 
 ###  http://open-model.eu/ontologies/ss3#Magnesium
 :Magnesium rdf:type owl:Class ;
-           rdfs:subClassOf simsoft:SimulatedMaterial ;
+           rdfs:subClassOf simsoft:VirtualMaterial ;
            skos:prefLabel "Magnesium" .
 
 
@@ -344,8 +344,11 @@ Additional input is needed."""@en .
 
 ###  http://open-model.eu/ontologies/ss3#ReinforcedConcrete
 :ReinforcedConcrete rdf:type owl:Class ;
-                    rdfs:subClassOf simsoft:SimulatedMaterial ,
-                                    emmo:EMMO_ec7464a9_d99d_45f8_965b_4e9230ea8356 ;
+                    rdfs:subClassOf simsoft:VirtualMaterial ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty emmo:EMMO_7159549c_16a3_4dd3_b37d_e992ad0b0879 ;
+                                      owl:someValuesFrom emmo:EMMO_ec7464a9_d99d_45f8_965b_4e9230ea8356
+                                    ] ;
                     skos:prefLabel "ReinforcedConcrete" .
 
 
@@ -364,7 +367,7 @@ Additional input is needed."""@en .
 
 ###  http://open-model.eu/ontologies/ss3#Steel
 :Steel rdf:type owl:Class ;
-       rdfs:subClassOf simsoft:SimulatedMaterial ;
+       rdfs:subClassOf simsoft:VirtualMaterial ;
        skos:prefLabel "Steel" .
 
 

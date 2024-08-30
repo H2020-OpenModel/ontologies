@@ -47,7 +47,7 @@ tbox:wrapper_qe_geomopt rdf:type tbox:QuantumEspressoWrapper .
 
 ###  http://open-model.eu/ontologies/ss1-abox#ASilicon
 :ASilicon rdf:type owl:NamedIndividual ,
-                   simsoft:SimulatedMaterial ,
+                   simsoft:VirtualMaterial ,
                    tbox:AmorphousSilicon ;
           emmo:EMMO_e1097637_70d2_4895_973f_2396f04fa204 :SiliconBandStructure2 ;
           skos:prefLabel "ASilicon" .
@@ -61,7 +61,7 @@ tbox:wrapper_qe_geomopt rdf:type tbox:QuantumEspressoWrapper .
 
 ###  http://open-model.eu/ontologies/ss1-abox#CBoronArsenide
 :CBoronArsenide rdf:type owl:NamedIndividual ,
-                         simsoft:SimulatedMaterial ,
+                         simsoft:VirtualMaterial ,
                          tbox:BoronArsenide ;
                 emmo:EMMO_e1097637_70d2_4895_973f_2396f04fa204 :BoronArsenideBandStructure ;
                 skos:prefLabel "CBoronArsenide" .
@@ -69,7 +69,7 @@ tbox:wrapper_qe_geomopt rdf:type tbox:QuantumEspressoWrapper .
 
 ###  http://open-model.eu/ontologies/ss1-abox#CGraphene
 :CGraphene rdf:type owl:NamedIndividual ,
-                    simsoft:SimulatedMaterial ,
+                    simsoft:VirtualMaterial ,
                     tbox:Graphene ;
            emmo:EMMO_e1097637_70d2_4895_973f_2396f04fa204 :GrapheneBandStructure ;
            skos:prefLabel "CGraphene" .
@@ -221,7 +221,7 @@ This item could point to (or be connected with) a YAML file containing a templat
 
 ###  http://open-model.eu/ontologies/ss1-abox#Silicon
 :Silicon rdf:type owl:NamedIndividual ,
-                  simsoft:SimulatedMaterial ,
+                  simsoft:VirtualMaterial ,
                   tbox:CrystalSilicon ;
          emmo:EMMO_e1097637_70d2_4895_973f_2396f04fa204 :SiliconExperimentalStructure ;
          skos:prefLabel "Silicon" .
