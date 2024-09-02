@@ -31,8 +31,20 @@
 #    Annotation properties
 #################################################################
 
-###  http://open-model.eu/ontoflow/kpa#KPAValue
-kpa:KPAValue rdf:type owl:AnnotationProperty .
+###  http://purl.org/dc/terms/creator
+dcterms:creator rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/license
+dcterms:license rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/publisher
+dcterms:publisher rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/title
+dcterms:title rdf:type owl:AnnotationProperty .
 
 
 #################################################################
@@ -114,7 +126,8 @@ This item could point to (or be connected with) a YAML file containing a templat
                                        owl:onProperty emmo:EMMO_7159549c_16a3_4dd3_b37d_e992ad0b0879 ;
                                        owl:someValuesFrom ss3:Aluminium
                                      ] ;
-                            simsoft:EMMO_b18859f8_74d8_4c9f_b779_705ab643fe2e :Concrete1 .
+                            simsoft:EMMO_b18859f8_74d8_4c9f_b779_705ab643fe2e :Concrete1 ;
+                            kpa:hasKPA :amc_sz1 .
 
 
 ###  http://open-model.eu/ontologies/ss3-abox#abaqus_materialcard_al6083
@@ -124,7 +137,8 @@ This item could point to (or be connected with) a YAML file containing a templat
                                        owl:onProperty emmo:EMMO_7159549c_16a3_4dd3_b37d_e992ad0b0879 ;
                                        owl:someValuesFrom ss3:Aluminium
                                      ] ;
-                            simsoft:EMMO_b18859f8_74d8_4c9f_b779_705ab643fe2e :Concrete2 .
+                            simsoft:EMMO_b18859f8_74d8_4c9f_b779_705ab643fe2e :Concrete2 ;
+                            kpa:hasKPA :amc_sz2 .
 
 
 ###  http://open-model.eu/ontologies/ss3-abox#abaqus_materialcard_cement1
@@ -135,7 +149,8 @@ This item could point to (or be connected with) a YAML file containing a templat
                                         owl:someValuesFrom ss3:Concrete
                                       ] ;
                              simsoft:EMMO_b18859f8_74d8_4c9f_b779_705ab643fe2e :Concrete1 ,
-                                                                               :Concrete3 .
+                                                                               :Concrete3 ;
+                            kpa:hasKPA :amc_sz4 .
 
 
 ###  http://open-model.eu/ontologies/ss3-abox#abaqus_materialcard_cement2
@@ -145,7 +160,8 @@ This item could point to (or be connected with) a YAML file containing a templat
                                         owl:onProperty emmo:EMMO_7159549c_16a3_4dd3_b37d_e992ad0b0879 ;
                                         owl:someValuesFrom ss3:Concrete
                                       ] ;
-                             simsoft:EMMO_b18859f8_74d8_4c9f_b779_705ab643fe2e :Concrete2 .
+                             simsoft:EMMO_b18859f8_74d8_4c9f_b779_705ab643fe2e :Concrete2 ;
+                            kpa:hasKPA :amc_sz5 .
 
 
 ###  http://open-model.eu/ontologies/ss3-abox#abaqus_materialcard_st001
@@ -155,17 +171,80 @@ This item could point to (or be connected with) a YAML file containing a templat
                                       owl:onProperty emmo:EMMO_7159549c_16a3_4dd3_b37d_e992ad0b0879 ;
                                       owl:someValuesFrom ss3:Steel
                                     ] ;
-                           simsoft:EMMO_b18859f8_74d8_4c9f_b779_705ab643fe2e :Concrete3 .
+                           simsoft:EMMO_b18859f8_74d8_4c9f_b779_705ab643fe2e :Concrete3 ;
+                            kpa:hasKPA :amc_sz3 .
 
 
 ###  http://open-model.eu/ontologies/ss3-abox#abaqussimulation_conf1
 :abaqussimulation_conf1 rdf:type owl:NamedIndividual ,
-                                 ss3:AbaqusConfiguration .
+                                 ss3:AbaqusConfiguration ;
+                        kpa:hasKPA :as_ac1 ,
+                                   :as_st1 .
 
 
 ###  http://open-model.eu/ontologies/ss3-abox#abaqussimulation_conf2
 :abaqussimulation_conf2 rdf:type owl:NamedIndividual ,
-                                 ss3:AbaqusConfiguration .
+                                 ss3:AbaqusConfiguration ;
+                        kpa:hasKPA :as_ac2 ,
+                                   :as_st2 .
+
+
+###  http://open-model.eu/ontologies/ss3-abox#amc_sz1
+:amc_sz1 rdf:type owl:NamedIndividual ,
+                  kpa:SystemSize ;
+         kpa:KPAValue 10 .
+
+
+###  http://open-model.eu/ontologies/ss3-abox#amc_sz2
+:amc_sz2 rdf:type owl:NamedIndividual ,
+                  kpa:SystemSize ;
+         kpa:KPAValue 15 .
+
+
+###  http://open-model.eu/ontologies/ss3-abox#amc_sz3
+:amc_sz3 rdf:type owl:NamedIndividual ,
+                  kpa:SystemSize ;
+         kpa:KPAValue 20 .
+
+
+###  http://open-model.eu/ontologies/ss3-abox#amc_sz4
+:amc_sz4 rdf:type owl:NamedIndividual ,
+                  kpa:SystemSize ;
+         kpa:KPAValue 5 .
+
+
+###  http://open-model.eu/ontologies/ss3-abox#amc_sz5
+:amc_sz5 rdf:type owl:NamedIndividual ,
+                  kpa:SystemSize ;
+         kpa:KPAValue 15 .
+
+
+###  http://open-model.eu/ontologies/ss3-abox#as_ac1
+:as_ac1 rdf:type owl:NamedIndividual ,
+                 kpa:OrdinalAccuracy ;
+        kpa:KPAValue "high" ;
+        skos:prefLabel "as_ac1"@en .
+
+
+###  http://open-model.eu/ontologies/ss3-abox#as_ac2
+:as_ac2 rdf:type owl:NamedIndividual ,
+                 kpa:OrdinalAccuracy ;
+        kpa:KPAValue "low" ;
+        skos:prefLabel "as_ac2"@en .
+
+
+###  http://open-model.eu/ontologies/ss3-abox#as_st1
+:as_st1 rdf:type owl:NamedIndividual ,
+                 kpa:NormalizedSimulationTime ;
+        kpa:KPAValue "1.0"^^xsd:double ;
+        skos:prefLabel "as_st1" .
+
+
+###  http://open-model.eu/ontologies/ss3-abox#as_st2
+:as_st2 rdf:type owl:NamedIndividual ,
+                 kpa:NormalizedSimulationTime ;
+        kpa:KPAValue "0.4"^^xsd:double ;
+        skos:prefLabel "as_st2" .
 
 
 ###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi

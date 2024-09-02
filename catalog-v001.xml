@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
-    <uri id="User Entered Import Resolution" name="http://open-model.eu/ontoflow/kpa" uri="KPA/kpa.ttl"/>
+    <uri id="User Entered Import Resolution" name="http://open-model.eu/ontoflow/0.1/kpa" uri="KPA/kpa.ttl"/>
     <uri id="User Entered Import Resolution" name="http://open-model.eu/ontologies/ss1-tbox" uri="ss1-inferred.ttl"/>
     <uri id="User Entered Import Resolution" name="http://open-model.eu/ontologies/ss3-tbox" uri="ss3-inferred.ttl"/>
     <uri id="User Entered Import Resolution" name="http://open-model.eu/ontologies/0.1/ss3-tbox" uri="ss3-inferred.ttl"/>

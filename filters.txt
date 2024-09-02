@@ -1,0 +1,101 @@
+hasProperPart       emmo:EMMO_9380ab64_0363_4804_b13f_3a8a94119a76
+hasDatum            emmo:EMMO_6b78c119_f86c_4b5e_ba6c_b42d25a64122
+isPropertyFor       emmo:EMMO_c4ca55f0_2795_4bff_b8a9_445ed6e29d6c
+isDescriptionFor    emmo:EMMO_7159549c_16a3_4dd3_b37d_e992ad0b0879
+isIconPart          simsoft:EMMO_b18859f8_74d8_4c9f_b779_705ab643fe2e
+ 
+ 
+# INPUT -  iri = tbox3:AbaqusSimulation, filter = abox3:Concrete1
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX emmo: <https://w3id.org/emmo#>
+PREFIX tbox1: <http://open-model.eu/ontologies/ss1#>
+PREFIX abox1: <http://open-model.eu/ontologies/ss1-abox#>
+PREFIX tbox3: <http://open-model.eu/ontologies/ss3#>
+PREFIX abox3: <http://open-model.eu/ontologies/ss3-abox#>
+PREFIX simsoft: <http://open-model.eu/domain/simulationsoftware#>
+ 
+SELECT DISTINCT ?sub ?rel ?obj WHERE {
+BIND({iri} AS ?obj) .
+BIND(emmo:EMMO_36e69413_8c59_4799_946c_10b05d266e22 AS ?rel) .
+ 
+BIND({filter} as ?filter) .
+BIND(simsoft:InputControlData as ?nofilter) .
+ 
+?obj rdf:type owl:Class ;
+    rdfs:subClassOf ?restriction .
+?restriction rdf:type owl:Restriction ;
+            owl:onProperty emmo:EMMO_36e69413_8c59_4799_946c_10b05d266e22 ;
+            ?p ?sub .
+FILTER (?p IN (owl:onClass, owl:someValuesFrom))
+ 
+{
+?sub rdfs:subClassOf ?nofilter
+}
+UNION
+{
+?filter rdf:type ?sub.
+}
+UNION
+{
+{
+?objf rdf:type ?sub.
+?objf rdf:type ?filter.
+}
+UNION
+{
+?objf rdf:type ?sub .
+?objf ?relf ?filter .
+}
+UNION
+{
+?objf rdf:type ?sub .
+?objf ?relf ?objf1 .
+?objf1 rdf:type ?filter .
+}
+FILTER (?relf IN (emmo:EMMO_9380ab64_0363_4804_b13f_3a8a94119a76, emmo:EMMO_6b78c119_f86c_4b5e_ba6c_b42d25a64122, emmo:EMMO_c4ca55f0_2795_4bff_b8a9_445ed6e29d6c, emmo:EMMO_7159549c_16a3_4dd3_b37d_e992ad0b0879, simsoft:EMMO_b18859f8_74d8_4c9f_b779_705ab643fe2e)) .
+}
+}
+ 
+# INDIVIDUAL -  iri = tbox3:MatrixMaterialCard, filter = abox3:Concrete1
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX emmo: <https://w3id.org/emmo#>
+PREFIX tbox1: <http://open-model.eu/ontologies/ss1#>
+PREFIX abox1: <http://open-model.eu/ontologies/ss1-abox#>
+PREFIX tbox3: <http://open-model.eu/ontologies/ss3#>
+PREFIX abox3: <http://open-model.eu/ontologies/ss3-abox#>
+PREFIX simsoft: <http://open-model.eu/domain/simulationsoftware#>
+ 
+SELECT DISTINCT * WHERE {
+BIND({iri} AS ?obj) .
+BIND(emmo:EMMO_36e69413_8c59_4799_946c_10b05d266e22 AS ?rel) .
+ 
+BIND({filter} as ?filter) .
+BIND(simsoft:InputControlData as ?nofilter) .
+ 
+ 
+?sub rdf:type ?obj .
+ 
+{
+?sub rdf:type ?objf .
+?objf rdfs:subClassOf ?nofilter .
+}
+UNION
+{
+{
+?sub ?relf ?filter .
+}
+UNION
+{
+?sub ?relf ?objf .
+?objf rdf:type ?filter .
+}
+ 
+FILTER (?relf IN (emmo:EMMO_9380ab64_0363_4804_b13f_3a8a94119a76, emmo:EMMO_6b78c119_f86c_4b5e_ba6c_b42d25a64122, emmo:EMMO_c4ca55f0_2795_4bff_b8a9_445ed6e29d6c, emmo:EMMO_7159549c_16a3_4dd3_b37d_e992ad0b0879, simsoft:EMMO_b18859f8_74d8_4c9f_b779_705ab643fe2e)) .
+}
+}

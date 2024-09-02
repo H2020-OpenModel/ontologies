@@ -181,6 +181,14 @@ kpa:hasKPA rdf:type owl:ObjectProperty .
                       emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Material card for concrete. It describes the mechanical properties of a given concrete."@en .
 
 
+###  http://open-model.eu/ontologies/ss3#EffectiveAlloyComposition
+:EffectiveAlloyComposition rdf:type owl:Class ;
+                           rdfs:subClassOf :OpenModelSS3DataSet ,
+                                           <https://w3id.org/emmo/domain/microstructure#EMMO_f84836b6_4a4d_4f13_a340_a4c141028c87> ;
+                           skos:prefLabel "EffectiveAlloyComposition"@en ;
+                           emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Dataset to describe the effective alloy composition, the composition in the aluminium matrix which is different from the nominal composition due to formation of other phases during solidification and homogenization."@en .
+
+
 ###  http://open-model.eu/ontologies/ss3#FenicsFiniteElementMesh
 :FenicsFiniteElementMesh rdf:type owl:Class ;
                          rdfs:subClassOf simsoft:InputControlData ,
@@ -353,7 +361,7 @@ kpa:hasKPA rdf:type owl:ObjectProperty .
                                        [ rdf:type owl:Restriction ;
                                          owl:onProperty emmo:EMMO_36e69413_8c59_4799_946c_10b05d266e22 ;
                                          owl:someValuesFrom :AbaqusSimpleMaterialCardTemplate
-                                       ] ,
+                                       ] ;
                        skos:prefLabel "MaterialCardGenerator"@en ;
                        emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 """A post-processing function that generates an Abaqus materials card from a the size distribution output from Premod.
 
