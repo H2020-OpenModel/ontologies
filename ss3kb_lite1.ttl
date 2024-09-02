@@ -28,42 +28,6 @@
                                             owl:versionInfo "0.2"@en .
 
 #################################################################
-#    Annotation properties
-#################################################################
-
-###  http://purl.org/dc/terms/creator
-dcterms:creator rdf:type owl:AnnotationProperty .
-
-
-###  http://purl.org/dc/terms/license
-dcterms:license rdf:type owl:AnnotationProperty .
-
-
-###  http://purl.org/dc/terms/publisher
-dcterms:publisher rdf:type owl:AnnotationProperty .
-
-
-###  http://purl.org/dc/terms/title
-dcterms:title rdf:type owl:AnnotationProperty .
-
-
-#################################################################
-#    Classes
-#################################################################
-
-###  http://open-model.eu/ontoflow/kpa#BoolOpenSource
-kpa:BoolOpenSource rdf:type owl:Class .
-
-
-###  http://open-model.eu/ontoflow/kpa#NumericalSimulationTime
-kpa:NumericalSimulationTime rdf:type owl:Class .
-
-
-###  http://open-model.eu/ontoflow/kpa#OrdinalAccuracy
-kpa:OrdinalAccuracy rdf:type owl:Class .
-
-
-#################################################################
 #    Individuals
 #################################################################
 
@@ -127,7 +91,7 @@ This item could point to (or be connected with) a YAML file containing a templat
                                        owl:someValuesFrom ss3:Aluminium
                                      ] ;
                             simsoft:EMMO_b18859f8_74d8_4c9f_b779_705ab643fe2e :Concrete1 ;
-                            kpa:hasKPA :amc_sz1 .
+                            kpa:hasKPA :amc_Size1 .
 
 
 ###  http://open-model.eu/ontologies/ss3-abox#abaqus_materialcard_al6083
@@ -138,7 +102,7 @@ This item could point to (or be connected with) a YAML file containing a templat
                                        owl:someValuesFrom ss3:Aluminium
                                      ] ;
                             simsoft:EMMO_b18859f8_74d8_4c9f_b779_705ab643fe2e :Concrete2 ;
-                            kpa:hasKPA :amc_sz2 .
+                            kpa:hasKPA :amc_Size2 .
 
 
 ###  http://open-model.eu/ontologies/ss3-abox#abaqus_materialcard_cement1
@@ -150,7 +114,7 @@ This item could point to (or be connected with) a YAML file containing a templat
                                       ] ;
                              simsoft:EMMO_b18859f8_74d8_4c9f_b779_705ab643fe2e :Concrete1 ,
                                                                                :Concrete3 ;
-                            kpa:hasKPA :amc_sz4 .
+                            kpa:hasKPA :amc_Size4 .
 
 
 ###  http://open-model.eu/ontologies/ss3-abox#abaqus_materialcard_cement2
@@ -161,7 +125,7 @@ This item could point to (or be connected with) a YAML file containing a templat
                                         owl:someValuesFrom ss3:Concrete
                                       ] ;
                              simsoft:EMMO_b18859f8_74d8_4c9f_b779_705ab643fe2e :Concrete2 ;
-                            kpa:hasKPA :amc_sz5 .
+                            kpa:hasKPA :amc_Size5 .
 
 
 ###  http://open-model.eu/ontologies/ss3-abox#abaqus_materialcard_st001
@@ -172,79 +136,79 @@ This item could point to (or be connected with) a YAML file containing a templat
                                       owl:someValuesFrom ss3:Steel
                                     ] ;
                            simsoft:EMMO_b18859f8_74d8_4c9f_b779_705ab643fe2e :Concrete3 ;
-                            kpa:hasKPA :amc_sz3 .
+                            kpa:hasKPA :amc_Size3 .
 
 
 ###  http://open-model.eu/ontologies/ss3-abox#abaqussimulation_conf1
 :abaqussimulation_conf1 rdf:type owl:NamedIndividual ,
                                  ss3:AbaqusConfiguration ;
-                        kpa:hasKPA :as_ac1 ,
-                                   :as_st1 .
+                        kpa:hasKPA :as_Accuracy1 ,
+                                   :as_SimulationTime1 .
 
 
 ###  http://open-model.eu/ontologies/ss3-abox#abaqussimulation_conf2
 :abaqussimulation_conf2 rdf:type owl:NamedIndividual ,
                                  ss3:AbaqusConfiguration ;
-                        kpa:hasKPA :as_ac2 ,
-                                   :as_st2 .
+                        kpa:hasKPA :as_Accuracy2 ,
+                                   :as_SimulationTime2 .
 
 
-###  http://open-model.eu/ontologies/ss3-abox#amc_sz1
-:amc_sz1 rdf:type owl:NamedIndividual ,
+###  http://open-model.eu/ontologies/ss3-abox#amc_Size1
+:amc_Size1 rdf:type owl:NamedIndividual ,
                   kpa:SystemSize ;
          kpa:KPAValue 10 .
 
 
-###  http://open-model.eu/ontologies/ss3-abox#amc_sz2
-:amc_sz2 rdf:type owl:NamedIndividual ,
+###  http://open-model.eu/ontologies/ss3-abox#amc_Size2
+:amc_Size2 rdf:type owl:NamedIndividual ,
                   kpa:SystemSize ;
          kpa:KPAValue 15 .
 
 
-###  http://open-model.eu/ontologies/ss3-abox#amc_sz3
-:amc_sz3 rdf:type owl:NamedIndividual ,
+###  http://open-model.eu/ontologies/ss3-abox#amc_Size3
+:amc_Size3 rdf:type owl:NamedIndividual ,
                   kpa:SystemSize ;
          kpa:KPAValue 20 .
 
 
-###  http://open-model.eu/ontologies/ss3-abox#amc_sz4
-:amc_sz4 rdf:type owl:NamedIndividual ,
+###  http://open-model.eu/ontologies/ss3-abox#amc_Size4
+:amc_Size4 rdf:type owl:NamedIndividual ,
                   kpa:SystemSize ;
          kpa:KPAValue 5 .
 
 
-###  http://open-model.eu/ontologies/ss3-abox#amc_sz5
-:amc_sz5 rdf:type owl:NamedIndividual ,
+###  http://open-model.eu/ontologies/ss3-abox#amc_Size5
+:amc_Size5 rdf:type owl:NamedIndividual ,
                   kpa:SystemSize ;
          kpa:KPAValue 15 .
 
 
-###  http://open-model.eu/ontologies/ss3-abox#as_ac1
-:as_ac1 rdf:type owl:NamedIndividual ,
+###  http://open-model.eu/ontologies/ss3-abox#as_Accuracy1
+:as_Accuracy1 rdf:type owl:NamedIndividual ,
                  kpa:OrdinalAccuracy ;
         kpa:KPAValue "high" ;
-        skos:prefLabel "as_ac1"@en .
+        skos:prefLabel "as_Accuracy1"@en .
 
 
-###  http://open-model.eu/ontologies/ss3-abox#as_ac2
-:as_ac2 rdf:type owl:NamedIndividual ,
+###  http://open-model.eu/ontologies/ss3-abox#as_Accuracy2
+:as_Accuracy2 rdf:type owl:NamedIndividual ,
                  kpa:OrdinalAccuracy ;
         kpa:KPAValue "low" ;
-        skos:prefLabel "as_ac2"@en .
+        skos:prefLabel "as_Accuracy2"@en .
 
 
-###  http://open-model.eu/ontologies/ss3-abox#as_st1
-:as_st1 rdf:type owl:NamedIndividual ,
+###  http://open-model.eu/ontologies/ss3-abox#as_SimulationTime1
+:as_SimulationTime1 rdf:type owl:NamedIndividual ,
                  kpa:NormalizedSimulationTime ;
         kpa:KPAValue "1.0"^^xsd:double ;
-        skos:prefLabel "as_st1" .
+        skos:prefLabel "as_SimulationTime1" .
 
 
-###  http://open-model.eu/ontologies/ss3-abox#as_st2
-:as_st2 rdf:type owl:NamedIndividual ,
+###  http://open-model.eu/ontologies/ss3-abox#as_SimulationTime2
+:as_SimulationTime2 rdf:type owl:NamedIndividual ,
                  kpa:NormalizedSimulationTime ;
         kpa:KPAValue "0.4"^^xsd:double ;
-        skos:prefLabel "as_st2" .
+        skos:prefLabel "as_SimulationTime2" .
 
 
 ###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi
