@@ -58,7 +58,7 @@ kpa:hasKPA rdf:type owl:ObjectProperty .
                                        owl:onProperty emmo:EMMO_b19aacfc_5f73_4c33_9456_469c1e89a53e ;
                                        owl:someValuesFrom :AbaqusFiniteElementMesh
                                      ] ;
-                     skos:prefLabel "AbaqusConfiguration" ;
+                     skos:prefLabel "AbaqusConfiguration"@en ;
                      emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A dataset containing the composition of a sample, e.g. the total number and individual type of material cards."@en .
 
 
@@ -108,15 +108,22 @@ kpa:hasKPA rdf:type owl:ObjectProperty .
                   rdfs:subClassOf :OpenModelSS3Simulation ,
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty emmo:EMMO_36e69413_8c59_4799_946c_10b05d266e22 ;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                    owl:onClass :AbaqusConfiguration
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty emmo:EMMO_36e69413_8c59_4799_946c_10b05d266e22 ;
                                     owl:someValuesFrom :MatrixMaterialCard
                                   ] ,
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty emmo:EMMO_36e69413_8c59_4799_946c_10b05d266e22 ;
-                                    owl:someValuesFrom :ReinforcementMaterialCard
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                    owl:onClass :ReinforcementMaterialCard
                                   ] ,
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty emmo:EMMO_c4bace1d_4db0_4cd3_87e9_18122bae2840 ;
-                                    owl:someValuesFrom :AbaqusDeformationHistory
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                    owl:onClass :AbaqusDeformationHistory
                                   ] ,
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty simsoft:hasWrapper ;
@@ -184,7 +191,22 @@ kpa:hasKPA rdf:type owl:ObjectProperty .
 
 ###  http://open-model.eu/ontologies/ss3#FenicsLayer
 :FenicsLayer rdf:type owl:Class ;
-             rdfs:subClassOf emmo:EMMO_ceaaf9f7_fd11_424b_8fda_9afa186af186 ;
+             rdfs:subClassOf emmo:EMMO_ceaaf9f7_fd11_424b_8fda_9afa186af186 ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty emmo:EMMO_e1097637_70d2_4895_973f_2396f04fa204 ;
+                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onClass :FenicsLayerDirection
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty emmo:EMMO_e1097637_70d2_4895_973f_2396f04fa204 ;
+                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onClass :FenicsLayerThickness
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty emmo:EMMO_eb3518bf_f799_4f9e_8c3e_ce59af11453b ;
+                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onClass :FenicsLayerMaterial
+                             ] ;
              skos:altLabel "FenicsSimulationLayer"@en ;
              skos:prefLabel "FenicsLayer"@en ;
              emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A layer in the Fenics model."@en .
@@ -234,7 +256,44 @@ kpa:hasKPA rdf:type owl:ObjectProperty .
 
 ###  http://open-model.eu/ontologies/ss3#FenicsSimulation
 :FenicsSimulation rdf:type owl:Class ;
-                  rdfs:subClassOf :OpenModelSS3Simulation ;
+                  rdfs:subClassOf :OpenModelSS3Simulation ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty kpa:hasKPA ;
+                                    owl:hasValue :fenicssimulation_accuracy
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty kpa:hasKPA ;
+                                    owl:hasValue :fenicssimulation_opensource
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty kpa:hasKPA ;
+                                    owl:hasValue :fenicssimulation_simulationtime
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty emmo:EMMO_36e69413_8c59_4799_946c_10b05d266e22 ;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                    owl:onClass :AbaqusDeformationHistory
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty emmo:EMMO_36e69413_8c59_4799_946c_10b05d266e22 ;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                    owl:onClass :FenicsFiniteElementMesh
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty emmo:EMMO_36e69413_8c59_4799_946c_10b05d266e22 ;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                    owl:onClass :FenicsMaterials
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty emmo:EMMO_36e69413_8c59_4799_946c_10b05d266e22 ;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                    owl:onClass :FenicsSimulationConfig
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty emmo:EMMO_c4bace1d_4db0_4cd3_87e9_18122bae2840 ;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                    owl:onClass :FenicsOutput
+                                  ] ;
                   skos:prefLabel "FenicsSimulation"@en ;
                   emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A simulation performed by the Fenics simulation software."@en .
 
@@ -270,13 +329,31 @@ kpa:hasKPA rdf:type owl:ObjectProperty .
 :MaterialCardGenerator rdf:type owl:Class ;
                        rdfs:subClassOf :OpenModelSS3Simulation ,
                                        [ rdf:type owl:Restriction ;
-                                         owl:onProperty emmo:EMMO_36e69413_8c59_4799_946c_10b05d266e22 ;
-                                         owl:someValuesFrom :AbaqusSimpleMaterialCardTemplate
+                                         owl:onProperty kpa:hasKPA ;
+                                         owl:hasValue :materialcardgenerator_accuracy
+                                       ] ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty kpa:hasKPA ;
+                                         owl:hasValue :materialcardgenerator_opensource
+                                       ] ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty kpa:hasKPA ;
+                                         owl:hasValue :materialcardgenerator_simulationtime
                                        ] ,
                                        [ rdf:type owl:Restriction ;
                                          owl:onProperty emmo:EMMO_36e69413_8c59_4799_946c_10b05d266e22 ;
-                                         owl:someValuesFrom micro:EMMO_17b4803f_6dc1_441c_ac84_0cf190de3a06
-                                       ] ;
+                                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                         owl:onClass :TabulatedElastoPlastic
+                                       ] ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty emmo:EMMO_36e69413_8c59_4799_946c_10b05d266e22 ;
+                                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                         owl:onClass :YieldStrength
+                                       ] ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty emmo:EMMO_36e69413_8c59_4799_946c_10b05d266e22 ;
+                                         owl:someValuesFrom :AbaqusSimpleMaterialCardTemplate
+                                       ] ,
                        skos:prefLabel "MaterialCardGenerator"@en ;
                        emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 """A post-processing function that generates an Abaqus materials card from a the size distribution output from Premod.
 
@@ -291,7 +368,39 @@ Additional input is needed."""@en .
 
 ###  http://open-model.eu/ontologies/ss3#NaMoSimulation
 :NaMoSimulation rdf:type owl:Class ;
-                rdfs:subClassOf :OpenModelSS3Simulation ;
+                rdfs:subClassOf :OpenModelSS3Simulation ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty kpa:hasKPA ;
+                                  owl:hasValue :namosimulation_accuracy
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty kpa:hasKPA ;
+                                  owl:hasValue :namosimulation_opensource
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty kpa:hasKPA ;
+                                  owl:hasValue :namosimulation_simulationtime
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty emmo:EMMO_36e69413_8c59_4799_946c_10b05d266e22 ;
+                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                  owl:onClass :EffectiveAlloyComposition
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty emmo:EMMO_36e69413_8c59_4799_946c_10b05d266e22 ;
+                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                  owl:onClass :HeatTreatment
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty emmo:EMMO_c4bace1d_4db0_4cd3_87e9_18122bae2840 ;
+                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                  owl:onClass :ChemistrySizeDistribution
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty emmo:EMMO_c4bace1d_4db0_4cd3_87e9_18122bae2840 ;
+                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                  owl:onClass :YieldStrength
+                                ] ;
                 skos:prefLabel "NaMoSimulation"@en ;
                 emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A simulation performed with the Hydro-owned NaMo simulation software for modelling precipitation during heat treatment and work hardening behaviour or the final component."@en .
 
@@ -349,7 +458,29 @@ Additional input is needed."""@en .
 
 ###  http://open-model.eu/ontologies/ss3#PremodStrengthModel
 :PremodStrengthModel rdf:type owl:Class ;
-                     rdfs:subClassOf :OpenModelSS3Simulation ;
+                     rdfs:subClassOf :OpenModelSS3Simulation ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty kpa:hasKPA ;
+                                       owl:hasValue :premodstrengthsimulation_accuracy
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty kpa:hasKPA ;
+                                       owl:hasValue :premodstrengthsimulation_opensource
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty kpa:hasKPA ;
+                                       owl:hasValue :premodstrengthsimulation_simulationtime
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty emmo:EMMO_36e69413_8c59_4799_946c_10b05d266e22 ;
+                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                       owl:onClass :ChemistrySizeDistribution
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty emmo:EMMO_c4bace1d_4db0_4cd3_87e9_18122bae2840 ;
+                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                       owl:onClass :YieldStrength
+                                     ] ;
                      skos:prefLabel "PremodStrengthModel"@en ;
                      emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A strength model that calculates the Yield strength from the size distribution calcuated by Premod."@en .
 
@@ -375,6 +506,20 @@ Additional input is needed."""@en .
                     rdfs:subClassOf emmo:EMMO_b7bcff25_ffc3_474e_9ab5_01b1664bd4ba ;
                     skos:prefLabel "SoftwareConstraint"@en ;
                     emmo:EMMO_705f27ae_954c_4f13_98aa_18473fc52b25 "Constraints of how a software can be used. This is typically imposed by its license and special requirements for infrastructure, like HCP."@en .
+
+
+###  http://open-model.eu/ontologies/ss3#TabulatedElastoPlastic
+:TabulatedElastoPlastic rdf:type owl:Class ;
+                        rdfs:subClassOf :OpenModelSS3DataSet ;
+                        skos:prefLabel "TabulatedElastoPlastic"@en ;
+                        emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Dataset to represent an Elasto Plastic constitutive model. The plastic behviour is represented by a table plastic strain - stress"@en .
+
+
+###  http://open-model.eu/ontologies/ss3#YieldStrength
+:YieldStrength rdf:type owl:Class ;
+               rdfs:subClassOf :OpenModelSS3DataSet ;
+               skos:prefLabel "YieldStrength"@en ;
+               emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A dataset describing the yield strength. The yield strength being defined in that context as the stress at which the plastic deformation starts."@en .
 
 
 ###  http://open-model.eu/ontologies/ss3#Steel

@@ -2177,6 +2177,11 @@ simsoft:YAMLFile rdf:type owl:Class ;
                                   emmo:EMMO_e12dcfa4_c9f1_4546_9a12_8457c052e6ba ,
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty emmo:EMMO_36e69413_8c59_4799_946c_10b05d266e22 ;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                    owl:onClass :AbaqusConfiguration
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty emmo:EMMO_36e69413_8c59_4799_946c_10b05d266e22 ;
                                     owl:someValuesFrom :MatrixMaterialCard
                                   ] ,
                                   [ rdf:type owl:Restriction ;
