@@ -14,7 +14,7 @@
 
 <http://open-model.eu/ontologies/ss1-tbox> rdf:type owl:Ontology ;
                                             dcterms:abstract "Application ontology for OpenModel success story 1. Synaptic electronics: from materials properties to next-generation memory devices."@en ;
-                                            owl:versionInfo "1.2"@en .
+                                            owl:versionInfo "1.3"@en .
 
 #################################################################
 #    Annotation properties
@@ -255,14 +255,29 @@ rdf:JSON rdf:type rdfs:Datatype .
 #    Object Properties
 #################################################################
 
-###  http://open-model.eu/domain/simulationsoftware#EMMO_b18859f8_74d8_4c9f_b779_705ab643fe2e
-simsoft:EMMO_b18859f8_74d8_4c9f_b779_705ab643fe2e rdf:type owl:ObjectProperty ;
-                                                  rdfs:subPropertyOf emmo:EMMO_39c3815d_8cae_4c8f_b2ff_eeba24bec455 ;
+###  http://open-model.eu/domain/simulationsoftware#EMMO_320e60e9_9fc2_4d33_94eb_74b0a0fe09cf
+simsoft:EMMO_320e60e9_9fc2_4d33_94eb_74b0a0fe09cf rdf:type owl:ObjectProperty ;
+                                                  rdfs:subPropertyOf emmo:EMMO_61f264fa_1f23_47f0_aa1c_c947d0be56fc ;
+                                                  owl:inverseOf emmo:EMMO_39c3815d_8cae_4c8f_b2ff_eeba24bec455 ;
+                                                  rdfs:domain emmo:EMMO_d7788d1a_020d_4c78_85a1_13563fcec168 ;
+                                                  skos:prefLabel "isIconFor"@en .
+
+
+###  http://open-model.eu/domain/simulationsoftware#EMMO_367a1570_8b0a_4a0a_9192_2e290e259f65
+simsoft:EMMO_367a1570_8b0a_4a0a_9192_2e290e259f65 rdf:type owl:ObjectProperty ;
+                                                  rdfs:subPropertyOf emmo:EMMO_a8bd7094_6b40_47af_b1f4_a69d81a3afbd ;
+                                                  owl:inverseOf emmo:EMMO_6b78c119_f86c_4b5e_ba6c_b42d25a64122 ;
+                                                  skos:prefLabel "isDatumOf"@en .
+
+
+###  http://open-model.eu/domain/simulationsoftware#EMMO_8d96aef4_90b6_42f7_b9f1_74cbd7b849f6
+simsoft:EMMO_8d96aef4_90b6_42f7_b9f1_74cbd7b849f6 rdf:type owl:ObjectProperty ;
+                                                  rdfs:subPropertyOf simsoft:EMMO_320e60e9_9fc2_4d33_94eb_74b0a0fe09cf ;
                                                   owl:inverseOf simsoft:EMMO_b83baba1_2f3c_48c9_b194_bb871d5078df ;
                                                   rdf:type owl:AsymmetricProperty ,
                                                            owl:IrreflexiveProperty ;
                                                   rdfs:seeAlso simsoft:EMMO_b83baba1_2f3c_48c9_b194_bb871d5078df ;
-                                                  skos:prefLabel "isIconPart"@en .
+                                                  skos:prefLabel "isIconPartOf"@en .
 
 
 ###  http://open-model.eu/domain/simulationsoftware#EMMO_b83baba1_2f3c_48c9_b194_bb871d5078df
@@ -21181,21 +21196,30 @@ emmo:EMMO_08cb807c_e626_447b_863f_e2835540e918 rdf:type owl:NamedIndividual ,
 
 
 [ emmo:EMMO_c7b62dd7_063a_4c2a_8504_42f7264ba83f """The rule for the subproperty chain:
-inverse (hasSign) o  inverse (hasReferent) => hasInterpreter"""@en
+ inverse (hasReferent) o  inverse (hasInterpreter)=>hasSign"""@en
 ] .
+
+[ emmo:EMMO_c7b62dd7_063a_4c2a_8504_42f7264ba83f """The rule for the subproperty chain:
+inverse (hasSign) o  inverse (hasReferent) => hasInterpreter"""@en
+ ] .
 
 [ emmo:EMMO_c7b62dd7_063a_4c2a_8504_42f7264ba83f """The rule for the subproperty chain:
  inverse (hasInterpreter) o  inverse (hasSign) =>hasReferent"""@en
  ] .
 
-[ emmo:EMMO_c7b62dd7_063a_4c2a_8504_42f7264ba83f """The rule for the subproperty chain:
- inverse (hasReferent) o  inverse (hasInterpreter)=>hasSign"""@en
+[ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
+ ] .
+
+[ owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger
  ] .
 
 [ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
  ] .
 
 [ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
+ ] .
+
+[ owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger
  ] .
 
 [ owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger
@@ -21207,25 +21231,7 @@ inverse (hasSign) o  inverse (hasReferent) => hasInterpreter"""@en
 [ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
  ] .
 
-[ owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger
- ] .
-
-[ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
- ] .
-
-[ owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger
- ] .
-
-[ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
- ] .
-
-[ owl:qualifiedCardinality "2"^^xsd:nonNegativeInteger
- ] .
-
-[ owl:qualifiedCardinality "2"^^xsd:nonNegativeInteger
- ] .
-
-[ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
+[ owl:qualifiedCardinality "3"^^xsd:nonNegativeInteger
  ] .
 
 [ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
@@ -21252,7 +21258,16 @@ inverse (hasSign) o  inverse (hasReferent) => hasInterpreter"""@en
 [ owl:qualifiedCardinality "4"^^xsd:nonNegativeInteger
  ] .
 
-[ owl:qualifiedCardinality "3"^^xsd:nonNegativeInteger
+[ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
+ ] .
+
+[ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
+ ] .
+
+[ owl:qualifiedCardinality "2"^^xsd:nonNegativeInteger
+ ] .
+
+[ owl:qualifiedCardinality "2"^^xsd:nonNegativeInteger
  ] .
 
 [ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger

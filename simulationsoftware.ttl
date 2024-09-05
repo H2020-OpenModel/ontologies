@@ -88,7 +88,7 @@ foaf:logo rdf:type owl:AnnotationProperty .
 
 ###  http://open-model.eu/domain/simulationsoftware#EMMO_367a1570_8b0a_4a0a_9192_2e290e259f65
 :EMMO_367a1570_8b0a_4a0a_9192_2e290e259f65 rdf:type owl:ObjectProperty ;
-                                           rdfs:subPropertyOf emmo:EMMO_b2282816_b7a3_44c6_b2cb_3feff1ceb7fe ;
+                                           rdfs:subPropertyOf emmo:EMMO_a8bd7094_6b40_47af_b1f4_a69d81a3afbd ;
                                            owl:inverseOf emmo:EMMO_6b78c119_f86c_4b5e_ba6c_b42d25a64122 ;
                                            skos:prefLabel "isDatumOf"@en .
 

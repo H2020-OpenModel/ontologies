@@ -19,7 +19,7 @@ PREFIX simsoft: <http://open-model.eu/domain/simulationsoftware#>
  
 SELECT DISTINCT ?sub ?rel ?obj WHERE {
 BIND({iri} AS ?obj) .
-BIND(emmo:EMMO_36e69413_8c59_4799_946c_10b05d266e22 AS ?rel) .
+BIND(emmo:EMMO_36e69413_8c59_4799_946c_10b05d266e22 AS ?rel) . # hasInput
  
 BIND({filter} as ?filter) .
 BIND(simsoft:InputControlData as ?nofilter) .
