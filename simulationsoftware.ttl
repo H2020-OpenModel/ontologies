@@ -78,14 +78,29 @@ foaf:logo rdf:type owl:AnnotationProperty .
 #    Object Properties
 #################################################################
 
-###  http://open-model.eu/domain/simulationsoftware#EMMO_b18859f8_74d8_4c9f_b779_705ab643fe2e
-:EMMO_b18859f8_74d8_4c9f_b779_705ab643fe2e rdf:type owl:ObjectProperty ;
-                                           rdfs:subPropertyOf emmo:EMMO_39c3815d_8cae_4c8f_b2ff_eeba24bec455 ;
+###  http://open-model.eu/domain/simulationsoftware#EMMO_320e60e9_9fc2_4d33_94eb_74b0a0fe09cf
+:EMMO_320e60e9_9fc2_4d33_94eb_74b0a0fe09cf rdf:type owl:ObjectProperty ;
+                                           rdfs:subPropertyOf emmo:EMMO_61f264fa_1f23_47f0_aa1c_c947d0be56fc ;
+                                           owl:inverseOf emmo:EMMO_39c3815d_8cae_4c8f_b2ff_eeba24bec455 ;
+                                           rdfs:domain emmo:EMMO_d7788d1a_020d_4c78_85a1_13563fcec168 ;
+                                           skos:prefLabel "isIconFor"@en .
+
+
+###  http://open-model.eu/domain/simulationsoftware#EMMO_367a1570_8b0a_4a0a_9192_2e290e259f65
+:EMMO_367a1570_8b0a_4a0a_9192_2e290e259f65 rdf:type owl:ObjectProperty ;
+                                           rdfs:subPropertyOf emmo:EMMO_b2282816_b7a3_44c6_b2cb_3feff1ceb7fe ;
+                                           owl:inverseOf emmo:EMMO_6b78c119_f86c_4b5e_ba6c_b42d25a64122 ;
+                                           skos:prefLabel "isDatumOf"@en .
+
+
+###  http://open-model.eu/domain/simulationsoftware#EMMO_8d96aef4_90b6_42f7_b9f1_74cbd7b849f6
+:EMMO_8d96aef4_90b6_42f7_b9f1_74cbd7b849f6 rdf:type owl:ObjectProperty ;
+                                           rdfs:subPropertyOf :EMMO_320e60e9_9fc2_4d33_94eb_74b0a0fe09cf ;
                                            owl:inverseOf :EMMO_b83baba1_2f3c_48c9_b194_bb871d5078df ;
                                            rdf:type owl:AsymmetricProperty ,
                                                     owl:IrreflexiveProperty ;
                                            rdfs:seeAlso :EMMO_b83baba1_2f3c_48c9_b194_bb871d5078df ;
-                                           skos:prefLabel "isIconPart"@en .
+                                           skos:prefLabel "isIconPartOf"@en .
 
 
 ###  http://open-model.eu/domain/simulationsoftware#EMMO_b83baba1_2f3c_48c9_b194_bb871d5078df
@@ -574,17 +589,6 @@ https://doi.org/10.1021/ja00214a001."""@en ;
                           emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Semi-empirical quantum chemistry methods are based on the Hartree–Fock formalism, but make many approximations and obtain some parameters from empirical data."@en .
 
 
-###  http://open-model.eu/domain/simulationsoftware#VirtualMaterial
-:VirtualMaterial rdf:type owl:Class ;
-                   rdfs:subClassOf emmo:EMMO_4f2d1fcc_e20c_4479_9ad7_7a0480dd3e44 ,
-                                   [ rdf:type owl:Restriction ;
-                                     owl:onProperty emmo:EMMO_7159549c_16a3_4dd3_b37d_e992ad0b0879 ;
-                                     owl:someValuesFrom emmo:EMMO_4207e895_8b83_4318_996a_72cfb32acd94
-                                   ] ;
-                   skos:prefLabel "VirtualMaterial" ;
-                   emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "An analogical icon of a material taking part in a materials modelling simulation."@en .
-
-
 ###  http://open-model.eu/domain/simulationsoftware#Slab
 :Slab rdf:type owl:Class ;
       rdfs:subClassOf :PeriodicBoundaryConditions ;
@@ -620,6 +624,17 @@ https://doi.org/10.1021/ja00214a001."""@en ;
                                               ] ;
                               skos:prefLabel "UnitedAtomsMolecularDynamics" ;
                               emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A molecular dynamics simulation using the united-atoms model."@en .
+
+
+###  http://open-model.eu/domain/simulationsoftware#VirtualMaterial
+:VirtualMaterial rdf:type owl:Class ;
+                 rdfs:subClassOf emmo:EMMO_4f2d1fcc_e20c_4479_9ad7_7a0480dd3e44 ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty emmo:EMMO_7159549c_16a3_4dd3_b37d_e992ad0b0879 ;
+                                   owl:someValuesFrom emmo:EMMO_4207e895_8b83_4318_996a_72cfb32acd94
+                                 ] ;
+                 skos:prefLabel "VirtualMaterial" ;
+                 emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "An analogical icon of a material taking part in a materials modelling simulation."@en .
 
 
 ###  http://open-model.eu/domain/simulationsoftware#VolumeElement
