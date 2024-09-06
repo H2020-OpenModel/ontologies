@@ -133,7 +133,7 @@ This item could point to (or be connected with) a YAML file containing a templat
 ###  http://open-model.eu/ontologies/ss1-abox#GinestraSetup_simulationtime
 :GinestraSetup_simulationtime rdf:type owl:NamedIndividual ,
                                        kpa:NumericalSimulationTime ;
-                              kpa:KPAValue "" .
+                              kpa:KPAValue 10 .
 
 
 ###  http://open-model.eu/ontologies/ss1-abox#GrapheneBandStructure
@@ -176,7 +176,7 @@ This item could point to (or be connected with) a YAML file containing a templat
 ###  http://open-model.eu/ontologies/ss1-abox#QEBands01_simulationtime
 :QEBands01_simulationtime rdf:type owl:NamedIndividual ,
                                    kpa:NumericalSimulationTime ;
-                          kpa:KPAValue "" ;
+                          kpa:KPAValue 20 ;
                           skos:prefLabel "QEBands01_simulationtime" .
 
 
@@ -199,7 +199,7 @@ This item could point to (or be connected with) a YAML file containing a templat
 ###  http://open-model.eu/ontologies/ss1-abox#QEGeometryOpt01_simulationtime
 :QEGeometryOpt01_simulationtime rdf:type owl:NamedIndividual ,
                                          kpa:NumericalSimulationTime ;
-                                kpa:KPAValue "" ;
+                                kpa:KPAValue 5 ;
                                 skos:prefLabel "QEGeometryOpt01_simulationtime" .
 
 
