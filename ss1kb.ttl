@@ -59,6 +59,14 @@ tbox:wrapper_qe_geomopt rdf:type tbox:QuantumEspressoWrapper .
                             emmo:EMMO_c4ca55f0_2795_4bff_b8a9_445ed6e29d6c :CBoronArsenide .
 
 
+###  http://open-model.eu/ontologies/ss1-abox#BoronArsenideBandGap
+:BoronArsenideBandGap rdf:type owl:NamedIndividual ,
+                               tbox:BandGap ;
+                      emmo:EMMO_c4ca55f0_2795_4bff_b8a9_445ed6e29d6c :CBoronArsenide ;
+                      emmo:EMMO_faf79f53_749d_40b2_807c_d34244c192f4 "1.82"^^xsd:double ;
+                      skos:prefLabel "BoronArsenideBandGap"@en .
+
+
 ###  http://open-model.eu/ontologies/ss1-abox#CBoronArsenide
 :CBoronArsenide rdf:type owl:NamedIndividual ,
                          simsoft:VirtualMaterial ,
