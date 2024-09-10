@@ -33,6 +33,21 @@ tbox:calcjob_bs2bg rdf:type simsoft:BandStructure2BandGap ;
                    kpa:hasKPA :bs2bs_opensource .
 
 
+###  http://open-model.eu/ontologies/ss1#ginestra_opensource
+tbox:ginestra_opensource rdf:type kpa:BoolOpenSource ;
+                         kpa:KPAValue "false"^^xsd:boolean .
+
+
+###  http://open-model.eu/ontologies/ss1#postprocess_qe_opensource
+tbox:postprocess_qe_opensource rdf:type kpa:BoolOpenSource ;
+                               kpa:KPAValue "true"^^xsd:boolean .
+
+
+###  http://open-model.eu/ontologies/ss1#qe_opensource
+tbox:qe_opensource rdf:type kpa:BoolOpenSource ;
+                   kpa:KPAValue "true"^^xsd:boolean .
+
+
 ###  http://open-model.eu/ontologies/ss1#wrapper_ginestra_device
 tbox:wrapper_ginestra_device rdf:type tbox:GinestraWrapper .
 
@@ -79,7 +94,7 @@ tbox:wrapper_qe_geomopt rdf:type tbox:QuantumEspressoWrapper .
 :CGraphene rdf:type owl:NamedIndividual ,
                     simsoft:VirtualMaterial ,
                     tbox:Graphene ;
-           emmo:EMMO_e1097637_70d2_4895_973f_2396f04fa204 :GrapheneBandStructure ;
+           emmo:EMMO_e1097637_70d2_4895_973f_2396f04fa204 :GrapheneExperimentalStructure ;
            skos:prefLabel "CGraphene" .
 
 
@@ -110,17 +125,9 @@ tbox:wrapper_qe_geomopt rdf:type tbox:QuantumEspressoWrapper .
 ###  http://open-model.eu/ontologies/ss1-abox#GinestraLocal
 :GinestraLocal rdf:type owl:NamedIndividual ,
                         simsoft:Ginestra ;
-               kpa:hasKPA :GinestraLocal_opensource ;
                skos:prefLabel "GinestraLocal" ;
                emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 """Local copy of the Ginestra Software.
 This item could point to (or be connected with) a YAML file containing a template for ExecFlow."""@en .
-
-
-###  http://open-model.eu/ontologies/ss1-abox#GinestraLocal_opensource
-:GinestraLocal_opensource rdf:type owl:NamedIndividual ,
-                                   kpa:BoolOpenSource ;
-                          kpa:KPAValue "false"^^xsd:boolean ;
-                          skos:prefLabel "GinestraLocal_opensource" .
 
 
 ###  http://open-model.eu/ontologies/ss1-abox#GinestraSetup
@@ -144,11 +151,11 @@ This item could point to (or be connected with) a YAML file containing a templat
                               kpa:KPAValue 10 .
 
 
-###  http://open-model.eu/ontologies/ss1-abox#GrapheneBandStructure
-:GrapheneBandStructure rdf:type owl:NamedIndividual ,
-                                tbox:QEBands ;
-                       emmo:EMMO_c4ca55f0_2795_4bff_b8a9_445ed6e29d6c :CGraphene ;
-                       skos:prefLabel "GrapheneBandStructure"@en .
+###  http://open-model.eu/ontologies/ss1-abox#GrapheneExperimentalStructure
+:GrapheneExperimentalStructure rdf:type owl:NamedIndividual ,
+                                        tbox:StructureInitialGuess ;
+                               kpa:hasKPA :qe_Size2 ;
+                               emmo:EMMO_c4ca55f0_2795_4bff_b8a9_445ed6e29d6c :CGraphene .
 
 
 ###  http://open-model.eu/ontologies/ss1-abox#MOSFET
@@ -196,6 +203,13 @@ This item could point to (or be connected with) a YAML file containing a templat
                   emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "The input dataset containing the Quantum Espresso commands to set up a generic band structure calculation, which can be used with any substance."@en .
 
 
+###  http://open-model.eu/ontologies/ss1-abox#QEBands_settings_high
+:QEBands_settings_high rdf:type owl:NamedIndividual ,
+                                tbox:QEBandStructureCalculation ;
+                       kpa:hasKPA :qe_Accuracy3 ,
+                                  :qe_SimulationTime3 .
+
+
 ###  http://open-model.eu/ontologies/ss1-abox#QEGeometryOpt01
 :QEGeometryOpt01 rdf:type owl:NamedIndividual ,
                           tbox:QuantumEspressoOpt ;
@@ -227,20 +241,20 @@ This item could point to (or be connected with) a YAML file containing a templat
                      emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Input dataset containing the Quantum Espresso commands to set up a geometrical optimisation. These are generic settings, that apply to any substance."@en .
 
 
+###  http://open-model.eu/ontologies/ss1-abox#QEGeometry_settings_high
+:QEGeometry_settings_high rdf:type owl:NamedIndividual ,
+                                   tbox:QEGeometryOptimisation ;
+                          kpa:hasKPA :qe_Accuracy4 ,
+                                     :qe_SimulationTime4 .
+
+
 ###  http://open-model.eu/ontologies/ss1-abox#QuantumEspressoLocal
 :QuantumEspressoLocal rdf:type owl:NamedIndividual ,
                                simsoft:QuantumEspresso ;
-                      kpa:hasKPA :QuantumEspressoLocal_opensource ;
+                      kpa:KPAValue "qe_opensource" ;
                       skos:prefLabel "QuantumEspressoLocal" ;
                       emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 """Local copy of Quantum Espresso.
 This item could point to (or be connected with) a YAML file containing a template for ExecFlow."""@en .
-
-
-###  http://open-model.eu/ontologies/ss1-abox#QuantumEspressoLocal_opensource
-:QuantumEspressoLocal_opensource rdf:type owl:NamedIndividual ,
-                                          kpa:BoolOpenSource ;
-                                 kpa:KPAValue "true"^^xsd:boolean ;
-                                 skos:prefLabel "QuantumEspressoLocal_opensource" .
 
 
 ###  http://open-model.eu/ontologies/ss1-abox#Silicon
@@ -286,6 +300,20 @@ This item could point to (or be connected with) a YAML file containing a templat
               skos:prefLabel "qe_Accuracy2"@en .
 
 
+###  http://open-model.eu/ontologies/ss1-abox#qe_Accuracy3
+:qe_Accuracy3 rdf:type owl:NamedIndividual ,
+                       kpa:OrdinalAccuracy ;
+              kpa:KPAValue "high" ;
+              skos:prefLabel "qe_Accuracy3"@en .
+
+
+###  http://open-model.eu/ontologies/ss1-abox#qe_Accuracy4
+:qe_Accuracy4 rdf:type owl:NamedIndividual ,
+                       kpa:OrdinalAccuracy ;
+              kpa:KPAValue "high" ;
+              skos:prefLabel "qe_Accuracy4"@en .
+
+
 ###  http://open-model.eu/ontologies/ss1-abox#qe_SimulationTime1
 :qe_SimulationTime1 rdf:type owl:NamedIndividual ,
                              kpa:NormalizedSimulationTime ;
@@ -296,8 +324,22 @@ This item could point to (or be connected with) a YAML file containing a templat
 ###  http://open-model.eu/ontologies/ss1-abox#qe_SimulationTime2
 :qe_SimulationTime2 rdf:type owl:NamedIndividual ,
                              kpa:NormalizedSimulationTime ;
-                    kpa:KPAValue "0.8"^^xsd:double ;
+                    kpa:KPAValue "0.6"^^xsd:double ;
                     skos:prefLabel "qe_SimulationTime2" .
+
+
+###  http://open-model.eu/ontologies/ss1-abox#qe_SimulationTime3
+:qe_SimulationTime3 rdf:type owl:NamedIndividual ,
+                             kpa:NormalizedSimulationTime ;
+                    kpa:KPAValue "0.95"^^xsd:double ;
+                    skos:prefLabel "qe_SimulationTime3" .
+
+
+###  http://open-model.eu/ontologies/ss1-abox#qe_SimulationTime4
+:qe_SimulationTime4 rdf:type owl:NamedIndividual ,
+                             kpa:NormalizedSimulationTime ;
+                    kpa:KPAValue "0.35"^^xsd:double ;
+                    skos:prefLabel "qe_SimulationTime4" .
 
 
 ###  http://open-model.eu/ontologies/ss1-abox#qe_Size1
@@ -306,4 +348,10 @@ This item could point to (or be connected with) a YAML file containing a templat
           kpa:KPAValue 10 .
 
 
-###  Generated by the OWL API (version 4.5.25.2023-02-15T19:15:49Z) https://github.com/owlcs/owlapi
+###  http://open-model.eu/ontologies/ss1-abox#qe_Size2
+:qe_Size2 rdf:type owl:NamedIndividual ,
+                   kpa:SystemSize ;
+          kpa:KPAValue 3 .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi

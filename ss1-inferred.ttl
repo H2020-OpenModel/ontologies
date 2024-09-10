@@ -14,7 +14,7 @@
 
 <http://open-model.eu/ontologies/ss1-tbox> rdf:type owl:Ontology ;
                                             dcterms:abstract "Application ontology for OpenModel success story 1. Synaptic electronics: from materials properties to next-generation memory devices."@en ;
-                                            owl:versionInfo "1.3"@en .
+                                            owl:versionInfo "1.4"@en .
 
 #################################################################
 #    Annotation properties
@@ -2409,7 +2409,12 @@ kpa:SystemSize rdf:type owl:Class ;
 ###  http://open-model.eu/ontologies/ss1#GinestraSimulation
 :GinestraSimulation rdf:type owl:Class ;
                     rdfs:subClassOf :SS1SynapticElectronics ,
+                                    emmo:EMMO_6f5af708_f825_4feb_a0d1_a8d813d3022b ,
                                     emmo:EMMO_e97af6ec_4371_4bbc_8936_34b76e33302f ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty kpa:hasKPA ;
+                                      owl:hasValue :ginestra_opensource
+                                    ] ,
                                     [ rdf:type owl:Restriction ;
                                       owl:onProperty emmo:EMMO_ae2d1a96_bfa1_409a_a7d2_03d69e8a125a ;
                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
@@ -2490,10 +2495,15 @@ kpa:SystemSize rdf:type owl:Class ;
 :QEPostprocessingBS rdf:type owl:Class ;
                     rdfs:subClassOf emmo:EMMO_1c7f2dfe_0db4_4bf6_a0f6_853054a34ead ,
                                     emmo:EMMO_4299e344_a321_4ef2_a744_bacfcce80afc ,
+                                    emmo:EMMO_6f5af708_f825_4feb_a0d1_a8d813d3022b ,
                                     emmo:EMMO_e12dcfa4_c9f1_4546_9a12_8457c052e6ba ,
                                     [ rdf:type owl:Restriction ;
                                       owl:onProperty simsoft:hasWrapper ;
                                       owl:hasValue :calcjob_bs2bg
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty kpa:hasKPA ;
+                                      owl:hasValue :postprocess_qe_opensource
                                     ] ,
                                     [ rdf:type owl:Restriction ;
                                       owl:onProperty emmo:EMMO_36e69413_8c59_4799_946c_10b05d266e22 ;
@@ -2620,7 +2630,12 @@ kpa:SystemSize rdf:type owl:Class ;
 ###  http://open-model.eu/ontologies/ss1#QuantumEspressoSimulation
 :QuantumEspressoSimulation rdf:type owl:Class ;
                            rdfs:subClassOf :SS1SynapticElectronics ,
+                                           emmo:EMMO_6f5af708_f825_4feb_a0d1_a8d813d3022b ,
                                            emmo:EMMO_e97af6ec_4371_4bbc_8936_34b76e33302f ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty kpa:hasKPA ;
+                                             owl:hasValue :qe_opensource
+                                           ] ,
                                            [ rdf:type owl:Restriction ;
                                              owl:onProperty emmo:EMMO_ae2d1a96_bfa1_409a_a7d2_03d69e8a125a ;
                                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
@@ -6306,7 +6321,7 @@ emmo:EMMO_2ce04004_62cf_4394_b6a2_b45fce1aebfe rdf:type owl:Class ;
 ###  https://w3id.org/emmo#EMMO_2d2ecd97_067f_4d0e_950c_d746b7700a31
 emmo:EMMO_2d2ecd97_067f_4d0e_950c_d746b7700a31 rdf:type owl:Class ;
                                                rdfs:subClassOf emmo:EMMO_76bd5e44_bf5a_49f9_a517_eea5e8bcbc2d ,
-                                                               _:genid336 ;
+                                                               _:genid339 ;
                                                skos:example "The collection of users of a particular software, the collection of atoms that have been part of that just dissociated molecule."@en ;
                                                skos:prefLabel "Collection"@en ;
                                                emmo:EMMO_31252f35_c767_4b97_a877_1235076c3e13 """A collection is the concept that complements the item concept, being an entity that possesses at least one part non directly causally connected with the rest.
@@ -6314,7 +6329,7 @@ A collection can be partitioned in maximally connected items called members. The
 The combination of collection and item concepts is the EMMO mereocausality alternative to set theory. However, two items can be members only if they are non direct causally connected, giving some constraints to a collection definition. For example, two entities which are directly connected cannot be two distinct members, while their interiors (i.e. the entities obtained by removing the layer of parts that provides the causal contact between them) can be."""@en ;
                                                emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "The class of not direct causally self-connected world entities."@en .
 
-_:genid336 rdf:type owl:Restriction ;
+_:genid339 rdf:type owl:Restriction ;
             owl:onProperty emmo:EMMO_6b7276a4_4b9d_440a_b577_0277539c0fc4 ;
             owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
             owl:onClass emmo:EMMO_eb3a768e_d53e_4be9_a23b_0714833c36de .
@@ -6322,7 +6337,7 @@ _:genid336 rdf:type owl:Restriction ;
 [ rdf:type owl:Axiom ;
    owl:annotatedSource emmo:EMMO_2d2ecd97_067f_4d0e_950c_d746b7700a31 ;
    owl:annotatedProperty rdfs:subClassOf ;
-   owl:annotatedTarget _:genid336 ;
+   owl:annotatedTarget _:genid339 ;
    emmo:EMMO_c7b62dd7_063a_4c2a_8504_42f7264ba83f "Every collection has at least two item members, since a collection of one item is a self-connected entity (and then an item)."@en
  ] .
 
@@ -12135,8 +12150,8 @@ emmo:EMMO_802c167d_b792_4cb8_a315_35797345c0e3 rdf:type owl:Class ;
 
 ###  https://w3id.org/emmo#EMMO_802d3e92_8770_4f98_a289_ccaaab7fdddf
 emmo:EMMO_802d3e92_8770_4f98_a289_ccaaab7fdddf rdf:type owl:Class ;
-                                               rdfs:subClassOf _:genid756 ,
-                                                               _:genid758 ;
+                                               rdfs:subClassOf _:genid759 ,
+                                                               _:genid761 ;
                                                owl:disjointUnionOf ( emmo:EMMO_0f795e3e_c602_4577_9a43_d5a231aa1360
                                                                      emmo:EMMO_2d2ecd97_067f_4d0e_950c_d746b7700a31
                                                                      emmo:EMMO_3f9ae00e_810c_4518_aec2_7200e424cf68
@@ -12154,11 +12169,11 @@ Entities are not placed in space or time: space and time are always relative bet
 The EMMO conceptualisation does not allow the existence of space without a temporal dimension, the latter coming from a causal relation between entities.
 For this reason, the EMMO entities that are not quantum or elementaries, may be considered to be always spatiotemporal. The EMMO poses no constraints to the number of spatial dimensions for a causal system (except being higher than one)."""@en .
 
-_:genid756 rdf:type owl:Restriction ;
+_:genid759 rdf:type owl:Restriction ;
             owl:onProperty emmo:EMMO_17e27c22_37e1_468c_9dd7_95e137f73e7f ;
             owl:someValuesFrom emmo:EMMO_3f9ae00e_810c_4518_aec2_7200e424cf68 .
 
-_:genid758 rdf:type owl:Restriction ;
+_:genid761 rdf:type owl:Restriction ;
             owl:onProperty [ owl:inverseOf emmo:EMMO_17e27c22_37e1_468c_9dd7_95e137f73e7f
                            ] ;
             owl:hasValue emmo:EMMO_08cb807c_e626_447b_863f_e2835540e918 .
@@ -12166,14 +12181,14 @@ _:genid758 rdf:type owl:Restriction ;
 [ rdf:type owl:Axiom ;
    owl:annotatedSource emmo:EMMO_802d3e92_8770_4f98_a289_ccaaab7fdddf ;
    owl:annotatedProperty rdfs:subClassOf ;
-   owl:annotatedTarget _:genid756 ;
+   owl:annotatedTarget _:genid759 ;
    emmo:EMMO_c7b62dd7_063a_4c2a_8504_42f7264ba83f "Every entity is made of quantum parts. This axiomatisation is the expression of the radical reductionistic approach of the EMMO."@en
  ] .
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource emmo:EMMO_802d3e92_8770_4f98_a289_ccaaab7fdddf ;
    owl:annotatedProperty rdfs:subClassOf ;
-   owl:annotatedTarget _:genid758 ;
+   owl:annotatedTarget _:genid761 ;
    emmo:EMMO_c7b62dd7_063a_4c2a_8504_42f7264ba83f "All EMMO individuals are part of the most comprehensive entity which is the universe."@en
  ] .
 
@@ -21146,6 +21161,18 @@ emmo:emmo_fd2aa864_eef7_4c3d_8243_9ea832d9df3e rdf:type owl:Class ;
 :calcjob_bs2bg rdf:type owl:NamedIndividual .
 
 
+###  http://open-model.eu/ontologies/ss1#ginestra_opensource
+:ginestra_opensource rdf:type owl:NamedIndividual .
+
+
+###  http://open-model.eu/ontologies/ss1#postprocess_qe_opensource
+:postprocess_qe_opensource rdf:type owl:NamedIndividual .
+
+
+###  http://open-model.eu/ontologies/ss1#qe_opensource
+:qe_opensource rdf:type owl:NamedIndividual .
+
+
 ###  http://open-model.eu/ontologies/ss1#wrapper_ginestra_device
 :wrapper_ginestra_device rdf:type owl:NamedIndividual .
 
@@ -21210,19 +21237,16 @@ inverse (hasSign) o  inverse (hasReferent) => hasInterpreter"""@en
 [ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
  ] .
 
-[ owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger
- ] .
-
 [ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
  ] .
 
 [ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
  ] .
 
-[ owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger
+[ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
  ] .
 
-[ owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger
+[ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
  ] .
 
 [ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
@@ -21240,24 +21264,18 @@ inverse (hasSign) o  inverse (hasReferent) => hasInterpreter"""@en
 [ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
  ] .
 
-[ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
- ] .
-
-[ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
- ] .
-
-[ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
- ] .
-
-[ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
- ] .
-
-[ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
- ] .
-
 [ owl:qualifiedCardinality "4"^^xsd:nonNegativeInteger
  ] .
 
+[ owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger
+ ] .
+
+[ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
+ ] .
+
+[ owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger
+ ] .
+
 [ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
  ] .
 
@@ -21267,10 +21285,19 @@ inverse (hasSign) o  inverse (hasReferent) => hasInterpreter"""@en
 [ owl:qualifiedCardinality "2"^^xsd:nonNegativeInteger
  ] .
 
-[ owl:qualifiedCardinality "2"^^xsd:nonNegativeInteger
+[ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
+ ] .
+
+[ owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger
  ] .
 
 [ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
+ ] .
+
+[ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
+ ] .
+
+[ owl:qualifiedCardinality "2"^^xsd:nonNegativeInteger
  ] .
 
 #################################################################
@@ -21665,4 +21692,4 @@ emmo:EMMO_c6e77b51_681b_4d04_b20d_a08f2b977470 skos:prefLabel "OWLDLRestrictedAx
                                          ]
  ] .
 
-###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
