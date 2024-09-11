@@ -45,11 +45,11 @@ dcterms:created rdf:type owl:AnnotationProperty .
                      emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Configuration for an Abaqus siumlation, with information both on input and immediate postprosessing. Does not include material specifications."@en .
 
 
-###  http://open-model.eu/ontologies/ss3#AbaqusDeformationHistory
-:AbaqusDeformationHistory rdf:type owl:Class ;
-                          rdfs:subClassOf :OpenModelSS3DataSet ;
-                          skos:prefLabel "AbaqusDeformationHistory"@en ;
-                          emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A dataset describing properties of cement calculated by ABAQUS."@en .
+###  http://open-model.eu/ontologies/ss3#DeformationHistory
+:DeformationHistory rdf:type owl:Class ;
+                    rdfs:subClassOf :OpenModelSS3DataSet ;
+                    skos:prefLabel "DeformationHistory"@en ;
+                    emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A dataset describing the deformation of a reinforced bar as a function of time under a three-point bending test."@en .
 
 
 ###  http://open-model.eu/ontologies/ss3#AbaqusMaterialCard
@@ -92,7 +92,7 @@ dcterms:created rdf:type owl:AnnotationProperty .
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty emmo:EMMO_c4bace1d_4db0_4cd3_87e9_18122bae2840 ;
                                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                    owl:onClass :AbaqusDeformationHistory
+                                    owl:onClass :DeformationHistory
                                   ] ;
                   skos:prefLabel "AbaqusSimulation"@en ;
                   emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 """A simulation of the 3-points bending of a square concrete beam reinforced by a centered cylindrical metallic bar. The simulation performed by the Abaqus simulation software.
@@ -221,7 +221,7 @@ The output is processed to extract the evolution of the local stresses and defor
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty emmo:EMMO_36e69413_8c59_4799_946c_10b05d266e22 ;
                                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                    owl:onClass :AbaqusDeformationHistory
+                                    owl:onClass :DeformationHistory
                                   ] ,
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty emmo:EMMO_36e69413_8c59_4799_946c_10b05d266e22 ;
