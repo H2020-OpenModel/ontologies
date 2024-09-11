@@ -54,15 +54,15 @@ dcterms:created rdf:type owl:AnnotationProperty .
                      emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A dataset containing the composition of a sample, e.g. the total number and individual type of material cards."@en .
 
 
-###  http://open-model.eu/ontologies/ss3#AbaqusDeformationHistory
-:AbaqusDeformationHistory rdf:type owl:Class ;
+###  http://open-model.eu/ontologies/ss3#DeformationHistory
+:DeformationHistory rdf:type owl:Class ;
                           rdfs:subClassOf :OpenModelSS3DataSet ,
                                           [ rdf:type owl:Restriction ;
                                             owl:onProperty emmo:EMMO_7159549c_16a3_4dd3_b37d_e992ad0b0879 ;
                                             owl:someValuesFrom emmo:EMMO_ec7464a9_d99d_45f8_965b_4e9230ea8356
                                           ] ;
-                          skos:prefLabel "AbaqusDeformationHistory"@en ;
-                          emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A dataset describing properties of cement calculated by ABAQUS."@en .
+                    skos:prefLabel "DeformationHistory"@en ;
+                    emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A dataset describing the deformation of a reinforced bar as a function of time under a three-point bending test."@en .
 
 
 ###  http://open-model.eu/ontologies/ss3#AbaqusFiniteElementMesh
@@ -115,7 +115,7 @@ dcterms:created rdf:type owl:AnnotationProperty .
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty emmo:EMMO_c4bace1d_4db0_4cd3_87e9_18122bae2840 ;
                                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                    owl:onClass :AbaqusDeformationHistory
+                                    owl:onClass :DeformationHistory
                                   ] ,
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty simsoft:hasWrapper ;
@@ -272,7 +272,7 @@ dcterms:created rdf:type owl:AnnotationProperty .
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty emmo:EMMO_36e69413_8c59_4799_946c_10b05d266e22 ;
                                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                    owl:onClass :AbaqusDeformationHistory
+                                    owl:onClass :DeformationHistory
                                   ] ,
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty emmo:EMMO_36e69413_8c59_4799_946c_10b05d266e22 ;
