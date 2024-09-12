@@ -34,16 +34,10 @@ tbox:wrapper_ginestra_device rdf:type tbox:GinestraWrapper .
 
 ###  http://open-model.eu/ontologies/ss1-abox#ASilicon
 :ASilicon rdf:type owl:NamedIndividual ,
-                   tbox:AmorphousSilicon ,
-                   simsoft:VirtualMaterial ;
+                   simsoft:VirtualMaterial ,
+                   tbox:AmorphousSilicon ;
           skos:prefLabel "ASilicon" .
 
-
-###  http://open-model.eu/ontologies/ss1-abox#CBoronArsenide
-:CBoronArsenide rdf:type owl:NamedIndividual ,
-                         tbox:BoronArsenide ,
-                         simsoft:VirtualMaterial ;
-                skos:prefLabel "CBoronArsenide" .
 
 ###  http://open-model.eu/ontologies/ss1-abox#BoronArsenideBandGap
 :BoronArsenideBandGap rdf:type owl:NamedIndividual ,
@@ -53,10 +47,17 @@ tbox:wrapper_ginestra_device rdf:type tbox:GinestraWrapper .
                       skos:prefLabel "BoronArsenideBandGap"@en .
 
 
+###  http://open-model.eu/ontologies/ss1-abox#CBoronArsenide
+:CBoronArsenide rdf:type owl:NamedIndividual ,
+                         simsoft:VirtualMaterial ,
+                         tbox:BoronArsenide ;
+                skos:prefLabel "CBoronArsenide" .
+
+
 ###  http://open-model.eu/ontologies/ss1-abox#CGraphene
 :CGraphene rdf:type owl:NamedIndividual ,
-                    tbox:Graphene ,
-                    simsoft:VirtualMaterial ;
+                    simsoft:VirtualMaterial ,
+                    tbox:Graphene ;
            skos:prefLabel "CGraphene" ;
            emmo:elucidation "An individual to test the filtering ability of OntoFlow."@en .
 
@@ -65,7 +66,7 @@ tbox:wrapper_ginestra_device rdf:type tbox:GinestraWrapper .
 :GinestraDev1 rdf:type owl:NamedIndividual ,
                        tbox:GDevice ;
               emmo:EMMO_6b78c119_f86c_4b5e_ba6c_b42d25a64122 :Silicon ;
-              emmo:EMMO_c4ca55f0_2795_4bff_b8a9_445ed6e29d6c :MOSFET ;
+              emmo:EMMO_7159549c_16a3_4dd3_b37d_e992ad0b0879 :MOSFET ;
               skos:prefLabel "GinestraDev1" .
 
 
@@ -73,7 +74,7 @@ tbox:wrapper_ginestra_device rdf:type tbox:GinestraWrapper .
 :GinestraDev2 rdf:type owl:NamedIndividual ,
                        tbox:GDevice ;
               emmo:EMMO_6b78c119_f86c_4b5e_ba6c_b42d25a64122 :CGraphene ;
-              emmo:EMMO_c4ca55f0_2795_4bff_b8a9_445ed6e29d6c :OLED ;
+              emmo:EMMO_7159549c_16a3_4dd3_b37d_e992ad0b0879 :OLED ;
               skos:prefLabel "GinestraDev2" .
 
 
@@ -81,7 +82,7 @@ tbox:wrapper_ginestra_device rdf:type tbox:GinestraWrapper .
 :GinestraDev3 rdf:type owl:NamedIndividual ,
                        tbox:GDevice ;
               emmo:EMMO_6b78c119_f86c_4b5e_ba6c_b42d25a64122 :CBoronArsenide ;
-              emmo:EMMO_c4ca55f0_2795_4bff_b8a9_445ed6e29d6c :MOSFET ;
+              emmo:EMMO_7159549c_16a3_4dd3_b37d_e992ad0b0879 :MOSFET ;
               skos:prefLabel "GinestraDev3" .
 
 
@@ -146,8 +147,8 @@ This item could point to (or be connected with) a YAML file containing a templat
 
 ###  http://open-model.eu/ontologies/ss1-abox#Silicon
 :Silicon rdf:type owl:NamedIndividual ,
-                  tbox:CrystalSilicon ,
-                  simsoft:VirtualMaterial ;
+                  simsoft:VirtualMaterial ,
+                  tbox:CrystalSilicon ;
          emmo:EMMO_e1097637_70d2_4895_973f_2396f04fa204 :SiliconExperimentalStructure ;
          skos:prefLabel "Silicon" .
 

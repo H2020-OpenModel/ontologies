@@ -381,6 +381,18 @@ GULP is a program for performing a variety of types of simulation on materials u
              skos:prefLabel "HartreeFock" .
 
 
+###  http://open-model.eu/domain/simulationsoftware#INI
+:INI rdf:type owl:Class ;
+     rdfs:subClassOf emmo:EMMO_3997e1f5_f478_4572_a030_4b8e7e5cc63a ;
+     skos:example """[Options]                                                                                                            
+timestep=1.                                                                                                                                 
+recursive=0                                                                                                                                 
+temperature=300                                                                                                                             
+pressure=1""" ;
+     skos:prefLabel "INI" ;
+     emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "An INI file is an initialization file that stores settings for a program."@en .
+
+
 ###  http://open-model.eu/domain/simulationsoftware#InputControlData
 :InputControlData rdf:type owl:Class ;
                   rdfs:subClassOf emmo:EMMO_4db96fb7_e9e0_466d_942b_f6f17bfdc145 ,
@@ -429,6 +441,20 @@ LAMMPS has potentials for solid-state materials (metals, semiconductors) and sof
                  emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "The Lennard-Jones potential combines an attractive term proportional to 1/r^6 to a repulsive term proportional to 1/r^12."@en .
 
 
+###  http://open-model.eu/domain/simulationsoftware#LicenceFile
+:LicenceFile rdf:type owl:Class ;
+             rdfs:subClassOf emmo:EMMO_998dd3a0_c85f_4c8d_9fb8_816a93cc3bb8 ;
+             skos:prefLabel "LicenceFile" ;
+             emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A file containing a licence to grant the use of proprietary software."@en .
+
+
+###  http://open-model.eu/domain/simulationsoftware#LicenceNumber
+:LicenceNumber rdf:type owl:Class ;
+               rdfs:subClassOf emmo:EMMO_50ea1ec5_f157_41b0_b46b_a9032f17ca10 ;
+               skos:prefLabel "LicenceNumber" ;
+               emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A string of number, characters, or both used to grant access to proprietary software."@en .
+
+
 ###  http://open-model.eu/domain/simulationsoftware#MCSCF
 :MCSCF rdf:type owl:Class ;
        rdfs:subClassOf :PostHartreeFock ;
@@ -451,6 +477,20 @@ LAMMPS has potentials for solid-state materials (metals, semiconductors) and sof
       emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 """MOLC. A reversible coarse grained approach using anisotropic beads for the modelling of organic functional materials.
 Phys. Chem. Chem. Phys., 21, 26195 (2019).
 https://doi.org/10.1039/c9cp04120f"""@en .
+
+
+###  http://open-model.eu/domain/simulationsoftware#MPIComputerNode
+:MPIComputerNode rdf:type owl:Class ;
+                 rdfs:subClassOf emmo:EMMO_51f1ba0d_e92b_4be2_9a9d_4640b16ac7ed ;
+                 skos:prefLabel "MPIComputerNode" ;
+                 emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A computer node refers to an individual computer or processor within a distributed computing environment. Each node runs its own instance of the MPI program and communicates with other nodes to perform parallel computations."@en .
+
+
+###  http://open-model.eu/domain/simulationsoftware#MPIProcsPerNode
+:MPIProcsPerNode rdf:type owl:Class ;
+                 rdfs:subClassOf emmo:EMMO_51f1ba0d_e92b_4be2_9a9d_4640b16ac7ed ;
+                 skos:prefLabel "MPIProcsPerNode" ;
+                 emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Number of MPI processes per computer node."@en .
 
 
 ###  http://open-model.eu/domain/simulationsoftware#MolecularTopology
@@ -605,6 +645,19 @@ https://doi.org/10.1021/ja00214a001."""@en ;
                        ] ;
        skos:prefLabel "Steps" ;
        emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Number of repetitions of a certain task."@en .
+
+
+###  http://open-model.eu/domain/simulationsoftware#TOML
+:TOML rdf:type owl:Class ;
+      rdfs:subClassOf emmo:EMMO_3997e1f5_f478_4572_a030_4b8e7e5cc63a ;
+      emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Tom's Obvious, Minimal Language, a plain-text format easy to read and write by humans. The syntax resembles that of the INI format."@en .
+
+
+###  http://open-model.eu/domain/simulationsoftware#TOMLFile
+:TOMLFile rdf:type owl:Class ;
+          rdfs:subClassOf emmo:EMMO_998dd3a0_c85f_4c8d_9fb8_816a93cc3bb8 ;
+          rdfs:seeAlso :TOML ;
+          skos:prefLabel "TOMLFile" .
 
 
 ###  http://open-model.eu/domain/simulationsoftware#Timestep
