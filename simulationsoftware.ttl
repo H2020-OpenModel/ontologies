@@ -305,6 +305,12 @@ foaf:logo rdf:type owl:AnnotationProperty .
                          skos:prefLabel "DensityFunctionalTheory" .
 
 
+###  http://open-model.eu/domain/simulationsoftware#ElectronMobility
+:ElectronMobility rdf:type owl:Class ;
+                  rdfs:subClassOf emmo:EMMO_9b8f36cd_4312_4bc3_a99c_420c00f41550 ;
+                  skos:prefLabel "ElectronMobility" .
+
+
 ###  http://open-model.eu/domain/simulationsoftware#ExecFlowWrapper
 :ExecFlowWrapper rdf:type owl:Class ;
                  rdfs:subClassOf :AiiDA ;
@@ -379,6 +385,12 @@ GULP is a program for performing a variety of types of simulation on materials u
 :HartreeFock rdf:type owl:Class ;
              rdfs:subClassOf emmo:EMMO_6eca09be_17e9_445e_abc9_000aa61b7a11 ;
              skos:prefLabel "HartreeFock" .
+
+
+###  http://open-model.eu/domain/simulationsoftware#HoleMobility
+:HoleMobility rdf:type owl:Class ;
+              rdfs:subClassOf emmo:EMMO_9b8f36cd_4312_4bc3_a99c_420c00f41550 ;
+              skos:prefLabel "HoleMobility" .
 
 
 ###  http://open-model.eu/domain/simulationsoftware#INI
@@ -622,6 +634,14 @@ https://doi.org/10.1021/ja00214a001."""@en ;
               emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A number with arbitrary value, selected using a random source or a pseudo-random algorithm."@en .
 
 
+###  http://open-model.eu/domain/simulationsoftware#RelativePermittivity
+:RelativePermittivity rdf:type owl:Class ;
+                      rdfs:subClassOf emmo:EMMO_0ee5779e_d798_4ee5_9bfe_c392d5bea112 ;
+                      skos:altLabel "DielectricConstant" ;
+                      skos:prefLabel "RelativePermittivity" ;
+                      emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "The permittivity is a measure of the electric polarizability of a dielectric material. The relative permittivity, formerly known as dielectric constant, is the ratio of the absolute permittivity ε and the vacuum permittivity ε0."@en .
+
+
 ###  http://open-model.eu/domain/simulationsoftware#SemiEmpiricalHamiltonian
 :SemiEmpiricalHamiltonian rdf:type owl:Class ;
                           rdfs:subClassOf :HartreeFock ;
@@ -694,6 +714,12 @@ https://doi.org/10.1021/ja00214a001."""@en ;
 :VolumeElement rdf:type owl:Class ;
                rdfs:subClassOf emmo:EMMO_4456a5d2_16a6_4ee1_9a8e_5c75956b28ea ;
                skos:prefLabel "VolumeElement" .
+
+
+###  http://open-model.eu/domain/simulationsoftware#XMLFile
+:XMLFile rdf:type owl:Class ;
+         rdfs:subClassOf emmo:EMMO_998dd3a0_c85f_4c8d_9fb8_816a93cc3bb8 ;
+         skos:prefLabel "XMLFile" .
 
 
 ###  http://open-model.eu/domain/simulationsoftware#XYZFile

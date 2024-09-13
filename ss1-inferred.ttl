@@ -14,7 +14,7 @@
 
 <http://open-model.eu/ontologies/ss1-tbox> rdf:type owl:Ontology ;
                                             dcterms:abstract "Application ontology for OpenModel success story 1. Synaptic electronics: from materials properties to next-generation memory devices."@en ;
-                                            owl:versionInfo "1.4"@en .
+                                            owl:versionInfo "1.5"@en .
 
 #################################################################
 #    Annotation properties
@@ -1830,6 +1830,12 @@ simsoft:DensityFunctionalTheory rdf:type owl:Class ;
                                 skos:prefLabel "DensityFunctionalTheory" .
 
 
+###  http://open-model.eu/domain/simulationsoftware#ElectronMobility
+simsoft:ElectronMobility rdf:type owl:Class ;
+                         rdfs:subClassOf emmo:EMMO_9b8f36cd_4312_4bc3_a99c_420c00f41550 ;
+                         skos:prefLabel "ElectronMobility" .
+
+
 ###  http://open-model.eu/domain/simulationsoftware#ExecFlowWrapper
 simsoft:ExecFlowWrapper rdf:type owl:Class ;
                         rdfs:subClassOf simsoft:AiiDA ;
@@ -1908,6 +1914,24 @@ simsoft:HartreeFock rdf:type owl:Class ;
                     skos:prefLabel "HartreeFock" .
 
 
+###  http://open-model.eu/domain/simulationsoftware#HoleMobility
+simsoft:HoleMobility rdf:type owl:Class ;
+                     rdfs:subClassOf emmo:EMMO_9b8f36cd_4312_4bc3_a99c_420c00f41550 ;
+                     skos:prefLabel "HoleMobility" .
+
+
+###  http://open-model.eu/domain/simulationsoftware#INI
+simsoft:INI rdf:type owl:Class ;
+            rdfs:subClassOf emmo:EMMO_3997e1f5_f478_4572_a030_4b8e7e5cc63a ;
+            skos:example """[Options]                                                                                                            
+timestep=1.                                                                                                                                 
+recursive=0                                                                                                                                 
+temperature=300                                                                                                                             
+pressure=1""" ;
+            skos:prefLabel "INI" ;
+            emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "An INI file is an initialization file that stores settings for a program."@en .
+
+
 ###  http://open-model.eu/domain/simulationsoftware#InputControlData
 simsoft:InputControlData rdf:type owl:Class ;
                          rdfs:subClassOf emmo:EMMO_4db96fb7_e9e0_466d_942b_f6f17bfdc145 ,
@@ -1957,6 +1981,20 @@ simsoft:LennardJones612 rdf:type owl:Class ;
                         emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "The Lennard-Jones potential combines an attractive term proportional to 1/r^6 to a repulsive term proportional to 1/r^12."@en .
 
 
+###  http://open-model.eu/domain/simulationsoftware#LicenceFile
+simsoft:LicenceFile rdf:type owl:Class ;
+                    rdfs:subClassOf emmo:EMMO_998dd3a0_c85f_4c8d_9fb8_816a93cc3bb8 ;
+                    skos:prefLabel "LicenceFile" ;
+                    emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A file containing a licence to grant the use of proprietary software."@en .
+
+
+###  http://open-model.eu/domain/simulationsoftware#LicenceNumber
+simsoft:LicenceNumber rdf:type owl:Class ;
+                      rdfs:subClassOf emmo:EMMO_50ea1ec5_f157_41b0_b46b_a9032f17ca10 ;
+                      skos:prefLabel "LicenceNumber" ;
+                      emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A string of number, characters, or both used to grant access to proprietary software."@en .
+
+
 ###  http://open-model.eu/domain/simulationsoftware#MCSCF
 simsoft:MCSCF rdf:type owl:Class ;
               rdfs:subClassOf simsoft:PostHartreeFock ;
@@ -1979,6 +2017,20 @@ simsoft:MOLC rdf:type owl:Class ;
              emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 """MOLC. A reversible coarse grained approach using anisotropic beads for the modelling of organic functional materials.
 Phys. Chem. Chem. Phys., 21, 26195 (2019).
 https://doi.org/10.1039/c9cp04120f"""@en .
+
+
+###  http://open-model.eu/domain/simulationsoftware#MPIComputerNode
+simsoft:MPIComputerNode rdf:type owl:Class ;
+                        rdfs:subClassOf emmo:EMMO_51f1ba0d_e92b_4be2_9a9d_4640b16ac7ed ;
+                        skos:prefLabel "MPIComputerNode" ;
+                        emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A computer node refers to an individual computer or processor within a distributed computing environment. Each node runs its own instance of the MPI program and communicates with other nodes to perform parallel computations."@en .
+
+
+###  http://open-model.eu/domain/simulationsoftware#MPIProcsPerNode
+simsoft:MPIProcsPerNode rdf:type owl:Class ;
+                        rdfs:subClassOf emmo:EMMO_51f1ba0d_e92b_4be2_9a9d_4640b16ac7ed ;
+                        skos:prefLabel "MPIProcsPerNode" ;
+                        emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Number of MPI processes per computer node."@en .
 
 
 ###  http://open-model.eu/domain/simulationsoftware#MolecularTopology
@@ -2112,6 +2164,14 @@ simsoft:RandomNumber rdf:type owl:Class ;
                      emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A number with arbitrary value, selected using a random source or a pseudo-random algorithm."@en .
 
 
+###  http://open-model.eu/domain/simulationsoftware#RelativePermittivity
+simsoft:RelativePermittivity rdf:type owl:Class ;
+                             rdfs:subClassOf emmo:EMMO_0ee5779e_d798_4ee5_9bfe_c392d5bea112 ;
+                             skos:altLabel "DielectricConstant" ;
+                             skos:prefLabel "RelativePermittivity" ;
+                             emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "The permittivity is a measure of the electric polarizability of a dielectric material. The relative permittivity, formerly known as dielectric constant, is the ratio of the absolute permittivity ε and the vacuum permittivity ε0."@en .
+
+
 ###  http://open-model.eu/domain/simulationsoftware#SemiEmpiricalHamiltonian
 simsoft:SemiEmpiricalHamiltonian rdf:type owl:Class ;
                                  rdfs:subClassOf simsoft:HartreeFock ;
@@ -2135,6 +2195,19 @@ simsoft:Steps rdf:type owl:Class ;
                               ] ;
               skos:prefLabel "Steps" ;
               emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Number of repetitions of a certain task."@en .
+
+
+###  http://open-model.eu/domain/simulationsoftware#TOML
+simsoft:TOML rdf:type owl:Class ;
+             rdfs:subClassOf emmo:EMMO_3997e1f5_f478_4572_a030_4b8e7e5cc63a ;
+             emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Tom's Obvious, Minimal Language, a plain-text format easy to read and write by humans. The syntax resembles that of the INI format."@en .
+
+
+###  http://open-model.eu/domain/simulationsoftware#TOMLFile
+simsoft:TOMLFile rdf:type owl:Class ;
+                 rdfs:subClassOf emmo:EMMO_998dd3a0_c85f_4c8d_9fb8_816a93cc3bb8 ;
+                 rdfs:seeAlso simsoft:TOML ;
+                 skos:prefLabel "TOMLFile" .
 
 
 ###  http://open-model.eu/domain/simulationsoftware#Timestep
@@ -2175,6 +2248,12 @@ simsoft:VirtualMaterial rdf:type owl:Class ;
 simsoft:VolumeElement rdf:type owl:Class ;
                       rdfs:subClassOf emmo:EMMO_4456a5d2_16a6_4ee1_9a8e_5c75956b28ea ;
                       skos:prefLabel "VolumeElement" .
+
+
+###  http://open-model.eu/domain/simulationsoftware#XMLFile
+simsoft:XMLFile rdf:type owl:Class ;
+                rdfs:subClassOf emmo:EMMO_998dd3a0_c85f_4c8d_9fb8_816a93cc3bb8 ;
+                skos:prefLabel "XMLFile" .
 
 
 ###  http://open-model.eu/domain/simulationsoftware#XYZFile
@@ -2327,32 +2406,60 @@ kpa:SystemSize rdf:type owl:Class ;
 ###  http://open-model.eu/ontologies/ss1#DeviceFlowCurrent
 :DeviceFlowCurrent rdf:type owl:Class ;
                    rdfs:subClassOf :GinestraDS ,
+                                   emmo:EMMO_35d4c439_fcb6_4399_a855_a89a207b41e9 ,
                                    emmo:EMMO_64c72d00_7582_44ea_a0b5_3a14e50acc36 ,
                                    emmo:EMMO_c995ae70_3b84_4ebb_bcfc_69e6a281bb88 ,
                                    [ rdf:type owl:Restriction ;
-                                     owl:onProperty emmo:EMMO_c4ca55f0_2795_4bff_b8a9_445ed6e29d6c ;
+                                     owl:onProperty emmo:EMMO_7159549c_16a3_4dd3_b37d_e992ad0b0879 ;
                                      owl:someValuesFrom emmo:EMMO_86ca9b93_1183_4b65_81b8_c0fcd3bba5ad
                                    ] ;
                    skos:prefLabel "DeviceFlowCurrent"@en ;
                    emmo:elucidation "The current–voltage (I-V) curve of a MOSFET device, computed with Ginestra. The I-V curve shows the electric current through a circuit as a function of the voltage applied to the drain."@en .
 
 
+###  http://open-model.eu/ontologies/ss1#FinFET
+:FinFET rdf:type owl:Class ;
+        rdfs:subClassOf :Transistor ;
+        skos:prefLabel "FinFET" ;
+        emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A fin field-effect transistor is a multigate device, a MOSFET built on a substrate where the gate is placed on two, three, or four sides of the channel or wrapped around the channel, forming a double or even multi gate structure."@en .
+
+
+###  http://open-model.eu/ontologies/ss1#GAA
+:GAA rdf:type owl:Class ;
+     rdfs:subClassOf :Transistor ;
+     skos:prefLabel "GAA" ;
+     emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Gate All Around (GAA) are a type of cylindrical transistors."@en .
+
+
 ###  http://open-model.eu/ontologies/ss1#GDevice
 :GDevice rdf:type owl:Class ;
          rdfs:subClassOf :GinestraDS ,
+                         emmo:EMMO_35d4c439_fcb6_4399_a855_a89a207b41e9 ,
                          emmo:EMMO_494b372c_cfdf_47d3_a4de_5e037c540de8 ,
                          emmo:EMMO_64c72d00_7582_44ea_a0b5_3a14e50acc36 ,
-                         emmo:EMMO_b7bcff25_ffc3_474e_9ab5_01b1664bd4ba ,
                          [ rdf:type owl:Restriction ;
-                           owl:onProperty emmo:EMMO_9380ab64_0363_4804_b13f_3a8a94119a76 ;
-                           owl:someValuesFrom emmo:EMMO_4207e895_8b83_4318_996a_72cfb32acd94
+                           owl:onProperty emmo:EMMO_7159549c_16a3_4dd3_b37d_e992ad0b0879 ;
+                           owl:someValuesFrom emmo:EMMO_86ca9b93_1183_4b65_81b8_c0fcd3bba5ad
                          ] ,
                          [ rdf:type owl:Restriction ;
-                           owl:onProperty emmo:EMMO_c4ca55f0_2795_4bff_b8a9_445ed6e29d6c ;
-                           owl:someValuesFrom emmo:EMMO_86ca9b93_1183_4b65_81b8_c0fcd3bba5ad
+                           owl:onProperty emmo:EMMO_9380ab64_0363_4804_b13f_3a8a94119a76 ;
+                           owl:someValuesFrom simsoft:VirtualMaterial
                          ] ;
          skos:prefLabel "GDevice"@en ;
          emmo:elucidation "A dataset with the input geometry and composition of a device, to be executed with Ginestra."@en .
+
+
+###  http://open-model.eu/ontologies/ss1#GParameters
+:GParameters rdf:type owl:Class ;
+             rdfs:subClassOf :GinestraDS ,
+                             emmo:EMMO_64c72d00_7582_44ea_a0b5_3a14e50acc36 ,
+                             emmo:EMMO_b7bcff25_ffc3_474e_9ab5_01b1664bd4ba ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty emmo:EMMO_c4ca55f0_2795_4bff_b8a9_445ed6e29d6c ;
+                               owl:someValuesFrom simsoft:VirtualMaterial
+                             ] ;
+             skos:prefLabel "GParameters" ;
+             emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Ginestra parameter file containing the band gap (eg) and electron effectime mass (me) of a material being part of a device."@en .
 
 
 ###  http://open-model.eu/ontologies/ss1#GSetup
@@ -2361,6 +2468,13 @@ kpa:SystemSize rdf:type owl:Class ;
                         :GinestraDS ;
         skos:prefLabel "GSetup"@en ;
         emmo:elucidation "A dataset required by Ginestra to start a calculation, including the path of the executable, the license file, and the path of output files."@en .
+
+
+###  http://open-model.eu/ontologies/ss1#GTestOperation
+:GTestOperation rdf:type owl:Class ;
+                rdfs:subClassOf :GinestraDS ;
+                skos:prefLabel "GTestOperation" ;
+                emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Ginestra input file containing the description of the parameters controlling a device (e.g. properties of the materials, test cycles, potential applied, temperature, etc.)."@en .
 
 
 ###  http://open-model.eu/ontologies/ss1#GinestraDS
@@ -2437,6 +2551,13 @@ kpa:SystemSize rdf:type owl:Class ;
                           emmo:EMMO_f1025834_0cd2_42a1_bfeb_13bec41c8655 ;
           skos:prefLabel "Graphene" ;
           emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "One of the many allotropes of carbon, characterized by a zero band gap."@en .
+
+
+###  http://open-model.eu/ontologies/ss1#MOSFET
+:MOSFET rdf:type owl:Class ;
+        rdfs:subClassOf :Transistor ;
+        skos:prefLabel "MOSFET" ;
+        emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A metal-oxide-semiconductor field-effect transistor (MOSFET) is a transistor most commonly fabricated by the controlled oxidation of silicon."@en .
 
 
 ###  http://open-model.eu/ontologies/ss1#QEBandStructureCalculation
@@ -2652,6 +2773,15 @@ kpa:SystemSize rdf:type owl:Class ;
                         emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A YAML wrapper for ExecFlow (AiiDA) written in the declarative workchain syntax."@en .
 
 
+###  http://open-model.eu/ontologies/ss1#RegionID
+:RegionID rdf:type owl:Class ;
+          rdfs:subClassOf emmo:EMMO_d1d436e7_72fc_49cd_863b_7bfb4ba5276a ,
+                          emmo:EMMO_f8bd64d5_5d3e_4ad4_a46e_c30714fecb7f ;
+          rdfs:seeAlso simsoft:Ginestra ;
+          skos:prefLabel "RegionID" ;
+          emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A numerical index identifying a region of space in a device simulation executed with the software Ginestra."@en .
+
+
 ###  http://open-model.eu/ontologies/ss1#SS1Datasets
 :SS1Datasets rdf:type owl:Class ;
              rdfs:subClassOf emmo:EMMO_194e367c_9783_4bf5_96d0_9ad597d48d9a ;
@@ -2683,6 +2813,13 @@ kpa:SystemSize rdf:type owl:Class ;
                                        ] ;
                        skos:prefLabel "StructureInitialGuess"@en ;
                        emmo:elucidation "The initial guess of a solid-state structure."@en .
+
+
+###  http://open-model.eu/ontologies/ss1#Transistor
+:Transistor rdf:type owl:Class ;
+            rdfs:subClassOf emmo:EMMO_494b372c_cfdf_47d3_a4de_5e037c540de8 ;
+            skos:prefLabel "Transistor" ;
+            emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A transistor is a semiconductor device used to amplify or switch electronic signals and power."@en .
 
 
 ###  http://xmlns.com/foaf/0.1/Person
@@ -6321,7 +6458,7 @@ emmo:EMMO_2ce04004_62cf_4394_b6a2_b45fce1aebfe rdf:type owl:Class ;
 ###  https://w3id.org/emmo#EMMO_2d2ecd97_067f_4d0e_950c_d746b7700a31
 emmo:EMMO_2d2ecd97_067f_4d0e_950c_d746b7700a31 rdf:type owl:Class ;
                                                rdfs:subClassOf emmo:EMMO_76bd5e44_bf5a_49f9_a517_eea5e8bcbc2d ,
-                                                               _:genid339 ;
+                                                               _:genid340 ;
                                                skos:example "The collection of users of a particular software, the collection of atoms that have been part of that just dissociated molecule."@en ;
                                                skos:prefLabel "Collection"@en ;
                                                emmo:EMMO_31252f35_c767_4b97_a877_1235076c3e13 """A collection is the concept that complements the item concept, being an entity that possesses at least one part non directly causally connected with the rest.
@@ -6329,7 +6466,7 @@ A collection can be partitioned in maximally connected items called members. The
 The combination of collection and item concepts is the EMMO mereocausality alternative to set theory. However, two items can be members only if they are non direct causally connected, giving some constraints to a collection definition. For example, two entities which are directly connected cannot be two distinct members, while their interiors (i.e. the entities obtained by removing the layer of parts that provides the causal contact between them) can be."""@en ;
                                                emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "The class of not direct causally self-connected world entities."@en .
 
-_:genid339 rdf:type owl:Restriction ;
+_:genid340 rdf:type owl:Restriction ;
             owl:onProperty emmo:EMMO_6b7276a4_4b9d_440a_b577_0277539c0fc4 ;
             owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
             owl:onClass emmo:EMMO_eb3a768e_d53e_4be9_a23b_0714833c36de .
@@ -6337,7 +6474,7 @@ _:genid339 rdf:type owl:Restriction ;
 [ rdf:type owl:Axiom ;
    owl:annotatedSource emmo:EMMO_2d2ecd97_067f_4d0e_950c_d746b7700a31 ;
    owl:annotatedProperty rdfs:subClassOf ;
-   owl:annotatedTarget _:genid339 ;
+   owl:annotatedTarget _:genid340 ;
    emmo:EMMO_c7b62dd7_063a_4c2a_8504_42f7264ba83f "Every collection has at least two item members, since a collection of one item is a self-connected entity (and then an item)."@en
  ] .
 
@@ -12150,8 +12287,8 @@ emmo:EMMO_802c167d_b792_4cb8_a315_35797345c0e3 rdf:type owl:Class ;
 
 ###  https://w3id.org/emmo#EMMO_802d3e92_8770_4f98_a289_ccaaab7fdddf
 emmo:EMMO_802d3e92_8770_4f98_a289_ccaaab7fdddf rdf:type owl:Class ;
-                                               rdfs:subClassOf _:genid759 ,
-                                                               _:genid761 ;
+                                               rdfs:subClassOf _:genid760 ,
+                                                               _:genid762 ;
                                                owl:disjointUnionOf ( emmo:EMMO_0f795e3e_c602_4577_9a43_d5a231aa1360
                                                                      emmo:EMMO_2d2ecd97_067f_4d0e_950c_d746b7700a31
                                                                      emmo:EMMO_3f9ae00e_810c_4518_aec2_7200e424cf68
@@ -12169,11 +12306,11 @@ Entities are not placed in space or time: space and time are always relative bet
 The EMMO conceptualisation does not allow the existence of space without a temporal dimension, the latter coming from a causal relation between entities.
 For this reason, the EMMO entities that are not quantum or elementaries, may be considered to be always spatiotemporal. The EMMO poses no constraints to the number of spatial dimensions for a causal system (except being higher than one)."""@en .
 
-_:genid759 rdf:type owl:Restriction ;
+_:genid760 rdf:type owl:Restriction ;
             owl:onProperty emmo:EMMO_17e27c22_37e1_468c_9dd7_95e137f73e7f ;
             owl:someValuesFrom emmo:EMMO_3f9ae00e_810c_4518_aec2_7200e424cf68 .
 
-_:genid761 rdf:type owl:Restriction ;
+_:genid762 rdf:type owl:Restriction ;
             owl:onProperty [ owl:inverseOf emmo:EMMO_17e27c22_37e1_468c_9dd7_95e137f73e7f
                            ] ;
             owl:hasValue emmo:EMMO_08cb807c_e626_447b_863f_e2835540e918 .
@@ -12181,14 +12318,14 @@ _:genid761 rdf:type owl:Restriction ;
 [ rdf:type owl:Axiom ;
    owl:annotatedSource emmo:EMMO_802d3e92_8770_4f98_a289_ccaaab7fdddf ;
    owl:annotatedProperty rdfs:subClassOf ;
-   owl:annotatedTarget _:genid759 ;
+   owl:annotatedTarget _:genid760 ;
    emmo:EMMO_c7b62dd7_063a_4c2a_8504_42f7264ba83f "Every entity is made of quantum parts. This axiomatisation is the expression of the radical reductionistic approach of the EMMO."@en
  ] .
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource emmo:EMMO_802d3e92_8770_4f98_a289_ccaaab7fdddf ;
    owl:annotatedProperty rdfs:subClassOf ;
-   owl:annotatedTarget _:genid761 ;
+   owl:annotatedTarget _:genid762 ;
    emmo:EMMO_c7b62dd7_063a_4c2a_8504_42f7264ba83f "All EMMO individuals are part of the most comprehensive entity which is the universe."@en
  ] .
 
@@ -21223,15 +21360,27 @@ emmo:EMMO_08cb807c_e626_447b_863f_e2835540e918 rdf:type owl:NamedIndividual ,
 
 
 [ emmo:EMMO_c7b62dd7_063a_4c2a_8504_42f7264ba83f """The rule for the subproperty chain:
- inverse (hasReferent) o  inverse (hasInterpreter)=>hasSign"""@en
+ inverse (hasInterpreter) o  inverse (hasSign) =>hasReferent"""@en
 ] .
+
+[ emmo:EMMO_c7b62dd7_063a_4c2a_8504_42f7264ba83f """The rule for the subproperty chain:
+ inverse (hasReferent) o  inverse (hasInterpreter)=>hasSign"""@en
+ ] .
 
 [ emmo:EMMO_c7b62dd7_063a_4c2a_8504_42f7264ba83f """The rule for the subproperty chain:
 inverse (hasSign) o  inverse (hasReferent) => hasInterpreter"""@en
  ] .
 
-[ emmo:EMMO_c7b62dd7_063a_4c2a_8504_42f7264ba83f """The rule for the subproperty chain:
- inverse (hasInterpreter) o  inverse (hasSign) =>hasReferent"""@en
+[ owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger
+ ] .
+
+[ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
+ ] .
+
+[ owl:qualifiedCardinality "2"^^xsd:nonNegativeInteger
+ ] .
+
+[ owl:qualifiedCardinality "2"^^xsd:nonNegativeInteger
  ] .
 
 [ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
@@ -21249,7 +21398,16 @@ inverse (hasSign) o  inverse (hasReferent) => hasInterpreter"""@en
 [ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
  ] .
 
+[ owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger
+ ] .
+
+[ owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger
+ ] .
+
 [ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
+ ] .
+
+[ owl:qualifiedCardinality "4"^^xsd:nonNegativeInteger
  ] .
 
 [ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
@@ -21264,16 +21422,10 @@ inverse (hasSign) o  inverse (hasReferent) => hasInterpreter"""@en
 [ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
  ] .
 
-[ owl:qualifiedCardinality "4"^^xsd:nonNegativeInteger
- ] .
-
-[ owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger
- ] .
-
 [ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
  ] .
 
-[ owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger
+[ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
  ] .
 
 [ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
@@ -21282,22 +21434,7 @@ inverse (hasSign) o  inverse (hasReferent) => hasInterpreter"""@en
 [ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
  ] .
 
-[ owl:qualifiedCardinality "2"^^xsd:nonNegativeInteger
- ] .
-
 [ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
- ] .
-
-[ owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger
- ] .
-
-[ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
- ] .
-
-[ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
- ] .
-
-[ owl:qualifiedCardinality "2"^^xsd:nonNegativeInteger
  ] .
 
 #################################################################
@@ -21692,4 +21829,4 @@ emmo:EMMO_c6e77b51_681b_4d04_b20d_a08f2b977470 skos:prefLabel "OWLDLRestrictedAx
                                          ]
  ] .
 
-###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
+###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi

@@ -98,11 +98,25 @@ simsoft:VirtualMaterial rdfs:subClassOf :SS1Datasets .
                    rdfs:subClassOf :GinestraDS ,
                                    emmo:EMMO_c995ae70_3b84_4ebb_bcfc_69e6a281bb88 ,
                                    [ rdf:type owl:Restriction ;
-                                     owl:onProperty emmo:EMMO_c4ca55f0_2795_4bff_b8a9_445ed6e29d6c ;
+                                     owl:onProperty emmo:EMMO_7159549c_16a3_4dd3_b37d_e992ad0b0879 ;
                                      owl:someValuesFrom emmo:EMMO_86ca9b93_1183_4b65_81b8_c0fcd3bba5ad
                                    ] ;
                    skos:prefLabel "DeviceFlowCurrent"@en ;
                    emmo:elucidation "The current–voltage (I-V) curve of a MOSFET device, computed with Ginestra. The I-V curve shows the electric current through a circuit as a function of the voltage applied to the drain."@en .
+
+
+###  http://open-model.eu/ontologies/ss1#FinFET
+:FinFET rdf:type owl:Class ;
+        rdfs:subClassOf :Transistor ;
+        skos:prefLabel "FinFET" ;
+        emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A fin field-effect transistor is a multigate device, a MOSFET built on a substrate where the gate is placed on two, three, or four sides of the channel or wrapped around the channel, forming a double or even multi gate structure."@en .
+
+
+###  http://open-model.eu/ontologies/ss1#GAA
+:GAA rdf:type owl:Class ;
+     rdfs:subClassOf :Transistor ;
+     skos:prefLabel "GAA" ;
+     emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Gate All Around (GAA) are a type of cylindrical transistors."@en .
 
 
 ###  http://open-model.eu/ontologies/ss1#GDevice
@@ -110,15 +124,26 @@ simsoft:VirtualMaterial rdfs:subClassOf :SS1Datasets .
          rdfs:subClassOf :GinestraDS ,
                          emmo:EMMO_494b372c_cfdf_47d3_a4de_5e037c540de8 ,
                          [ rdf:type owl:Restriction ;
-                           owl:onProperty emmo:EMMO_9380ab64_0363_4804_b13f_3a8a94119a76 ;
-                           owl:someValuesFrom emmo:EMMO_4207e895_8b83_4318_996a_72cfb32acd94
+                           owl:onProperty emmo:EMMO_7159549c_16a3_4dd3_b37d_e992ad0b0879 ;
+                           owl:someValuesFrom emmo:EMMO_86ca9b93_1183_4b65_81b8_c0fcd3bba5ad
                          ] ,
                          [ rdf:type owl:Restriction ;
-                           owl:onProperty emmo:EMMO_c4ca55f0_2795_4bff_b8a9_445ed6e29d6c ;
-                           owl:someValuesFrom emmo:EMMO_86ca9b93_1183_4b65_81b8_c0fcd3bba5ad
+                           owl:onProperty emmo:EMMO_9380ab64_0363_4804_b13f_3a8a94119a76 ;
+                           owl:someValuesFrom simsoft:VirtualMaterial
                          ] ;
          skos:prefLabel "GDevice"@en ;
          emmo:elucidation "A dataset with the input geometry and composition of a device, to be executed with Ginestra."@en .
+
+
+###  http://open-model.eu/ontologies/ss1#GParameters
+:GParameters rdf:type owl:Class ;
+             rdfs:subClassOf :GinestraDS ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty emmo:EMMO_c4ca55f0_2795_4bff_b8a9_445ed6e29d6c ;
+                               owl:someValuesFrom simsoft:VirtualMaterial
+                             ] ;
+             skos:prefLabel "GParameters" ;
+             emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Ginestra parameter file containing the band gap (eg) and electron effectime mass (me) of a material being part of a device."@en .
 
 
 ###  http://open-model.eu/ontologies/ss1#GSetup
@@ -127,6 +152,13 @@ simsoft:VirtualMaterial rdfs:subClassOf :SS1Datasets .
                         :GinestraDS ;
         skos:prefLabel "GSetup"@en ;
         emmo:elucidation "A dataset required by Ginestra to start a calculation, including the path of the executable, the license file, and the path of output files."@en .
+
+
+###  http://open-model.eu/ontologies/ss1#GTestOperation
+:GTestOperation rdf:type owl:Class ;
+                rdfs:subClassOf :GinestraDS ;
+                skos:prefLabel "GTestOperation" ;
+                emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Ginestra input file containing the description of the parameters controlling a device (e.g. properties of the materials, test cycles, potential applied, temperature, etc.)."@en .
 
 
 ###  http://open-model.eu/ontologies/ss1#GinestraDS
@@ -200,6 +232,13 @@ simsoft:VirtualMaterial rdfs:subClassOf :SS1Datasets .
                           emmo:EMMO_f1025834_0cd2_42a1_bfeb_13bec41c8655 ;
           skos:prefLabel "Graphene" ;
           emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "One of the many allotropes of carbon, characterized by a zero band gap."@en .
+
+
+###  http://open-model.eu/ontologies/ss1#MOSFET
+:MOSFET rdf:type owl:Class ;
+        rdfs:subClassOf :Transistor ;
+        skos:prefLabel "MOSFET" ;
+        emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A metal-oxide-semiconductor field-effect transistor (MOSFET) is a transistor most commonly fabricated by the controlled oxidation of silicon."@en .
 
 
 ###  http://open-model.eu/ontologies/ss1#QEBandStructureCalculation
@@ -399,6 +438,15 @@ simsoft:VirtualMaterial rdfs:subClassOf :SS1Datasets .
                         emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A YAML wrapper for ExecFlow (AiiDA) written in the declarative workchain syntax."@en .
 
 
+###  http://open-model.eu/ontologies/ss1#RegionID
+:RegionID rdf:type owl:Class ;
+          rdfs:subClassOf emmo:EMMO_d1d436e7_72fc_49cd_863b_7bfb4ba5276a ,
+                          emmo:EMMO_f8bd64d5_5d3e_4ad4_a46e_c30714fecb7f ;
+          rdfs:seeAlso simsoft:Ginestra ;
+          skos:prefLabel "RegionID" ;
+          emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A numerical index identifying a region of space in a device simulation executed with the software Ginestra."@en .
+
+
 ###  http://open-model.eu/ontologies/ss1#SS1Datasets
 :SS1Datasets rdf:type owl:Class ;
              rdfs:subClassOf emmo:EMMO_194e367c_9783_4bf5_96d0_9ad597d48d9a ;
@@ -427,6 +475,13 @@ simsoft:VirtualMaterial rdfs:subClassOf :SS1Datasets .
                                        ] ;
                        skos:prefLabel "StructureInitialGuess"@en ;
                        emmo:elucidation "The initial guess of a solid-state structure."@en .
+
+
+###  http://open-model.eu/ontologies/ss1#Transistor
+:Transistor rdf:type owl:Class ;
+            rdfs:subClassOf emmo:EMMO_494b372c_cfdf_47d3_a4de_5e037c540de8 ;
+            skos:prefLabel "Transistor" ;
+            emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A transistor is a semiconductor device used to amplify or switch electronic signals and power."@en .
 
 
 ###  http://xmlns.com/foaf/0.1/Person
@@ -473,4 +528,4 @@ foaf:Person rdf:type owl:Class .
                                         foaf:name "Otello Maria Roscioni" .
 
 
-###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
+###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi
