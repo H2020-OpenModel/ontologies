@@ -1,7 +1,7 @@
 The wrapper for the Ginestra task:
 
 ```bash
-ginestra-core-sim.exe -l “ginestra.lic” -i “input.ini” -p “input_parameter.tsv”`
+ginestra-core-sim.exe -l "ginestra.lic" -i "input.ini" -p "input_parameter.tsv"
 ```
 
 It depends on the specific OTEAPI pipelines providing the relevant data nodes:
@@ -106,9 +106,9 @@ The datamodel for GParameters:
  mappings = [
   (GPAR,                EMMO.isDescriptionFor, EMMO.ManufacturedProduct),
   (GPAR.bandgap,        MAP.mapsTo,            SS1:BandGap),
-  (GPAR.bandgap,        EMMO.isDescriptionFor, SS1:VirtualMaterial),
+  (GPAR.bandgap,        EMMO.isPropertyFor,    SS1:VirtualMaterial),
   (GPAR.effective_mass, MAP.mapsTo,            EMMO:EffectiveMass),
-  (GPAR.effective_mass, EMMO.isDescriptionFor, SS1:VirtualMaterial),
+  (GPAR.effective_mass, EMMO.isPropertyFor,    SS1:VirtualMaterial),
   (GPAR.temperature,    MAP.mapsTo,            EMMO.ThermodynamicTemperature),
   (GPAR.temperature,    EMMO.isDescriptionFor, EMMO.ManufacturedProduct),
   (GPAR.grid_size,      MAP.mapsTo,            MICROSTR.Grid)
@@ -187,7 +187,7 @@ However, the user-defined parameters in `GParameters` refer both to the device a
   mappings = [
     (GMAT,                EMMO.isDescriptionFor, SS1.VirtualMaterial),
     (GMAT.bandgap,        MAP.mapsTo,            SS1:BandGap),
-    (GMAT.bandgap,        EMMO.isDescriptionFor, SS1:VirtualMaterial),
+    (GMAT.bandgap,        EMMO.isPropertyFor,    SS1:VirtualMaterial),
     (GMAT.effective_mass, MAP.mapsTo,            EMMO:EffectiveMass),
     (GMAT.effective_mass, EMMO.isDescriptionFor, SS1:VirtualMaterial)
   ]
