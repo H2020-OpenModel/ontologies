@@ -14,9 +14,9 @@
                                                owl:imports <https://w3id.org/emmo/1.0.0-rc2/disciplines/chemistry> ,
                                                            <https://w3id.org/emmo/1.0.0-rc2/disciplines/computerscience> ,
                                                            <https://w3id.org/emmo/1.0.0-rc2/disciplines/geometrical> ,
+                                                           <https://w3id.org/emmo/1.0.0-rc2/disciplines/metrology> ,
                                                            <https://w3id.org/emmo/1.0.0-rc2/disciplines/models> ,
-                                                           <https://w3id.org/emmo/1.0.0-rc2/perspectives/structural> ,
-                                                           <https://w3id.org/emmo/1.0.0-rc2/disciplines/metrology> ;
+                                                           <https://w3id.org/emmo/1.0.0-rc2/perspectives/structural> ;
                                                dcterms:contributor "SFI PhysMet"@en ;
                                                dcterms:creator "Astrid Marthinsen (SINTEF)"@en ,
                                                                "Georg J. Schmitz (ACCESS)"@en ,
@@ -38,12 +38,7 @@ emmo:EMMO_57c75ca1_bf8a_42bc_85d9_58cfe38c7df2 rdf:type owl:Class .
 
 ###  https://w3id.org/emmo/domain/microstructure#EMMO_0449d241-e6ec-5426-b327-16785bcf87fe
 :EMMO_0449d241-e6ec-5426-b327-16785bcf87fe rdf:type owl:Class ;
-                                           rdfs:subClassOf :EMMO_4c72efd2-93bc-5692-b200-256efce58997 ,
-                                                           [ rdf:type owl:Restriction ;
-                                                             owl:onProperty emmo:EMMO_5ceab41b_2aea_4041_9e9c_a243f7562cee ;
-                                                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                             owl:onClass emmo:EMMO_668fbd5b_6f1b_405c_9c6b_d6067bd0595a
-                                                           ] ;
+                                           rdfs:subClassOf :EMMO_4c72efd2-93bc-5692-b200-256efce58997 ;
                                            skos:prefLabel "SinglePhaseParticle"@en ;
                                            emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Particle containing one PhaseOfMatter"@en ;
                                            emmo:EMMO_c7b62dd7_063a_4c2a_8504_42f7264ba83f "In the physical sciences, a particle (or corpuscule in older texts) is a small localized object to which can be ascribed several physical or chemical properties, such as volume, density, or mass. [Wikipedia]"@en .
@@ -161,13 +156,7 @@ emmo:EMMO_57c75ca1_bf8a_42bc_85d9_58cfe38c7df2 rdf:type owl:Class .
 
 ###  https://w3id.org/emmo/domain/microstructure#EMMO_1b2bfe71-5da9-5c46-b137-be45c3e3f9c3
 :EMMO_1b2bfe71-5da9-5c46-b137-be45c3e3f9c3 rdf:type owl:Class ;
-                                           rdfs:subClassOf :EMMO_89c368d0-ca72-5e9f-bd52-988d9b6f8ace ,
-                                                           [ rdf:type owl:Restriction ;
-                                                             owl:onProperty [ owl:inverseOf emmo:EMMO_5ceab41b_2aea_4041_9e9c_a243f7562cee
-                                                                            ] ;
-                                                             owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
-                                                             owl:onClass emmo:EMMO_eb3a768e_d53e_4be9_a23b_0714833c36de
-                                                           ] ;
+                                           rdfs:subClassOf :EMMO_89c368d0-ca72-5e9f-bd52-988d9b6f8ace ;
                                            owl:disjointUnionOf ( :EMMO_0ce81730-cf19-5582-9dab-caa1cccea652
                                                                  :EMMO_8d44ea1a-3b1c-5723-bda9-058ca5159ac1
                                                                ) ;
@@ -178,13 +167,7 @@ emmo:EMMO_57c75ca1_bf8a_42bc_85d9_58cfe38c7df2 rdf:type owl:Class .
 ###  https://w3id.org/emmo/domain/microstructure#EMMO_1c81f1eb-8b94-5e74-96de-1aeacbdb5b93
 :EMMO_1c81f1eb-8b94-5e74-96de-1aeacbdb5b93 rdf:type owl:Class ;
                                            rdfs:subClassOf :EMMO_d0e2d4e0-298e-57b7-90a8-71669ca12929 ,
-                                                           :EMMO_fc7ad1c6-73e2-5525-9116-e4aee2f0dfc7 ,
-                                                           [ rdf:type owl:Restriction ;
-                                                             owl:onProperty [ owl:inverseOf emmo:EMMO_5ceab41b_2aea_4041_9e9c_a243f7562cee
-                                                                            ] ;
-                                                             owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
-                                                             owl:onClass :EMMO_b0f0e57e-464d-562f-80ec-b216c92d5e88
-                                                           ] ;
+                                                           :EMMO_fc7ad1c6-73e2-5525-9116-e4aee2f0dfc7 ;
                                            skos:prefLabel "GrainBoundary"@en ;
                                            emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A boundary between at least two grains."@en .
 
@@ -314,13 +297,7 @@ emmo:EMMO_57c75ca1_bf8a_42bc_85d9_58cfe38c7df2 rdf:type owl:Class .
 
 ###  https://w3id.org/emmo/domain/microstructure#EMMO_37b704a7-1358-5041-bc5a-b65282014d3e
 :EMMO_37b704a7-1358-5041-bc5a-b65282014d3e rdf:type owl:Class ;
-                                           rdfs:subClassOf :EMMO_1b2bfe71-5da9-5c46-b137-be45c3e3f9c3 ,
-                                                           [ rdf:type owl:Restriction ;
-                                                             owl:onProperty [ owl:inverseOf emmo:EMMO_5ceab41b_2aea_4041_9e9c_a243f7562cee
-                                                                            ] ;
-                                                             owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
-                                                             owl:onClass emmo:EMMO_668fbd5b_6f1b_405c_9c6b_d6067bd0595a
-                                                           ] ;
+                                           rdfs:subClassOf :EMMO_1b2bfe71-5da9-5c46-b137-be45c3e3f9c3 ;
                                            skos:prefLabel "PhaseBoundary"@en ;
                                            emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Boundary between two (or more) phases."@en .
 
@@ -328,11 +305,7 @@ emmo:EMMO_57c75ca1_bf8a_42bc_85d9_58cfe38c7df2 rdf:type owl:Class .
 ###  https://w3id.org/emmo/domain/microstructure#EMMO_3a9e6708-4df7-51a5-bd3f-f551d7f2ca30
 :EMMO_3a9e6708-4df7-51a5-bd3f-f551d7f2ca30 rdf:type owl:Class ;
                                            rdfs:subClassOf emmo:EMMO_4207e895_8b83_4318_996a_72cfb32acd94 ,
-                                                           :EMMO_89c368d0-ca72-5e9f-bd52-988d9b6f8ace ,
-                                                           [ rdf:type owl:Restriction ;
-                                                             owl:onProperty emmo:EMMO_5ceab41b_2aea_4041_9e9c_a243f7562cee ;
-                                                             owl:someValuesFrom emmo:EMMO_04f2a2d5_e799_4692_a654_420e76f5acc1
-                                                           ] ;
+                                                           :EMMO_89c368d0-ca72-5e9f-bd52-988d9b6f8ace ;
                                            skos:altLabel "Pore"@en ;
                                            skos:prefLabel "GasPore"@en ;
                                            emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "An object in the microstructure. A region of a gas material."@en .
@@ -437,13 +410,7 @@ emmo:EMMO_57c75ca1_bf8a_42bc_85d9_58cfe38c7df2 rdf:type owl:Class .
 
 ###  https://w3id.org/emmo/domain/microstructure#EMMO_5b23558f-6686-55bf-a812-e0a9a51b5614
 :EMMO_5b23558f-6686-55bf-a812-e0a9a51b5614 rdf:type owl:Class ;
-                                           rdfs:subClassOf :EMMO_1b2bfe71-5da9-5c46-b137-be45c3e3f9c3 ,
-                                                           [ rdf:type owl:Restriction ;
-                                                             owl:onProperty [ owl:inverseOf emmo:EMMO_5ceab41b_2aea_4041_9e9c_a243f7562cee
-                                                                            ] ;
-                                                             owl:qualifiedCardinality "2"^^xsd:nonNegativeInteger ;
-                                                             owl:onClass emmo:EMMO_668fbd5b_6f1b_405c_9c6b_d6067bd0595a
-                                                           ] ;
+                                           rdfs:subClassOf :EMMO_1b2bfe71-5da9-5c46-b137-be45c3e3f9c3 ;
                                            skos:prefLabel "DualBoundary"@en ;
                                            emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A boundary consisting of exactly two phase of matter."@en .
 
@@ -681,11 +648,7 @@ Inconel 625"""@en ;
 
 ###  https://w3id.org/emmo/domain/microstructure#EMMO_8fa9f05b-72e0-58d9-af64-a5a6673c5038
 :EMMO_8fa9f05b-72e0-58d9-af64-a5a6673c5038 rdf:type owl:Class ;
-                                           rdfs:subClassOf emmo:EMMO_4207e895_8b83_4318_996a_72cfb32acd94 ,
-                                                           [ rdf:type owl:Restriction ;
-                                                             owl:onProperty emmo:EMMO_5ceab41b_2aea_4041_9e9c_a243f7562cee ;
-                                                             owl:someValuesFrom emmo:EMMO_4207e895_8b83_4318_996a_72cfb32acd94
-                                                           ] ;
+                                           rdfs:subClassOf emmo:EMMO_4207e895_8b83_4318_996a_72cfb32acd94 ;
                                            skos:altLabel "CompositeMaterial"@en ;
                                            skos:prefLabel "Composite"@en ;
                                            emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A composite material is a material which is produced from two or more constituent materials. "@en ;
@@ -943,26 +906,14 @@ Inconel 625"""@en ;
 
 ###  https://w3id.org/emmo/domain/microstructure#EMMO_d0e2d4e0-298e-57b7-90a8-71669ca12929
 :EMMO_d0e2d4e0-298e-57b7-90a8-71669ca12929 rdf:type owl:Class ;
-                                           rdfs:subClassOf :EMMO_37b704a7-1358-5041-bc5a-b65282014d3e ,
-                                                           [ rdf:type owl:Restriction ;
-                                                             owl:onProperty [ owl:inverseOf emmo:EMMO_5ceab41b_2aea_4041_9e9c_a243f7562cee
-                                                                            ] ;
-                                                             owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
-                                                             owl:onClass emmo:EMMO_a2b006f2_bbfd_4dba_bcaa_3fca20cd6be1
-                                                           ] ;
+                                           rdfs:subClassOf :EMMO_37b704a7-1358-5041-bc5a-b65282014d3e ;
                                            skos:prefLabel "SolidPhaseBoundary"@en ;
                                            emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Boundary with at least one solid"@en .
 
 
 ###  https://w3id.org/emmo/domain/microstructure#EMMO_d0e5f672-8fd6-5ce0-a4d2-39d65ad9028d
 :EMMO_d0e5f672-8fd6-5ce0-a4d2-39d65ad9028d rdf:type owl:Class ;
-                                           rdfs:subClassOf :EMMO_1b2bfe71-5da9-5c46-b137-be45c3e3f9c3 ,
-                                                           [ rdf:type owl:Restriction ;
-                                                             owl:onProperty [ owl:inverseOf emmo:EMMO_5ceab41b_2aea_4041_9e9c_a243f7562cee
-                                                                            ] ;
-                                                             owl:qualifiedCardinality "3"^^xsd:nonNegativeInteger ;
-                                                             owl:onClass emmo:EMMO_668fbd5b_6f1b_405c_9c6b_d6067bd0595a
-                                                           ] ;
+                                           rdfs:subClassOf :EMMO_1b2bfe71-5da9-5c46-b137-be45c3e3f9c3 ;
                                            skos:prefLabel "TripleJunction"@en ;
                                            emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A boundary volume , where tree things collocate."@en ;
                                            emmo:EMMO_c7b62dd7_063a_4c2a_8504_42f7264ba83f "A triple junction is a line in space."@en .
@@ -1009,13 +960,7 @@ Inconel 625"""@en ;
 
 ###  https://w3id.org/emmo/domain/microstructure#EMMO_dadc1e15-a920-503f-802e-074c16682eb1
 :EMMO_dadc1e15-a920-503f-802e-074c16682eb1 rdf:type owl:Class ;
-                                           rdfs:subClassOf :EMMO_1b2bfe71-5da9-5c46-b137-be45c3e3f9c3 ,
-                                                           [ rdf:type owl:Restriction ;
-                                                             owl:onProperty [ owl:inverseOf emmo:EMMO_5ceab41b_2aea_4041_9e9c_a243f7562cee
-                                                                            ] ;
-                                                             owl:qualifiedCardinality "4"^^xsd:nonNegativeInteger ;
-                                                             owl:onClass emmo:EMMO_668fbd5b_6f1b_405c_9c6b_d6067bd0595a
-                                                           ] ;
+                                           rdfs:subClassOf :EMMO_1b2bfe71-5da9-5c46-b137-be45c3e3f9c3 ;
                                            skos:prefLabel "QuadrupleJunction"@en ;
                                            emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A boundary volume , where four things collocate."@en ;
                                            emmo:EMMO_c7b62dd7_063a_4c2a_8504_42f7264ba83f "A quadruple junction is a point in space."@en .
@@ -1170,4 +1115,4 @@ Inconel 625"""@en ;
                                            emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A constituent of a microstructure."@en .
 
 
-###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
