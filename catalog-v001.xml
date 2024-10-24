@@ -40,7 +40,7 @@
         <uri name="https://w3id.org/emmo/1.0.0-rc3/disciplines/periodictable"       uri="../EMMO/disciplines/periodictable.ttl"/>
         <uri name="https://w3id.org/emmo/1.0.0-rc3/disciplines/perceptual"          uri="../EMMO/disciplines/perceptual.ttl"/>
         <uri name="https://w3id.org/emmo/1.0.0-rc3/disciplines/geometrical"         uri="../EMMO/disciplines/geometrical.ttl"/>
-        <uri name="https://w3id.org/emmo/1.0.0-rc3/discipline/dataset"              uri="../EMMO/discipline/dataset.ttl"/>
+        <uri name="https://w3id.org/emmo/1.0.0-rc3/discipline/dataset"              uri="../EMMO/disciplines/dataset.ttl"/>
         <uri name="https://w3id.org/emmo/1.0.0-rc3/disciplines/metrology"           uri="../EMMO/disciplines/metrology.ttl"/>
         <uri name="https://w3id.org/emmo/1.0.0-rc3/disciplines/isq"                 uri="../EMMO/disciplines/isq.ttl"/>
         <uri name="https://w3id.org/emmo/1.0.0-rc3/disciplines/sisystem"            uri="../EMMO/disciplines/sisystem.ttl"/>
