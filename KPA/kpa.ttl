@@ -10,13 +10,12 @@
 
 <http://open-model.eu/ontoflow/kpa> rdf:type owl:Ontology ;
                                      owl:versionIRI <http://open-model.eu/ontoflow/0.1/kpa> ;
-                                     owl:imports <https://w3id.org/emmo/1.0.0-rc2/disciplines/metrology> ,
-                                                 <https://w3id.org/emmo/1.0.0-rc2/disciplines/models> ,
-                                                 <https://w3id.org/emmo/1.0.0-rc2/disciplines/units/siunits> ,
-                                                 <https://w3id.org/emmo/1.0.0-rc2/mereocausality/mereocausality> ,
-                                                 <https://w3id.org/emmo/1.0.0-rc2/multiperspective/symbolic> ,
-                                                 <https://w3id.org/emmo/1.0.0-rc2/perspectives/semiotics> ,
-                                                 <https://w3id.org/emmo/1.0.0-rc2/perspectives/structural> .
+                                     owl:imports <https://w3id.org/emmo/1.0.0-rc3/disciplines/metrology> ,
+                                                 <https://w3id.org/emmo/1.0.0-rc3/disciplines/models> ,
+                                                 <https://w3id.org/emmo/1.0.0-rc3/disciplines/units/siunits> ,
+                                                 <https://w3id.org/emmo/1.0.0-rc3/mereocausality> ,
+                                                 <https://w3id.org/emmo/1.0.0-rc3/reference/symbolic> ,
+                                                 <https://w3id.org/emmo/1.0.0-rc3/perspectives/structural> .
 
 #################################################################
 #    Object Properties

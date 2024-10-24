@@ -17,7 +17,7 @@
                                        owl:versionIRI <http://open-model.eu/ontologies/0.2/ss3> ;
                                        owl:imports <http://open-model.eu/domain/simulationsoftware> ,
                                                    <http://open-model.eu/ontoflow/0.1/kpa> ,
-                                                   <https://w3id.org/emmo/1.0.0-rc2/disciplines/manufacturing> ,
+                                                   <https://w3id.org/emmo/1.0.0-rc3/disciplines/manufacturing> ,
                                                    <https://w3id.org/emmo/domain/microstructure> ;
                                        dcterms:abstract "Application ontology for OpenModel success story 3 on aluminium reinforced concrete."@en ;
                                        dcterms:created "2023-11-11"@en ;
