@@ -15,7 +15,7 @@
                                                   owl:imports <https://w3id.org/emmo/1.0.0-rc3/disciplines/geometrical> ,
                                                               <https://w3id.org/emmo/1.0.0-rc3/disciplines/isq> ,
                                                               <https://w3id.org/emmo/1.0.0-rc3/disciplines/models> ,
-                                                              <https://w3id.org/emmo/1.0.0-rc3/discipline/dataset> ,
+                                                              <https://w3id.org/emmo/1.0.0-rc3/disciplines/dataset> ,
                                                               <https://w3id.org/emmo/1.0.0-rc3/reference/data> ,
                                                               <https://w3id.org/emmo/1.0.0-rc3/perspectives/structural> ;
                                                   dcterms:abstract "Ontological foundations for a Knowledge Base covering the methods outlined in the Review of Materials Modelling (RoMM)."@en ;
