@@ -135,9 +135,24 @@ simsoft:VirtualMaterial rdfs:subClassOf :SS1Datasets .
          emmo:elucidation "A dataset with the input geometry and composition of a device, to be executed with Ginestra."@en .
 
 
+###  http://open-model.eu/ontologies/ss1#GInput
+:GInput rdf:type owl:Class ;
+        rdfs:subClassOf :GinestraDS ,
+                        emmo:EMMO_5f334606_f67d_4f0e_acb9_eeb21cb10c66 ;
+        skos:prefLabel "GInput" ;
+        emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A path to a file containing the digital representation of a device, the physical parameters to simulate (a \"test\", meaning the virtual experiment to be carried out in a multiphysics simulation), and the names of I/O files and directory."@en .
+
+
+###  http://open-model.eu/ontologies/ss1#GMaterial
+:GMaterial rdf:type owl:Class ;
+           rdfs:subClassOf :GinestraDS ;
+           skos:prefLabel "GMaterial" .
+
+
 ###  http://open-model.eu/ontologies/ss1#GParameters
 :GParameters rdf:type owl:Class ;
              rdfs:subClassOf :GinestraDS ,
+                             emmo:EMMO_5f334606_f67d_4f0e_acb9_eeb21cb10c66 ,
                              [ rdf:type owl:Restriction ;
                                owl:onProperty emmo:EMMO_c4ca55f0_2795_4bff_b8a9_445ed6e29d6c ;
                                owl:someValuesFrom simsoft:VirtualMaterial
@@ -152,6 +167,52 @@ simsoft:VirtualMaterial rdfs:subClassOf :SS1Datasets .
                         :GinestraDS ;
         skos:prefLabel "GSetup"@en ;
         emmo:elucidation "A dataset required by Ginestra to start a calculation, including the path of the executable, the license file, and the path of output files."@en .
+
+
+###  http://open-model.eu/ontologies/ss1#GSetup0
+:GSetup0 rdf:type owl:Class ;
+         rdfs:subClassOf simsoft:InputControlData ,
+                         :GinestraDS ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty emmo:EMMO_7159549c_16a3_4dd3_b37d_e992ad0b0879 ;
+                           owl:someValuesFrom emmo:EMMO_86ca9b93_1183_4b65_81b8_c0fcd3bba5ad
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty emmo:EMMO_9380ab64_0363_4804_b13f_3a8a94119a76 ;
+                           owl:someValuesFrom simsoft:VirtualMaterial
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty emmo:EMMO_6b78c119_f86c_4b5e_ba6c_b42d25a64122 ;
+                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                           owl:onClass simsoft:MPIComputerNode
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty emmo:EMMO_6b78c119_f86c_4b5e_ba6c_b42d25a64122 ;
+                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                           owl:onClass simsoft:MPIProcsPerNode
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty emmo:EMMO_6b78c119_f86c_4b5e_ba6c_b42d25a64122 ;
+                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                           owl:onClass :GInput
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty emmo:EMMO_6b78c119_f86c_4b5e_ba6c_b42d25a64122 ;
+                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                           owl:onClass :GParameters
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty emmo:EMMO_6b78c119_f86c_4b5e_ba6c_b42d25a64122 ;
+                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                           owl:onClass :GinestraExecutable
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty emmo:EMMO_6b78c119_f86c_4b5e_ba6c_b42d25a64122 ;
+                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                           owl:onClass :GinestraLicense
+                         ] ;
+         emmo:elucidation """A dataset required by Ginestra to start a calculation, including the path of the executable, the license file, and the path of output files.
+This is a monolithic dataset containing all the files required to simulate a MOSFET transistor with a specific combination of semiconductor and dielectric materials."""@en .
 
 
 ###  http://open-model.eu/ontologies/ss1#GTestOperation
@@ -199,7 +260,63 @@ simsoft:VirtualMaterial rdfs:subClassOf :SS1Datasets .
                                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                             owl:onClass :DeviceFlowCurrent
                                           ] ;
-                          skos:prefLabel "GinestraDeviceSimulation"@en .
+                          skos:prefLabel "GinestraDeviceSimulation"@en ;
+                          emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A multiphysics simulation of a MOSFET transistor carried out with the software Ginestra. The process described in this class takes three datasets as input, each one having a restricted semantic meaning."@en .
+
+
+###  http://open-model.eu/ontologies/ss1#GinestraDeviceSimulation0
+:GinestraDeviceSimulation0 rdf:type owl:Class ;
+                           rdfs:subClassOf :GinestraSimulation ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty emmo:EMMO_36e69413_8c59_4799_946c_10b05d266e22 ;
+                                             owl:someValuesFrom simsoft:VirtualMaterial
+                                           ] ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty simsoft:hasWrapper ;
+                                             owl:hasValue :wrapper_ginestra_device
+                                           ] ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty emmo:EMMO_36e69413_8c59_4799_946c_10b05d266e22 ;
+                                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                             owl:onClass :BandGap
+                                           ] ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty emmo:EMMO_36e69413_8c59_4799_946c_10b05d266e22 ;
+                                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                             owl:onClass :GDevice
+                                           ] ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty emmo:EMMO_36e69413_8c59_4799_946c_10b05d266e22 ;
+                                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                             owl:onClass :GSetup
+                                           ] ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty emmo:EMMO_c4bace1d_4db0_4cd3_87e9_18122bae2840 ;
+                                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                             owl:onClass :DeviceFlowCurrent
+                                           ] ;
+                           skos:prefLabel "GinestraDeviceSimulation0" ;
+                           emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A multiphysics simulation of a MOSFET transistor carried out with the software Ginestra. The process described in this class takes a single dataset as input."@en .
+
+
+###  http://open-model.eu/ontologies/ss1#GinestraExecutable
+:GinestraExecutable rdf:type owl:Class ;
+                    rdfs:subClassOf :GinestraDS ,
+                                    emmo:EMMO_5f334606_f67d_4f0e_acb9_eeb21cb10c66 ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty simsoft:EMMO_320e60e9_9fc2_4d33_94eb_74b0a0fe09cf ;
+                                      owl:someValuesFrom simsoft:Ginestra
+                                    ] ;
+                    skos:prefLabel "GinestraExecutable" ;
+                    emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Path to the executable pointing to Ginestra Black-Box to be run from the command line interface."@en .
+
+
+###  http://open-model.eu/ontologies/ss1#GinestraLicense
+:GinestraLicense rdf:type owl:Class ;
+                 rdfs:subClassOf :GinestraDS ,
+                                 emmo:EMMO_5f334606_f67d_4f0e_acb9_eeb21cb10c66 ;
+                 skos:prefLabel "GinestraLicense" ;
+                 emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Path to the license file for using Ginestra Black-Box."@en .
 
 
 ###  http://open-model.eu/ontologies/ss1#GinestraSimulation
