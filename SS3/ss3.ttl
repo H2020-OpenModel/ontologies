@@ -583,21 +583,15 @@ The model computes the different component of the strength but will return only 
 #################################################################
 
 ###  http://open-model.eu/ontologies/ss3#abaqussimulation_ave_accuracy
-:abaqussimulation_ave_accuracy rdf:type owl:NamedIndividual ,
-                           kpa:OrdinalAccuracy ;
-                           kpa:KPAValue "high" .
+:abaqussimulation_ave_accuracy rdf:type owl:NamedIndividual .
 
 
 ###  http://open-model.eu/ontologies/ss3#abaqussimulation_ave_simulationtime
-:abaqussimulation_ave_simulationtime rdf:type owl:NamedIndividual ,
-                                          kpa:NumericalSimulationTime ;
-                                 kpa:KPAValue "5000.0"^^xsd:double .
+:abaqussimulation_ave_simulationtime rdf:type owl:NamedIndividual .
 
 
 ###  http://open-model.eu/ontologies/ss3#abaqussimulation_opensource
-:abaqussimulation_opensource rdf:type owl:NamedIndividual ,
-                                      kpa:BoolOpenSource ;
-                             kpa:KPAValue "false"^^xsd:boolean .
+:abaqussimulation_opensource rdf:type owl:NamedIndividual .
 
 
 ###  http://open-model.eu/ontologies/ss3#abaquswrapper_twocomponents
@@ -605,75 +599,51 @@ The model computes the different component of the strength but will return only 
 
 
 ###  http://open-model.eu/ontologies/ss3#fenicssimulation_accuracy
-:fenicssimulation_accuracy rdf:type owl:NamedIndividual ,
-                                    kpa:OrdinalAccuracy ;
-                           kpa:KPAValue "medium" .
+:fenicssimulation_accuracy rdf:type owl:NamedIndividual .
 
 
 ###  http://open-model.eu/ontologies/ss3#fenicssimulation_opensource
-:fenicssimulation_opensource rdf:type owl:NamedIndividual ,
-                                      kpa:BoolOpenSource ;
-                             kpa:KPAValue "true"^^xsd:boolean .
+:fenicssimulation_opensource rdf:type owl:NamedIndividual .
 
 
 ###  http://open-model.eu/ontologies/ss3#fenicssimulation_simulationtime
-:fenicssimulation_simulationtime rdf:type owl:NamedIndividual ,
-                                          kpa:NumericalSimulationTime ;
-                                 kpa:KPAValue "3600.0"^^xsd:double .
+:fenicssimulation_simulationtime rdf:type owl:NamedIndividual .
 
 
 ###  http://open-model.eu/ontologies/ss3#materialcardgenerator_accuracy
-:materialcardgenerator_accuracy rdf:type owl:NamedIndividual ,
-                                         kpa:OrdinalAccuracy ;
-                                kpa:KPAValue "high" .
+:materialcardgenerator_accuracy rdf:type owl:NamedIndividual .
 
 
 ###  http://open-model.eu/ontologies/ss3#materialcardgenerator_opensource
-:materialcardgenerator_opensource rdf:type owl:NamedIndividual ,
-                                           kpa:BoolOpenSource ;
-                                  kpa:KPAValue "false"^^xsd:boolean .
+:materialcardgenerator_opensource rdf:type owl:NamedIndividual .
 
 
 ###  http://open-model.eu/ontologies/ss3#materialcardgenerator_simulationtime
-:materialcardgenerator_simulationtime rdf:type owl:NamedIndividual ,
-                                               kpa:NumericalSimulationTime ;
-                                      kpa:KPAValue "0.1"^^xsd:double .
+:materialcardgenerator_simulationtime rdf:type owl:NamedIndividual .
 
 
 ###  http://open-model.eu/ontologies/ss3#namosimulation_accuracy
-:namosimulation_accuracy rdf:type owl:NamedIndividual ,
-                                  kpa:OrdinalAccuracy ;
-                         kpa:KPAValue "medium" .
+:namosimulation_accuracy rdf:type owl:NamedIndividual .
 
 
 ###  http://open-model.eu/ontologies/ss3#namosimulation_opensource
-:namosimulation_opensource rdf:type owl:NamedIndividual ,
-                                    kpa:BoolOpenSource ;
-                           kpa:KPAValue "false"^^xsd:boolean .
+:namosimulation_opensource rdf:type owl:NamedIndividual .
 
 
 ###  http://open-model.eu/ontologies/ss3#namosimulation_simulationtime
-:namosimulation_simulationtime rdf:type owl:NamedIndividual ,
-                                        kpa:NumericalSimulationTime ;
-                               kpa:KPAValue "120.0"^^xsd:double .
+:namosimulation_simulationtime rdf:type owl:NamedIndividual .
 
 
 ###  http://open-model.eu/ontologies/ss3#premodstrengthsimulation_accuracy
-:premodstrengthsimulation_accuracy rdf:type owl:NamedIndividual ,
-                                            kpa:OrdinalAccuracy ;
-                                   kpa:KPAValue "medium" .
+:premodstrengthsimulation_accuracy rdf:type owl:NamedIndividual .
 
 
 ###  http://open-model.eu/ontologies/ss3#premodstrengthsimulation_opensource
-:premodstrengthsimulation_opensource rdf:type owl:NamedIndividual ,
-                                              kpa:BoolOpenSource ;
-                                     kpa:KPAValue "false"^^xsd:boolean .
+:premodstrengthsimulation_opensource rdf:type owl:NamedIndividual .
 
 
 ###  http://open-model.eu/ontologies/ss3#premodstrengthsimulation_simulationtime
-:premodstrengthsimulation_simulationtime rdf:type owl:NamedIndividual ,
-                                                  kpa:NumericalSimulationTime ;
-                                         kpa:KPAValue "1.0"^^xsd:double .
+:premodstrengthsimulation_simulationtime rdf:type owl:NamedIndividual .
 
 
 ###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
