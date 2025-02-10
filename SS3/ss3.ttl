@@ -337,12 +337,13 @@ emmo:EMMO_9380ab64_0363_4804_b13f_3a8a94119a76 owl:propertyDisjointWith emmo:EMM
            skos:prefLabel "Magnesium" .
 
 
-###  http://open-model.eu/ontologies/ss3#MaterialCardGenerator
-:MaterialCardGenerator rdf:type owl:Class ;
+###  http://open-model.eu/ontologies/ss3#ReinforcementMaterialCardGenerator
+:ReinforcementMaterialCardGenerator rdf:type owl:Class ;
                        rdfs:subClassOf :OpenModelSS3Simulation ,
                                        [ rdf:type owl:Restriction ;
-                                         owl:onProperty emmo:EMMO_36e69413_8c59_4799_946c_10b05d266e22 ;
-                                         owl:someValuesFrom :AbaqusSimpleMaterialCardTemplate
+                                         owl:onProperty emmo:EMMO_c4bace1d_4db0_4cd3_87e9_18122bae2840 ;
+				         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                         owl:onClass :ReinforcementMaterialCard
                                        ] ,
                                        [ rdf:type owl:Restriction ;
                                          owl:onProperty kpa:hasKPA ;
@@ -366,7 +367,7 @@ emmo:EMMO_9380ab64_0363_4804_b13f_3a8a94119a76 owl:propertyDisjointWith emmo:EMM
                                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                          owl:onClass :YieldStrength
                                        ] ;
-                       skos:prefLabel "MaterialCardGenerator"@en ;
+                       skos:prefLabel "ReinforcementMaterialCardGenerator"@en ;
                        emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 """A post-processing function that generates an Abaqus materials card from a the size distribution output from Premod.
 
 Additional input is needed."""@en .
@@ -454,18 +455,52 @@ Additional input is needed."""@en .
                         emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "The class of all simulations used in OpenModel success story 3."@en .
 
 
-###  http://open-model.eu/ontologies/ss3#PremodSimple
-:PremodSimple rdf:type owl:Class ;
-              rdfs:subClassOf :OpenModelSS3DataSet ;
-              skos:prefLabel "PremodSimple"@en ;
-              emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Input to the PREMOD model."@en .
+###  http://open-model.eu/ontologies/ss3#PremodBasicConfiguration
+:PremodBasicConfiguration rdf:type owl:Class ;
+                          rdfs:subClassOf :OpenModelSS3DataSet ;
+                          skos:prefLabel "PremodBasicConfiguration"@en ;
+                          emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Basic configuration for Premod."@en .
 
 
 ###  http://open-model.eu/ontologies/ss3#PremodSimulation
 :PremodSimulation rdf:type owl:Class ;
-                  rdfs:subClassOf :OpenModelSS3Simulation ;
+                  rdfs:subClassOf :OpenModelSS3Simulation ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty kpa:hasKPA ;
+                                    owl:hasValue :premodsimulation_accuracy
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty kpa:hasKPA ;
+                                    owl:hasValue :premodsimulation_opensource
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty kpa:hasKPA ;
+                                    owl:hasValue :premodsimulation_simulationtime
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty emmo:EMMO_36e69413_8c59_4799_946c_10b05d266e22 ;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                    owl:onClass :EffectiveAlloyComposition
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty emmo:EMMO_36e69413_8c59_4799_946c_10b05d266e22 ;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                    owl:onClass :HeatTreatment
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty emmo:EMMO_36e69413_8c59_4799_946c_10b05d266e22 ;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                    owl:onClass :PremodBasicConfiguration
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty emmo:EMMO_c4bace1d_4db0_4cd3_87e9_18122bae2840 ;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                    owl:onClass :ChemistrySizeDistribution
+                                  ] ;
                   skos:prefLabel "PremodSimulation"@en ;
-                  emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A simulation performed with the PREMOD microstructure model."@en .
+                  emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 """A simulation of the precipitation during artificial ageing performed with the PREMOD microstructure model. Simulation only valid for AA6xxx. By default, the model assumes an homogenized initial microstructure and uses an effective composition (composition of the aluminium matrix not taking into account dispersoids).
+
+The model returns the solid solution content and the particle size distribution."""@en .
 
 
 ###  http://open-model.eu/ontologies/ss3#PremodStrengthModel
@@ -493,8 +528,11 @@ Additional input is needed."""@en .
                                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                        owl:onClass :YieldStrength
                                      ] ;
-                     skos:prefLabel "PremodStrengthModel"@en ;
-                     emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A strength model that calculates the Yield strength from the size distribution calcuated by Premod."@en .
+                     emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 """A strength model that calculates the Yield strength from the preciptate size distribution (possibly calculated by Premod), the solid solution content, the intrinsic strength, the grain size, and the dislocation density composition.
+
+In the present case, only the precipitate size distribution and the solid solution are taken as input, the other parameters are fixed.
+
+The model computes the different component of the strength but will return only the sum."""@en .
 
 
 ###  http://open-model.eu/ontologies/ss3#ReinforcedConcrete
@@ -545,15 +583,21 @@ Additional input is needed."""@en .
 #################################################################
 
 ###  http://open-model.eu/ontologies/ss3#abaqussimulation_ave_accuracy
-:abaqussimulation_ave_accuracy rdf:type owl:NamedIndividual .
+:abaqussimulation_ave_accuracy rdf:type owl:NamedIndividual ,
+                           kpa:OrdinalAccuracy ;
+                           kpa:KPAValue "high" .
 
 
 ###  http://open-model.eu/ontologies/ss3#abaqussimulation_ave_simulationtime
-:abaqussimulation_ave_simulationtime rdf:type owl:NamedIndividual .
+:abaqussimulation_ave_simulationtime rdf:type owl:NamedIndividual ,
+                                          kpa:NumericalSimulationTime ;
+                                 kpa:KPAValue "5000.0"^^xsd:double .
 
 
 ###  http://open-model.eu/ontologies/ss3#abaqussimulation_opensource
-:abaqussimulation_opensource rdf:type owl:NamedIndividual .
+:abaqussimulation_opensource rdf:type owl:NamedIndividual ,
+                                      kpa:BoolOpenSource ;
+                             kpa:KPAValue "false"^^xsd:boolean .
 
 
 ###  http://open-model.eu/ontologies/ss3#abaquswrapper_twocomponents
@@ -561,51 +605,75 @@ Additional input is needed."""@en .
 
 
 ###  http://open-model.eu/ontologies/ss3#fenicssimulation_accuracy
-:fenicssimulation_accuracy rdf:type owl:NamedIndividual .
+:fenicssimulation_accuracy rdf:type owl:NamedIndividual ,
+                                    kpa:OrdinalAccuracy ;
+                           kpa:KPAValue "medium" .
 
 
 ###  http://open-model.eu/ontologies/ss3#fenicssimulation_opensource
-:fenicssimulation_opensource rdf:type owl:NamedIndividual .
+:fenicssimulation_opensource rdf:type owl:NamedIndividual ,
+                                      kpa:BoolOpenSource ;
+                             kpa:KPAValue "true"^^xsd:boolean .
 
 
 ###  http://open-model.eu/ontologies/ss3#fenicssimulation_simulationtime
-:fenicssimulation_simulationtime rdf:type owl:NamedIndividual .
+:fenicssimulation_simulationtime rdf:type owl:NamedIndividual ,
+                                          kpa:NumericalSimulationTime ;
+                                 kpa:KPAValue "3600.0"^^xsd:double .
 
 
 ###  http://open-model.eu/ontologies/ss3#materialcardgenerator_accuracy
-:materialcardgenerator_accuracy rdf:type owl:NamedIndividual .
+:materialcardgenerator_accuracy rdf:type owl:NamedIndividual ,
+                                         kpa:OrdinalAccuracy ;
+                                kpa:KPAValue "high" .
 
 
 ###  http://open-model.eu/ontologies/ss3#materialcardgenerator_opensource
-:materialcardgenerator_opensource rdf:type owl:NamedIndividual .
+:materialcardgenerator_opensource rdf:type owl:NamedIndividual ,
+                                           kpa:BoolOpenSource ;
+                                  kpa:KPAValue "false"^^xsd:boolean .
 
 
 ###  http://open-model.eu/ontologies/ss3#materialcardgenerator_simulationtime
-:materialcardgenerator_simulationtime rdf:type owl:NamedIndividual .
+:materialcardgenerator_simulationtime rdf:type owl:NamedIndividual ,
+                                               kpa:NumericalSimulationTime ;
+                                      kpa:KPAValue "0.1"^^xsd:double .
 
 
 ###  http://open-model.eu/ontologies/ss3#namosimulation_accuracy
-:namosimulation_accuracy rdf:type owl:NamedIndividual .
+:namosimulation_accuracy rdf:type owl:NamedIndividual ,
+                                  kpa:OrdinalAccuracy ;
+                         kpa:KPAValue "medium" .
 
 
 ###  http://open-model.eu/ontologies/ss3#namosimulation_opensource
-:namosimulation_opensource rdf:type owl:NamedIndividual .
+:namosimulation_opensource rdf:type owl:NamedIndividual ,
+                                    kpa:BoolOpenSource ;
+                           kpa:KPAValue "false"^^xsd:boolean .
 
 
 ###  http://open-model.eu/ontologies/ss3#namosimulation_simulationtime
-:namosimulation_simulationtime rdf:type owl:NamedIndividual .
+:namosimulation_simulationtime rdf:type owl:NamedIndividual ,
+                                        kpa:NumericalSimulationTime ;
+                               kpa:KPAValue "120.0"^^xsd:double .
 
 
 ###  http://open-model.eu/ontologies/ss3#premodstrengthsimulation_accuracy
-:premodstrengthsimulation_accuracy rdf:type owl:NamedIndividual .
+:premodstrengthsimulation_accuracy rdf:type owl:NamedIndividual ,
+                                            kpa:OrdinalAccuracy ;
+                                   kpa:KPAValue "medium" .
 
 
 ###  http://open-model.eu/ontologies/ss3#premodstrengthsimulation_opensource
-:premodstrengthsimulation_opensource rdf:type owl:NamedIndividual .
+:premodstrengthsimulation_opensource rdf:type owl:NamedIndividual ,
+                                              kpa:BoolOpenSource ;
+                                     kpa:KPAValue "false"^^xsd:boolean .
 
 
 ###  http://open-model.eu/ontologies/ss3#premodstrengthsimulation_simulationtime
-:premodstrengthsimulation_simulationtime rdf:type owl:NamedIndividual .
+:premodstrengthsimulation_simulationtime rdf:type owl:NamedIndividual ,
+                                                  kpa:NumericalSimulationTime ;
+                                         kpa:KPAValue "1.0"^^xsd:double .
 
 
 ###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
