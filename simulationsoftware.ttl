@@ -1,0 +1,737 @@
+@prefix : <http://open-model.eu/domain/simulationsoftware#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix emmo: <https://w3id.org/emmo#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@base <http://open-model.eu/domain/simulationsoftware#> .
+
+<http://open-model.eu/domain/simulationsoftware> rdf:type owl:Ontology ;
+                                                  owl:versionIRI <http://open-model.eu/domain/simulationsoftware> ;
+                                                  owl:imports <https://w3id.org/emmo/1.0.0-rc3/disciplines/geometrical> ,
+                                                              <https://w3id.org/emmo/1.0.0-rc3/disciplines/isq> ,
+                                                              <https://w3id.org/emmo/1.0.0-rc3/disciplines/models> ,
+                                                              <https://w3id.org/emmo/1.0.0-rc3/disciplines/dataset> ,
+                                                              <https://w3id.org/emmo/1.0.0-rc3/reference/data> ,
+                                                              <https://w3id.org/emmo/1.0.0-rc3/perspectives/structural> ;
+                                                  dcterms:abstract "Ontological foundations for a Knowledge Base covering the methods outlined in the Review of Materials Modelling (RoMM)."@en ;
+                                                  dcterms:contributor "Goldbeck Consulting Ltd (UK)" ;
+                                                  dcterms:created "2024-08-29" ;
+                                                  dcterms:license "https://creativecommons.org/licenses/by/4.0/legalcode" ;
+                                                  dcterms:title "Simulation Software Ontology"@en ;
+                                                  <http://purl.org/vocab/vann/preferredNamespacePrefix> "simsoft"@en ;
+                                                  rdfs:comment """Contacts:
+        Otello M Roscioni
+        Goldbeck Consulting Ltd (UK)
+        email: otello@goldbeck-consulting.com"""@en ;
+                                                  owl:versionInfo 1.0 .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/terms/bibliographicCitation
+dcterms:bibliographicCitation rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/created
+dcterms:created rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/description
+dcterms:description rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/issued
+dcterms:issued rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/modified
+dcterms:modified rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/source
+dcterms:source rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/ontology/bibo/doi
+<http://purl.org/ontology/bibo/doi> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/ontology/bibo/status
+<http://purl.org/ontology/bibo/status> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespacePrefix
+<http://purl.org/vocab/vann/preferredNamespacePrefix> rdf:type owl:AnnotationProperty .
+
+
+###  http://xmlns.com/foaf/0.1/logo
+foaf:logo rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://open-model.eu/domain/simulationsoftware#EMMO_320e60e9_9fc2_4d33_94eb_74b0a0fe09cf
+:EMMO_320e60e9_9fc2_4d33_94eb_74b0a0fe09cf rdf:type owl:ObjectProperty ;
+                                           rdfs:subPropertyOf emmo:EMMO_61f264fa_1f23_47f0_aa1c_c947d0be56fc ;
+                                           owl:inverseOf emmo:EMMO_39c3815d_8cae_4c8f_b2ff_eeba24bec455 ;
+                                           rdfs:domain emmo:EMMO_d7788d1a_020d_4c78_85a1_13563fcec168 ;
+                                           skos:prefLabel "isIconFor"@en .
+
+
+###  http://open-model.eu/domain/simulationsoftware#EMMO_367a1570_8b0a_4a0a_9192_2e290e259f65
+:EMMO_367a1570_8b0a_4a0a_9192_2e290e259f65 rdf:type owl:ObjectProperty ;
+                                           rdfs:subPropertyOf emmo:EMMO_a8bd7094_6b40_47af_b1f4_a69d81a3afbd ;
+                                           owl:inverseOf emmo:EMMO_6b78c119_f86c_4b5e_ba6c_b42d25a64122 ;
+                                           skos:prefLabel "isDatumOf"@en .
+
+
+###  http://open-model.eu/domain/simulationsoftware#EMMO_8d96aef4_90b6_42f7_b9f1_74cbd7b849f6
+:EMMO_8d96aef4_90b6_42f7_b9f1_74cbd7b849f6 rdf:type owl:ObjectProperty ;
+                                           rdfs:subPropertyOf :EMMO_320e60e9_9fc2_4d33_94eb_74b0a0fe09cf ;
+                                           owl:inverseOf :EMMO_b83baba1_2f3c_48c9_b194_bb871d5078df ;
+                                           rdf:type owl:AsymmetricProperty ,
+                                                    owl:IrreflexiveProperty ;
+                                           rdfs:seeAlso :EMMO_b83baba1_2f3c_48c9_b194_bb871d5078df ;
+                                           skos:prefLabel "isIconPartOf"@en .
+
+
+###  http://open-model.eu/domain/simulationsoftware#EMMO_b83baba1_2f3c_48c9_b194_bb871d5078df
+:EMMO_b83baba1_2f3c_48c9_b194_bb871d5078df rdf:type owl:ObjectProperty ;
+                                           rdfs:subPropertyOf emmo:EMMO_39c3815d_8cae_4c8f_b2ff_eeba24bec455 ;
+                                           rdf:type owl:AsymmetricProperty ,
+                                                    owl:IrreflexiveProperty ;
+                                           rdfs:seeAlso emmo:EMMO_9380ab64_0363_4804_b13f_3a8a94119a76 ;
+                                           skos:prefLabel "hasIconPart" ;
+                                           emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A semantic shortcut analogous to proper parthood relations between objects in the real world."@en .
+
+
+###  http://open-model.eu/domain/simulationsoftware#hasWrapper
+:hasWrapper rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf emmo:EMMO_b2282816_b7a3_44c6_b2cb_3feff1ceb7fe ;
+            rdfs:domain emmo:EMMO_4299e344_a321_4ef2_a744_bacfcce80afc ;
+            rdfs:range :YAMLFile ;
+            skos:prefLabel "hasWrapper" ;
+            emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Relates a process to its AiiDA wrapper, written using the declarative workflow syntax (ExecFlow)."@en .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://open-model.eu/domain/simulationsoftware#hasCTX
+:hasCTX rdf:type owl:DatatypeProperty ;
+        rdfs:subPropertyOf emmo:EMMO_02face50_43a1_40ce_a909_dfe54d5e186b ;
+        rdfs:range xsd:string ;
+        skos:prefLabel "hasCTX" ;
+        emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A string naming an AiiDA data node"@en .
+
+
+###  http://open-model.eu/domain/simulationsoftware#hasTempURIValue
+:hasTempURIValue rdf:type owl:DatatypeProperty ;
+                 rdfs:subPropertyOf emmo:EMMO_b35e92d7_7fa0_4661_aa5a_5cea7c8e6925 ;
+                 skos:prefLabel "hasTempURIValue" ;
+                 emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "The URI value of a temporary resource, which is created on the fly to exchange data between processes."@en .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://open-model.eu/domain/simulationsoftware#Abaqus
+:Abaqus rdf:type owl:Class ;
+        rdfs:subClassOf emmo:EMMO_8d4962d7_9608_44f7_a2f1_82a4bb173f4a ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty emmo:EMMO_24c71baf_6db6_48b9_86c8_8c70cf36db0c ;
+                          owl:someValuesFrom :FiniteElements
+                        ] ;
+        skos:prefLabel "Abaqus" ;
+        emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Abaqus is a Finite Element Analysis (FEA) software designed to simulate real-world problems for various industries." .
+
+
+###  http://open-model.eu/domain/simulationsoftware#AiiDA
+:AiiDA rdf:type owl:Class ;
+       rdfs:subClassOf emmo:EMMO_cbf42aa6_9e11_4be8_932a_ae3c792ab17d ;
+       rdfs:seeAlso "https://www.aiida.net/" ;
+       skos:prefLabel "AiiDA" ;
+       emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "AiiDA is an open-source Python infrastructure to help researchers with automating, managing, persisting, sharing and reproducing the complex workflows associated with modern computational science and all associated data."@en .
+
+
+###  http://open-model.eu/domain/simulationsoftware#AiiDADataNodes
+:AiiDADataNodes rdf:type owl:Class ;
+                rdfs:subClassOf emmo:EMMO_194e367c_9783_4bf5_96d0_9ad597d48d9a ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty emmo:EMMO_4832e353_6a2d_4deb_9a5b_96989afaff2d ;
+                                  owl:someValuesFrom :AiiDA
+                                ] ;
+                skos:prefLabel "AiiDADataNodes" ;
+                emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A dataset created during the execution of a workflow. Thedataset is composed of nodes that are created during one step and can be passed to another step using the context, a internal data container."@en .
+
+
+###  http://open-model.eu/domain/simulationsoftware#AtomicStructureFile
+:AtomicStructureFile rdf:type owl:Class ;
+                     rdfs:subClassOf emmo:EMMO_998dd3a0_c85f_4c8d_9fb8_816a93cc3bb8 ;
+                     skos:prefLabel "AtomicStructureFile" ;
+                     emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A file containing the position and type of one or more atoms. Optionally, the file can include additional information such as periodic repeating unit, symmetry group, molecular topology or connectivity, molecular index, residue type, labels, etc."@en .
+
+
+###  http://open-model.eu/domain/simulationsoftware#AtomisticMolecularDynamics
+:AtomisticMolecularDynamics rdf:type owl:Class ;
+                            rdfs:subClassOf emmo:EMMO_84cadc45_6758_46f2_ba2a_5ead65c70213 ,
+                                            [ rdf:type owl:Restriction ;
+                                              owl:onProperty emmo:EMMO_17e27c22_37e1_468c_9dd7_95e137f73e7f ;
+                                              owl:someValuesFrom :ForceField
+                                            ] ;
+                            skos:prefLabel "AtomisticMolecularDynamics" ;
+                            emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A molecular dynamics simulation using an all-atom model."@en .
+
+
+###  http://open-model.eu/domain/simulationsoftware#BandStructure2BandGap
+:BandStructure2BandGap rdf:type owl:Class ;
+                       rdfs:subClassOf :Calcjob ;
+                       skos:prefLabel "BandStructure2BandGap"@en ;
+                       emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "An AiiDA calcfunction that computes the band gap from the electronic band structure simulation."@en .
+
+
+###  http://open-model.eu/domain/simulationsoftware#BashScript
+:BashScript rdf:type owl:Class ;
+            rdfs:subClassOf emmo:EMMO_f84b1b92_1dc8_4146_99f0_b03cd53e455b ;
+            skos:prefLabel "BashScript" .
+
+
+###  http://open-model.eu/domain/simulationsoftware#Bead
+:Bead rdf:type owl:Class ;
+      rdfs:subClassOf emmo:EMMO_53935db0_af45_4426_b9e9_244a0d77db00 ;
+      skos:prefLabel "Bead" ;
+      emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A bead is the constituent part of a mesoscopic model. Generally, it represents a group of atoms, for example a monomer in a polymer, or several water molecules in a cluster."@en .
+
+
+###  http://open-model.eu/domain/simulationsoftware#Bulk
+:Bulk rdf:type owl:Class ;
+      rdfs:subClassOf :PeriodicBoundaryConditions ;
+      skos:prefLabel "Bulk" ;
+      emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A bulk geometry in a molecular dynamics simulation is a type of boundary condition that is used to model systems that are infinite in all three dimensions. For example, a bulk geometry can be used to simulate a gas, liquid or solid phase without any external confinement or surface effects. A bulk geometry can be achieved by using periodic boundary conditions that replicate the system in all directions and eliminate any edge effects."@en .
+
+
+###  http://open-model.eu/domain/simulationsoftware#CIFFile
+:CIFFile rdf:type owl:Class ;
+         rdfs:subClassOf :AtomicStructureFile ;
+         skos:prefLabel "CIFFile" .
+
+
+###  http://open-model.eu/domain/simulationsoftware#CTX
+:CTX rdf:type owl:Class ;
+     rdfs:subClassOf :ProgrammingVariable ;
+     skos:prefLabel "CTX" ;
+     emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "In AiiDA workflow, the context (CTX) is a internal data container that can hold and pass information between steps. It is very usefull for complex workflows."@en .
+
+
+###  http://open-model.eu/domain/simulationsoftware#Calcjob
+:Calcjob rdf:type owl:Class ;
+         rdfs:subClassOf :AiiDA ;
+         skos:prefLabel "Calcjob"@en ;
+         emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A function written in python and executed in AiiDA performing some kind of data processing."@en .
+
+
+###  http://open-model.eu/domain/simulationsoftware#CoarseGrainedMolecularDynamics
+:CoarseGrainedMolecularDynamics rdf:type owl:Class ;
+                                rdfs:subClassOf emmo:EMMO_53935db0_af45_4426_b9e9_244a0d77db00 ,
+                                                [ rdf:type owl:Restriction ;
+                                                  owl:onProperty emmo:EMMO_17e27c22_37e1_468c_9dd7_95e137f73e7f ;
+                                                  owl:someValuesFrom :ForceField
+                                                ] ;
+                                skos:prefLabel "CoarseGrainedMolecularDynamics" ;
+                                emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A molecular dynamics simulation using a coarse-grained model."@en .
+
+
+###  http://open-model.eu/domain/simulationsoftware#ComputationalFluidDynamics
+:ComputationalFluidDynamics rdf:type owl:Class ;
+                            rdfs:subClassOf emmo:EMMO_4456a5d2_16a6_4ee1_9a8e_5c75956b28ea ;
+                            skos:prefLabel "ComputationalFluidDynamics" ;
+                            emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Computational fluid dynamics is a branch of fluid mechanics that uses numerical analysis and data structures to analyze and solve problems that involve fluid flows. Computers are used to perform the calculations required to simulate the free-stream flow of the fluid, and the interaction of the fluid with surfaces defined by boundary conditions."@en .
+
+
+###  http://open-model.eu/domain/simulationsoftware#ConfigurationInteraction
+:ConfigurationInteraction rdf:type owl:Class ;
+                          rdfs:subClassOf :PostHartreeFock ;
+                          skos:prefLabel "ConfigurationInteraction" ;
+                          emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Configuration interaction (CI) is a post-Hartree–Fock linear variational method for solving the nonrelativistic Schrödinger equation within the Born–Oppenheimer approximation for a quantum chemical multi-electron system." .
+
+
+###  http://open-model.eu/domain/simulationsoftware#CoupledCluster
+:CoupledCluster rdf:type owl:Class ;
+                rdfs:subClassOf :PostHartreeFock ;
+                skos:prefLabel "CoupledCluster" ;
+                emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Coupled cluster (CC) is a numerical technique used for describing many-body systems. Its most common use is as one of several post-Hartree–Fock ab initio quantum chemistry method. Coupled cluster essentially takes the basic Hartree–Fock molecular orbital method and constructs multi-electron wavefunctions using the exponential cluster operator to account for electron correlation."@en .
+
+
+###  http://open-model.eu/domain/simulationsoftware#DCDFile
+:DCDFile rdf:type owl:Class ;
+         rdfs:subClassOf :AtomicStructureFile ;
+         skos:prefLabel "DCDFile" .
+
+
+###  http://open-model.eu/domain/simulationsoftware#DLite
+:DLite rdf:type owl:Class ;
+       rdfs:subClassOf emmo:EMMO_cbf42aa6_9e11_4be8_932a_ae3c792ab17d ;
+       rdfs:seeAlso "https://sintef.github.io/dlite/" ;
+       skos:prefLabel "DLite" ;
+       emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A lightweight data-centric framework for semantic interoperability."@en .
+
+
+###  http://open-model.eu/domain/simulationsoftware#DataBasedModel
+:DataBasedModel rdf:type owl:Class ;
+                rdfs:subClassOf emmo:EMMO_90f18cf0_1225_4c64_b5f8_f65cd7f992c5 ;
+                skos:prefLabel "DataBasedModel" .
+
+
+###  http://open-model.eu/domain/simulationsoftware#DataParsing
+:DataParsing rdf:type owl:Class ;
+             rdfs:subClassOf emmo:EMMO_cbf42aa6_9e11_4be8_932a_ae3c792ab17d ;
+             skos:prefLabel "DataParsing" ;
+             emmo:EMMO_c7b62dd7_063a_4c2a_8504_42f7264ba83f "A software or script that parses a data file and returns data in the form of scalars, arrays, or matrices."@en .
+
+
+###  http://open-model.eu/domain/simulationsoftware#DensityFunctionalTheory
+:DensityFunctionalTheory rdf:type owl:Class ;
+                         rdfs:subClassOf emmo:EMMO_6eca09be_17e9_445e_abc9_000aa61b7a11 ;
+                         skos:prefLabel "DensityFunctionalTheory" .
+
+
+###  http://open-model.eu/domain/simulationsoftware#ElectronMobility
+:ElectronMobility rdf:type owl:Class ;
+                  rdfs:subClassOf emmo:EMMO_9b8f36cd_4312_4bc3_a99c_420c00f41550 ;
+                  skos:prefLabel "ElectronMobility" .
+
+
+###  http://open-model.eu/domain/simulationsoftware#ExecFlowWrapper
+:ExecFlowWrapper rdf:type owl:Class ;
+                 rdfs:subClassOf :AiiDA ;
+                 skos:prefLabel "ExecFlowWrapper" ;
+                 emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A task which is executed in ExecFlow using a wrapper to an external software."@en .
+
+
+###  http://open-model.eu/domain/simulationsoftware#Fenics
+:Fenics rdf:type owl:Class ;
+        rdfs:subClassOf emmo:EMMO_cbf42aa6_9e11_4be8_932a_ae3c792ab17d ;
+        rdfs:seeAlso "https://fenicsproject.org/" ;
+        skos:prefLabel "Fenics" ;
+        emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "FEniCS is a popular open-source computing platform for solving partial differential equations (PDEs) with the finite element method (FEM). FEniCS enables users to quickly translate scientific models into efficient finite element code."@en .
+
+
+###  http://open-model.eu/domain/simulationsoftware#FiniteElements
+:FiniteElements rdf:type owl:Class ;
+                rdfs:subClassOf emmo:EMMO_4456a5d2_16a6_4ee1_9a8e_5c75956b28ea ;
+                skos:prefLabel "FiniteElements" .
+
+
+###  http://open-model.eu/domain/simulationsoftware#ForceField
+:ForceField rdf:type owl:Class ;
+            rdfs:subClassOf emmo:EMMO_e5438930_04e7_4d42_ade5_3700d4a52ab7 ;
+            skos:prefLabel "ForceField" ;
+            emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "a set of parameters and equations for use in molecular mechanics simulations" .
+
+
+###  http://open-model.eu/domain/simulationsoftware#GROMOS
+:GROMOS rdf:type owl:Class ;
+        rdfs:subClassOf :ForceField ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty emmo:EMMO_a8bd7094_6b40_47af_b1f4_a69d81a3afbd ;
+                          owl:someValuesFrom emmo:EMMO_84cadc45_6758_46f2_ba2a_5ead65c70213
+                        ] ;
+        skos:prefLabel "GROMOS" ;
+        emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "GROningen MOlecular Simulation (GROMOS) is the name of a force field for molecular dynamics simulation, and a related computer software package. Both are developed at the University of Groningen, and at the Computer-Aided Chemistry Group at the Laboratory for Physical Chemistry at the Swiss Federal Institute of Technology (ETH Zurich)."@en .
+
+
+###  http://open-model.eu/domain/simulationsoftware#GULP
+:GULP rdf:type owl:Class ;
+      rdfs:subClassOf emmo:EMMO_8d4962d7_9608_44f7_a2f1_82a4bb173f4a ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty emmo:EMMO_24c71baf_6db6_48b9_86c8_8c70cf36db0c ;
+                        owl:someValuesFrom emmo:EMMO_84cadc45_6758_46f2_ba2a_5ead65c70213
+                      ] ;
+      rdfs:seeAlso "https://gulp.curtin.edu.au/" ;
+      skos:prefLabel "GULP" ;
+      emmo:EMMO_c7b62dd7_063a_4c2a_8504_42f7264ba83f """GULP - a computer program for the symmetry adapted simulation of solids.
+GULP is a program for performing a variety of types of simulation on materials using boundary conditions of 0-D (molecules and clusters), 1-D (polymers), 2-D (surfaces, slabs and grain boundaries), or 3-D (periodic solids). The focus of the code is on analytical solutions, through the use of lattice dynamics, where possible, rather than on molecular dynamics."""@en .
+
+
+###  http://open-model.eu/domain/simulationsoftware#GayBerne
+:GayBerne rdf:type owl:Class ;
+          rdfs:subClassOf :PotentialFunction ;
+          skos:prefLabel "GayBerne" ;
+          emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "The Gay-Berne potential is a generalised form of the Lennard-Jones 12:6 potential adapted for anisotropic particles, that is, spheroids."@en .
+
+
+###  http://open-model.eu/domain/simulationsoftware#Ginestra
+:Ginestra rdf:type owl:Class ;
+          rdfs:subClassOf emmo:EMMO_8d4962d7_9608_44f7_a2f1_82a4bb173f4a ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty emmo:EMMO_24c71baf_6db6_48b9_86c8_8c70cf36db0c ;
+                            owl:someValuesFrom emmo:EMMO_4456a5d2_16a6_4ee1_9a8e_5c75956b28ea
+                          ] ;
+          skos:prefLabel "Ginestra" ;
+          emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Ginestra integrates relevant physics, critical to understanding and managing the complexity of materials-to-device co-optimization from materials discovery through device performance, reliability and variability projection."@en .
+
+
+###  http://open-model.eu/domain/simulationsoftware#HartreeFock
+:HartreeFock rdf:type owl:Class ;
+             rdfs:subClassOf emmo:EMMO_6eca09be_17e9_445e_abc9_000aa61b7a11 ;
+             skos:prefLabel "HartreeFock" .
+
+
+###  http://open-model.eu/domain/simulationsoftware#HoleMobility
+:HoleMobility rdf:type owl:Class ;
+              rdfs:subClassOf emmo:EMMO_9b8f36cd_4312_4bc3_a99c_420c00f41550 ;
+              skos:prefLabel "HoleMobility" .
+
+
+###  http://open-model.eu/domain/simulationsoftware#INI
+:INI rdf:type owl:Class ;
+     rdfs:subClassOf emmo:EMMO_3997e1f5_f478_4572_a030_4b8e7e5cc63a ;
+     skos:example """[Options]                                                                                                            
+timestep=1.                                                                                                                                 
+recursive=0                                                                                                                                 
+temperature=300                                                                                                                             
+pressure=1""" ;
+     skos:prefLabel "INI" ;
+     emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "An INI file is an initialization file that stores settings for a program."@en .
+
+
+###  http://open-model.eu/domain/simulationsoftware#InputControlData
+:InputControlData rdf:type owl:Class ;
+                  rdfs:subClassOf emmo:EMMO_3e7add3d_e6ed_489a_a796_8e31fef9b490 ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty emmo:EMMO_1494c1a9_00e1_40c2_a9cc_9bbf302a1cac ;
+                                    owl:someValuesFrom emmo:EMMO_eff42cb3_208e_4768_9a39_f8b6b3c3d7a2
+                                  ] ;
+                  skos:example "A coarse step for numerical integration."@en ;
+                  skos:prefLabel "ComputationalParameters"@en ;
+                  emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "The set of parameters used to control a numerical simulation."@en ;
+                  emmo:EMMO_c7b62dd7_063a_4c2a_8504_42f7264ba83f "If a dataset is also a subclass of InputControlData, then OntoFlow does not apply any filter to the individual of the dataset class. This means that each instance of InputControlData gives rise to a different workflow."@en .
+
+
+###  http://open-model.eu/domain/simulationsoftware#Jinja2File
+:Jinja2File rdf:type owl:Class ;
+            rdfs:subClassOf emmo:EMMO_998dd3a0_c85f_4c8d_9fb8_816a93cc3bb8 ;
+            skos:prefLabel "Jinja2File" .
+
+
+###  http://open-model.eu/domain/simulationsoftware#LAMMPS
+:LAMMPS rdf:type owl:Class ;
+        rdfs:subClassOf emmo:EMMO_8d4962d7_9608_44f7_a2f1_82a4bb173f4a ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty emmo:EMMO_24c71baf_6db6_48b9_86c8_8c70cf36db0c ;
+                          owl:someValuesFrom emmo:EMMO_4456a5d2_16a6_4ee1_9a8e_5c75956b28ea
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty emmo:EMMO_24c71baf_6db6_48b9_86c8_8c70cf36db0c ;
+                          owl:someValuesFrom emmo:EMMO_53935db0_af45_4426_b9e9_244a0d77db00
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty emmo:EMMO_24c71baf_6db6_48b9_86c8_8c70cf36db0c ;
+                          owl:someValuesFrom emmo:EMMO_84cadc45_6758_46f2_ba2a_5ead65c70213
+                        ] ;
+        rdfs:comment """LAMMPS is a classical molecular dynamics code with a focus on materials modeling. It's an acronym for Large-scale Atomic/Molecular Massively Parallel Simulator.
+
+LAMMPS has potentials for solid-state materials (metals, semiconductors) and soft matter (biomolecules, polymers) and coarse-grained or mesoscopic systems. It can be used to model atoms or, more generically, as a parallel particle simulator at the atomic, meso, or continuum scale."""@en ;
+        rdfs:seeAlso "https://lammps.org" ;
+        skos:prefLabel "LAMMPS"@en .
+
+
+###  http://open-model.eu/domain/simulationsoftware#LennardJones612
+:LennardJones612 rdf:type owl:Class ;
+                 rdfs:subClassOf :PotentialFunction ;
+                 skos:prefLabel "LennardJones612" ;
+                 emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "The Lennard-Jones potential combines an attractive term proportional to 1/r^6 to a repulsive term proportional to 1/r^12."@en .
+
+
+###  http://open-model.eu/domain/simulationsoftware#LicenceFile
+:LicenceFile rdf:type owl:Class ;
+             rdfs:subClassOf emmo:EMMO_998dd3a0_c85f_4c8d_9fb8_816a93cc3bb8 ;
+             skos:prefLabel "LicenceFile" ;
+             emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A file containing a licence to grant the use of proprietary software."@en .
+
+
+###  http://open-model.eu/domain/simulationsoftware#LicenceNumber
+:LicenceNumber rdf:type owl:Class ;
+               rdfs:subClassOf emmo:EMMO_50ea1ec5_f157_41b0_b46b_a9032f17ca10 ;
+               skos:prefLabel "LicenceNumber" ;
+               emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A string of number, characters, or both used to grant access to proprietary software."@en .
+
+
+###  http://open-model.eu/domain/simulationsoftware#MCSCF
+:MCSCF rdf:type owl:Class ;
+       rdfs:subClassOf :PostHartreeFock ;
+       skos:prefLabel "MCSCF" ;
+       emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Multi-configurational self-consistent field (MCSCF) is a method in quantum chemistry used to generate qualitatively correct reference states of molecules in cases where Hartree–Fock and density functional theory are not adequate. It uses a linear combination of configuration state functions (CSF), or configuration determinants, to approximate the exact electronic wavefunction of an atom or molecule."@en .
+
+
+###  http://open-model.eu/domain/simulationsoftware#MOLC
+:MOLC rdf:type owl:Class ;
+      rdfs:subClassOf :ForceField ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty emmo:EMMO_9380ab64_0363_4804_b13f_3a8a94119a76 ;
+                        owl:someValuesFrom :GayBerne
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty emmo:EMMO_a8bd7094_6b40_47af_b1f4_a69d81a3afbd ;
+                        owl:someValuesFrom emmo:EMMO_53935db0_af45_4426_b9e9_244a0d77db00
+                      ] ;
+      skos:prefLabel "MOLC" ;
+      emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 """MOLC. A reversible coarse grained approach using anisotropic beads for the modelling of organic functional materials.
+Phys. Chem. Chem. Phys., 21, 26195 (2019).
+https://doi.org/10.1039/c9cp04120f"""@en .
+
+
+###  http://open-model.eu/domain/simulationsoftware#MPIComputerNode
+:MPIComputerNode rdf:type owl:Class ;
+                 rdfs:subClassOf emmo:EMMO_51f1ba0d_e92b_4be2_9a9d_4640b16ac7ed ;
+                 skos:prefLabel "MPIComputerNode" ;
+                 emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A computer node refers to an individual computer or processor within a distributed computing environment. Each node runs its own instance of the MPI program and communicates with other nodes to perform parallel computations."@en .
+
+
+###  http://open-model.eu/domain/simulationsoftware#MPIProcsPerNode
+:MPIProcsPerNode rdf:type owl:Class ;
+                 rdfs:subClassOf emmo:EMMO_51f1ba0d_e92b_4be2_9a9d_4640b16ac7ed ;
+                 skos:prefLabel "MPIProcsPerNode" ;
+                 emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Number of MPI processes per computer node."@en .
+
+
+###  http://open-model.eu/domain/simulationsoftware#MolecularTopology
+:MolecularTopology rdf:type owl:Class ;
+                   rdfs:subClassOf emmo:EMMO_46f0f8df_4dc6_418f_8036_10427a3a288e ;
+                   skos:prefLabel "MolecularTopology" ;
+                   emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 """In chemistry, topology provides a way of describing and predicting the molecular structure within the constraints of three-dimensional space.
+This class includes the three-dimensional arrangement of the atoms that constitute a molecule and the molecular connectivity defined as the list of bonds, angles, dihedral angles, and improper angles between atoms."""@en .
+
+
+###  http://open-model.eu/domain/simulationsoftware#MollerPlesset
+:MollerPlesset rdf:type owl:Class ;
+               rdfs:subClassOf :PostHartreeFock ;
+               skos:prefLabel "MollerPlesset" ;
+               emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Møller–Plesset perturbation theory (MP) is one of several quantum chemistry post–Hartree–Fock ab initio methods in the field of computational chemistry. It improves on the Hartree–Fock method by adding electron correlation effects by means of Rayleigh–Schrödinger perturbation theory (RS-PT), usually to second (MP2), third (MP3) or fourth (MP4) order."@en .
+
+
+###  http://open-model.eu/domain/simulationsoftware#Moltemplate
+:Moltemplate rdf:type owl:Class ;
+             rdfs:subClassOf emmo:EMMO_cbf42aa6_9e11_4be8_932a_ae3c792ab17d ;
+             rdfs:seeAlso "http://www.moltemplate.org/" ;
+             skos:prefLabel "Moltemplate"@en ;
+             emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Moltemplate is a general molecule builder and force-field database system for LAMMPS."@en .
+
+
+###  http://open-model.eu/domain/simulationsoftware#OPLS
+:OPLS rdf:type owl:Class ;
+      rdfs:subClassOf :ForceField ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty emmo:EMMO_a8bd7094_6b40_47af_b1f4_a69d81a3afbd ;
+                        owl:someValuesFrom emmo:EMMO_84cadc45_6758_46f2_ba2a_5ead65c70213
+                      ] ;
+      rdfs:seeAlso """OPLS4: Improving Force Field Accuracy on Challenging Regimes of Chemical Space.
+J. Chem. Theory Comput., 17, 4291–4300 (2021).
+https://doi.org/10.1021/acs.jctc.1c00302"""@en ,
+                   """The OPLS Force Field for Proteins. Energy Minimizations for Crystals of Cyclic Peptides and Crambin.
+J. Am. Chem. Soc., 110, 1657–1666 (1998).
+https://doi.org/10.1021/ja00214a001."""@en ;
+      skos:prefLabel "OPLS" ;
+      emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "The OPLS (Optimized Potentials for Liquid Simulations) force field was developed by Prof. William L. Jorgensen at Purdue University and later at Yale University, and is being further developed commercially by Schrödinger, Inc."@en .
+
+
+###  http://open-model.eu/domain/simulationsoftware#OTEAPIDataSet
+:OTEAPIDataSet rdf:type owl:Class ;
+               rdfs:subClassOf emmo:EMMO_194e367c_9783_4bf5_96d0_9ad597d48d9a ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty emmo:EMMO_4832e353_6a2d_4deb_9a5b_96989afaff2d ;
+                                 owl:someValuesFrom :DLite
+                               ] ;
+               emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A class covering any dataset that is passed to an OTEAPI pipeline for data documentation, mapping, and serialisation."@en .
+
+
+###  http://open-model.eu/domain/simulationsoftware#OTEAPIpipeline
+:OTEAPIpipeline rdf:type owl:Class ;
+                rdfs:subClassOf emmo:EMMO_1c7f2dfe_0db4_4bf6_a0f6_853054a34ead ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty emmo:EMMO_36e69413_8c59_4799_946c_10b05d266e22 ;
+                                  owl:someValuesFrom :OTEAPIDataSet
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty emmo:EMMO_ae2d1a96_bfa1_409a_a7d2_03d69e8a125a ;
+                                  owl:someValuesFrom :DLite
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty emmo:EMMO_c4bace1d_4db0_4cd3_87e9_18122bae2840 ;
+                                  owl:someValuesFrom :AiiDADataNodes
+                                ] ;
+                skos:prefLabel "OTEAPIpipeline" ;
+                emmo:EMMO_70fe84ff_99b6_4206_a9fc_9a8931836d84 "Open Translation Environment API"@en ;
+                emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "OTEAPI allows the access to a large range of data resources. Semantic interoperability is supported via mapping of data models describing the data to ontologies."@en .
+
+
+###  http://open-model.eu/domain/simulationsoftware#PDBFile
+:PDBFile rdf:type owl:Class ;
+         rdfs:subClassOf :AtomicStructureFile ;
+         skos:prefLabel "PDBFile" .
+
+
+###  http://open-model.eu/domain/simulationsoftware#PeriodicBoundaryConditions
+:PeriodicBoundaryConditions rdf:type owl:Class ;
+                            rdfs:subClassOf emmo:EMMO_5f278af9_8593_4e27_a717_ccc9e07a0ddf ;
+                            skos:prefLabel "PeriodicBoundaryConditions" ;
+                            emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Periodic boundary conditions (PBCs) are a set of boundary conditions which are often chosen for approximating a large (infinite) system by using a small part called a unit cell."@en .
+
+
+###  http://open-model.eu/domain/simulationsoftware#PostHartreeFock
+:PostHartreeFock rdf:type owl:Class ;
+                 rdfs:subClassOf emmo:EMMO_6eca09be_17e9_445e_abc9_000aa61b7a11 ;
+                 skos:prefLabel "PostHartreeFock" ;
+                 emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Post–Hartree–Fock (post-HF) methods are the set of methods developed to improve on the Hartree–Fock (HF), or self-consistent field (SCF) method. They add electron correlation which is a more accurate way of including the repulsions between electrons than in the Hartree–Fock method where repulsions are only averaged."@en .
+
+
+###  http://open-model.eu/domain/simulationsoftware#PotentialFunction
+:PotentialFunction rdf:type owl:Class ;
+                   rdfs:subClassOf emmo:EMMO_a6138ba7_e365_4f2d_b6b4_fe5a5918d403 ,
+                                   emmo:EMMO_e5438930_04e7_4d42_ade5_3700d4a52ab7 ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty emmo:EMMO_a8bd7094_6b40_47af_b1f4_a69d81a3afbd ;
+                                     owl:someValuesFrom :ForceField
+                                   ] ;
+                   skos:prefLabel "PotentialFunction" ;
+                   emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A mathematical function used to express the potential energy (or part of it) in classical molecular modelling simulations."@en .
+
+
+###  http://open-model.eu/domain/simulationsoftware#ProgrammingVariable
+:ProgrammingVariable rdf:type owl:Class ;
+                     rdfs:subClassOf emmo:EMMO_1eed0732_e3f1_4b2c_a9c4_b4e75eeb5895 ,
+                                     emmo:EMMO_9ffffb55_3496_4307_82b8_a0d78fe1fcd8 ;
+                     skos:prefLabel "ProgrammingVariable" ;
+                     emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A variable is a named memory location that stores data."@en .
+
+
+###  http://open-model.eu/domain/simulationsoftware#QuantumEspresso
+:QuantumEspresso rdf:type owl:Class ;
+                 rdfs:subClassOf emmo:EMMO_8d4962d7_9608_44f7_a2f1_82a4bb173f4a ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty emmo:EMMO_24c71baf_6db6_48b9_86c8_8c70cf36db0c ;
+                                   owl:someValuesFrom emmo:EMMO_6eca09be_17e9_445e_abc9_000aa61b7a11
+                                 ] ;
+                 rdfs:seeAlso "https://www.quantum-espresso.org/" ;
+                 skos:prefLabel "QuantumEspresso" ;
+                 emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Quantum ESPRESSO is an integrated suite of Open-Source computer codes for electronic-structure calculations and materials modeling at the nanoscale. It is based on density-functional theory, plane waves, and pseudopotentials."@en .
+
+
+###  http://open-model.eu/domain/simulationsoftware#RandomNumber
+:RandomNumber rdf:type owl:Class ;
+              rdfs:subClassOf emmo:EMMO_888a5dea_3b7d_4dc0_93f2_d4e345a1f903 ;
+              skos:prefLabel "RandomNumber" ;
+              emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A number with arbitrary value, selected using a random source or a pseudo-random algorithm."@en .
+
+
+###  http://open-model.eu/domain/simulationsoftware#RelativePermittivity
+:RelativePermittivity rdf:type owl:Class ;
+                      rdfs:subClassOf emmo:EMMO_0ee5779e_d798_4ee5_9bfe_c392d5bea112 ;
+                      skos:altLabel "DielectricConstant" ;
+                      skos:prefLabel "RelativePermittivity" ;
+                      emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "The permittivity is a measure of the electric polarizability of a dielectric material. The relative permittivity, formerly known as dielectric constant, is the ratio of the absolute permittivity ε and the vacuum permittivity ε0."@en .
+
+
+###  http://open-model.eu/domain/simulationsoftware#SemiEmpiricalHamiltonian
+:SemiEmpiricalHamiltonian rdf:type owl:Class ;
+                          rdfs:subClassOf :HartreeFock ;
+                          skos:prefLabel "SemiEmpiricalHamiltonian" ;
+                          emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Semi-empirical quantum chemistry methods are based on the Hartree–Fock formalism, but make many approximations and obtain some parameters from empirical data."@en .
+
+
+###  http://open-model.eu/domain/simulationsoftware#Slab
+:Slab rdf:type owl:Class ;
+      rdfs:subClassOf :PeriodicBoundaryConditions ;
+      skos:prefLabel "Slab" ;
+      emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A slab geometry in a molecular dynamics simulation is a type of boundary condition that is used to model systems that are infinite in two dimensions and finite in one dimension. For example, a slab geometry can be used to simulate a thin layer of fluid or solid confined between two parallel walls, or a membrane-channel system that spans across a water box."@en .
+
+
+###  http://open-model.eu/domain/simulationsoftware#Steps
+:Steps rdf:type owl:Class ;
+       rdfs:subClassOf emmo:EMMO_d1d436e7_72fc_49cd_863b_7bfb4ba5276a ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty emmo:EMMO_faf79f53_749d_40b2_807c_d34244c192f4 ;
+                         owl:allValuesFrom xsd:int
+                       ] ;
+       skos:prefLabel "Steps" ;
+       emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Number of repetitions of a certain task."@en .
+
+
+###  http://open-model.eu/domain/simulationsoftware#TOML
+:TOML rdf:type owl:Class ;
+      rdfs:subClassOf emmo:EMMO_3997e1f5_f478_4572_a030_4b8e7e5cc63a ;
+      emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Tom's Obvious, Minimal Language, a plain-text format easy to read and write by humans. The syntax resembles that of the INI format."@en .
+
+
+###  http://open-model.eu/domain/simulationsoftware#TOMLFile
+:TOMLFile rdf:type owl:Class ;
+          rdfs:subClassOf emmo:EMMO_998dd3a0_c85f_4c8d_9fb8_816a93cc3bb8 ;
+          rdfs:seeAlso :TOML ;
+          skos:prefLabel "TOMLFile" .
+
+
+###  http://open-model.eu/domain/simulationsoftware#Timestep
+:Timestep rdf:type owl:Class ;
+          rdfs:subClassOf emmo:EMMO_d1d436e7_72fc_49cd_863b_7bfb4ba5276a ,
+                          emmo:EMMO_d4f7d378_5e3b_468a_baa1_a7e98358cda7 ;
+          skos:prefLabel "Timestep" ;
+          emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A timestep is a number (in time units) used to integrate numerically the equations of motion in a subsequent molecular dynamics simulation."@en .
+
+
+###  http://open-model.eu/domain/simulationsoftware#UnitedAtomsMolecularDynamics
+:UnitedAtomsMolecularDynamics rdf:type owl:Class ;
+                              rdfs:subClassOf emmo:EMMO_53935db0_af45_4426_b9e9_244a0d77db00 ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty emmo:EMMO_17e27c22_37e1_468c_9dd7_95e137f73e7f ;
+                                                owl:someValuesFrom :ForceField
+                                              ] ;
+                              skos:prefLabel "UnitedAtomsMolecularDynamics" ;
+                              emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A molecular dynamics simulation using the united-atoms model."@en .
+
+
+###  http://open-model.eu/domain/simulationsoftware#VirtualMaterial
+:VirtualMaterial rdf:type owl:Class ;
+                 rdfs:subClassOf emmo:EMMO_4f2d1fcc_e20c_4479_9ad7_7a0480dd3e44 ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty emmo:EMMO_7159549c_16a3_4dd3_b37d_e992ad0b0879 ;
+                                   owl:someValuesFrom emmo:EMMO_4207e895_8b83_4318_996a_72cfb32acd94
+                                 ] ;
+                 skos:prefLabel "VirtualMaterial" ;
+                 emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "An analogical icon of a material taking part in a materials modelling simulation."@en .
+
+
+###  http://open-model.eu/domain/simulationsoftware#VolumeElement
+:VolumeElement rdf:type owl:Class ;
+               rdfs:subClassOf emmo:EMMO_4456a5d2_16a6_4ee1_9a8e_5c75956b28ea ;
+               skos:prefLabel "VolumeElement" .
+
+
+###  http://open-model.eu/domain/simulationsoftware#XMLFile
+:XMLFile rdf:type owl:Class ;
+         rdfs:subClassOf emmo:EMMO_998dd3a0_c85f_4c8d_9fb8_816a93cc3bb8 ;
+         skos:prefLabel "XMLFile" .
+
+
+###  http://open-model.eu/domain/simulationsoftware#XYZFile
+:XYZFile rdf:type owl:Class ;
+         rdfs:subClassOf :AtomicStructureFile ;
+         skos:prefLabel "XYZFile" .
+
+
+###  http://open-model.eu/domain/simulationsoftware#YAMLFile
+:YAMLFile rdf:type owl:Class ;
+          rdfs:subClassOf emmo:EMMO_998dd3a0_c85f_4c8d_9fb8_816a93cc3bb8 ;
+          skos:prefLabel "YAMLFile" .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi

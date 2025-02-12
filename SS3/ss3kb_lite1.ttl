@@ -1,0 +1,234 @@
+@prefix : <http://open-model.eu/ontologies/ss3-abox#> .
+@prefix kpa: <http://open-model.eu/ontoflow/kpa#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix ss3: <http://open-model.eu/ontologies/ss3#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix astm: <https://w3id.org/emmo/domain/doam/astm52900#> .
+@prefix emmo: <https://w3id.org/emmo#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix micro: <https://w3id.org/emmo/domain/microstructure#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix simsoft: <http://open-model.eu/domain/simulationsoftware#> .
+@base <http://open-model.eu/ontologies/ss3-abox#> .
+
+<http://open-model.eu/ontologies/ss3-abox> rdf:type owl:Ontology ;
+                                            owl:versionIRI <http://open-model.eu/ontologies/0.1/ss3-abox> ;
+                                            owl:imports <http://open-model.eu/ontologies/ss3-tbox> ;
+                                            dcterms:abstract "Knowledge base for OpenModel success story 3 on aluminium reinforced concrete."@en ;
+                                            dcterms:created "2024-01-24"@en ;
+                                            dcterms:creator "Francesca Lønstad Bleken, SINTEF, NO"@en ,
+                                                            "Jesper Friis, SINTEF, NO"@en ,
+                                                            "Sylvain Gouttebroze, SINTEF, NO"@en ;
+                                            dcterms:license "https://creativecommons.org/licenses/by/4.0/legalcode"@en ;
+                                            dcterms:publisher "OpenModel"@en ;
+                                            dcterms:title "OpenModel Success Story 3 Knowledge base"@en ;
+                                            owl:versionInfo "0.2"@en .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/terms/creator
+dcterms:creator rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/license
+dcterms:license rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/publisher
+dcterms:publisher rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/title
+dcterms:title rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://open-model.eu/ontologies/ss3#abaqussimulation_ave_accuracy
+ss3:abaqussimulation_ave_accuracy rdf:type owl:NamedIndividual ,
+                                           kpa:OrdinalAccuracy ;
+                                  kpa:KPAValue "high" .
+
+
+###  http://open-model.eu/ontologies/ss3#abaqussimulation_ave_simulationtime
+ss3:abaqussimulation_ave_simulationtime rdf:type owl:NamedIndividual ,
+                                                 kpa:NumericalSimulationTime ;
+                                        kpa:KPAValue "5000.0"^^xsd:double .
+
+
+###  http://open-model.eu/ontologies/ss3#abaqussimulation_opensource
+ss3:abaqussimulation_opensource rdf:type owl:NamedIndividual ,
+                                         kpa:BoolOpenSource ;
+                                kpa:KPAValue "false"^^xsd:boolean .
+
+
+###  http://open-model.eu/ontologies/ss3#abaquswrapper_twocomponents
+ss3:abaquswrapper_twocomponents rdf:type ss3:AbaqusWrapper ;
+                                emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A pointer to a YAML template file containing the Abaqus wrapper for a particular task, that is, a simulation of reinforced concrete, where the simulated components are the reinforcement bar and the concrete matrix."@en .
+
+
+###  http://open-model.eu/ontologies/ss3-abox#Abaqus_local
+:Abaqus_local rdf:type owl:NamedIndividual ,
+                       simsoft:Abaqus ;
+              kpa:hasKPA ss3:abaqussimulation_opensource ;
+              skos:prefLabel "Abaqus_local" ;
+              emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 """Local copy of the Abaqus Software.
+This item could point to (or be connected with) a YAML file containing a template for ExecFlow."""@en .
+
+
+###  http://open-model.eu/ontologies/ss3-abox#Concrete1
+:Concrete1 rdf:type owl:NamedIndividual ,
+                    ss3:ReinforcedConcrete ;
+           emmo:EMMO_6b78c119_f86c_4b5e_ba6c_b42d25a64122 :abaqus_materialcard_cement1 ,
+                                                          :abaqus_materialcard_al6060 .
+
+
+###  http://open-model.eu/ontologies/ss3-abox#Concrete2
+:Concrete2 rdf:type owl:NamedIndividual ,
+                    ss3:ReinforcedConcrete ;
+           emmo:EMMO_6b78c119_f86c_4b5e_ba6c_b42d25a64122 :abaqus_materialcard_al6083 ,
+                                                          :abaqus_materialcard_cement2 .
+
+
+###  http://open-model.eu/ontologies/ss3-abox#Concrete3
+:Concrete3 rdf:type owl:NamedIndividual ;
+           emmo:EMMO_6b78c119_f86c_4b5e_ba6c_b42d25a64122 :abaqus_materialcard_cement1 ,
+                                                          :abaqus_materialcard_st001 .
+
+
+###  http://open-model.eu/ontologies/ss3-abox#abaqus_materialcard_al6060
+:abaqus_materialcard_al6060 rdf:type owl:NamedIndividual ,
+                                     ss3:ReinforcementMaterialCard ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty emmo:EMMO_7159549c_16a3_4dd3_b37d_e992ad0b0879 ;
+                                       owl:someValuesFrom ss3:Aluminium
+                                     ] ;
+                            simsoft:EMMO_367a1570_8b0a_4a0a_9192_2e290e259f65 :Concrete1 ;
+                            kpa:hasKPA :amc_Size1 .
+
+
+###  http://open-model.eu/ontologies/ss3-abox#abaqus_materialcard_al6083
+:abaqus_materialcard_al6083 rdf:type owl:NamedIndividual ,
+                                     ss3:ReinforcementMaterialCard ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty emmo:EMMO_7159549c_16a3_4dd3_b37d_e992ad0b0879 ;
+                                       owl:someValuesFrom ss3:Aluminium
+                                     ] ;
+                            simsoft:EMMO_367a1570_8b0a_4a0a_9192_2e290e259f65 :Concrete2 ;
+                            kpa:hasKPA :amc_Size2 .
+
+
+###  http://open-model.eu/ontologies/ss3-abox#abaqus_materialcard_cement1
+:abaqus_materialcard_cement1 rdf:type owl:NamedIndividual ,
+                                      ss3:MatrixMaterialCard ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty emmo:EMMO_7159549c_16a3_4dd3_b37d_e992ad0b0879 ;
+                                        owl:someValuesFrom ss3:Concrete
+                                      ] ;
+                             simsoft:EMMO_367a1570_8b0a_4a0a_9192_2e290e259f65 :Concrete1 ,
+                                                                               :Concrete3 ;
+                             kpa:hasKPA :amc_Size4 .
+
+
+###  http://open-model.eu/ontologies/ss3-abox#abaqus_materialcard_cement2
+:abaqus_materialcard_cement2 rdf:type owl:NamedIndividual ,
+                                      ss3:MatrixMaterialCard ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty emmo:EMMO_7159549c_16a3_4dd3_b37d_e992ad0b0879 ;
+                                        owl:someValuesFrom ss3:Concrete
+                                      ] ;
+                             simsoft:EMMO_367a1570_8b0a_4a0a_9192_2e290e259f65 :Concrete2 ;
+                             kpa:hasKPA :amc_Size5 .
+
+
+###  http://open-model.eu/ontologies/ss3-abox#abaqus_materialcard_st001
+:abaqus_materialcard_st001 rdf:type owl:NamedIndividual ,
+                                    ss3:ReinforcementMaterialCard ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty emmo:EMMO_7159549c_16a3_4dd3_b37d_e992ad0b0879 ;
+                                      owl:someValuesFrom ss3:Steel
+                                    ] ;
+                           simsoft:EMMO_367a1570_8b0a_4a0a_9192_2e290e259f65 :Concrete3 ;
+                           kpa:hasKPA :amc_Size3 .
+
+
+###  http://open-model.eu/ontologies/ss3-abox#abaqussimulation_conf1
+:abaqussimulation_conf1 rdf:type owl:NamedIndividual ,
+                                 ss3:AbaqusConfiguration ;
+                        kpa:hasKPA :as_Accuracy1 ,
+                                   :as_SimulationTime1 .
+
+
+###  http://open-model.eu/ontologies/ss3-abox#abaqussimulation_conf2
+:abaqussimulation_conf2 rdf:type owl:NamedIndividual ,
+                                 ss3:AbaqusConfiguration ;
+                        kpa:hasKPA :as_Accuracy2 ,
+                                   :as_SimulationTime2 .
+
+
+###  http://open-model.eu/ontologies/ss3-abox#amc_Size1
+:amc_Size1 rdf:type owl:NamedIndividual ,
+                    kpa:SystemSize ;
+           kpa:KPAValue 10 .
+
+
+###  http://open-model.eu/ontologies/ss3-abox#amc_Size2
+:amc_Size2 rdf:type owl:NamedIndividual ,
+                    kpa:SystemSize ;
+           kpa:KPAValue 15 .
+
+
+###  http://open-model.eu/ontologies/ss3-abox#amc_Size3
+:amc_Size3 rdf:type owl:NamedIndividual ,
+                    kpa:SystemSize ;
+           kpa:KPAValue 20 .
+
+
+###  http://open-model.eu/ontologies/ss3-abox#amc_Size4
+:amc_Size4 rdf:type owl:NamedIndividual ,
+                    kpa:SystemSize ;
+           kpa:KPAValue 5 .
+
+
+###  http://open-model.eu/ontologies/ss3-abox#amc_Size5
+:amc_Size5 rdf:type owl:NamedIndividual ,
+                    kpa:SystemSize ;
+           kpa:KPAValue 15 .
+
+
+###  http://open-model.eu/ontologies/ss3-abox#as_Accuracy1
+:as_Accuracy1 rdf:type owl:NamedIndividual ,
+                       kpa:OrdinalAccuracy ;
+              kpa:KPAValue "high" ;
+              skos:prefLabel "as_Accuracy1"@en .
+
+
+###  http://open-model.eu/ontologies/ss3-abox#as_Accuracy2
+:as_Accuracy2 rdf:type owl:NamedIndividual ,
+                       kpa:OrdinalAccuracy ;
+              kpa:KPAValue "low" ;
+              skos:prefLabel "as_Accuracy2"@en .
+
+
+###  http://open-model.eu/ontologies/ss3-abox#as_SimulationTime1
+:as_SimulationTime1 rdf:type owl:NamedIndividual ,
+                             kpa:NormalizedSimulationTime ;
+                    kpa:KPAValue "1.0"^^xsd:double ;
+                    skos:prefLabel "as_SimulationTime1" .
+
+
+###  http://open-model.eu/ontologies/ss3-abox#as_SimulationTime2
+:as_SimulationTime2 rdf:type owl:NamedIndividual ,
+                             kpa:NormalizedSimulationTime ;
+                    kpa:KPAValue "0.4"^^xsd:double ;
+                    skos:prefLabel "as_SimulationTime2" .
+
+
+###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi

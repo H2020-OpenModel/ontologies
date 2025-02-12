@@ -1,0 +1,200 @@
+@prefix : <http://open-model.eu/ontologies/ss1-abox#> .
+@prefix kpa: <http://open-model.eu/ontoflow/kpa#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix emmo: <https://w3id.org/emmo#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix tbox: <http://open-model.eu/ontologies/ss1#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix simsoft: <http://open-model.eu/domain/simulationsoftware#> .
+@base <http://open-model.eu/ontologies/ss1-abox#> .
+
+<http://open-model.eu/ontologies/ss1-abox> rdf:type owl:Ontology ;
+                                            owl:versionIRI <http://open-model.eu/ontologies/1.0/ss1-abox> ;
+                                            owl:imports <http://open-model.eu/ontologies/ss1-tbox> ;
+                                            dcterms:abstract "Application ontology for OpenModel success story 1. Synaptic electronics: from materials properties to next-generation memory devices."@en ;
+                                            dcterms:created "2024-07-22"@en ;
+                                            dcterms:creator <https://orcid.org/0000-0001-7815-6636> ;
+                                            dcterms:license "https://creativecommons.org/licenses/by/4.0/legalcode"@en ;
+                                            dcterms:publisher "OpenModel"@en ;
+                                            dcterms:title "ABox for OpenModel Success Story 1."@en ;
+                                            owl:versionInfo "1.0"@en .
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://open-model.eu/ontologies/ss1#calcjob_bs2bg
+tbox:calcjob_bs2bg rdf:type simsoft:BandStructure2BandGap ;
+                   kpa:hasKPA :bs2bs_opensource .
+
+
+###  http://open-model.eu/ontologies/ss1#wrapper_ginestra_device
+tbox:wrapper_ginestra_device rdf:type tbox:GinestraWrapper .
+
+
+###  http://open-model.eu/ontologies/ss1-abox#ASilicon
+:ASilicon rdf:type owl:NamedIndividual ,
+                   tbox:AmorphousSilicon ,
+                   simsoft:VirtualMaterial ;
+          emmo:EMMO_e1097637_70d2_4895_973f_2396f04fa204 :SiliconBandStructure2 ;
+          skos:prefLabel "ASilicon" .
+
+
+###  http://open-model.eu/ontologies/ss1-abox#CBoronArsenide
+:CBoronArsenide rdf:type owl:NamedIndividual ,
+                         tbox:BoronArsenide ,
+                         simsoft:VirtualMaterial ;
+               emmo:EMMO_e1097637_70d2_4895_973f_2396f04fa204 :BoronArsenideBandStructure ;
+                skos:prefLabel "CBoronArsenide" .
+
+###  http://open-model.eu/ontologies/ss1-abox#BoronArsenideBandStructure
+:BoronArsenideBandStructure rdf:type owl:NamedIndividual ,
+                                     tbox:QEBands ;
+                            emmo:EMMO_c4ca55f0_2795_4bff_b8a9_445ed6e29d6c :BoronArsenide ;
+                            skos:prefLabel "BoronArsenideBandStructure"@en .
+
+
+###  http://open-model.eu/ontologies/ss1-abox#CGraphene
+:CGraphene rdf:type owl:NamedIndividual ,
+                    tbox:Graphene ,
+                    simsoft:VirtualMaterial ;
+           skos:prefLabel "CGraphene" .
+
+
+###  http://open-model.eu/ontologies/ss1-abox#GrapheneBandStructure
+:GrapheneBandStructure rdf:type owl:NamedIndividual ,
+                                tbox:QEBands ;
+                       emmo:EMMO_c4ca55f0_2795_4bff_b8a9_445ed6e29d6c :CGraphene ;
+                       skos:prefLabel "GrapheneBandStructure"@en .
+
+
+###  http://open-model.eu/ontologies/ss1-abox#Silicon
+:Silicon rdf:type owl:NamedIndividual ,
+                  tbox:CrystalSilicon ,
+                  simsoft:VirtualMaterial ;
+         emmo:EMMO_e1097637_70d2_4895_973f_2396f04fa204 :SiliconBandStructure ,
+                                                        :SiliconExperimentalStructure ;
+         skos:prefLabel "Silicon" .
+
+
+###  http://open-model.eu/ontologies/ss1-abox#SiliconBandStructure
+:SiliconBandStructure rdf:type owl:NamedIndividual ,
+                               tbox:QEBands ;
+                      emmo:EMMO_c4ca55f0_2795_4bff_b8a9_445ed6e29d6c :Silicon ;
+                      skos:prefLabel "SiliconBandStructure"@en ;
+                      emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Band structure computed with Quantum Espresso for crystalline silicon."@en .
+
+
+###  http://open-model.eu/ontologies/ss1-abox#SiliconBandStructure2
+:SiliconBandStructure2 rdf:type owl:NamedIndividual ,
+                                tbox:QEBands ;
+                       emmo:EMMO_c4ca55f0_2795_4bff_b8a9_445ed6e29d6c :ASilicon ;
+                       skos:prefLabel "SiliconBandStructure2"@en ;
+                       emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 """Band structure computed with Quantum Espresso for amorphous silicon.
+This instance should not be selected by OntoFlow (hopefully)."""@en .
+
+
+###  http://open-model.eu/ontologies/ss1-abox#SiliconExperimentalStructure
+:SiliconExperimentalStructure rdf:type owl:NamedIndividual ,
+                                       tbox:StructureInitialGuess ;
+                              emmo:EMMO_c4ca55f0_2795_4bff_b8a9_445ed6e29d6c :Silicon ;
+                              skos:prefLabel "SiliconExperimentalStructure"@en .
+
+
+
+###  http://open-model.eu/ontologies/ss1-abox#GinestraDev1
+:GinestraDev1 rdf:type owl:NamedIndividual ,
+                       tbox:GDevice ;
+              emmo:EMMO_6b78c119_f86c_4b5e_ba6c_b42d25a64122 :Silicon ;
+              emmo:EMMO_c4ca55f0_2795_4bff_b8a9_445ed6e29d6c :MOSFET ;
+              skos:prefLabel "GinestraDev1" .
+
+
+###  http://open-model.eu/ontologies/ss1-abox#GinestraDev2
+:GinestraDev2 rdf:type owl:NamedIndividual ,
+                       tbox:GDevice ;
+              emmo:EMMO_6b78c119_f86c_4b5e_ba6c_b42d25a64122 :CGraphene ;
+              emmo:EMMO_c4ca55f0_2795_4bff_b8a9_445ed6e29d6c :OLED ;
+              skos:prefLabel "GinestraDev2" .
+
+
+###  http://open-model.eu/ontologies/ss1-abox#GinestraDev3
+:GinestraDev3 rdf:type owl:NamedIndividual ,
+                       tbox:GDevice ;
+              emmo:EMMO_6b78c119_f86c_4b5e_ba6c_b42d25a64122 :CBoronArsenide ;
+              emmo:EMMO_c4ca55f0_2795_4bff_b8a9_445ed6e29d6c :MOSFET ;
+              skos:prefLabel "GinestraDev3" .
+
+
+###  http://open-model.eu/ontologies/ss1-abox#GinestraLocal
+:GinestraLocal rdf:type owl:NamedIndividual ,
+                        simsoft:Ginestra ;
+               kpa:hasKPA :GinestraLocal_opensource ;
+               skos:prefLabel "GinestraLocal" ;
+               emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 """Local copy of the Ginestra Software.
+This item could point to (or be connected with) a YAML file containing a template for ExecFlow."""@en .
+
+
+###  http://open-model.eu/ontologies/ss1-abox#GinestraLocal_opensource
+:GinestraLocal_opensource rdf:type owl:NamedIndividual ,
+                                   kpa:BoolOpenSource ;
+                          kpa:KPAValue "false"^^xsd:boolean ;
+                          skos:prefLabel "GinestraLocal_opensource" .
+
+
+###  http://open-model.eu/ontologies/ss1-abox#GinestraSetup
+:GinestraSetup rdf:type owl:NamedIndividual ,
+                        tbox:GSetup ;
+               kpa:hasKPA :GinestraSetup_accuracy ,
+                          :GinestraSetup_simulationtime ;
+               skos:prefLabel "GinestraSetup" ;
+               emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "An input dataset to setup a Ginestra calculation."@en .
+
+
+###  http://open-model.eu/ontologies/ss1-abox#GinestraSetup_accuracy
+:GinestraSetup_accuracy rdf:type owl:NamedIndividual ,
+                                 kpa:OrdinalAccuracy ;
+                        kpa:KPAValue "medium" .
+
+
+###  http://open-model.eu/ontologies/ss1-abox#GinestraSetup_simulationtime
+:GinestraSetup_simulationtime rdf:type owl:NamedIndividual ,
+                                       kpa:NumericalSimulationTime ;
+                              kpa:KPAValue "" .
+
+
+
+###  http://open-model.eu/ontologies/ss1-abox#MOSFET
+:MOSFET rdf:type owl:NamedIndividual ,
+                 emmo:EMMO_86ca9b93_1183_4b65_81b8_c0fcd3bba5ad ;
+        emmo:EMMO_9380ab64_0363_4804_b13f_3a8a94119a76 :Silicon ;
+        skos:prefLabel "MOSFET" .
+
+
+###  http://open-model.eu/ontologies/ss1-abox#OLED
+:OLED rdf:type owl:NamedIndividual ,
+               emmo:EMMO_86ca9b93_1183_4b65_81b8_c0fcd3bba5ad ;
+      emmo:EMMO_9380ab64_0363_4804_b13f_3a8a94119a76 :CGraphene ;
+      skos:prefLabel "OLED"@en .
+
+
+###  http://open-model.eu/ontologies/ss1-abox#BS2BGLocal
+:BS2BGLocal rdf:type owl:NamedIndividual ,
+                     simsoft:BandStructure2BandGap ;
+            kpa:hasKPA :BS2BGLocal_opensource ;
+            skos:prefLabel "BS2BGLocal"@en .
+
+
+###  http://open-model.eu/ontologies/ss1-abox#BS2BGLocal_opensource
+:BS2BGLocal_opensource rdf:type owl:NamedIndividual ,
+                                kpa:BoolOpenSource ;
+                       kpa:KPAValue "true"^^xsd:boolean ;
+                       skos:prefLabel "BS2BGLocal_opensource"@en .
+
+
+###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi

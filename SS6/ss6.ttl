@@ -1,0 +1,194 @@
+@prefix : <http://open-model.eu/ontologies/ss6#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix astm: <http://emmo.info/doam/astm52900#> .
+@prefix emmo: <https://w3id.org/emmo#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix micro: <https://w3id.org/emmo/domain/microstructure#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@base <http://open-model.eu/ontologies/ss6#> .
+
+<http://open-model.eu/ontologies/ss6> rdf:type owl:Ontology ;
+                                       owl:versionIRI <http://open-model.eu/ontologies/0.1/ss6> ;
+                                       owl:imports <https://w3id.org/emmo/1.0.0/disciplines/materials> ,
+                                                   <https://w3id.org/emmo/1.0.0/reference/persholistic> ;
+                                       dcterms:abstract "Application ontology for OpenModel success story 3 on aluminium reinforced concrete."@en ;
+                                       dcterms:created "2025-01-07"@en ;
+                                       dcterms:creator "Emanuele Ghedini, UNIBO"@en ,
+                                                       "Otello Roscioni, GCL"@en ;
+                                       dcterms:license "https://creativecommons.org/licenses/by/4.0/legalcode"@en ;
+                                       dcterms:publisher "OpenModel"@en ;
+                                       dcterms:title "OpenModel Success Story 6 Application Ontology"@en ;
+                                       owl:versionInfo "0.1"@en .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/terms/created
+dcterms:created rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://open-model.eu/ontologies/ss6#CarbonFiber
+:CarbonFiber rdf:type owl:Class ;
+             rdfs:subClassOf emmo:EMMO_f678173d_f036_4df1_a86b_2894560be617 ;
+             skos:prefLabel "CarbonFiber"@en ;
+             emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A material consisting of thin, strong crystalline filaments of carbon, essentially carbon atoms bonded together in long chains"@en .
+
+
+###  http://open-model.eu/ontologies/ss6#CatalystLayer
+:CatalystLayer rdf:type owl:Class ;
+               rdfs:subClassOf emmo:EMMO_f76884f7_964e_488e_9bb7_1b2453e9e817 ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty [ owl:inverseOf emmo:EMMO_3c7f239f_e833_4a2b_98a1_c88831770c1b
+                                                ] ;
+                                 owl:someValuesFrom :FuelCell
+                               ] ;
+               skos:prefLabel "CatalystLayer"@en ;
+               emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "The element of the fuel cell, where the electrochemical reactions take place that generate the voltage and current."@en .
+
+
+###  http://open-model.eu/ontologies/ss6#FuelCell
+:FuelCell rdf:type owl:Class ;
+          rdfs:subClassOf emmo:EMMO_65a007dc_2550_46b0_b394_3346c67fbb69 ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty emmo:EMMO_3c7f239f_e833_4a2b_98a1_c88831770c1b ;
+                            owl:someValuesFrom :CatalystLayer
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty emmo:EMMO_3c7f239f_e833_4a2b_98a1_c88831770c1b ;
+                            owl:someValuesFrom :PEM
+                          ] ;
+          skos:prefLabel "FuelCell"@en ;
+          emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "An electrochemical cell that converts the chemical energy of a fuel and an oxidizing agent into electricity through a pair of redox reactions."@en .
+
+
+###  http://open-model.eu/ontologies/ss6#GasDiffusionLayer
+:GasDiffusionLayer rdf:type owl:Class ;
+                   rdfs:subClassOf emmo:EMMO_f76884f7_964e_488e_9bb7_1b2453e9e817 ;
+                   skos:prefLabel "GasDiffusionLayer"@en ;
+                   emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A thin, high electrical, thermal conductivity and chemical corrosion resistance porous sheet, used for controlling the proper flow of reactant gases and managing the water transport out of the fuel cell."@en .
+
+
+###  http://open-model.eu/ontologies/ss6#Hydrogen
+:Hydrogen rdf:type owl:Class ;
+          rdfs:subClassOf emmo:EMMO_04f2a2d5_e799_4692_a654_420e76f5acc1 ;
+          skos:prefLabel "Hydrogen"@en ;
+          emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Hydrogen molecules in gaseous state"@en .
+
+
+###  http://open-model.eu/ontologies/ss6#MPL
+:MPL rdf:type owl:Class ;
+     rdfs:subClassOf :GasDiffusionLayer ;
+     rdfs:comment "In OpenModel the MPL is an array of PTFE-coated carbon powder particles"@en ;
+     skos:altLabel "MicroPorousLayer"@en ;
+     skos:prefLabel "MPL"@en ;
+     emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A capillary barrier that drives water from the cathode to the anode through the membrane."@en .
+
+
+###  http://open-model.eu/ontologies/ss6#MPS
+:MPS rdf:type owl:Class ;
+     rdfs:subClassOf :GasDiffusionLayer ;
+     skos:altLabel "MicroPorousSubstrate"@en ;
+     skos:prefLabel "MPS"@en ;
+     emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Electrically conductive fibers used as structural component fot gas diffusion layer."@en .
+
+
+###  http://open-model.eu/ontologies/ss6#Oxygen
+:Oxygen rdf:type owl:Class ;
+        rdfs:subClassOf emmo:EMMO_04f2a2d5_e799_4692_a654_420e76f5acc1 ;
+        skos:prefLabel "Oxygen"@en ;
+        emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Oxygen molecules in gaseous state"@en .
+
+
+###  http://open-model.eu/ontologies/ss6#PEM
+:PEM rdf:type owl:Class ;
+     rdfs:subClassOf emmo:EMMO_f76884f7_964e_488e_9bb7_1b2453e9e817 ,
+                     [ rdf:type owl:Restriction ;
+                       owl:onProperty [ owl:inverseOf emmo:EMMO_3c7f239f_e833_4a2b_98a1_c88831770c1b
+                                      ] ;
+                       owl:someValuesFrom :FuelCell
+                     ] ;
+     skos:altLabel "PolymerElectroliteMembrane"@en ;
+     skos:prefLabel "PEM"@en ;
+     emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A polymer electrolyte membrane"@en .
+
+
+###  http://open-model.eu/ontologies/ss6#PTFECoatedCarbonParticles
+:PTFECoatedCarbonParticles rdf:type owl:Class ;
+                           rdfs:subClassOf emmo:EMMO_f678173d_f036_4df1_a86b_2894560be617 ;
+                           skos:prefLabel "PTFECoatedCarbonParticles"@en ;
+                           emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Carbon particles coated with polytetrafluoroethylene"@en .
+
+
+###  http://open-model.eu/ontologies/ss6#Water
+:Water rdf:type owl:Class ;
+       rdfs:subClassOf emmo:EMMO_7509da43_56b1_4d7f_887a_65d1663df4ba ;
+       skos:prefLabel "Water"@en ;
+       emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Water molecules in liquid state"@en .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://open-model.eu/ontologies/ss6#catalyst_layer
+:catalyst_layer rdf:type owl:NamedIndividual ,
+                         :CatalystLayer ,
+                         emmo:EMMO_4207e895_8b83_4318_996a_72cfb32acd94 ;
+                emmo:EMMO_8785be5a_2493_4b12_8f39_31907ab11748 :pem .
+
+
+###  http://open-model.eu/ontologies/ss6#fuel_cell
+:fuel_cell rdf:type owl:NamedIndividual ,
+                    :FuelCell ;
+           emmo:EMMO_3c7f239f_e833_4a2b_98a1_c88831770c1b :catalyst_layer ,
+                                                          :pem .
+
+
+###  http://open-model.eu/ontologies/ss6#hydrogen
+:hydrogen rdf:type owl:NamedIndividual ,
+                   :Hydrogen ;
+          emmo:EMMO_ea7724fe_ba5d_4201_865e_761cb6fe9f99 :fuel_cell .
+
+
+###  http://open-model.eu/ontologies/ss6#mpl
+:mpl rdf:type owl:NamedIndividual ,
+              :MPL ,
+              :PTFECoatedCarbonParticles ;
+     emmo:EMMO_8785be5a_2493_4b12_8f39_31907ab11748 :catalyst_layer .
+
+
+###  http://open-model.eu/ontologies/ss6#mps
+:mps rdf:type owl:NamedIndividual ,
+              :CarbonFiber ,
+              :MPS ;
+     emmo:EMMO_8785be5a_2493_4b12_8f39_31907ab11748 :mpl .
+
+
+###  http://open-model.eu/ontologies/ss6#oxygen
+:oxygen rdf:type owl:NamedIndividual ,
+                 :Oxygen ;
+        emmo:EMMO_ea7724fe_ba5d_4201_865e_761cb6fe9f99 :fuel_cell .
+
+
+###  http://open-model.eu/ontologies/ss6#pem
+:pem rdf:type owl:NamedIndividual ,
+              :PEM ,
+              emmo:EMMO_fb27e6d6_159e_48a6_9c29_76dc31d8a860 .
+
+
+###  http://open-model.eu/ontologies/ss6#water
+:water rdf:type owl:NamedIndividual ,
+                :Water ;
+       emmo:EMMO_2fe8b850_9f2d_4c13_8be9_6ae2487de393 :fuel_cell .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
